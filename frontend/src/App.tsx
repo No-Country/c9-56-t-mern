@@ -1,4 +1,5 @@
 import LoginForm from './components/LoginForm';
+import SuccessfulRegistration from './components/SuccessfulRegistration';
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
         title="Iniciar Sesión"
         welcomeText="Bienvenido al sistema, por favor inicia sesión"
       />
+      <SuccessfulRegistration/>
     </div>
   )
 }
