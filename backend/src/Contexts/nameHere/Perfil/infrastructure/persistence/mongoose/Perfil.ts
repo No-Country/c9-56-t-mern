@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose"
-import { PerfilModel } from "../../../domain/models/PerfilModel";
+import { PerfilModel } from "../../../domain/models/PerfilModel"
 
 const PerfilSchema = new Schema<PerfilModel>(
   {
@@ -27,12 +27,11 @@ const PerfilSchema = new Schema<PerfilModel>(
       type: String,
       required: true,
     },
-    titleCareer:[
+    titleCareer: [
       {
-        type: String
-      }
-    ]
-
+        type: String,
+      },
+    ],
   },
   {
     timestamps: true,
