@@ -8,5 +8,9 @@
   "files.encoding": "utf8",
   "[typescript][typescriptreact][json][jsonc][html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "cSpell.language": "en,es,en-GB,en-US,lorem,es-ES",
+  "cSpell.words": [
+    "tailwindcss"
+  ]
 }
