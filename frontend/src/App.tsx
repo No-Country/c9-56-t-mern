@@ -1,6 +1,7 @@
 import LoginForm from './components/LoginForm';
 import PetForm from './components/PetForm';
 import PetForm2 from './components/PetForm2';
+import PetPopup from './components/PetPopup';
 import SuccessfulRegistration from './components/SuccessfulRegistration';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         welcomeText="Bienvenido al sistema, por favor inicia sesión"
       />
       <SuccessfulRegistration/>
+      <PetPopup/>
       <PetForm/>
       <PetForm2/>
     </div>
