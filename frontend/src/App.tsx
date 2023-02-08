@@ -1,4 +1,5 @@
 import LoginForm from './components/LoginForm';
+import PetForm from './components/PetForm';
 import SuccessfulRegistration from './components/SuccessfulRegistration';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         welcomeText="Bienvenido al sistema, por favor inicia sesión"
       />
       <SuccessfulRegistration/>
+      <PetForm/>
     </div>
   )
 }
