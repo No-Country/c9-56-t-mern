@@ -6,7 +6,7 @@
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.encoding": "utf8",
-  "cSpell.language": "en,es,en-GB,en-US,lorem,es-ES",
+  "cSpell.language": "en",
   "cSpell.words": [
     "tailwindcss"
   ]
