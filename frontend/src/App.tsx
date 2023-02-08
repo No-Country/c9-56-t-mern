@@ -1,5 +1,6 @@
 import LoginForm from './components/LoginForm';
 import PetForm from './components/PetForm';
+import PetForm2 from './components/PetForm2';
 import SuccessfulRegistration from './components/SuccessfulRegistration';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       />
       <SuccessfulRegistration/>
       <PetForm/>
+      <PetForm2/>
     </div>
   )
 }
