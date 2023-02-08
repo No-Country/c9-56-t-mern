@@ -26,6 +26,12 @@ const PetForm: React.FC = () => {
     console.log("Pet Gender:", petGender)
     console.log("Pet Size:", petSize)
     console.log("Pet Age:", petAge)
+
+    // setPetName("")
+    // setPetRace("")
+    // setPetGender("")
+    // setPetSize("")
+    // setPetAge("")
   }
 
   return (
