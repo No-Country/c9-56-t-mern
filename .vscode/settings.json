@@ -5,5 +5,8 @@
   "files.eol": "\n",
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
-  "files.encoding": "utf8"
+  "files.encoding": "utf8",
+  "[typescript][typescriptreact][json][jsonc][html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
