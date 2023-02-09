@@ -14,3 +14,14 @@ interface PostUserBody {
   roleId: string 
 }
 ```
+
+### `POST /auth/login`
+
+Body:
+
+```typescript
+interface AuthBody {
+  email: string
+  password: string
+}
+```
