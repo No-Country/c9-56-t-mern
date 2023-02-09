@@ -38,8 +38,10 @@ const LoginForm: React.FC<Props> = ({ title, welcomeText }) => {
     );
     if (user) {
       console.log("Login successful!");
+      alert('Bienvenido')
     } else {
       console.log("Email or password is incorrect.");
+      alert('Correo o contraseña incorrecta')
     }
   };
 
