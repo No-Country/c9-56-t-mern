@@ -5,6 +5,26 @@ interface Props {
   welcomeText: string;
 }
 
+interface User {
+  email: string;
+  password: string;
+}
+
+const users: User[] = [
+  {
+    email: "abi@example.com",
+    password: "123456",
+  },
+  {
+    email: "janedoe@example.com",
+    password: "password",
+  },
+  {
+    email: "bobsmith@example.com",
+    password: "qwerty",
+  },
+];
+
 const LoginForm: React.FC<Props> = ({ title, welcomeText }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,7 +32,17 @@ const LoginForm: React.FC<Props> = ({ title, welcomeText }) => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(`Email: ${email}, Password: ${password}`);
+
+    const user = users.find(
+      (user) => user.email === email && user.password === password
+    );
+    if (user) {
+      console.log("Login successful!");
+    } else {
+      console.log("Email or password is incorrect.");
+    }
   };
+
 
   return (
     <div className="flex flex-col items-center p-4">
