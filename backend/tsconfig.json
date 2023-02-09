@@ -5,17 +5,13 @@
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
     "esModuleInterop": true,
-    "module": "ES2022",
-    "moduleResolution": "node",
+    "module": "CommonJS",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
-    "baseUrl": "./src",
-    "paths": {
-      "@*": ["./*"]
-    }
+    "rootDir": "./src",
+    "outDir": "./dist"
   },
   "include": ["**/*.ts"],
   "exclude": ["node_modules"]
