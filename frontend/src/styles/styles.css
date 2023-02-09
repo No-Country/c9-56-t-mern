@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+
+@tailwind utilities;
+
+.div-principal{
+  @apply flex flex-col h-screen p-1;
+}
+.div-encabezados{
+  @apply mb-8 mt-8 flex flex-col justify-center
+}
+.contenedor-img-icon{
+  @apply relative w-28 h-28 rounded-full mb-5 mt-5
+}
+.contenedor-icon{
+  @apply absolute bottom-4 right-4 bg-white text-gray-500 
+  py-2 px-2 
+  rounded-full hover:bg-gray-100
+}
+.form{
+  @apply flex flex-col gap-3 w-full max-w-sm mx-auto shadow-2xl bg-white p-4 rounded-xl
+}
+
+.container-inputs{
+  @apply flex flex-row justify-center flex-wrap -mx-3 mb-1;
+}
+.div-input-label{
+  @apply flex flex-col gap-1 w-full md:w-10/12 lg:w-10/12 xl:w-10/12 px-3 mb-6 md:mb-0;
+}
+.inputs{
+  @apply appearance-none block w-full bg-gray-100 text-gray-700
+  border border-gray-200 rounded-xl py-3 px-6 mb-3 leading-tight 
+focus:outline-none focus:bg-white focus:border-gray-500;
+}
+.p-form{
+  @apply flex flex-row justify-center text-center font-sans text-base
+}
+.h2-titulo{
+  @apply flex flex-row justify-center mb-6 font-sans font-bold text-2xl
+}
