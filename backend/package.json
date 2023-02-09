@@ -2,7 +2,7 @@
   "name": "@c9-56/backend",
   "version": "0.1.0",
   "scripts": {
-    "dev": "tsc-watch --onSuccess \"node -r tsconfig-paths/register dist/apps/Pawful/index.js\"",
+    "dev": "tsc-watch --onSuccess \"node dist/apps/Pawful/index.js\"",
     "build": "tsc",
     "start": "node dist/apps/Pawful/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
