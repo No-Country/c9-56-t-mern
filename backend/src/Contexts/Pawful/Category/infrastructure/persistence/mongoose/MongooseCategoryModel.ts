@@ -1,8 +1,12 @@
 import { Schema, model } from "mongoose"
 import { CategoryModel } from "../../../domain/models/CategoryModel"
 
-const CategorySchema = new Schema<CategoryModel>(
+const MongooseCategorySchema = new Schema<CategoryModel>(
   {
+    id: {
+      type: String,
+      required: true,
+    },
     name: {
       type: String,
       required: true,
@@ -17,6 +21,6 @@ const CategorySchema = new Schema<CategoryModel>(
   },
 )
 
-const Category = model<CategoryModel>("Category", CategorySchema)
+const MongooseCategoryModel = model<CategoryModel>("Category", MongooseCategorySchema)
 
-export { Category }
+export { MongooseCategoryModel }
