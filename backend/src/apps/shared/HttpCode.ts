@@ -4,6 +4,7 @@ const enum HttpCode {
   InternalServerError = 500,
   UnprocessableEntity = 422,
   NotFound = 404,
+  Ok = 200,
 }
 
 export { HttpCode }
