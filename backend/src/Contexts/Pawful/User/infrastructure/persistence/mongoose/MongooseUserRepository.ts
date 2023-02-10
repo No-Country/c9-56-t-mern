@@ -13,6 +13,18 @@ class MongooseUserRepository implements UserRepository {
     return new User(id, email, avatar, passwordHash, roleId)
   }
 
+  async findById(id: string): Promise<User | null> {
+    const user: User | null = await MongooseUserModel.findOne({ id })
+
+    if (!user) {
+      return null
+    }
+
+    const { email, avatar, passwordHash, roleId } = user
+
+    return new User(id, email, passwordHash, avatar, roleId)
+  }
+
   async findByEmail(email: string): Promise<User | null> {
     const user: User | null = await MongooseUserModel.findOne({ email })
 

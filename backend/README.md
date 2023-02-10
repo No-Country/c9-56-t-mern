@@ -2,6 +2,16 @@
 
 ## Endpoints
 
+### `GET /users/:id`
+
+URL Parameters:
+
+```typescript
+interface ShowUserUrlParams {
+  id: string // Este ID es devuelto en la autenticación
+}
+```
+
 ### `POST /users`
 
 Body:
