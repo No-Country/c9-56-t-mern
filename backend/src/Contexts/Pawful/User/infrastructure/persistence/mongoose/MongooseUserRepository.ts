@@ -1,3 +1,5 @@
+import type { PartialExcept } from "../../../../../shared/domain/types"
+import type { UserModel } from "../../../domain/models/UserModel"
 import type { UserRepository } from "../../../domain/repositories/UserRepository"
 import { User } from "../../../domain/valueObjects/User"
 
@@ -8,9 +10,9 @@ class MongooseUserRepository implements UserRepository {
     const newUser = new MongooseUserModel(user)
     const savedUser: User = await newUser.save()
 
-    const { id, email, avatar, passwordHash, roleId } = savedUser
+    const { id, email, passwordHash, avatar, roleId } = savedUser
 
-    return new User(id, email, avatar, passwordHash, roleId)
+    return new User(id, email, passwordHash, avatar, roleId)
   }
 
   async findById(id: string): Promise<User | null> {
@@ -32,9 +34,24 @@ class MongooseUserRepository implements UserRepository {
       return null
     }
 
-    const { id, avatar, passwordHash, roleId } = user
+    const { id, passwordHash, avatar, roleId } = user
 
-    return new User(id, email, avatar, passwordHash, roleId)
+    return new User(id, email, passwordHash, avatar, roleId)
+  }
+
+  async updateById(user: PartialExcept<UserModel, "id">): Promise<User | null> {
+    const { id } = user
+    const newUser = await MongooseUserModel.findOneAndUpdate({ id }, user, {
+      new: true,
+    })
+
+    if (!newUser) {
+      return null
+    }
+
+    const { email, avatar, passwordHash, roleId } = newUser
+
+    return new User(id, email, passwordHash, avatar, roleId)
   }
 }
 
