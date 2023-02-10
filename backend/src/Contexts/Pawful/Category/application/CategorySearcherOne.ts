@@ -1,6 +1,6 @@
 import { CategoryNotFound } from "../domain/errors/CategoryNotFound"
-import type { CategoryRepository } from "../domain/repositories/CategoryRepository"
-import type { Category } from "../domain/valueObjects/Category"
+import { CategoryRepository } from "../domain/repositories/CategoryRepository"
+import { Category } from "../domain/valueObjects/Category"
 
 class CategorySearcheOne {
   constructor(private readonly categoryRepository: CategoryRepository) {}
