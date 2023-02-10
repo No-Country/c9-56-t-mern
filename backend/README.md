@@ -2,16 +2,16 @@
 
 ## Endpoints
 
-### `POST /user`
+### `POST /users`
 
 Body:
 
 ```typescript
 interface PostUserBody {
-  email: string 
+  email: string
   password: string
   avatar: string // URL
-  roleId: string 
+  roleId: string
 }
 ```
 
@@ -23,5 +23,16 @@ Body:
 interface AuthBody {
   email: string
   password: string
+}
+```
+
+### `POST /categories`
+
+Body:
+
+```ts
+interface CategoryBody {
+  name: string
+  description: string
 }
 ```
