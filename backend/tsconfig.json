@@ -10,9 +10,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
+    "typeRoots": ["./src/@types"],
     "rootDir": "./src",
     "outDir": "./dist"
   },
-  "include": ["**/*.ts"],
+  "include": ["@types/**/*.d.ts", "**/*.ts"],
   "exclude": ["node_modules"]
 }
