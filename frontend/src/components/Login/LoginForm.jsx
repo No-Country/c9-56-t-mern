@@ -48,8 +48,8 @@ const LoginForm = () => {
 
   return (
     <div className="flex flex-col items-center p-4">
-      <h2 className="text-3xl font-medium mb-4">{title}</h2>
-      <p className="text-gray-600 mb-8">{welcomeText}</p>
+      <h2 className="text-3xl font-medium mb-4">Iniciar Sesión</h2>
+      <p className="text-gray-600 mb-8">Bienvenido</p>
 
       <form className="w-full max-w-sm" onSubmit={handleSubmit}>
         <div className="mb-4">
