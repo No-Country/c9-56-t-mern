@@ -5,6 +5,7 @@ const enum HttpCode {
   UnprocessableEntity = 422,
   NotFound = 404,
   Ok = 200,
+  Unauthenticated = 401,
 }
 
 export { HttpCode }
