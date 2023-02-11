@@ -25,6 +25,23 @@ interface PostUserBody {
 }
 ```
 
+### `PUT /users/:id`
+
+URL Parameters and Body:
+
+```typescript
+interface EditUserUrlParams {
+  id: string // Este ID es devuelto en la autenticación
+}
+
+interface EditUserBody {
+  email?: string
+  password?: string
+  avatar?: string
+  roleId?: string
+}
+```
+
 ### `POST /auth/login`
 
 Body:
