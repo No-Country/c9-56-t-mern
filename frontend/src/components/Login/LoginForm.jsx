@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 
-interface Props {
-  title: string;
-  welcomeText: string;
-}
+// interface Props {
+//   title: string;
+//   welcomeText: string;
+// }
 
-interface User {
-  email: string;
-  password: string;
-}
+// interface User {
+//   email: string;
+//   password: string;
+// }
 
-const users: User[] = [
+const users = [
   {
     email: "abi@example.com",
     password: "123456",
@@ -25,11 +25,11 @@ const users: User[] = [
   },
 ];
 
-const LoginForm: React.FC<Props> = ({ title, welcomeText }) => {
+const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     console.log(`Email: ${email}, Password: ${password}`);
 
