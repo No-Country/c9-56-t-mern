@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { FaPen } from 'react-icons/fa';
 
-const PetForm2: React.FC = () => {
-  const [petImage, setPetImage] = useState<string>('');
-  const [petInfo, setPetInfo] = useState<string>('');
+const PetForm2 = () => {
+  const [petImage, setPetImage] = useState('');
+  const [petInfo, setPetInfo] = useState('');
 
-  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setPetImage(URL.createObjectURL(event.target.files![0]));
+  const handleImageChange = (event) => {
+    setPetImage(URL.createObjectURL(event.target.files[0]));
   };
 
-  const handleInfoChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleInfoChange = (event) => {
     setPetInfo(event.target.value);
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     console.log({ petImage, petInfo });
   };
@@ -35,7 +35,7 @@ const PetForm2: React.FC = () => {
         <label className="absolute bottom-0 right-0 mb-3 mr-3">
           <input type="file" className="hidden" onChange={handleImageChange} />
           <div className="bg-black rounded-full p-2">
-          <FaPen className='text-white' size={12} />
+            <FaPen className='text-white' size={12} />
           </div>
         </label>
       </div>

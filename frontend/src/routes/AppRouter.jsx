@@ -6,23 +6,16 @@ import { useState } from 'react';
 import PerfilPropietario from '../components/profOwner/PerfilPropietario';
 
 
-interface AppSTATE {
-    infoProp: Propietario
-}
-
 
 const AppRouter = () => {
 
     const [count, setCount] = useState(0)
-    const handleSaveInfo = (newSub: Propietario): void => {
-        // console.log(sub)
-        console.log(newSub)
-    }
+    
     let autStatus = 'autenticado';
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/*' element={<FormPropietario onAddInfoProp={handleSaveInfo} />} />
+                {/* <Route path='/*' element={<FormPropietario onAddInfoProp={handleSaveInfo} />} /> */}
                 <Route path='/profile' element={<PerfilPropietario />} />
             </Routes></BrowserRouter>
     )
