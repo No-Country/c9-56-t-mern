@@ -9,7 +9,11 @@ const tokenValidator = (req: Request, _: Response, next: NextFunction) => {
   if (token) {
     try {
       const payload = verify(token, process.env.JWT_PASS!) as JwtPayload
-      req.logedInUserId = payload.id as User["id"]
+
+      req.logedInUser = {
+        id: payload.id as User["id"],
+        roleId: payload.roleId as User["roleId"],
+      }
     } catch {
       throw new UnauthenticatedError()
     }
