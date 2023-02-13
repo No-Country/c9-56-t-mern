@@ -46,7 +46,7 @@ class UpdateUserController {
     }
 
     // Check authenticated user is the same as the one to update
-    if (req.logedInUserId !== id) {
+    if (req.logedInUser?.id !== id) {
       throw new ForbiddenError()
     }
 
