@@ -8,7 +8,7 @@ const tokenValidator = (req: Request, _: Response, next: NextFunction) => {
 
   if (token) {
     try {
-      const payload = verify(token, process.env.JWT_PASS!) as JwtPayload
+      const payload = verify(token, process.env.JWT_PASS) as JwtPayload
 
       req.logedInUser = {
         id: payload.id as User["id"],

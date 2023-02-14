@@ -32,7 +32,7 @@ class CreateLogController {
     const user = await this.logCreator.run(log)
     const token = jwt.sign(
       { id: user.id, roles: user.roles },
-      process.env.JWT_PASS!,
+      process.env.JWT_PASS,
       {
         expiresIn: "1h",
       },
