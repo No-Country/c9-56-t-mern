@@ -16,6 +16,14 @@ import swaggerSetup from "../../docs/swagger"
 
 dotenv.config({ path: resolve(__dirname, "../../../.env") })
 
+const missing = ["PORT", "DB_URI", "JWT_PASS"].filter(
+  (env) => !process.env[env],
+)
+
+if (missing.length) {
+  throw new Error(`Missing environment variables: ${missing.join(", ")}.`)
+}
+
 connectToDatabase()
 
 const app = express()
