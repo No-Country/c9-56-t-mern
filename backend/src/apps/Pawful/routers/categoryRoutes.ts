@@ -2,6 +2,7 @@ import { Router, type Request, type Response } from "express"
 import { asyncHandler } from "../../shared/framework/asyncHandler"
 import { CreateCategoryController } from "../controllers/category/CreateCategoryController"
 import { CategorySearchOneController } from "../controllers/category/categorySearchOneController"
+import { CategorySearchAllController } from "../controllers/category/categorySeachAllController"
 
 const categoryRouter = Router()
 
@@ -19,6 +20,14 @@ categoryRouter.get(
     const categorySearchOneController = new CategorySearchOneController()
 
     await categorySearchOneController.run(req, res)
+  }),
+)
+
+categoryRouter.get(
+  "/categories",
+  asyncHandler(async (req: Request, res: Response) => {
+    const categorySearchAllController = new CategorySearchAllController()
+    await categorySearchAllController.run(req, res)
   }),
 )
 
