@@ -4,6 +4,7 @@ import { Types } from "mongoose"
 import { PerfilUserCreator } from "../../../../Contexts/Pawful/Perfil/application/PerfilUserCreator"
 import type { PerfilUserRepository } from "../../../../Contexts/Pawful/Perfil/domain/repositories/PerfilUserRepository"
 import { PerfilUser } from "../../../../Contexts/Pawful/Perfil/domain/valueObjects/PerfilUser"
+import { PerfilUserPro } from "../../../../Contexts/Pawful/Perfil/domain/valueObjects/PerfilUserPro"
 import { MongoosePerfilUserRepository } from "../../../../Contexts/Pawful/Perfil/infrastructure/persistence/mongoose/MongooseProfileUserRepository"
 import { MissingFieldsError } from "../../../../Contexts/shared/domain/errors/MissingFieldsError"
 import { HttpCode } from "../../../shared/HttpCode"
@@ -19,7 +20,7 @@ class CreatePerfilUserController {
 
   async run(req: Request, res: Response): Promise<void> {
     const fields = req.body as { [key: string]: unknown }
-    const { name, lastname, image, userId, phone, address} = fields
+    const { name, lastname, dni, image, userId, phone, address} = fields
 
     if (
       typeof name !== "string" ||
@@ -33,19 +34,17 @@ class CreatePerfilUserController {
     }
     const objectId = new Types.ObjectId();
 
-    const perfil = new PerfilUser(
-      objectId.toString(),
-      name,
-      lastname,
-      image, 
-      userId,
-      phone,
-      address
-    )
+    if(req.body.rol == "OWNER"){
+      const perfil = new PerfilUser( objectId.toString(), name, lastname, image, req.logedInUser?.id!, phone, address )
+      await this.perfilUserCreator.saveProfileOwner(perfil)
+      res.status(HttpCode.Created).send({ perfil })
 
-    await this.perfilUserCreator.run(perfil)
+    }else{
+      const perfilProfesional = new PerfilUserPro(objectId.toString(), name, lastname, req.body.dni, image, req.logedInUser?.id!, phone, address, req.body.titleCareer)
+      await this.perfilUserCreator.saveProfilePro(perfilProfesional)
+      res.status(HttpCode.Created).send({ perfilProfesional })
+    }
 
-    res.status(HttpCode.Created).send({ perfil })
   }
 }
 
