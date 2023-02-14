@@ -1,10 +1,9 @@
-import { Types } from "mongoose"
 interface PerfilUserModel {
   id: string
   name: string
   lastname: string
   image: string
-  userId: Types.ObjectId
+  userId: string
   phone: string
   address: string
 }

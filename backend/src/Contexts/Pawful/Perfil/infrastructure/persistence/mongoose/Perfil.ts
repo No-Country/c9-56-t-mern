@@ -1,4 +1,4 @@
-import { Schema, model, Types } from "mongoose"
+import { Schema, model} from "mongoose"
 import { PerfilUserModel } from "../../../domain/models/PerfilUserModel"
 
 const PerfilSchema = new Schema<PerfilUserModel>(
@@ -16,11 +16,10 @@ const PerfilSchema = new Schema<PerfilUserModel>(
       type: String,
       required: true,
     },
-    userId: [{
-      type: Types.ObjectId,
-      ref: 'User',
+    userId: {
+      type: String,
       required: true,
-    }],
+    },
     phone: {
       type: String,
       required: true,
@@ -35,6 +34,6 @@ const PerfilSchema = new Schema<PerfilUserModel>(
   },
 )
 
-const MongoosePerfilUserModel = model<PerfilUserModel>("PerfilUsuario", PerfilSchema)
+const MongoosePerfilUserModel = model<PerfilUserModel>("ProfileStandar", PerfilSchema)
 
 export { MongoosePerfilUserModel }

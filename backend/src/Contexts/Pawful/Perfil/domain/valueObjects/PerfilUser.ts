@@ -1,4 +1,3 @@
-import { Types } from "mongoose"
 import type { PerfilUserModel } from "../models/PerfilUserModel"
 class PerfilUser implements PerfilUserModel {
   constructor(
@@ -6,7 +5,7 @@ class PerfilUser implements PerfilUserModel {
     readonly name: string,
     readonly lastname: string,
     readonly image: string,
-    readonly userId: Types.ObjectId,
+    readonly userId: string,
     readonly phone: string,
     readonly address: string
   ) {}

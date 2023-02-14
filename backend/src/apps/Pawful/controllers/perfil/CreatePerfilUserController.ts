@@ -32,14 +32,13 @@ class CreatePerfilUserController {
       throw new MissingFieldsError()
     }
     const objectId = new Types.ObjectId();
-    const idUser = new Types.ObjectId(userId)
 
     const perfil = new PerfilUser(
       objectId.toString(),
       name,
       lastname,
       image, 
-      idUser,
+      userId,
       phone,
       address
     )
