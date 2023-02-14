@@ -23,9 +23,9 @@ class ShowUserController {
       throw new MissingFieldsError()
     }
 
-    const { email, avatar, roleId } = await this.userShower.run(id)
+    const { email, avatar, roles } = await this.userShower.run(id)
 
-    res.status(HttpCode.Ok).send({ id, email, avatar, roleId })
+    res.status(HttpCode.Ok).send({ id, email, avatar, roles })
   }
 }
 

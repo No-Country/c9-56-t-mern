@@ -62,9 +62,9 @@ class UpdateUserController {
       newUser.passwordHash = passwordHash
     }
 
-    const { email, avatar, roleId } = await this.userUpdater.run(newUser)
+    const { email, avatar, roles } = await this.userUpdater.run(newUser)
 
-    res.status(HttpCode.Ok).send({ id, email, avatar, roleId })
+    res.status(HttpCode.Ok).send({ id, email, avatar, roles })
   }
 }
 
