@@ -1,4 +1,5 @@
 import type { UserModel } from "../models/UserModel"
+import { Role } from "./Role"
 
 class User implements UserModel {
   // https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#number-string-boolean-symbol-and-object
@@ -7,7 +8,7 @@ class User implements UserModel {
     readonly email: string,
     readonly passwordHash: string,
     readonly avatar: string,
-    readonly roleId: string,
+    readonly roles: Role[],
   ) {}
 }
 

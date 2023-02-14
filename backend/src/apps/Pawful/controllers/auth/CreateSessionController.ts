@@ -31,13 +31,13 @@ class CreateLogController {
 
     const user = await this.logCreator.run(log)
     const token = jwt.sign(
-      { id: user.id, roleId: user.roleId },
+      { id: user.id, roles: user.roles },
       process.env.JWT_PASS!,
       {
         expiresIn: "1h",
       },
     )
-    const data = { id: user.id, email: user.email }
+    const data = { id: user.id, email: user.email, roles: user.roles }
     res.status(HttpCode.Created).send({
       user: data,
       token: token,

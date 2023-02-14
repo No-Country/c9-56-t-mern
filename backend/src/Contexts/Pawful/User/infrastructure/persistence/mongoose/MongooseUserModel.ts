@@ -7,7 +7,7 @@ const MongooseUserSchema = new Schema<UserModel>({
   email: { type: String, required: true },
   passwordHash: { type: String, required: true },
   avatar: { type: String, required: true },
-  roleId: { type: String, required: true },
+  roles: [{ type: String, required: true }],
 })
 
 const MongooseUserModel = model<UserModel>("User", MongooseUserSchema)

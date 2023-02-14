@@ -12,7 +12,7 @@ const tokenValidator = (req: Request, _: Response, next: NextFunction) => {
 
       req.logedInUser = {
         id: payload.id as User["id"],
-        roleId: payload.roleId as User["roleId"],
+        roles: payload.roles as User["roles"],
       }
     } catch {
       throw new UnauthenticatedError()

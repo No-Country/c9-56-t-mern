@@ -1,5 +1,16 @@
 # Backend
 
+## Enums
+
+Role
+
+```ts
+enum Role {
+  Owner = "OWNER",
+  Professional = "PROFESSIONAL",
+}
+```
+
 ## Endpoints
 
 ### `GET /users/:id`
@@ -21,7 +32,7 @@ interface PostUserBody {
   email: string
   password: string
   avatar: string // URL
-  roleId: string
+  role: Role // Debe ser uno de los valores de Role
 }
 ```
 
