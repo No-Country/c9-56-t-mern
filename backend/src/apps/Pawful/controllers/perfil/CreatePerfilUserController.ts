@@ -33,8 +33,8 @@ class CreatePerfilUserController {
       throw new MissingFieldsError()
     }
     const objectId = new Types.ObjectId();
-    
-    if(req.body.rol == "owner"){
+
+    if(req.body.rol == "OWNER"){
       const perfil = new PerfilUser( objectId.toString(), name, lastname, image, req.logedInUser?.id!, phone, address )
       await this.perfilUserCreator.saveProfileOwner(perfil)
       res.status(HttpCode.Created).send({ perfil })
