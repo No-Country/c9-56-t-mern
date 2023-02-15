@@ -26,7 +26,6 @@ class CreatePerfilUserController {
       typeof name !== "string" ||
       typeof lastname !== "string" ||
       typeof image !== "string" ||
-      typeof userId !== "string" ||
       typeof phone !== "string" ||
       typeof address !== "string"
     ) {
