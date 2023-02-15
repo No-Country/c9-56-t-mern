@@ -6,6 +6,7 @@ import { UserCreator } from "../../../../Contexts/Pawful/User/application/UserCr
 import type { UserRepository } from "../../../../Contexts/Pawful/User/domain/repositories/UserRepository"
 import { User } from "../../../../Contexts/Pawful/User/domain/valueObjects/User"
 import { MongooseUserRepository } from "../../../../Contexts/Pawful/User/infrastructure/persistence/mongoose/MongooseUserRepository"
+import { isValidRole } from "../../../../Contexts/Pawful/User/shared/utils/isValidRole"
 import { MissingFieldsError } from "../../../../Contexts/shared/domain/errors/MissingFieldsError"
 import { HttpCode } from "../../../shared/HttpCode"
 import { SALT_ROUNDS } from "../../shared/constants"
@@ -21,13 +22,13 @@ class CreateUserController {
 
   async run(req: Request, res: Response): Promise<void> {
     const fields = req.body as { [key: string]: unknown }
-    const { email, password, avatar, roleId } = fields
+    const { email, password, avatar, role } = fields
 
     if (
       typeof email !== "string" ||
       typeof password !== "string" ||
       typeof avatar !== "string" ||
-      typeof roleId !== "string"
+      !isValidRole(role)
     ) {
       throw new MissingFieldsError()
     }
@@ -36,13 +37,9 @@ class CreateUserController {
 
     const objectId = new Types.ObjectId()
 
-    const user = new User(
-      objectId.toString(),
-      email,
-      hashPassword,
-      avatar,
-      roleId,
-    )
+    const user = new User(objectId.toString(), email, hashPassword, avatar, [
+      role,
+    ])
 
     await this.userCreator.run(user)
 

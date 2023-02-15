@@ -57,7 +57,7 @@ const RegisterForm = () => {
   }
 
   return (
-    <div className="App">
+    <div className="max-w-sm mt-5 mx-auto p-6 rounded-lg flex flex-col items-center">
       <StepNavigation
         labelArray={labelArray}
         currentStep={currentStep}
@@ -65,10 +65,10 @@ const RegisterForm = () => {
       >
 
       </StepNavigation>
-      <h2><strong>Registro</strong></h2>
+      <h2 className="text-lg font-bold mb-4"><strong>Registro</strong></h2>
       <br />
       <br />
-      <p>Texto de Bienvenida</p>
+      <p className="text-lg font-bold mb-4">Texto de Bienvenida</p>
       <br />
       <br />
       {getInfoPerPage()}
@@ -81,8 +81,8 @@ const RegisterForm = () => {
       <button className="primaryButton" onClick={() => setCurrentStep(currentStep - 1)}>Back</button>
       <button className="primaryButton" onClick={() => setCurrentStep(currentStep + 1)}>Next</button>
 
-
-    </div>
+    
+</div>
   )
 }
 

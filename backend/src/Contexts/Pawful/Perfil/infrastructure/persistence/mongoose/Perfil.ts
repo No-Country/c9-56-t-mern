@@ -1,8 +1,9 @@
-import { Schema, model } from "mongoose"
-import { PerfilModel } from "../../../domain/models/PerfilModel"
+import { Schema, model} from "mongoose"
+import { PerfilUserModel } from "../../../domain/models/PerfilUserModel"
 
-const PerfilSchema = new Schema<PerfilModel>(
+const PerfilSchema = new Schema<PerfilUserModel>(
   {
+    id: { type: String, required: true },
     name: {
       type: String,
       required: true,
@@ -26,18 +27,13 @@ const PerfilSchema = new Schema<PerfilModel>(
     address: {
       type: String,
       required: true,
-    },
-    titleCareer: [
-      {
-        type: String,
-      },
-    ],
+    }
   },
   {
     timestamps: true,
   },
 )
 
-const Perfil = model<PerfilModel>("Perfil", PerfilSchema)
+const MongoosePerfilUserModel = model<PerfilUserModel>("ProfileStandar", PerfilSchema)
 
-export { Perfil }
+export { MongoosePerfilUserModel }

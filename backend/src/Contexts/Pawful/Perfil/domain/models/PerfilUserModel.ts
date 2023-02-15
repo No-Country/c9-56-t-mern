@@ -1,4 +1,4 @@
-interface PerfilModel {
+interface PerfilUserModel {
   id: string
   name: string
   lastname: string
@@ -6,7 +6,6 @@ interface PerfilModel {
   userId: string
   phone: string
   address: string
-  titleCareer: string[]
 }
 
-export { type PerfilModel }
+export { type PerfilUserModel }

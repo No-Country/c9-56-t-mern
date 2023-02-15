@@ -16,26 +16,23 @@ const RegisterFormStep1 = (props) => {
     return <div>
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
-                <label>Email</label>
-                <input type="text" {...register('email', {
+                <label className="block font-medium mb-2">Email</label>
+                <input type="email" {...register('email', {
                     pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i
                 })} />
                 {errors.email?.type === 'pattern' && <p>El formato del email es incorrecto</p>}
             </div>
 
             <br />
-            <br />
-
             <div>
-                <label>Contraseña</label>
+                <label className="block font-medium mb-2">Contraseña</label>
                 <input type="password" {...register('password', {
                 })} />
             </div>
             <br />
-            <br />
 
             <div>
-                <label>Repetir contraseña</label>
+                <label className="block font-medium mb-2">Repetir contraseña</label>
                 <input type="password" {...register('password', {
                 })} />
             </div>

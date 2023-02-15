@@ -41,6 +41,7 @@ const RegisterFormStep2 = (props) => {
             <div>
                 <label>Repetir contraseña</label>
                 <input
+                    className="border border-gray-400 p-2 w-full"
                     type="password"
                     name="confirmPassword"
                 // ref={register({
