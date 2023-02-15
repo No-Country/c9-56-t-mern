@@ -7,6 +7,7 @@ import express, { json, urlencoded } from "express"
 import { connectToDatabase } from "../../config/connectToDatabase"
 import { errorHandler } from "../shared/framework/middleware/errorHandler"
 
+import helmet from "helmet"
 import { mainRouter } from "./routers"
 
 import swaggerUi from "swagger-ui-express";
@@ -19,6 +20,8 @@ connectToDatabase()
 const app = express()
 
 const port = process.env.PORT
+
+app.use(helmet())
 
 app.use(cors())
 app.use(json())
