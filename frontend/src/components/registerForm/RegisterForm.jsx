@@ -53,9 +53,21 @@ const RegisterForm = () => {
       {getInfoPerPage()}
       
       {currentStep === 1? 
-      (<button className="mt-4 bg-black hover:bg-gray-700 text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" disabled={currentStep === labelArray.length} onClick={() => updateStep(currentStep + 1)}>Continuar</button>)
-      :(<button className="primaryButton" disabled={currentStep === 1} onClick={() => updateStep(currentStep -1)}>Back</button>)}
-      <p>¿ya tienes una cuenta? <a href="http:#" className="text-blue-600 hover:text-blue-800">Inciar Sesion</a> </p>
+      (<button
+      className="bg-black text-white py-3 px-6 rounded-lg sm:py-4 sm:px-8 sm:rounded-xl"
+       disabled={currentStep === labelArray.length} 
+       onClick={() => updateStep(currentStep + 1)}>
+        Continuar</button>)
+      :(
+      <button 
+       className="primaryButton"
+       disabled={currentStep === 1} 
+       onClick={() => updateStep(currentStep -1)}>Back</button>)}
+      <p>¿ya tienes una cuenta? 
+      <a 
+      href="http:#" 
+      className="text-blue-600 hover:text-blue-800">Inciar Sesion</a>
+       </p>
       <br />
       <br />
       

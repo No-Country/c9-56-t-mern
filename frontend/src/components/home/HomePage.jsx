@@ -15,7 +15,7 @@ mascota</h2></div>
 </div>
             <div >
                     </div>
-                <button class="bg-black text-white py-3 px-6 rounded-lg sm:py-4 sm:px-8 sm:rounded-xl">
+                <button className="bg-black text-white py-3 px-6 rounded-lg sm:py-4 sm:px-8 sm:rounded-xl">
                     CONOCER SERVICIOS
                 </button>
                 <br />

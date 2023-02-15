@@ -41,7 +41,7 @@ const RegisterFormStep2 = () => {
             <br />
 
             <div>
-                <label className="absolute bottom-0 right-0 mb-3 mr-3">Repetir contraseña</label>
+                <label>Repetir contraseña</label>
                 <input
                     className="border border-gray-400 p-2 w-full"
                     type="password"
@@ -51,7 +51,9 @@ const RegisterFormStep2 = () => {
                 {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
             </div>
             <br />
-            <button className="mt-4 bg-black hover:bg-gray-700 text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">
+            <button 
+         className="bg-black text-white py-3 px-6 rounded-lg sm:py-4 sm:px-8 sm:rounded-xl">
+
         Guardar Datos
       </button>
 

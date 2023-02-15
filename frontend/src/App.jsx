@@ -10,8 +10,8 @@ import RegisterForm from "./components/registerForm/RegisterForm";
 function App() {
   return (
     <div className="App">
-      {/* <RegisterForm /> */}
-      <HomePage />
+      <RegisterForm />
+      {/* <HomePage /> */}
       {/* <FormPropietario/> */}
        {/* <PerfilPropietario/>
      <ProfilePet/> */}
