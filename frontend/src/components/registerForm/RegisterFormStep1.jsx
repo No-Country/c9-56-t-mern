@@ -1,25 +1,20 @@
 import { useForm } from "react-hook-form";
-import { useState } from "react";
-import React from "react";
+import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom'
 
 const RegisterFormStep1 = (props) => {
-  const [currentStep, setCurrentStep] = useState(1);
-  const updateStep = (step) => {
-    setCurrentStep(step);
-  }
+
     const { register, formState: { errors }, handleSubmit } = useForm({
-      
+        defaultValues: props.formValues
     });
 
     const onSubmit = (data) => {
         <div>Data{data}</div>
+        props.setFormValues({ ...props.formValues, ...data })
         console.log(data);
+
     }
-
-
-
-    return <div className="flex flex-col items-center p-4 ">
-        <form  className="max-w-sm mt-5 mx-auto p-6 rounded-lg flex flex-col items-center"onSubmit={handleSubmit(onSubmit)}>
+    return <div>
+        <form onSubmit={handleSubmit(onSubmit)}>
             <div>
                 <label className="block font-medium mb-2">Email</label>
                 <input type="email" {...register('email', {
@@ -42,7 +37,10 @@ const RegisterFormStep1 = (props) => {
                 })} />
             </div>
             <br />
-      
+            <br />
+            <br />
+            <br />
+            <button type="submit" > Continuar</button>
         </form>
     </div>
 }

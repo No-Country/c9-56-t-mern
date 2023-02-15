@@ -1,14 +1,6 @@
-import React, { useState } from "react";
-
-// interface Props {
-//   title: string;
-//   welcomeText: string;
-// }
-
-// interface User {
-//   email: string;
-//   password: string;
-// }
+import React, { useState,useEffect } from "react";
+import { useAuthStore } from "../../hooks/useAuthStore";
+import "../../styles/styles.css"
 
 const users = [
   {
@@ -26,6 +18,9 @@ const users = [
 ];
 
 const LoginForm = () => {
+
+  const { startLogin, errorMessage } = useAuthStore();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -33,17 +28,25 @@ const LoginForm = () => {
     event.preventDefault();
     console.log(`Email: ${email}, Password: ${password}`);
 
-    const user = users.find(
-      (user) => user.email === email && user.password === password
-    );
-    if (user) {
-      console.log("Login successful!");
-      alert('Bienvenido')
-    } else {
-      console.log("Email or password is incorrect.");
-      alert('Correo o contraseña incorrecta')
-    }
+    startLogin({ email: email, password: password });
+
+    // const user = users.find(
+    //   (user) => user.email === email && user.password === password
+    // );
+    // if (user) {
+    //   console.log("Login successful!");
+    //   alert('Bienvenido')
+    // } else {
+    //   console.log("Email or password is incorrect.");
+    //   alert('Correo o contraseña incorrecta')
+    // }
   };
+
+  useEffect(() => {
+    if (errorMessage !== undefined) {
+      //SE MUESTRA EL ERROR
+    }
+  }, []);
 
 
   return (

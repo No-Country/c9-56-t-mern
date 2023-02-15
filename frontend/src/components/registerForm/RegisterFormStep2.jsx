@@ -1,24 +1,24 @@
 import { useForm } from "react-hook-form";
-import React from "react";
+import { Routes, Route, BrowserRouter, Navigate, useNavigate } from 'react-router-dom'
 
-const RegisterFormStep2 = () => {
+const RegisterFormStep2 = (props) => {
 
     const { register, formState: { errors }, handleSubmit } = useForm({
-
+        defaultValues: props.formValues
     });
+    const navigate = useNavigate();
 
     const onSubmit = (data) => {
         <div>Data{data}</div>
+        props.setFormValues({ ...props.formValues, ...data })
+        navigate('/succes')
         console.log(data);
     }
-
-    return <div className="flex flex-col items-center p-4 ">
-        <form className="max-w-sm mt-5 mx-auto p-6 rounded-lg flex flex-col items-center"onSubmit={handleSubmit(onSubmit)}>
+    return <div>
+        <form onSubmit={handleSubmit(onSubmit)}>
             <div>
                 <label>Email</label>
-                <input 
-                className="border border-gray-400 p-2 w-full"
-                type="text" {...register('email', {
+                <input type="text" {...register('avatar', {
                     pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i
                 })} />
                 {errors.email?.type === 'pattern' && <p>El formato del email es incorrecto</p>}
@@ -29,9 +29,7 @@ const RegisterFormStep2 = () => {
 
             <div>
                 <label>Contraseña</label>
-                <input 
-                className="border border-gray-400 p-2 w-full"
-                type="password" {...register('password', {
+                <input type="password" {...register('role', {
                 })} />
                 {errors.password && <p>{errors.password.message}</p>}
 
@@ -46,17 +44,20 @@ const RegisterFormStep2 = () => {
                     className="border border-gray-400 p-2 w-full"
                     type="password"
                     name="confirmPassword"
-                    
+                // ref={register({
+                //     required: 'Confirm password is required',
+                //     validate: value => {
+                //         return value === watch('password') || 'La contraseña no es igual';
+                //     }
+                // })}
                 />
                 {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
             </div>
             <br />
-            <button 
-         className="bg-black text-white py-3 px-6 rounded-lg sm:py-4 sm:px-8 sm:rounded-xl">
-
-        Guardar Datos
-      </button>
-
+            <br />
+            <br />
+            <br />
+            <button type="submit" >Guardar datos</button>
         </form>
     </div>
 }

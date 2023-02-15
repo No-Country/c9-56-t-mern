@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../styles/styles.css'
 import logo from '../../assets/react.svg'
-import { MdEdit, MdRoom, MdPhone, MdAddCircle,MdOutlinePets,MdOutlinePersonOutline } from "react-icons/md";
+import { MdEdit, MdRoom, MdPhone, MdAddCircle, MdOutlinePets, MdOutlinePersonOutline } from "react-icons/md";
 
 
 const ProfilePet = () => {
@@ -78,8 +78,6 @@ const ProfilePet = () => {
                 </div>
 
             </div>
-
-
 
             <div className=' flex items-center bg-gray-800 bottom-0 w-full h-28 justify-evenly '>
                 <div>
