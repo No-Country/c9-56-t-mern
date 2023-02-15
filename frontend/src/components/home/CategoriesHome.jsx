@@ -10,7 +10,12 @@ const CategoriesHome = () => {
         category: 'Category2',
         categoryDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit eos' 
 
-    }
+    },
+    {
+      category: 'Category3',
+      categoryDescription: 'Ipsum dolor sit amet consectetur adipisicing elit. Adipisci, cupiditate.'
+
+  }
 ]
     return (
         <div>
@@ -21,10 +26,10 @@ const CategoriesHome = () => {
                 </div>
                 {/* div categoriaName y text */}
                 {   
-                categoryDetails.map(cattegory => (
+                categoryDetails.map(categories => (
                     <div>
-                    <h3>{cattegory.category}</h3>
-                    <p>{cattegory.categoryDescription}
+                    <h3>{categories.category}</h3>
+                    <p>{categories.categoryDescription}
                     </p></div>
                     
                 ))
