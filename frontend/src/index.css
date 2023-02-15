@@ -2,15 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-
+* {
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	box-sizing: border-box;
+	border: none;
+}
 .circle {
   width: 29px;
   height: 29px;
   line-height: 25px;
-  background-color: rgb(44, 46, 44);
-  color: white;
+  background-color: rgb(255, 255, 255);
+  color: rgb(2, 2, 2);
   border-radius: 50%;
-  border: 2px solid transparent;
+  border: 2px solid black;
   cursor: pointer;
   -moz-background-clip: padding-box;
   -webkit-background-clip: padding-box;
@@ -30,7 +36,7 @@
 
 .selected .circle {
   color: black;
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   border-color: rgb(66, 66, 66);
 }
 

@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
+import React from "react";
 
-const RegisterFormStep1 = () => {
+const RegisterFormStep2 = () => {
 
     const { register, formState: { errors }, handleSubmit } = useForm({
 
@@ -11,13 +12,13 @@ const RegisterFormStep1 = () => {
         console.log(data);
     }
 
-
-
-    return <div>
-        <form onSubmit={handleSubmit(onSubmit)}>
+    return <div className="flex flex-col items-center p-4 ">
+        <form className="max-w-sm mt-5 mx-auto p-6 rounded-lg flex flex-col items-center"onSubmit={handleSubmit(onSubmit)}>
             <div>
                 <label>Email</label>
-                <input type="text" {...register('email', {
+                <input 
+                className="border border-gray-400 p-2 w-full"
+                type="text" {...register('email', {
                     pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i
                 })} />
                 {errors.email?.type === 'pattern' && <p>El formato del email es incorrecto</p>}
@@ -28,7 +29,9 @@ const RegisterFormStep1 = () => {
 
             <div>
                 <label>Contraseña</label>
-                <input type="password" {...register('password', {
+                <input 
+                className="border border-gray-400 p-2 w-full"
+                type="password" {...register('password', {
                 })} />
                 {errors.password && <p>{errors.password.message}</p>}
 
@@ -38,26 +41,22 @@ const RegisterFormStep1 = () => {
             <br />
 
             <div>
-                <label>Repetir contraseña</label>
+                <label className="absolute bottom-0 right-0 mb-3 mr-3">Repetir contraseña</label>
                 <input
+                    className="border border-gray-400 p-2 w-full"
                     type="password"
                     name="confirmPassword"
-                    ref={register({
-                        required: 'Confirm password is required',
-                        validate: value => {
-                            return value === watch('password') || 'La contraseña no es igual';
-                        }
-                    })}
+                    
                 />
                 {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
             </div>
             <br />
-            <br />
-            <br />
-            <br />
+            <button className="mt-4 bg-black hover:bg-gray-700 text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">
+        Guardar Datos
+      </button>
 
         </form>
     </div>
 }
 
-export default RegisterFormStep1;
+export default RegisterFormStep2;

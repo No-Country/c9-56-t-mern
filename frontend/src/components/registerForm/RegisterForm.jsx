@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import React, { useState } from "react";
 import RegisterFormStep2 from "./RegisterFormStep2";
 import RegisterFormStep1 from "./RegisterFormStep1";
 import StepNavigation from "../stepper/StepNavigation";
@@ -37,30 +36,33 @@ const RegisterForm = () => {
 
 
   return (
-    <div className="App">
+    <div className="max-w-sm mt-5 mx-auto p-6 rounded-lg flex flex-col items-center">
       <StepNavigation
         labelArray={labelArray}
         currentStep={currentStep}
         updateStep={updateStep}>
 
       </StepNavigation>
-      <h2><strong>Registro</strong></h2>
+      <h2 className="text-lg font-bold mb-4"><strong>Registro</strong></h2>
       <br />
       <br />
-      <p>Texto de Bienvenida</p>
+      <p className="text-lg font-bold mb-4">Texto de Bienvenida</p>
       <br />
       <br />
 
       {getInfoPerPage()}
-
-      <p>Ya tienes una cuenta? <a href="http://">Inciar Sesion</a> </p>
+      
+      {currentStep === 1? 
+      (<button className="mt-4 bg-black hover:bg-gray-700 text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" disabled={currentStep === labelArray.length} onClick={() => updateStep(currentStep + 1)}>Continuar</button>)
+      :(<button className="primaryButton" disabled={currentStep === 1} onClick={() => updateStep(currentStep -1)}>Back</button>)}
+      <p>¿ya tienes una cuenta? <a href="http:#" className="text-blue-600 hover:text-blue-800">Inciar Sesion</a> </p>
       <br />
       <br />
-      <button className="primaryButton" disabled={currentStep === 1} onClick={() => updateStep(currentStep - 1)}>Back</button>
-      <button className="primaryButton" disabled={currentStep === labelArray.length} onClick={() => updateStep(currentStep + 1)}>Next</button>
+      
+     
 
-
-    </div>
+    
+</div>
   )
 }
 

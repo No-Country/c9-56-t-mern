@@ -1,7 +1,12 @@
 import { useForm } from "react-hook-form";
+import { useState } from "react";
+import React from "react";
 
-const RegisterFormStep1 = () => {
-    
+const RegisterFormStep1 = (props) => {
+  const [currentStep, setCurrentStep] = useState(1);
+  const updateStep = (step) => {
+    setCurrentStep(step);
+  }
     const { register, formState: { errors }, handleSubmit } = useForm({
       
     });
@@ -13,37 +18,31 @@ const RegisterFormStep1 = () => {
 
 
 
-    return <div>
-        <form  onSubmit={handleSubmit(onSubmit)}>
+    return <div className="flex flex-col items-center p-4 ">
+        <form  className="max-w-sm mt-5 mx-auto p-6 rounded-lg flex flex-col items-center"onSubmit={handleSubmit(onSubmit)}>
             <div>
-                <label>Email</label>
-                <input type="text" {...register('email', {
+                <label className="block font-medium mb-2">Email</label>
+                <input type="email" {...register('email', {
                     pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i
                 })} />
                 {errors.email?.type === 'pattern' && <p>El formato del email es incorrecto</p>}
             </div>
 
             <br />
-            <br />
-
             <div>
-                <label>Contraseña</label>
+                <label className="block font-medium mb-2">Contraseña</label>
                 <input type="password" {...register('password', {
                 })} />
             </div>
             <br />
-            <br />
 
             <div>
-                <label>Repetir contraseña</label>
+                <label className="block font-medium mb-2">Repetir contraseña</label>
                 <input type="password" {...register('password', {
                 })} />
             </div>
             <br />
-            <br />
-            <br />
-            <br />
-            
+      
         </form>
     </div>
 }
