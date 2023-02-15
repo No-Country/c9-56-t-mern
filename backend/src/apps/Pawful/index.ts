@@ -9,6 +9,9 @@ import { errorHandler } from "../shared/framework/middleware/errorHandler"
 
 import { mainRouter } from "./routers"
 
+import swaggerUi from "swagger-ui-express";
+import swaggerSetup from '../../docs/swagger';
+
 dotenv.config({ path: resolve(__dirname, "../../../.env") })
 
 connectToDatabase()
@@ -20,7 +23,7 @@ const port = process.env.PORT
 app.use(cors())
 app.use(json())
 app.use(urlencoded({ extended: true }))
-
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerSetup));
 app.use("/api", mainRouter)
 
 app.use(errorHandler)
