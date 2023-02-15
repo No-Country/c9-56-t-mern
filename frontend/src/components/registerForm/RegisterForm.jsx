@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import React, { useState } from "react";
 import RegisterFormStep2 from "./RegisterFormStep2";
 import RegisterFormStep1 from "./RegisterFormStep1";
@@ -10,6 +10,9 @@ const RegisterForm = () => {
   // Registro Form
   const labelArray = ['Step 1', 'Step 2']
   const [currentStep, setCurrentStep] = useState(1);
+
+  const [formValues, setFormValues] = useState({});
+
   const updateStep = (step) => {
     setCurrentStep(step);
   }
@@ -19,29 +22,47 @@ const RegisterForm = () => {
         <div>
           <RegisterFormStep1
             labelArray={labelArray}
+            // onRefreshForm={setForm}
             currentStep={currentStep}
-            setCurrentStep={setCurrentStep}
-            updateStep={updateStep} />
+            ssetCurrentStep={setCurrentStep}
+            updateStep={updateStep}
+            formValues={formValues}
+            setFormValues={setFormValues}
+          />
         </div>
       )
     }
-    else {
+    else if (currentStep === 2) {
       return (
         <div >
-          <RegisterFormStep2 />
+          <RegisterFormStep2
+            labelArray={labelArray}
+            // onRefreshForm={setForm}
+            currentStep={currentStep}
+            ssetCurrentStep={setCurrentStep}
+            updateStep={updateStep}
+            formValues={formValues}
+            setFormValues={setFormValues}
+          // onRefreshForm={setForm}
+          />
+          {/* <ProfilePet /> */}
         </div>
       )
     }
 
   }
 
+  const handleForm = (data) => {
+    console.log(data)
+  }
 
   return (
     <div className="App">
       <StepNavigation
         labelArray={labelArray}
         currentStep={currentStep}
-        updateStep={updateStep}>
+        updateStep={updateStep}
+      >
 
       </StepNavigation>
       <h2><strong>Registro</strong></h2>
@@ -50,14 +71,15 @@ const RegisterForm = () => {
       <p>Texto de Bienvenida</p>
       <br />
       <br />
-
       {getInfoPerPage()}
 
-      <p>Ya tienes una cuenta? <a href="http://">Inciar Sesion</a> </p>
+
+      <p>Ya tienes una cuenta? <a href="/auth/login">Inciar Sesion</a> </p>
       <br />
       <br />
-      <button className="primaryButton" disabled={currentStep === 1} onClick={() => updateStep(currentStep - 1)}>Back</button>
-      <button className="primaryButton" disabled={currentStep === labelArray.length} onClick={() => updateStep(currentStep + 1)}>Next</button>
+      {/* <button onClick={()=> handleForm(form) } >Continuar</button> */}
+      <button className="primaryButton" onClick={() => setCurrentStep(currentStep - 1)}>Back</button>
+      <button className="primaryButton" onClick={() => setCurrentStep(currentStep + 1)}>Next</button>
 
 
     </div>
