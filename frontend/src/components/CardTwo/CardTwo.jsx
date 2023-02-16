@@ -11,7 +11,7 @@ const CardTwo = ({ image, service, paragraph }) => {
           </p>
         </div>
         <div className="bg-gray-500 w-24 h-24 rounded-full">
-          {/* <img src={image} alt='service' className='object-cover w-full h-full rounded-full' /> */}
+          {/* <img src=={image} alt='service' className='object-cover w-full h-full rounded-full' /> */}
         </div>
       </div>
     </div>
