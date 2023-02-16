@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { IoMdCreate } from 'react-icons/io';
 import { AiOutlineUser } from 'react-icons/ai'
 
-const InputImage = () => {
+const InputImage = (props) => {
   const [image, setImage] = useState(null);
 
   const handleImageChange = (e) => {
     const selectedImage = e.target.files[0];
     setImage(URL.createObjectURL(selectedImage));
+    props.onChange(e.target.files[0])
+    console.log(image)
   };
 
   return (

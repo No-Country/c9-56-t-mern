@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { Routes, Route, BrowserRouter, Navigate, useNavigate } from 'react-router-dom'
 import InputForm from "../inputForm/InputForm";
 import InputImage from "../InputImage/InputImage";
+import axios from "axios";
 // import { useState, useEffect } from "react";
 
 const RegisterFormStep2 = (props) => {
@@ -17,18 +18,41 @@ const RegisterFormStep2 = (props) => {
 
     }
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
         <div>Data{data}</div>
         props.setFormValues({ ...props.formValues, ...data })
-        navigate('/succes')
-        console.log(data);
+        // console.log(data.avatar)
+        const formData = new FormData()
+        formData.append('file', data.avatar)
+        formData.append("upload_preset", "v3mcaqee")
+        formData.append("cloud_name", "dvm4qew1i")
+
+        await axios.post("https://api.cloudinary.com/v1_1/dvm4qew1i/image/upload", formData, {
+            headers: { 'X-Requested-With': 'XMLHttpRequest' },
+        }).then((response) => {
+            console.log(response)
+            data.avatar = response.data.secure_url;
+            console.log('Image URL:', data.avatar);
+        })
+
+        console.log('DATA.AVATAR URL:', data.avatar);
+
+        // navigate('/succes')
+        // console.log(data);
+        // console.log('DAta:{data.role}')
+    }
+
+    function handleImageChange(files) {
+        register('avatar', { value: files })
+        console.log(files)
+        // setImageFiles(files);
     }
 
     const imageUrl = "https://cdn-icons-png.flaticon.com/512/3177/3177440.png"
     return <div>
         <form onSubmit={handleSubmit(onSubmit)}>
             <br />
-            <InputImage />
+            <InputImage onChange={handleImageChange} />
             <br />
             <div className="flex flex-row items-center gap-6">
                 <div onClick={handleClickDiv('OWNER')}
