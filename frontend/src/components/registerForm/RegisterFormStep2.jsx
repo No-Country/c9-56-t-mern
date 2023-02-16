@@ -1,12 +1,21 @@
 import { useForm } from "react-hook-form";
 import { Routes, Route, BrowserRouter, Navigate, useNavigate } from 'react-router-dom'
+import InputForm from "../inputForm/InputForm";
+import InputImage from "../InputImage/InputImage";
+// import { useState, useEffect } from "react";
 
 const RegisterFormStep2 = (props) => {
 
-    const { register, formState: { errors }, handleSubmit } = useForm({
-        defaultValues: props.formValues
+    const { register, formState: { errors }, handleSubmit, setValue } = useForm({
+        defaultValues: props.formValues,
     });
     const navigate = useNavigate();
+
+    const handleClickDiv = (valor) => {
+        register('role', { value: valor })
+        console.log(valor)
+
+    }
 
     const onSubmit = (data) => {
         <div>Data{data}</div>
@@ -14,50 +23,33 @@ const RegisterFormStep2 = (props) => {
         navigate('/succes')
         console.log(data);
     }
+
+    const imageUrl = "https://cdn-icons-png.flaticon.com/512/3177/3177440.png"
     return <div>
         <form onSubmit={handleSubmit(onSubmit)}>
-            <div>
-                <label>Email</label>
-                <input type="text" {...register('avatar', {
-                    pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i
-                })} />
-                {errors.email?.type === 'pattern' && <p>El formato del email es incorrecto</p>}
-            </div>
-
             <br />
+            <InputImage />
             <br />
+            <div className="flex flex-row items-center gap-6">
+                <div onClick={handleClickDiv('OWNER')}
+                    className=" flex flex-col w-36 h-36 justify-center items-center border border-violet-900 rounded-xl">
+                    <div className=" justify-center flex">
+                        <img src={imageUrl} width={80} height={80} />
+                    </div>
+                    <label className="flex justify-center">Soy usuario</label>
+                </div>
 
-            <div>
-                <label>Contraseña</label>
-                <input type="password" {...register('role', {
-                })} />
-                {errors.password && <p>{errors.password.message}</p>}
-
-            </div>
-
-            <br />
-            <br />
-
-            <div>
-                <label>Repetir contraseña</label>
-                <input
-                    className="border border-gray-400 p-2 w-full"
-                    type="password"
-                    name="confirmPassword"
-                // ref={register({
-                //     required: 'Confirm password is required',
-                //     validate: value => {
-                //         return value === watch('password') || 'La contraseña no es igual';
-                //     }
-                // })}
-                />
-                {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
+                <div onClick={handleClickDiv('PROFESSIONAL')} className=" flex flex-col justify-center w-36 h-36 border border-violet-900 rounded-xl">
+                    <div className="justify-center flex">
+                        <img src={imageUrl} width={80} height={80} />
+                    </div>
+                    <label className="flex justify-center">Soy profesional</label>
+                </div>
             </div>
             <br />
             <br />
-            <br />
-            <br />
-            <button type="submit" >Guardar datos</button>
+
+            <button type="submit" className="mt-4 bg-black hover:bg-gray-700 text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full mb-4" >Registrar</button>
         </form>
     </div>
 }
