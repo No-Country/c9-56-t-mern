@@ -22,7 +22,6 @@ const RegisterForm = () => {
         <div>
           <RegisterFormStep1
             labelArray={labelArray}
-            // onRefreshForm={setForm}
             currentStep={currentStep}
             ssetCurrentStep={setCurrentStep}
             updateStep={updateStep}
