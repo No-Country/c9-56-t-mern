@@ -41,7 +41,7 @@ const RegisterFormStep1 = (props) => {
             <br />
             <br />
             <br />
-            <button type="submit"> Continuar</button>
+            <button type="submit" className="mt-4 bg-black hover:bg-gray-700 text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" > Continuar</button>
         </form>
     </div>
 }
