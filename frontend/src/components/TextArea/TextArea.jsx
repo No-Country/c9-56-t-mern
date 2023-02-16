@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const TextArea = (label, placeholder) => {
+const TextArea = ({ label, placeholder }) => {
 
   const [value, setValue] = useState('')
 
