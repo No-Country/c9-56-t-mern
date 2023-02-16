@@ -29,7 +29,8 @@ const AppRouter = () => {
                 (status === 'not-authenticated')
                     ? (
                         <>
-                            <Route path='/auth/*' element={<LoginForm />} />
+                            <Route path='/auth/login/*' element={<LoginForm />} />
+                            <Route path='/register/*' element={<RegisterForm />} />
                             <Route path='/*' element={<Navigate to="/auth/login" />} />
                         </>
                     )

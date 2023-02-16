@@ -1,21 +1,8 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useAuthStore } from "../../hooks/useAuthStore";
 import "../../styles/styles.css"
+import { Link } from "react-router-dom";
 
-const users = [
-  {
-    email: "abi@example.com",
-    password: "123456",
-  },
-  {
-    email: "janedoe@example.com",
-    password: "password",
-  },
-  {
-    email: "bobsmith@example.com",
-    password: "qwerty",
-  },
-];
 
 const LoginForm = () => {
 
@@ -29,17 +16,6 @@ const LoginForm = () => {
     console.log(`Email: ${email}, Password: ${password}`);
 
     startLogin({ email: email, password: password });
-
-    // const user = users.find(
-    //   (user) => user.email === email && user.password === password
-    // );
-    // if (user) {
-    //   console.log("Login successful!");
-    //   alert('Bienvenido')
-    // } else {
-    //   console.log("Email or password is incorrect.");
-    //   alert('Correo o contraseña incorrecta')
-    // }
   };
 
   useEffect(() => {
@@ -94,9 +70,10 @@ const LoginForm = () => {
 
         <p className="text-center text-gray-600 text-sm">
           ¿No tienes una cuenta?{" "}
-          <a href="#" className="text-blue-600 hover:text-blue-800">
+          <Link to='/register'>Registrate aqui</Link>
+          {/* <a href="#" className="text-blue-600 hover:text-blue-800">
             Regístrate aquí
-          </a>
+          </a> */}
         </p>
       </form>
     </div>

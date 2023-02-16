@@ -73,16 +73,10 @@ const RegisterForm = () => {
       <br />
       {getInfoPerPage()}
 
-
       <p>Ya tienes una cuenta? <a href="/auth/login">Inciar Sesion</a> </p>
       <br />
       <br />
-      {/* <button onClick={()=> handleForm(form) } >Continuar</button> */}
-      <button className="primaryButton" onClick={() => setCurrentStep(currentStep - 1)}>Back</button>
-      <button className="primaryButton" onClick={() => setCurrentStep(currentStep + 1)}>Next</button>
-
-    
-</div>
+    </div>
   )
 }
 

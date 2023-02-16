@@ -1,8 +1,5 @@
 import axios from "axios";
-import { getEnvVariables } from "../helpers/getEnvVariables";
 
-const { API_URL_PAWFUL } = getEnvVariables()
-// const url = process.env.API_URL_PAWFUL;
 
 const pawfulApi = axios.create({
 

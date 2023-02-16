@@ -10,6 +10,7 @@ const RegisterFormStep1 = (props) => {
     const onSubmit = (data) => {
         <div>Data{data}</div>
         props.setFormValues({ ...props.formValues, ...data })
+        props.updateStep(props.currentStep + 1)
         console.log(data);
 
     }
@@ -40,7 +41,7 @@ const RegisterFormStep1 = (props) => {
             <br />
             <br />
             <br />
-            <button type="submit" > Continuar</button>
+            <button type="submit"> Continuar</button>
         </form>
     </div>
 }

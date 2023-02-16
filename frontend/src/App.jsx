@@ -5,6 +5,7 @@ import ProfilePet from './components/profPet/ProfilePet';
 import { store } from './store/store'
 import { BrowserRouter } from "react-router-dom";
 import AppRouter from "./router/AppRouter";
+import RegisterForm from "./components/registerForm/RegisterForm";
 
 function App() {
   return (
@@ -14,12 +15,6 @@ function App() {
         <AppRouter />
       </BrowserRouter>
     </Provider>
-    // <div className="App">
-    //   <h1 className="text-lime-600">Hello World</h1>
-    //   {/* <FormPropietario/> */}
-    //   <PerfilPropietario/>
-    //   <ProfilePet/>
-    // </div>
   )
 }
 
