@@ -3,11 +3,12 @@ import React, { useState } from "react";
 import RegisterFormStep2 from "./RegisterFormStep2";
 import RegisterFormStep1 from "./RegisterFormStep1";
 import StepNavigation from "../stepper/StepNavigation";
+import SimpleText from "../SimpleText/SimpleText"
+
 
 
 
 const RegisterForm = () => {
-  // Registro Form
   const labelArray = ['Step 1', 'Step 2']
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -20,6 +21,9 @@ const RegisterForm = () => {
     if (currentStep === 1) {
       return (
         <div>
+            <SimpleText 
+        title={'Registro'}
+        paragraph={'Te pediremos algunos datos para crear tu perfil'}/>
           <RegisterFormStep1
             labelArray={labelArray}
             // onRefreshForm={setForm}
@@ -35,17 +39,17 @@ const RegisterForm = () => {
     else if (currentStep === 2) {
       return (
         <div >
+          <SimpleText 
+            title={'Registro'}
+            paragraph={'¡Falta poco! Ya casi tenés tu cuenta en Pawful. '}/>
           <RegisterFormStep2
             labelArray={labelArray}
-            // onRefreshForm={setForm}
             currentStep={currentStep}
             ssetCurrentStep={setCurrentStep}
             updateStep={updateStep}
             formValues={formValues}
             setFormValues={setFormValues}
-          // onRefreshForm={setForm}
           />
-          {/* <ProfilePet /> */}
         </div>
       )
     }
@@ -64,12 +68,10 @@ const RegisterForm = () => {
         updateStep={updateStep}
       >
 
-      </StepNavigation>
-      <h2 className="text-lg font-bold mb-4"><strong>Registro</strong></h2>
-      <br />
-      <br />
-      <p className="text-lg font-bold mb-4">Texto de Bienvenida</p>
-      <br />
+      </StepNavigation> 
+      
+    
+      
       <br />
       {getInfoPerPage()}
 
