@@ -3,6 +3,7 @@ import { Routes, Route, BrowserRouter, Navigate, useNavigate } from 'react-route
 import InputForm from "../inputForm/InputForm";
 import InputImage from "../InputImage/InputImage";
 import axios from "axios";
+import { registerUSerStore } from "../../hooks/registerUserStore";
 // import { useState, useEffect } from "react";
 
 const RegisterFormStep2 = (props) => {
@@ -10,6 +11,9 @@ const RegisterFormStep2 = (props) => {
     const { register, formState: { errors }, handleSubmit, setValue } = useForm({
         defaultValues: props.formValues,
     });
+
+    const { addUSer } = registerUSerStore();
+
     const navigate = useNavigate();
 
     const handleClickDiv = (valor) => {
@@ -37,7 +41,9 @@ const RegisterFormStep2 = (props) => {
 
         console.log('DATA.AVATAR URL:', data.avatar);
 
-        // navigate('/succes')
+        addUSer({ email: data.email, password: data.password, avatar: data.avatar, role: data.role })
+
+        navigate('/succes')
         // console.log(data);
         // console.log('DAta:{data.role}')
     }
