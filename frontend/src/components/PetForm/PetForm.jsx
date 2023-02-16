@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-const PetForm: React.FC = () => {
+const PetForm = () => {
   const [petName, setPetName] = useState("")
   const [petRace, setPetRace] = useState("")
   const [petGender, setPetGender] = useState("")
@@ -19,7 +19,7 @@ const PetForm: React.FC = () => {
   const sizes = ["Pequeño", "Mediano", "Grande"]
   const ages = ["Puppy (0-3 años)", "Adult (3-10 años)", "Senior (+10 años)"]
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = (event) => {
     event.preventDefault()
     console.log("Pet Name:", petName)
     console.log("Pet Race:", petRace)

@@ -1,31 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useAuthStore } from "../../hooks/useAuthStore";
+import "../../styles/styles.css"
+import { Link } from "react-router-dom";
 
-// interface Props {
-//   title: string;
-//   welcomeText: string;
-// }
-
-// interface User {
-//   email: string;
-//   password: string;
-// }
-
-const users = [
-  {
-    email: "abi@example.com",
-    password: "123456",
-  },
-  {
-    email: "janedoe@example.com",
-    password: "password",
-  },
-  {
-    email: "bobsmith@example.com",
-    password: "qwerty",
-  },
-];
 
 const LoginForm = () => {
+
+  const { startLogin, errorMessage } = useAuthStore();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -33,24 +15,22 @@ const LoginForm = () => {
     event.preventDefault();
     console.log(`Email: ${email}, Password: ${password}`);
 
-    const user = users.find(
-      (user) => user.email === email && user.password === password
-    );
-    if (user) {
-      console.log("Login successful!");
-      alert('Bienvenido')
-    } else {
-      console.log("Email or password is incorrect.");
-      alert('Correo o contraseña incorrecta')
-    }
+    startLogin({ email: email, password: password });
   };
+
+  useEffect(() => {
+    if (errorMessage !== undefined) {
+      //SE MUESTRA EL ERROR
+    }
+  }, []);
 
 
   return (
     <div className="flex flex-col items-center p-4">
       <h2 className="text-3xl font-medium mb-4">Iniciar Sesión</h2>
+      <br />
       <p className="text-gray-600 mb-8">Bienvenido</p>
-
+      <br />
       <form className="w-full max-w-sm" onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block font-medium mb-2" htmlFor="email">
@@ -91,9 +71,10 @@ const LoginForm = () => {
 
         <p className="text-center text-gray-600 text-sm">
           ¿No tienes una cuenta?{" "}
-          <a href="#" className="text-blue-600 hover:text-blue-800">
+          <Link to='/register'>Registrate aqui</Link>
+          {/* <a href="#" className="text-blue-600 hover:text-blue-800">
             Regístrate aquí
-          </a>
+          </a> */}
         </p>
       </form>
     </div>

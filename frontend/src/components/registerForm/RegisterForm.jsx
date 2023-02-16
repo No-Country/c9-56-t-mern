@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import React, { useState } from "react";
 import RegisterFormStep2 from "./RegisterFormStep2";
 import RegisterFormStep1 from "./RegisterFormStep1";
 import StepNavigation from "../stepper/StepNavigation";
+import SimpleText from "../SimpleText/SimpleText"
 
 
 
-const RegisterForm = () => {
-  // Registro Form
+
+const RegisterForm = (props) => {
   const labelArray = ['Step 1', 'Step 2']
   const [currentStep, setCurrentStep] = useState(1);
+
+  const [formValues, setFormValues] = useState({});
+
   const updateStep = (step) => {
     setCurrentStep(step);
   }
@@ -17,49 +21,62 @@ const RegisterForm = () => {
     if (currentStep === 1) {
       return (
         <div>
+            <SimpleText 
+            title={'Registro'}
+            paragraph={'Te pediremos algunos datos para crear tu perfil'}/>
           <RegisterFormStep1
             labelArray={labelArray}
             currentStep={currentStep}
             setCurrentStep={setCurrentStep}
-            updateStep={updateStep} />
+            updateStep={updateStep}
+            formValues={formValues}
+            setFormValues={setFormValues}
+          />
         </div>
       )
     }
-    else {
+    else if (currentStep === 2) {
       return (
         <div >
-          <RegisterFormStep2 />
+          <SimpleText 
+            title={'Registro'}
+            paragraph={'¡Falta poco! Ya casi tenés tu cuenta en Pawful. '}/>
+          <RegisterFormStep2
+            labelArray={labelArray}
+            currentStep={currentStep}
+            setCurrentStep={setCurrentStep}
+            updateStep={updateStep}
+            formValues={formValues}
+            setFormValues={setFormValues}
+          />
         </div>
       )
     }
 
   }
 
+  const handleForm = (data) => {
+    console.log(data)
+  }
 
   return (
-    <div className="App">
+    <div className="max-w-sm mt-5 mx-auto p-6 rounded-lg flex flex-col items-center">
       <StepNavigation
         labelArray={labelArray}
         currentStep={currentStep}
-        updateStep={updateStep}>
+        updateStep={updateStep}
+      >
 
-      </StepNavigation>
-      <h2><strong>Registro</strong></h2>
+      </StepNavigation> 
+      
+    
+      
       <br />
-      <br />
-      <p>Texto de Bienvenida</p>
-      <br />
-      <br />
-
       {getInfoPerPage()}
 
-      <p>Ya tienes una cuenta? <a href="http://">Inciar Sesion</a> </p>
+      <p>Ya tienes una cuenta? <a href="/auth/login">Inciar Sesion</a> </p>
       <br />
       <br />
-      <button className="primaryButton" disabled={currentStep === 1} onClick={() => updateStep(currentStep - 1)}>Back</button>
-      <button className="primaryButton" disabled={currentStep === labelArray.length} onClick={() => updateStep(currentStep + 1)}>Next</button>
-
-
     </div>
   )
 }

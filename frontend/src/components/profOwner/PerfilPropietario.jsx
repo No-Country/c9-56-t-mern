@@ -2,7 +2,7 @@ import React from 'react'
 import '../../styles/styles.css'
 import logo from '../../assets/react.svg'
 import { MdEdit, MdRoom, MdPhone, MdAddCircle } from "react-icons/md";
-// import {MdRoom} from 'react-icons'
+
 const PerfilPropietario = () => {
   const url = 'https://img.freepik.com/fotos-premium/cientificos-datos-programador-hombre-utilizando-algoritmo-analisis-desarrollo-computadora-portatil_34200-491.jpg?w=1380'
   return (
