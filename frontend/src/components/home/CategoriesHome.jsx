@@ -60,7 +60,7 @@ const CategoriesHome = () => {
 //         service={categories.category}
 //         paragraph={categories.categoryDescription}
 
-//         /> )
+//        lo  /> ) 
 
         
 //    }
