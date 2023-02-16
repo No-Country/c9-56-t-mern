@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaCat, FaDog } from 'react-icons/fa';
 
 const PetPopup = () => {
-  const [selectedOption, setSelectedOption] = useState < string | null > (null);
+  const [selectedOption, setSelectedOption] = useState(null);
   const [showError, setShowError] = useState(false);
 
   const handleOptionSelect = (option) => {
