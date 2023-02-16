@@ -57,7 +57,6 @@ const RegisterFormStep2 = (props) => {
     const imageUrl = "https://cdn-icons-png.flaticon.com/512/3177/3177440.png"
     return <div>
         <form onSubmit={handleSubmit(onSubmit)}>
-            <br />
             <InputImage onChange={handleImageChange} />
             <br />
             <div className="flex flex-row items-center gap-6">

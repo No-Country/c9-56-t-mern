@@ -1,5 +1,6 @@
 import React from 'react';
 import CategoriesHome from './CategoriesHome';
+import SecondaryBtn from '../SecondaryBtn/SecondaryBtn';
 
 const HomePage = () => {
 
@@ -7,8 +8,7 @@ const HomePage = () => {
         <div className="flex flex-col items-center p-4">
             <div >
                 <div id='homeTitle' className="flex m-6 overflow-hidden w-56 h-40">
-                    <h2 className="flex m-6 overflow-hidden w-56 h-40">Encuentra los mejores servicios para tu
-                        mascota
+                    <h2 className="flex m-6 overflow-hidden w-56 h-40"> Conectá con expertos para el cuidado de tus mascotas 
                     </h2>
                 </div>
             </div>
@@ -21,9 +21,12 @@ const HomePage = () => {
                 CONOCER SERVICIOS
             </button>
             <br />
-            <button className="bg-black text-white py-3 px-6 rounded-lg sm:py-4 sm:px-8 sm:rounded-xl">
+            <SecondaryBtn 
+            text={'SER PROFESIONAL'}
+            />
+            {/* <button className="bg-black text-white py-3 px-6 rounded-lg sm:py-4 sm:px-8 sm:rounded-xl">
                 SER PROFESIONAL
-            </button>
+            </button> */}
             <br />
             <h2 className="font-poppins font-semibold text-2xl leading-8 text-center">Nuestros servicios</h2>
 

@@ -1,4 +1,5 @@
 import RegisterForm from "./RegisterForm"
+import SimpleText from "../SimpleText/SimpleText"
 
 export default {
   title: "Components/RegisterForm",
