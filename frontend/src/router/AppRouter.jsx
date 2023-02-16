@@ -6,6 +6,7 @@ import RegisterForm from '../components/registerForm/RegisterForm';
 import FormPropietario from '../components/profOwner/FormPropietario';
 import PerfilPropietario from '../components/profOwner/PerfilPropietario';
 import SuccessfulRegistration from '../components/Register/SuccessfulRegistration';
+import HomePage from '../components/home/HomePage';
 
 const AppRouter = () => {
 
@@ -39,10 +40,10 @@ const AppRouter = () => {
                     (
                         <>
                             {/* RUTAS PARA NAVEGAR DENTRO DE LA APP */}
-                            <Route path='/' element={<RegisterForm />} />
+                            <Route path='/' element={<HomePage />} />
+                            {/* <Route path='/homePage' element={ <HomePage/> } /> */}
                             <Route path='/formOwner' element={<PerfilPropietario />} />
                             <Route path='/completRegister' element={<FormPropietario />} />
-
                             <Route path='/*' element={<Navigate to="/" />} />
                         </>
                     )

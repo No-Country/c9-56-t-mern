@@ -1,6 +1,6 @@
 import React from 'react';
 import { FiCheckCircle } from 'react-icons/fi';
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const SuccessfulRegistration = () => {
   const navigate = useNavigate();
@@ -16,9 +16,9 @@ const SuccessfulRegistration = () => {
         <h2 className="text-2xl font-medium my-4">Registro exitoso</h2>
         <p className="text-gray-600">Gracias por registrarte en nuestra plataforma.</p>
         <button onClick={handleClick} className="bg-black hover:bg-gray-700 text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full my-3">Completar perfil</button>
-        <p className="text-center mt-4 text-gray-600">
-          ¿Quieres hacerlo en otro momento? <a href="#">Haz clic aquí</a>
-        </p>
+        {/* <p className="text-center mt-4 text-gray-600">
+          ¿Quieres hacerlo en otro momento? <Link to='/homePage'>Hacerlo en otro momento</Link>
+        </p> */}
       </div>
     </div>
   );
