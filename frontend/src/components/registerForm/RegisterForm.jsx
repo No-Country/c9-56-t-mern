@@ -22,13 +22,12 @@ const RegisterForm = () => {
       return (
         <div>
             <SimpleText 
-        title={'Registro'}
-        paragraph={'Te pediremos algunos datos para crear tu perfil'}/>
+            title={'Registro'}
+            paragraph={'Te pediremos algunos datos para crear tu perfil'}/>
           <RegisterFormStep1
             labelArray={labelArray}
-            // onRefreshForm={setForm}
             currentStep={currentStep}
-            ssetCurrentStep={setCurrentStep}
+            setCurrentStep={setCurrentStep}
             updateStep={updateStep}
             formValues={formValues}
             setFormValues={setFormValues}
@@ -45,7 +44,7 @@ const RegisterForm = () => {
           <RegisterFormStep2
             labelArray={labelArray}
             currentStep={currentStep}
-            ssetCurrentStep={setCurrentStep}
+            setCurrentStep={setCurrentStep}
             updateStep={updateStep}
             formValues={formValues}
             setFormValues={setFormValues}

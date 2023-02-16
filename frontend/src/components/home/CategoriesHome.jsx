@@ -29,29 +29,28 @@ const CategoriesHome = () => {
     ]
     return (
         <div className="max-w-sm mt-5 mx-auto p-6 rounded-lg flex flex-col items-center">
-            <div className="flex">
-                {/* div imagen cat */}
-                <div className="flex justify-center items-center w-99 h-99 bg-gray-500">
+        <div className="flex">
+            {/* div imagen cat */}
+            <div className="flex justify-center items-center w-99 h-99 bg-gray-500">
 
-                </div>
-                {/* div categoriaName y text */}
-                {
-                    categoryDetails.map(categories => (
-                        <div className="w-full flex flex-col items-center">
+            </div>
+            {/* div categoriaName y text */}
+            {
+                categoryDetails.map(categories => (
 
-                            <button id='cardCategory' className="bg-white rounded-lg shadow-md flex m-6 overflow-hidden w-80 h-48">
-                                <div className="p-8 max-w-10 flex flex-col items-center justify-between">
-                                    <h2>Sector imagen</h2>
-                                </div>
-                                <div id="right-column" className="py-8 w-full flex flex-col items-start justify-between">
-
-                                    <h3 className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{categories.category}</h3>
-                                    <p className="mt-2 text-gray-500">{categories.categoryDescription}
-                                    </p>
-                                </div>
-
-                            </button>
-                        </div>
+                    <div className="flex justify-center">
+  <div className="max-w-sm mx-4 my-4 h-32 px-2 py-4 bg-gray-50 drop-shadow-md rounded-2xl flex justify-around items-center text-center text-neutral-900">
+    <div className="bg-gray-500 w-24 h-24 rounded-full">
+      {/* <img src={image} alt='service' className='object-cover w-full h-full rounded-full' /> */}
+    </div>
+    <div className="w-56 h-20">
+      <h2 className="text-2xl font-semibold">{categories.category}</h2>
+      <p className="text-base font-normal">{categories.categoryDescription}
+        Servicios de baño, corte y estéticos para perros y gatos.
+      </p>
+    </div>
+  </div>
+</div>
                     ))
                 }
             </div>
