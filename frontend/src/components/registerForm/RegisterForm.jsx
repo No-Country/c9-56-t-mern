@@ -8,7 +8,7 @@ import SimpleText from "../SimpleText/SimpleText"
 
 
 
-const RegisterForm = () => {
+const RegisterForm = (props) => {
   const labelArray = ['Step 1', 'Step 2']
   const [currentStep, setCurrentStep] = useState(1);
 

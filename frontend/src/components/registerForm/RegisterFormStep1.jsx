@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom'
+import MainBtn from "../MainBtn/MainBtn";
 
 const RegisterFormStep1 = (props) => {
 
@@ -17,8 +18,14 @@ const RegisterFormStep1 = (props) => {
     return <div>
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
-                <label className="block font-medium mb-2">Email</label>
-                <input type="email" {...register('email', {
+            <div
+          style={{ backgroundColor: 'gray', width: props.currentStep === 0 ?"66.6%" : "100%" }}
+        ></div>
+                <label 
+                className="block font-medium mb-2">Email</label>
+                <input             
+                className="border border-gray-400 p-2 w-full"
+                type="email" {...register('email', {
                     pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i
                 })} />
                 {errors.email?.type === 'pattern' && <p>El formato del email es incorrecto</p>}
@@ -27,21 +34,28 @@ const RegisterFormStep1 = (props) => {
             <br />
             <div>
                 <label className="block font-medium mb-2">Contraseña</label>
-                <input type="password" {...register('password', {
+                <input 
+                className="border border-gray-400 p-2 w-full"
+                type="password" {...register('password', {
                 })} />
             </div>
             <br />
 
             <div>
                 <label className="block font-medium mb-2">Repetir contraseña</label>
-                <input type="password" {...register('password', {
+                <input
+                className="border border-gray-400 p-2 w-full"
+                type="password" {...register('password', {
                 })} />
             </div>
             <br />
             <br />
             <br />
             <br />
-            <button type="submit" className="mt-4 bg-black hover:bg-gray-700 text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" > Continuar</button>
+            <MainBtn
+            text={'Continuar'}
+            type={"submit"}
+             />
         </form>
     </div>
 }

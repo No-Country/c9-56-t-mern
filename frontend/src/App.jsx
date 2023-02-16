@@ -7,15 +7,15 @@ import { BrowserRouter } from "react-router-dom";
 import AppRouter from "./router/AppRouter";
 import RegisterForm from "./components/registerForm/RegisterForm";
 import HomePage from "./components/home/HomePage";
+{/* <HomePage /> */}
 
 function App() {
   return (
-<HomePage />
-    // <Provider store={store} >
-    //   <BrowserRouter>
-    //     <AppRouter />
-    //   </BrowserRouter>
-    // </Provider>
+    <Provider store={store} >
+      <BrowserRouter>
+        <AppRouter />
+      </BrowserRouter>
+    </Provider>
   )
 }
 

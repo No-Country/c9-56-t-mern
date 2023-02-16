@@ -4,6 +4,7 @@ import InputForm from "../inputForm/InputForm";
 import InputImage from "../InputImage/InputImage";
 import axios from "axios";
 import { registerUSerStore } from "../../hooks/registerUserStore";
+import MainBtn from "../MainBtn/MainBtn";
 // import { useState, useEffect } from "react";
 
 const RegisterFormStep2 = (props) => {
@@ -25,7 +26,6 @@ const RegisterFormStep2 = (props) => {
     const onSubmit = async (data) => {
         <div>Data{data}</div>
         props.setFormValues({ ...props.formValues, ...data })
-        // console.log(data.avatar)
         const formData = new FormData()
         formData.append('file', data.avatar)
         formData.append("upload_preset", "v3mcaqee")
@@ -77,8 +77,9 @@ const RegisterFormStep2 = (props) => {
             </div>
             <br />
             <br />
-
-            <button type="submit" className="mt-4 bg-black hover:bg-gray-700 text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full mb-4" >Registrar</button>
+<MainBtn
+text={'Registrar'}
+type={'submit'} />
         </form>
     </div>
 }
