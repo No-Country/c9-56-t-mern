@@ -5,7 +5,10 @@ import RegisterFormStep2 from "./RegisterFormStep2"
 export default {
   title: "Components/RegisterFormStep2",
   component: RegisterFormStep2,
-  args: {},
+  args: {
+    setFormValues: () => {},
+    formValues: {},
+  },
   decorators: [
     (Story) => (
       <MemoryRouter>
