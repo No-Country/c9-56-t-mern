@@ -14,6 +14,15 @@ class MongooseServiceRepository implements ServiceRepository {
 
     return new Service(id, presentacionPersonal, presentacion_del_servicio, profileId,categoryId)
   }
+  async getServices(idProfile: string): Promise<Service[] | null> {
+    const services: Service[] | null = await MongooseServiceModel.find({ profileId: idProfile })
+
+    if (!services) {
+      return null
+    }
+
+    return services
+  }
 }
 
 export { MongooseServiceRepository }
