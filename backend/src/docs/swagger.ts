@@ -135,6 +135,39 @@ const swaggerDefinition: OAS3Definition = {
         },
       },
     },
+    "/services": {
+      post: {
+        summary: "Registro de un servicio",
+        description:
+          "Esta ruta es responsable de registrar el servicio de un usuario Profesional",
+        tags: ["services"],
+        security: [{ bearerAuth: [] }],
+        requestBody: {
+          content: {
+            "application/json": {
+              schema: {
+                $ref: "#/components/schemas/profile",
+              },
+              examples: {
+                "service example": {
+                  value: {
+                    presentacionPersonal: "un presentacion personal",
+                    presentacion_del_servicio: "un presentacion del servicio",
+                    profileId: "un id",
+                    categoryId: "un id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        responses: {
+          "201": {
+            description: "ok",
+          },
+        },
+      },
+    },
   },
   components: {
     securitySchemes: {
@@ -200,6 +233,24 @@ const swaggerDefinition: OAS3Definition = {
             type: "array",
           },
           rol: {
+            type: "string",
+          },
+        },
+      },
+      service: {
+        type: "object",
+        required: ["presentacionPersonal", "presentacion_del_servicio", "profileId", "categoryId"],
+        properties: {
+          presentacionPersonal: {
+            type: "string",
+          },
+          presentacion_del_servicio: {
+            type: "string",
+          },
+          profileId: {
+            type: "integer",
+          },
+          categoryId: {
             type: "string",
           },
         },
