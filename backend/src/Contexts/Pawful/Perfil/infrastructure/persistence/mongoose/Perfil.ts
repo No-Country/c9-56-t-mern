@@ -1,4 +1,4 @@
-import { Schema, model} from "mongoose"
+import { Schema, model } from "mongoose"
 import { PerfilUserModel } from "../../../domain/models/PerfilUserModel"
 
 const PerfilSchema = new Schema<PerfilUserModel>(
@@ -27,13 +27,16 @@ const PerfilSchema = new Schema<PerfilUserModel>(
     address: {
       type: String,
       required: true,
-    }
+    },
   },
   {
     timestamps: true,
   },
 )
 
-const MongoosePerfilUserModel = model<PerfilUserModel>("ProfileStandar", PerfilSchema)
+const MongoosePerfilUserModel = model<PerfilUserModel>(
+  "ProfileStandar",
+  PerfilSchema,
+)
 
 export { MongoosePerfilUserModel }

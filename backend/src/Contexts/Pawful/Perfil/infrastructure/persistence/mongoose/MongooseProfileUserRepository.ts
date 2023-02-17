@@ -10,42 +10,89 @@ class MongoosePerfilUserRepository implements PerfilUserRepository {
     const newUser = new MongoosePerfilUserModel(perfil)
     const savedUser: PerfilUser = await newUser.save()
 
-    const {id, address, image, lastname, name, phone, userId} = savedUser
+    const { id, address, image, lastname, name, phone, userId } = savedUser
 
-    return new PerfilUser(id, name, lastname, image, userId, phone, address);
+    return new PerfilUser(id, name, lastname, image, userId, phone, address)
   }
 
   async savePerfilUserPro(perfil: PerfilUserPro): Promise<PerfilUserPro> {
     const newUser = new MongoosePerfilUserProModel(perfil)
     const savedUser: PerfilUserPro = await newUser.save()
 
-    const {id, address, image, lastname,dni, name, phone, userId,  titleCareer} = savedUser
+    const {
+      id,
+      address,
+      image,
+      lastname,
+      dni,
+      name,
+      phone,
+      userId,
+      titleCareer,
+    } = savedUser
 
-    return new PerfilUserPro(id, name, lastname, dni, image, userId, phone, address, titleCareer);
+    return new PerfilUserPro(
+      id,
+      name,
+      lastname,
+      dni,
+      image,
+      userId,
+      phone,
+      address,
+      titleCareer,
+    )
   }
 
   async getProfiles(idUser: string): Promise<any[] | null> {
     const profiles: any[] = []
     const dataStandar = await MongoosePerfilUserModel.findOne({
-      userId: idUser
+      userId: idUser,
     })
     const dataProfessional = await MongoosePerfilUserProModel.findOne({
-      userId: idUser
+      userId: idUser,
     })
-    if(dataStandar){
-      const {id, address, image, lastname, name, phone, userId} = dataStandar
-      const profileStandardfound = new PerfilUser(id, name, lastname, image, userId, phone, address);
-      profiles.push(profileStandardfound);
+    if (dataStandar) {
+      const { id, address, image, lastname, name, phone, userId } = dataStandar
+      const profileStandardfound = new PerfilUser(
+        id,
+        name,
+        lastname,
+        image,
+        userId,
+        phone,
+        address,
+      )
+      profiles.push(profileStandardfound)
     }
-    if(dataProfessional){
-      const {id, address, image, lastname, name, phone, userId, dni, titleCareer} = dataProfessional
-      const profileProfessionalfound = new PerfilUserPro(id, name, lastname, dni, image, userId, phone, address, titleCareer);
-      profiles.push(profileProfessionalfound);
+    if (dataProfessional) {
+      const {
+        id,
+        address,
+        image,
+        lastname,
+        name,
+        phone,
+        userId,
+        dni,
+        titleCareer,
+      } = dataProfessional
+      const profileProfessionalfound = new PerfilUserPro(
+        id,
+        name,
+        lastname,
+        dni,
+        image,
+        userId,
+        phone,
+        address,
+        titleCareer,
+      )
+      profiles.push(profileProfessionalfound)
     }
 
-    if(profiles.length == 0) return null
+    if (profiles.length == 0) return null
     return profiles
-    
   }
 }
 

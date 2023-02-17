@@ -11,7 +11,7 @@ class ProfileShower {
       throw new ProfileDoesNotExistError()
     }
 
-    return profileFound;
+    return profileFound
   }
 }
 

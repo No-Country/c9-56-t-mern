@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import { FaCat, FaDog } from 'react-icons/fa';
+import React, { useState } from "react"
+import { FaCat, FaDog } from "react-icons/fa"
 
 const PetPopup = () => {
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [showError, setShowError] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null)
+  const [showError, setShowError] = useState(false)
 
   const handleOptionSelect = (option) => {
-    setSelectedOption(option);
-  };
+    setSelectedOption(option)
+  }
 
   const handleContinue = () => {
     if (!selectedOption) {
-      setShowError(true);
-      return;
+      setShowError(true)
+      return
     }
 
-    console.log(`Selected option: ${selectedOption}`);
-  };
+    console.log(`Selected option: ${selectedOption}`)
+  }
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-xl max-w-xs m-auto my-5 text-center">
@@ -24,9 +24,10 @@ const PetPopup = () => {
       <div className="flex items-center justify-around">
         <div>
           <div
-            className={`cursor-pointer flex items-center justify-center rounded-full bg-gray-200 p-4 ${selectedOption === 'cat' ? 'bg-gray-400 shadow-lg' : ''
-              }`}
-          // onClick={() => handleOptionSelect('cat')}
+            className={`cursor-pointer flex items-center justify-center rounded-full bg-gray-200 p-4 ${
+              selectedOption === "cat" ? "bg-gray-400 shadow-lg" : ""
+            }`}
+            // onClick={() => handleOptionSelect('cat')}
           >
             <FaCat className="text-3xl mr-2" />
           </div>
@@ -34,9 +35,10 @@ const PetPopup = () => {
         </div>
         <div>
           <div
-            className={`cursor-pointer flex items-center justify-center rounded-full bg-gray-200 p-4 ${selectedOption === 'dog' ? 'bg-gray-400 shadow-lg' : ''
-              }`}
-            onClick={() => handleOptionSelect('dog')}
+            className={`cursor-pointer flex items-center justify-center rounded-full bg-gray-200 p-4 ${
+              selectedOption === "dog" ? "bg-gray-400 shadow-lg" : ""
+            }`}
+            onClick={() => handleOptionSelect("dog")}
           >
             <FaDog className="text-3xl mr-2" />
           </div>
@@ -50,11 +52,9 @@ const PetPopup = () => {
       >
         Continuar
       </button>
-      {showError && (
-        <p className="mt-2 text-red-500">Escoge una opción</p>
-      )}
+      {showError && <p className="mt-2 text-red-500">Escoge una opción</p>}
     </div>
-  );
-};
+  )
+}
 
-export default PetPopup;
+export default PetPopup

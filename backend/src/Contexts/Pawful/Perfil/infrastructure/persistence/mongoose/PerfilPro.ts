@@ -20,7 +20,7 @@ const PerfilSchema = new Schema<PerfilProfesionalModel>(
       type: String,
       required: true,
     },
-    userId:{
+    userId: {
       type: String,
       required: true,
     },
@@ -32,18 +32,21 @@ const PerfilSchema = new Schema<PerfilProfesionalModel>(
       type: String,
       required: true,
     },
-    titleCareer:[
+    titleCareer: [
       {
         type: String,
-        required:true
-      }
-    ]
+        required: true,
+      },
+    ],
   },
   {
     timestamps: true,
   },
 )
 
-const MongoosePerfilUserProModel = model<PerfilProfesionalModel>("profileProfessional", PerfilSchema)
+const MongoosePerfilUserProModel = model<PerfilProfesionalModel>(
+  "profileProfessional",
+  PerfilSchema,
+)
 
 export { MongoosePerfilUserProModel }

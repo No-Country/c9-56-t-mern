@@ -12,7 +12,7 @@ class CategorySearcheOne {
       throw new CategoryNotFound()
     }
 
-    return categoryFound;
+    return categoryFound
   }
 }
 

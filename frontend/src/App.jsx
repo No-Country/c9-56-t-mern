@@ -1,16 +1,16 @@
-import { Provider } from "react-redux";
+import { Provider } from "react-redux"
 import FormPropietario from "./components/profOwner/FormPropietario"
-import PerfilPropietario from './components/profOwner/PerfilPropietario';
-import ProfilePet from './components/profPet/ProfilePet';
-import { store } from './store/store'
-import { BrowserRouter } from "react-router-dom";
-import AppRouter from "./router/AppRouter";
-import RegisterForm from "./components/registerForm/RegisterForm";
-import HomePage from "./components/home/HomePage";
+import PerfilPropietario from "./components/profOwner/PerfilPropietario"
+import ProfilePet from "./components/profPet/ProfilePet"
+import { store } from "./store/store"
+import { BrowserRouter } from "react-router-dom"
+import AppRouter from "./router/AppRouter"
+import RegisterForm from "./components/registerForm/RegisterForm"
+import HomePage from "./components/home/HomePage"
 
 function App() {
   return (
-     <HomePage /> 
+    <HomePage />
 
     // <Provider store={store} >
     //   <BrowserRouter>

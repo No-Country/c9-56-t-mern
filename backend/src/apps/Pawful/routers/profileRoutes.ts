@@ -4,7 +4,6 @@ import { asyncHandler } from "../../shared/framework/asyncHandler"
 import { CreatePerfilUserController } from "../controllers/perfil/CreatePerfilUserController"
 import { ShowProfileController } from "../controllers/perfil/ShowProfileController"
 
-
 const perfilUserRouter = Router()
 
 perfilUserRouter.post(

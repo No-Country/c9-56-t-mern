@@ -9,9 +9,8 @@ class PerfilUserPro implements PerfilProfesionalModel {
     readonly userId: string,
     readonly phone: string,
     readonly address: string,
-    readonly titleCareer: []
+    readonly titleCareer: [],
   ) {}
 }
-
 
 export { PerfilUserPro }

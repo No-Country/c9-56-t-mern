@@ -8,7 +8,7 @@ const HomePage = () => {
     <div className="flex flex-col items-center p-4">
       <div>
         <div id="homeTitle" className="flex m-6 overflow-hidden w-56 h-40">
-          <h2 className="font-poppins font-semibold text-2xl leading-8 text-start"> 
+          <h2 className="font-poppins font-semibold text-2xl leading-8 text-start">
             {" "}
             Conectá con expertos para el cuidado de tus mascotas
           </h2>
@@ -26,7 +26,7 @@ const HomePage = () => {
       <br />
 
       <div className="flex flex-col justify-center items-center w-80 mx-auto overflow-x-scroll">
-        <CategoriesHome /> 
+        <CategoriesHome />
       </div>
     </div>
   )
