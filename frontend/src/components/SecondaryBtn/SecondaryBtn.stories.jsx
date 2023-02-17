@@ -8,5 +8,7 @@ export default {
 
 const Template = (args) => <SecondaryBtn {...args} />
 
-export const Default = Template.bind({})
-Default.args = {}
+export const Sample = Template.bind({})
+Sample.args = {
+  text: "Sample Button",
+}
