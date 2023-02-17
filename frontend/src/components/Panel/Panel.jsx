@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AddBtn from '../AddBtn/AddBtn';
-import CardOne from '../CardOne/CardOne';
+import Card from '../Card';
 
 const Panel = ({title, placeholder}) => {
   const [panel, setPanel] = useState([]);
@@ -20,9 +20,9 @@ const Panel = ({title, placeholder}) => {
           {/* {panel.map((item, index) => (
             <li key={index}>{item}</li>
           ))} */}
-          <CardOne/>
-          <CardOne/>
-          <CardOne/>
+          <Card/>
+          <Card/>
+          <Card/>
         </div>
       )}
     </div>

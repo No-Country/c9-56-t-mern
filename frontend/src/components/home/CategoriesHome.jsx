@@ -1,6 +1,5 @@
 import React from "react"
-import CardOne from "../CardOne/CardOne"
-import CardTwo from "../CardTwo/CardTwo"
+import Card from "../Card"
 
 const CategoriesHome = () => {
   let categoryDetails = [
@@ -29,12 +28,13 @@ const CategoriesHome = () => {
 
   return categoryDetails.map((categories) =>
     categories.category === "Guardería" || categories.category === "Fiestas" ? (
-      <CardTwo
+      <Card
+        imageSide="right"
         service={categories.category}
         paragraph={categories.categoryDescription}
       />
     ) : (
-      <CardOne
+      <Card
         service={categories.category}
         paragraph={categories.categoryDescription}
       />
