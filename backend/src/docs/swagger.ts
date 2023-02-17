@@ -168,6 +168,27 @@ const swaggerDefinition: OAS3Definition = {
         },
       },
     },
+    "/services/{id}": {
+      "get": {
+          "description": "Servicios de un perfil Profesional",
+          "summary": "lista todos los servicios de un perfil profesional",
+          "tags": ["services"],
+          "security": [{ "bearerAuth": [] }],
+          "parameters": [
+              {
+                  "name":"id",
+                  "in":"path",
+                  "description": "id para lista los servicios",
+                  "required": true
+              }
+          ],
+          "responses": {
+              "200": {
+                  "description": "ok",
+              }
+          }
+      }
+  }
   },
   components: {
     securitySchemes: {
