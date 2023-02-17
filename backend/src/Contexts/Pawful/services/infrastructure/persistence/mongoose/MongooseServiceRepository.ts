@@ -1,0 +1,19 @@
+import type { PartialExcept } from "../../../../../shared/domain/types"
+import type { ServiceModel } from "../../../domain/models/ServiceModel"
+import { ServiceRepository } from "../../../domain/repositories/ServiceRepository"
+import { Service } from "../../../domain/valueObjects/Service"
+
+import { MongooseServiceModel } from "./MongooseServiceModel"
+
+class MongooseServiceRepository implements ServiceRepository {
+  async save(oneService: Service): Promise<Service> {
+    const service = new MongooseServiceModel(oneService)
+    const savedService: Service = await service.save()
+
+    const {id, presentacionPersonal, presentacion_del_servicio, categoryId, profileId } = savedService
+
+    return new Service(id, presentacionPersonal, presentacion_del_servicio, profileId,categoryId)
+  }
+}
+
+export { MongooseServiceRepository }
