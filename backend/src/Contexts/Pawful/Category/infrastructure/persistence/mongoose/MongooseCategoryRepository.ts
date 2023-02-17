@@ -21,7 +21,6 @@ class MongooseCategoryRepository implements CategoryRepository {
     }
 
     const { id, name, description } = category
-
     return new Category(id, name, description)
   }
 
@@ -32,6 +31,20 @@ class MongooseCategoryRepository implements CategoryRepository {
       return null
     }
     return this.getAllCategories(...categoryAll)
+  }
+
+  async deleteOne(category: string): Promise<void> {
+    // const category: Category | null = await MongooseCategoryModel.deleteOne({
+    //   _id: category,
+    // })
+
+    // if (!category) {
+    //   return null
+    // }
+
+    // const { id, name, description } = category
+    // return new Category(id, name, description)
+    await MongooseCategoryModel.deleteOne({ _id: category })
   }
 
   getAllCategories(...MongooseCategoryModel: Category[]): Category[] {
