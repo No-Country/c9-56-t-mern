@@ -1,29 +1,26 @@
-import React, { useState, useEffect } from "react";
-import { useAuthStore } from "../../hooks/useAuthStore";
+import React, { useState, useEffect } from "react"
+import { useAuthStore } from "../../hooks/useAuthStore"
 import "../../styles/styles.css"
-import { Link } from "react-router-dom";
-
+import { Link } from "react-router-dom"
 
 const LoginForm = () => {
+  const { startLogin, errorMessage } = useAuthStore()
 
-  const { startLogin, errorMessage } = useAuthStore();
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(`Email: ${email}, Password: ${password}`);
+    event.preventDefault()
+    console.log(`Email: ${email}, Password: ${password}`)
 
-    startLogin({ email: email, password: password });
-  };
+    startLogin({ email: email, password: password })
+  }
 
   useEffect(() => {
     if (errorMessage !== undefined) {
       //SE MUESTRA EL ERROR
     }
-  }, []);
-
+  }, [])
 
   return (
     <div className="flex flex-col items-center p-4">
@@ -64,21 +61,23 @@ const LoginForm = () => {
           <a href="#" className="text-gray-600 hover:text-gray-800 text-sm">
             Recuperar Contraseña
           </a>
-          <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full">
+          <button
+            type="submit"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full"
+          >
             Iniciar Sesión
           </button>
         </div>
 
         <p className="text-center text-gray-600 text-sm">
-          ¿No tienes una cuenta?{" "}
-          <Link to='/register'>Registrate aqui</Link>
+          ¿No tienes una cuenta? <Link to="/register">Registrate aqui</Link>
           {/* <a href="#" className="text-blue-600 hover:text-blue-800">
             Regístrate aquí
           </a> */}
         </p>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default LoginForm;
+export default LoginForm

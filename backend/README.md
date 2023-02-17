@@ -78,11 +78,14 @@ interface CategoryBody {
 }
 ```
 
-## Configuracion:
+## Configuracion
+
 - Acceder al backend `cd backend`
-- Crear un archivo, `.env` para las variables de entorno tome de guia, el ejemplo de configuracion`.env.example`
+- Crear un archivo, `.env` para las variables de entorno tome de guia, el
+  ejemplo de configuracion`.env.example`
 - Instalar dependencias: `npm install`
 
-## Documentacion:
+## Documentacion
+
 - inciar el servidor `npm run dev`
-- Navegar a http://localhost:3000/doc/
+- Navegar a <http://localhost:3000/doc/>

@@ -15,7 +15,6 @@ class ShowProfileController {
   }
 
   async run(req: Request, res: Response): Promise<void> {
-
     const data = await this.profileShower.run(req.logedInUser?.id!)
 
     res.status(HttpCode.Ok).send(data)

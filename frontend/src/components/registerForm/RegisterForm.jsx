@@ -1,29 +1,27 @@
 // import React, { useState } from "react";
-import React, { useState } from "react";
-import RegisterFormStep2 from "./RegisterFormStep2";
-import RegisterFormStep1 from "./RegisterFormStep1";
-import StepNavigation from "../stepper/StepNavigation";
+import React, { useState } from "react"
+import RegisterFormStep2 from "./RegisterFormStep2"
+import RegisterFormStep1 from "./RegisterFormStep1"
+import StepNavigation from "../stepper/StepNavigation"
 import SimpleText from "../SimpleText/SimpleText"
 
-
-
-
 const RegisterForm = (props) => {
-  const labelArray = ['Step 1', 'Step 2']
-  const [currentStep, setCurrentStep] = useState(1);
+  const labelArray = ["Step 1", "Step 2"]
+  const [currentStep, setCurrentStep] = useState(1)
 
-  const [formValues, setFormValues] = useState({});
+  const [formValues, setFormValues] = useState({})
 
   const updateStep = (step) => {
-    setCurrentStep(step);
+    setCurrentStep(step)
   }
   const getInfoPerPage = () => {
     if (currentStep === 1) {
       return (
         <div>
-            <SimpleText 
-            title={'Registro'}
-            paragraph={'Te pediremos algunos datos para crear tu perfil'}/>
+          <SimpleText
+            title={"Registro"}
+            paragraph={"Te pediremos algunos datos para crear tu perfil"}
+          />
           <RegisterFormStep1
             labelArray={labelArray}
             currentStep={currentStep}
@@ -34,13 +32,13 @@ const RegisterForm = (props) => {
           />
         </div>
       )
-    }
-    else if (currentStep === 2) {
+    } else if (currentStep === 2) {
       return (
-        <div >
-          <SimpleText 
-            title={'Registro'}
-            paragraph={'¡Falta poco! Ya casi tenés tu cuenta en Pawful. '}/>
+        <div>
+          <SimpleText
+            title={"Registro"}
+            paragraph={"¡Falta poco! Ya casi tenés tu cuenta en Pawful. "}
+          />
           <RegisterFormStep2
             labelArray={labelArray}
             currentStep={currentStep}
@@ -52,7 +50,6 @@ const RegisterForm = (props) => {
         </div>
       )
     }
-
   }
 
   const handleForm = (data) => {
@@ -65,21 +62,18 @@ const RegisterForm = (props) => {
         labelArray={labelArray}
         currentStep={currentStep}
         updateStep={updateStep}
-      >
+      ></StepNavigation>
 
-      </StepNavigation> 
-      
-    
-      
       <br />
       {getInfoPerPage()}
 
-      <p>Ya tienes una cuenta? <a href="/auth/login">Inciar Sesion</a> </p>
+      <p>
+        Ya tienes una cuenta? <a href="/auth/login">Inciar Sesion</a>{" "}
+      </p>
       <br />
       <br />
     </div>
   )
 }
 
-
-export default RegisterForm;
+export default RegisterForm

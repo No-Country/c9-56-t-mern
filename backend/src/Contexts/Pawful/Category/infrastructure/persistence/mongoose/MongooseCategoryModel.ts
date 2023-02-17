@@ -21,6 +21,9 @@ const MongooseCategorySchema = new Schema<CategoryModel>(
   },
 )
 
-const MongooseCategoryModel = model<CategoryModel>("Category", MongooseCategorySchema)
+const MongooseCategoryModel = model<CategoryModel>(
+  "Category",
+  MongooseCategorySchema,
+)
 
 export { MongooseCategoryModel }

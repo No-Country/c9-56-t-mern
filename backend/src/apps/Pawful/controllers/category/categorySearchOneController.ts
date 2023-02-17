@@ -5,7 +5,7 @@ import { Types } from "mongoose"
 import { CategorySearcheOne } from "../../../../Contexts/Pawful/Category/application/CategorySearcherOne"
 import type { CategoryRepository } from "../../../../Contexts/Pawful/Category/domain/repositories/CategoryRepository"
 import { Category } from "../../../../Contexts/Pawful/Category/domain/valueObjects/Category"
-import { MongooseCategoryRepository} from "../../../../Contexts/Pawful/Category/infrastructure/persistence/mongoose/MongooseCategoryRepository"
+import { MongooseCategoryRepository } from "../../../../Contexts/Pawful/Category/infrastructure/persistence/mongoose/MongooseCategoryRepository"
 import { MissingFieldsError } from "../../../../Contexts/shared/domain/errors/MissingFieldsError"
 import { HttpCode } from "../../../shared/HttpCode"
 import { SALT_ROUNDS } from "../../shared/constants"
@@ -23,9 +23,7 @@ class CategorySearchOneController {
     const fields = req.params as { [key: string]: unknown }
     const { id } = fields
 
-    if (
-      typeof id !== "string"
-    ) {
+    if (typeof id !== "string") {
       throw new MissingFieldsError()
     }
 

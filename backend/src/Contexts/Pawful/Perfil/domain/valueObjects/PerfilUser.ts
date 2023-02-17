@@ -7,9 +7,8 @@ class PerfilUser implements PerfilUserModel {
     readonly image: string,
     readonly userId: string,
     readonly phone: string,
-    readonly address: string
+    readonly address: string,
   ) {}
 }
-
 
 export { PerfilUser }
