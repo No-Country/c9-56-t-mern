@@ -1,5 +1,5 @@
 import RegisterForm from "./RegisterForm"
-import SimpleText from "../SimpleText/SimpleText"
+import SimpleText from "../recycleComponents/SimpleText/SimpleText"
 
 export default {
   title: "Components/RegisterForm",
