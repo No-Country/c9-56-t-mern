@@ -135,6 +135,60 @@ const swaggerDefinition: OAS3Definition = {
         },
       },
     },
+    "/services": {
+      post: {
+        summary: "Registro de un servicio",
+        description:
+          "Esta ruta es responsable de registrar el servicio de un usuario Profesional",
+        tags: ["services"],
+        security: [{ bearerAuth: [] }],
+        requestBody: {
+          content: {
+            "application/json": {
+              schema: {
+                $ref: "#/components/schemas/profile",
+              },
+              examples: {
+                "service example": {
+                  value: {
+                    presentacionPersonal: "un presentacion personal",
+                    presentacion_del_servicio: "un presentacion del servicio",
+                    profileId: "un id",
+                    categoryId: "un id",
+                  },
+                },
+              },
+            },
+          },
+        },
+        responses: {
+          "201": {
+            description: "ok",
+          },
+        },
+      },
+    },
+    "/services/{id}": {
+      "get": {
+          "description": "Servicios de un perfil Profesional",
+          "summary": "lista todos los servicios de un perfil profesional",
+          "tags": ["services"],
+          "security": [{ "bearerAuth": [] }],
+          "parameters": [
+              {
+                  "name":"id",
+                  "in":"path",
+                  "description": "id para lista los servicios",
+                  "required": true
+              }
+          ],
+          "responses": {
+              "200": {
+                  "description": "ok",
+              }
+          }
+      }
+  }
   },
   components: {
     securitySchemes: {
@@ -200,6 +254,24 @@ const swaggerDefinition: OAS3Definition = {
             type: "array",
           },
           rol: {
+            type: "string",
+          },
+        },
+      },
+      service: {
+        type: "object",
+        required: ["presentacionPersonal", "presentacion_del_servicio", "profileId", "categoryId"],
+        properties: {
+          presentacionPersonal: {
+            type: "string",
+          },
+          presentacion_del_servicio: {
+            type: "string",
+          },
+          profileId: {
+            type: "integer",
+          },
+          categoryId: {
             type: "string",
           },
         },
