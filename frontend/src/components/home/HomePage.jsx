@@ -1,7 +1,8 @@
 import React from "react"
-import CategoriesHome from "./CategoriesHome"
-import SecondaryBtn from "../SecondaryBtn/SecondaryBtn"
+import { Link } from "react-router-dom"
 import MainBtn from "../MainBtn/MainBtn"
+import SecondaryBtn from "../SecondaryBtn/SecondaryBtn"
+import CategoriesHome from "./CategoriesHome"
 
 const HomePage = () => {
   return (
@@ -19,7 +20,9 @@ const HomePage = () => {
       </div>
       <br />
       <MainBtn text={"Nuestros servicios"} />
-      <SecondaryBtn text={"SER PROFESIONAL"} />
+      <Link to="/auth/login">
+        <SecondaryBtn text={"SER PROFESIONAL"} />
+      </Link>
       {/* <button className="bg-black text-white py-3 px-6 rounded-lg sm:py-4 sm:px-8 sm:rounded-xl">
                 Boton ser profesional
             </button> */}
