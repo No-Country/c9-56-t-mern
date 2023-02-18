@@ -1,7 +1,7 @@
 // @ts-check
 import React from "react"
 import { AiOutlineUser } from "react-icons/ai"
-import { IoMdCreate } from "react-icons/io"
+import PencilIcon from "../PencilIcon"
 
 const ImageSelector = ({ image, urlImage, handleImageChange }) => {
   return (
@@ -25,9 +25,9 @@ const ImageSelector = ({ image, urlImage, handleImageChange }) => {
       )}
       <label
         htmlFor="image"
-        className="absolute bottom-0 right-0 mb-1 mr-1 bg-black rounded-full p-2 z-10"
+        className="absolute bottom-0 right-0 mb-1 mr-1 z-10"
       >
-        <IoMdCreate className="text-white size={12}" />
+        <PencilIcon />
       </label>
       <input
         type="file"
