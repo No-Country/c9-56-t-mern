@@ -6,12 +6,12 @@ import {
   Navigate,
   useNavigate,
 } from "react-router-dom"
-import { useAuthStore } from "../hooks/useAuthStore"
+import { useAuthStore } from "../utils/hooks/useAuthStore"
 import LoginForm from "../components/bothFlows/login/LoginForm"
 import RegisterForm from "../components/bothFlows/registerForm/RegisterForm"
 import SuccessfulRegistration from "../components/Register/SuccessfulRegistration"
 import HomePage from "../components/bothFlows/home/HomePage"
-import OwnerForm from "../components/userFlow/owner/ownerForm/OwnerForm"
+import OwnerForm from "../views/ownerForm/OwnerForm"
 
 const AppRouter = () => {
   const { status, checkAuthToken } = useAuthStore()

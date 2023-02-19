@@ -2,7 +2,7 @@ import logo from "../../assets/react.svg"
 import { MdEdit } from "react-icons/md"
 import { Link, Form, Navigate } from "react-router-dom"
 import "../../styles/styles.css"
-import VioletBtnM from "../../../recycleComponents/VioletBtnM/VioletBtnM"
+import VioletBtnM from "../../components/recycleComponents/VioletBtnM/VioletBtnM"
 
 const OwnerForm = () => {
 

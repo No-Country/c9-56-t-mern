@@ -5,7 +5,7 @@ import {
   onChecking,
   onLogin,
   onLogout,
-} from "../store/auth/authSlice"
+} from "../../store/auth/authSlice"
 
 export const useAuthStore = () => {
   const { status, user, errorMessage } = useSelector((state) => state.auth)
