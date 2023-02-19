@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import { useAuthStore } from "../../../utils/hooks/useAuthStore"
-import "../../../styles/styles.css"
+import { useAuthStore } from "../../../../utils/hooks/useAuthStore"
+import "../../../../styles/styles.css"
 
 const LoginForm = () => {
   const { startLogin, errorMessage } = useAuthStore()
