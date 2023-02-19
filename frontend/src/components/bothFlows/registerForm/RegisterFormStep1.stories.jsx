@@ -1,7 +1,7 @@
 import RegisterFormStep1 from "./RegisterFormStep1"
 
 export default {
-  title: "Components/RegisterFormStep1",
+  title: "Components/bothFlows/registerForm/RegisterFormStep1",
   component: RegisterFormStep1,
   args: {
     setFormValues: () => {},

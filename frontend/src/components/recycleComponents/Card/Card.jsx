@@ -1,6 +1,6 @@
 import React from "react"
 
-const Card = ({ imageSide = "left", image, service, paragraph }) => {
+const Card = ({ imageSide = "left", image, service, paragraph, key }) => {
   if (!["left", "right"].includes(imageSide))
     throw new Error("Invalid imageSide prop")
 

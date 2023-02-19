@@ -1,11 +1,11 @@
 import React, { useEffect } from "react"
 import { Navigate, Route, Routes } from "react-router-dom"
-import HomePage from "../components/home/HomePage"
-import LoginForm from "../components/Login/LoginForm"
-import OwnerForm from "../components/profOwner/OwnerForm"
-import OwnerProfile from "../components/profOwner/OwnerProfile"
-import SuccessfulRegistration from "../components/Register/SuccessfulRegistration"
-import RegisterForm from "../components/registerForm/RegisterForm"
+import HomePage from "../components/bothFlows/home/HomePage"
+import LoginForm from "../components/bothFlows/login/LoginForm"
+import OwnerForm from "../components/userFlow/owner/ownerForm/OwnerForm"
+import OwnerProfile from "../components/userFlow/owner/ownerProfile/OwnerProfile"
+import SuccessfulRegistration from "../components/bothFlows/successfulRegistration/SuccessfulRegistration"
+import RegisterForm from "../components/bothFlows/registerForm/RegisterForm"
 import { useAuthStore } from "../hooks/useAuthStore"
 
 const AppRouter = () => {
@@ -31,7 +31,7 @@ const AppRouter = () => {
         </>
       ) : (
         <>
-          <Route path="/formOwner" element={<OwnerProfile />} />
+          <Route path="/Profowner" element={<OwnerProfile />} /> 
           <Route path="/completeRegister" element={<OwnerForm />} />
         </>
       )}

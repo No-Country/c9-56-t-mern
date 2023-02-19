@@ -2,7 +2,7 @@ import VioletBtnM from "./VioletBtnM"
 
 export default {
   title: "Components/VioletBtnM",
-  component: MainBtn,
+  component: VioletBtnM,
   args: {},
   argTypes: {
     type: {

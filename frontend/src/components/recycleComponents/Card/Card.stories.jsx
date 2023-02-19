@@ -3,7 +3,7 @@ import React from "react"
 import Card from "."
 
 export default {
-  title: "Components/Card",
+  title: "Components/bothFlows/registerForm/card/Card",
   component: Card,
   args: {},
   argTypes: {

@@ -1,5 +1,5 @@
 import React from "react"
-import Card from "../Card/Card"
+import Card from "../../recycleComponents/card/Card"
 
 const CategoriesHome = () => {
   let categoryDetails = [
@@ -32,11 +32,14 @@ const CategoriesHome = () => {
         imageSide="right"
         service={categories.category}
         paragraph={categories.categoryDescription}
+        key='ImRight'
       />
     ) : (
       <Card
         service={categories.category}
         paragraph={categories.categoryDescription}
+        key='ImLeft'
+
       />
     ),
   )

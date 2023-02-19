@@ -1,6 +1,6 @@
 import React from "react"
-import "../../styles/styles.css"
-import logo from "../../assets/react.svg"
+import "../../../../styles/styles.css"
+import logo from "../../../../assets/react.svg"
 import { MdEdit, MdRoom, MdPhone, MdAddCircle } from "react-icons/md"
 
 const OwnerProfile = () => {
@@ -9,7 +9,6 @@ const OwnerProfile = () => {
   return (
     // div principal
     <div className="flex flex-col h-screen p-0">
-      {/* <div className='flex flex-row justify-center'> */}
       <div className="flex flex-row justify-center w-screen bg-white h-2/4 xl:h-3/6">
         <div className="relative xl:h-5/6  h-5/6 xl:w-4/6 mt-12 bg-white mb-2">
           <img src={url} alt="" className="w-full xl:h-5/6" />

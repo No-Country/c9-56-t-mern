@@ -1,6 +1,7 @@
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
+
+import VioletBtnM from "../../recycleComponents/VioletBtnM/VioletBtnM"
 import { useForm } from "react-hook-form"
-import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom"
-import MainBtn from "../VioletBtnMS/VioletBtnMS"
 
 const RegisterFormStep1 = (props) => {
   const {
@@ -63,7 +64,7 @@ const RegisterFormStep1 = (props) => {
         <br />
         <br />
         <br />
-        <MainBtn text={"Continuar"} type={"submit"} />
+        <VioletBtnM text={"Continuar"} type={"submit"} />
       </form>
     </div>
   )

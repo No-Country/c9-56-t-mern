@@ -1,9 +1,8 @@
 import { MemoryRouter } from "react-router-dom"
-
 import RegisterFormStep2 from "./RegisterFormStep2"
 
 export default {
-  title: "Components/RegisterFormStep2",
+  title: "Components/bothFlows/registerForm/RegisterFormStep2",
   component: RegisterFormStep2,
   args: {
     setFormValues: () => {},

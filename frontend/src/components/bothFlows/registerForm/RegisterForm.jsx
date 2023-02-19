@@ -1,8 +1,8 @@
 import React, { useState } from "react"
-import RegisterFormStep2 from "./RegisterFormStep2"
 import RegisterFormStep1 from "./RegisterFormStep1"
-import StepNavigation from "../stepper/StepNavigation"
-import SimpleText from "../recycleComponents/SimpleText/SimpleText"
+import RegisterFormStep2 from "./RegisterFormStep2"
+import SimpleText from "../../recycleComponents/SimpleText/SimpleText"
+import StepNavigation from "../../recycleComponents/stepper/StepNavigation"
 
 const RegisterForm = (props) => {
   const labelArray = ["Step 1", "Step 2"]

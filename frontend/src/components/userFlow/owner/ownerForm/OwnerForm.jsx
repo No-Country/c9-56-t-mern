@@ -1,14 +1,10 @@
-import logo from "../../assets/react.svg"
-import { MdEdit } from "react-icons/md"
-// import { Propietario } from '../../types/typesPropie';
-// import useNewForm from '../../hooks/propietarioForm';
-import { Link, Form, Navigate } from "react-router-dom"
-import "../../styles/styles.css"
-import OwnerProfile from "../OwnerProfile/OwnerProfile"
-import SimpleText from "../SimpleText/SimpleText"
-import InputImage from "../InputImage/InputImage"
+import "../../../../styles/styles.css"
+import { Form, Link, Navigate } from "react-router-dom"
 import React, { useState } from "react"
-
+import { MdEdit } from "react-icons/md"
+import InputImage from "../../../recycleComponents/inputImage/InputImage"
+import SimpleText from "../../../recycleComponents/simpleText/SimpleText"
+import logo from "../../assets/react.svg"
 
 const OwnerForm = () => {
   // const [inputValues, dispatch] = useNewForm()
@@ -76,9 +72,9 @@ const OwnerForm = () => {
               <label htmlFor="">Nombre completo</label>
               <textarea
                 onChange={handleChange}
-                name="addres"
+                name="address"
                 className="inputs"
-                placeholder="DIngrese su dirección aquí"
+                placeholder="Ingrese su dirección aquí"
               />
             </div>
           </div>

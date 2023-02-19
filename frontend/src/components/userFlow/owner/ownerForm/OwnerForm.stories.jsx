@@ -1,7 +1,7 @@
 import OwnerForm from "./OwnerForm"
 
 export default {
-  title: "Components/OwnerForm",
+  title: "Components/recycleComponents/owner/ownerForm/OwnerForm",
   component: OwnerForm,
   args: {},
 }

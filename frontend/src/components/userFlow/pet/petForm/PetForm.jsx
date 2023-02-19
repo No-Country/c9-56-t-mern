@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import VioletBtnM from "../../../recycleComponents/violetBtnM"
 
 const PetForm = () => {
   const [petName, setPetName] = useState("")
@@ -27,11 +28,6 @@ const PetForm = () => {
     console.log("Pet Size:", petSize)
     console.log("Pet Age:", petAge)
 
-    // setPetName("")
-    // setPetRace("")
-    // setPetGender("")
-    // setPetSize("")
-    // setPetAge("")
   }
 
   return (
@@ -153,7 +149,8 @@ const PetForm = () => {
           onClick={handleSubmit}
           disabled={!petName || !petRace || !petGender || !petSize || !petAge}
         >
-          Guardar datos
+          <VioletBtnM 
+          text='Guardar datos' />
         </button>
       </form>
     </div>

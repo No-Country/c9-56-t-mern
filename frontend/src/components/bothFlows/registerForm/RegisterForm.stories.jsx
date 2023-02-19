@@ -2,7 +2,7 @@ import RegisterForm from "./RegisterForm"
 import SimpleText from "../recycleComponents/SimpleText/SimpleText"
 
 export default {
-  title: "Components/RegisterForm",
+  title: "Components/bothFlows/registerForm/RegisterForm",
   component: RegisterForm,
   args: {},
 }

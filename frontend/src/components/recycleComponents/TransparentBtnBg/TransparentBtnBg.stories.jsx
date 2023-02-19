@@ -1,8 +1,8 @@
-import SecondaryBtn from "./TransparentBtnBg"
+import TransparentBtnBg from "./TransparentBtnBg"
 
 export default {
-  title: "Components/SecondaryBtn",
-  component: SecondaryBtn,
+  title: "Components/TransparentBtnBg",
+  component: TransparentBtnBg,
   args: {},
 }
 

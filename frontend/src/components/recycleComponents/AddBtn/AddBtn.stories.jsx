@@ -1,7 +1,7 @@
 import AddBtn from "./AddBtn"
 
 export default {
-  title: "Components/AddBtn",
+  title: "Components/recycleComponents/addBtn/addBtn",
   component: AddBtn,
   args: {},
 }
