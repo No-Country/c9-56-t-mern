@@ -1,3 +1,4 @@
+import axios from "axios"
 import { useForm } from "react-hook-form"
 import {
   Routes,
@@ -6,11 +7,10 @@ import {
   Navigate,
   useNavigate,
 } from "react-router-dom"
-import InputForm from "../../recycleComponents/inputForm/InputForm"
-import InputImage from "../../recycleComponents/inputImage/InputImage"
-import axios from "axios"
-import { registerUSerStore } from "../../hooks/registerUserStore"
-import VioletBtnM from "../../recycleComponents/VioletBtnM/VioletBtnM"
+import InputForm from "../../../../components/inputForm/InputForm"
+import InputImage from "../../../../components/inputImage/InputImage"
+import { registerUSerStore } from "../../../../utils/hooks/registerUserStore"
+import VioletBtnM from "../../../../components/violetBtnM/VioletBtnM"
 
 const RegisterFormStep2 = (props) => {
   const {

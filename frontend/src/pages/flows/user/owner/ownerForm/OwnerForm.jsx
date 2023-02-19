@@ -1,7 +1,7 @@
 import { MdEdit } from "react-icons/md"
 import { Link, Form, Navigate } from "react-router-dom"
-import "../../../../../styles/styles"
-import VioletBtnM from "../../components/recycleComponents/VioletBtnM/VioletBtnM"
+import "../../../../../styles/styles.css"
+import VioletBtnM from "../../../../../components/violetBtnM/VioletBtnM"
 
 const OwnerForm = () => {
 
