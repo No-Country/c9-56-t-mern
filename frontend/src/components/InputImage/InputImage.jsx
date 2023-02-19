@@ -11,7 +11,6 @@ const InputImage = (props) => {
     props.onChange(e.target.files[0])
     console.log(image)
   }
-
   return (
     <div className="flex flex-col items-center bg-gray-50 py-4">
       <div className="w-24 h-24 rounded-full bg-slate-600 flex items-center justify-center relative">
@@ -21,11 +20,15 @@ const InputImage = (props) => {
             alt="profile"
             className="object-cover w-full h-full rounded-full"
           />
-        ) : (
-          <span className="text-white text-5xl">
-            <AiOutlineUser />
-          </span>
-        )}
+        ) : props.urlImage ? (
+          <img
+            src={props.urlImage}
+            alt="profile"
+            className="object-cover w-full h-full rounded-full"
+          />
+        ) : <span className="text-white text-5xl">
+          <AiOutlineUser />
+        </span>}
         <label
           htmlFor="image"
           className="absolute bottom-0 right-0 mb-1 mr-1 bg-black rounded-full p-2 z-10"
