@@ -13,12 +13,11 @@ import MainBtn from "../MainBtn/MainBtn"
 
 
 const FormPropietario = () => {
-  // const [inputValues, dispatch] = useNewForm()
+
   const [image, setImage] = useState(null);
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
-    // onAddInfoProp(inputValues)
   }
 
   const handleChangeImage = (file) => {
@@ -59,27 +58,27 @@ const FormPropietario = () => {
               <label className="block font-medium mb-2">Nombre Completo</label>
               <input
                 className="border border-gray-400 p-2 w-full"
-                placeholder="Ingrese nombre aqui"
+                placeholder="Ingrese nombre aquí"
               />
             </div>
             <div>
-              <label className="block font-medium mb-2">Numero de telefono</label>
+              <label className="block font-medium mb-2">Número de télefono</label>
               <input
                 className="border border-gray-400 p-2 w-full"
-                placeholder="Ingrese numero aqui"
+                placeholder="Ingrese número aquí"
               />
             </div>
             <div>
               <label className="block font-medium mb-2">Dirección</label>
               <input
                 className="border border-gray-400 p-2 w-full"
-                placeholder="Ingrese su dirección aqui"
+                placeholder="Ingrese su dirección aquí"
               />
             </div>
 
           </div>
         </div>
-        <MainBtn text={" GUARDAR DATOS"} type={"submit"} />
+        <MainBtn text=" GUARDAR DATOS" type="submit" />
       </form>
     </div>
   )

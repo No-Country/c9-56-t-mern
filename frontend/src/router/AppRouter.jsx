@@ -21,7 +21,6 @@ const AppRouter = () => {
 
   return (
     <Routes>
-      {/* <Route path="/" element={<FormPropietario />} /> */}
 
       <Route path="/" element={<HomePage />} />
       <Route path="/*" element={<Navigate to="/" />} />

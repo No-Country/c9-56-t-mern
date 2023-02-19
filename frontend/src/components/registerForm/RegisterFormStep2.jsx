@@ -1,24 +1,29 @@
 import axios from "axios"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
-import { registerUSerStore } from "../../hooks/registerUserStore"
+import { useRegisterUSerStore } from "../../hooks/useRegisterUserStore"
 import InputImage from "../InputImage/InputImage"
 import MainBtn from "../MainBtn/MainBtn"
-import uploadIageDataForm from "../../hooks/uploadImageCloudinary"
-// import { useState, useEffect } from "react";
+import useCloudinaryImage from "../../hooks/useCloudinaryImage"
+import { useState, useEffect } from "react";
 
 const RegisterFormStep2 = (props) => {
+
+  const { formValues, setFormValues } = props
+
+
   const {
     register,
     formState: { errors },
     handleSubmit,
     setValue,
   } = useForm({
-    defaultValues: props.formValues,
+    defaultValues: formValues,
   })
 
-  const { addUSer, resp, dataResp } = registerUSerStore()
-  const { upImage, urlImage } = uploadIageDataForm()
+
+  const { addUser, resp, dataResp } = useRegisterUSerStore()
+  const { urlImage, uploadImage } = useCloudinaryImage()
 
   const navigate = useNavigate()
 
@@ -28,30 +33,26 @@ const RegisterFormStep2 = (props) => {
   }
 
   const onSubmit = async (data) => {
-    // ; <div>Data{data}</div>
-    props.setFormValues({ ...props.formValues, ...data })
 
-    upImage(data)
-    // console.log(`Imagen ${urlImage}`)
-    addUSer({
+    setFormValues({ ...formValues, ...data })
+
+    const imageUrlCloud = await uploadImage(data)
+
+    addUser({
       email: data.email,
       password: data.password,
-      avatar: urlImage,
+      avatar: imageUrlCloud,
       role: data.role,
     })
-
-    if (resp === 'ok') {
-      navigate("/success")
-      console.log(`DATA DEVUELTA: ${dataResp}`)
-    } else {
-      console.log("Algo salio mal")
-    }
   }
+  useEffect(() => {
+    if (resp === 'ok') {
+      navigate('/success')
+    }
+  }, [resp])
 
   function handleImageChange(files) {
     register("avatar", { value: files })
-    // console.log(files)
-    // setImageFiles(files);
   }
 
   const imageUrl = "https://cdn-icons-png.flaticon.com/512/3177/3177440.png"
