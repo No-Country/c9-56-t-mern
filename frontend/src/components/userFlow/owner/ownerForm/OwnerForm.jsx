@@ -1,21 +1,16 @@
-import "../../../../styles/styles.css"
-import { Form, Link, Navigate } from "react-router-dom"
-import React, { useState } from "react"
-import { MdEdit } from "react-icons/md"
-import InputImage from "../../../recycleComponents/inputImage/InputImage"
-import SimpleText from "../../../recycleComponents/simpleText/SimpleText"
 import logo from "../../assets/react.svg"
+import { MdEdit } from "react-icons/md"
 
-const OwnerForm = () => {
+import { Link, Form, Navigate } from "react-router-dom"
+import "../../styles/styles.css"
+import PerfilPropietario from "./PerfilPropietario"
+
+const FormPropietario = () => {
   // const [inputValues, dispatch] = useNewForm()
-  const [image, setImage] = useState(null);
+
   const handleSubmit = (evt) => {
     evt.preventDefault()
     // onAddInfoProp(inputValues)
-  }
-
-  const handleChangeImage = (file) => {
-    setImage(file)
   }
 
   const handleChange = (evt) => {
@@ -29,23 +24,25 @@ const OwnerForm = () => {
       },
     })
   }
-  const log = "https://cdn-icons-png.flaticon.com/512/3177/3177440.png"
   return (
     // <div className='flex flex-col h-screen p-4'>
     <div className="div-principal">
       <div className="div-encabezados">
-        <SimpleText
-          title={"¡Vamos a conocernos!"}
-          paragraph={"Te pediremos algunos datos personales para completar el perfil puedas contratar a tu profesional de confianza"}
-        />
+        <h2 className="h2-titulo">¡Vamos a conocernos!</h2>
+        <p className="p-form">
+          Te pediremos algunos datos personales para completar el perfil y
+          puedas contratar a tu profesional de confianza
+        </p>
       </div>
       <form onSubmit={handleSubmit} className="form">
         <div className="flex flex-col justify-center">
           <div className="flex flex-row justify-center">
-            <InputImage
-              urlImage={logo}
-              onChange={handleChangeImage}
-            />
+            <div className="contenedor-img-icon">
+              <img src={logo} alt="" className="w-full" />
+              <div className="contenedor-icon">
+                <MdEdit style={{ fontSize: "1.5rem", color: "#0A497B" }} />
+              </div>
+            </div>
           </div>
           <div className="container-inputs">
             <div className="div-input-label">
@@ -72,9 +69,9 @@ const OwnerForm = () => {
               <label htmlFor="">Nombre completo</label>
               <textarea
                 onChange={handleChange}
-                name="address"
+                name="addres"
                 className="inputs"
-                placeholder="Ingrese su dirección aquí"
+                placeholder="DIngrese su dirección aquí"
               />
             </div>
           </div>
@@ -87,4 +84,4 @@ const OwnerForm = () => {
   )
 }
 
-export default OwnerForm
+export default FormPropietario

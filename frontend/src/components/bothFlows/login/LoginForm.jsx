@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react"
+import React, { useState, useEffect } from "react"
+import { useAuthStore } from "../../hooks/useAuthStore"
+import "../../styles/styles.css"
 import { Link } from "react-router-dom"
-import { useAuthStore } from "../../../hooks/useAuthStore"
-import "../../../styles/styles.css"
 
 const LoginForm = () => {
   const { startLogin, errorMessage } = useAuthStore()
@@ -70,10 +70,10 @@ const LoginForm = () => {
         </div>
 
         <p className="text-center text-gray-600 text-sm">
-          ¿No tienes una cuenta?{" "}
-          <Link to="/register" className="text-blue-600 hover:text-blue-800">
-            Registrate aqui
-          </Link>
+          ¿No tienes una cuenta? <Link to="/register">Registrate aqui</Link>
+          {/* <a href="#" className="text-blue-600 hover:text-blue-800">
+            Regístrate aquí
+          </a> */}
         </p>
       </form>
     </div>

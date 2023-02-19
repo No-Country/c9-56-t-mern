@@ -1,12 +1,18 @@
 import React, { useEffect } from "react"
-import { Navigate, Route, Routes } from "react-router-dom"
-import HomePage from "../components/bothFlows/home/HomePage"
-import LoginForm from "../components/bothFlows/login/LoginForm"
-import OwnerForm from "../components/userFlow/owner/ownerForm/OwnerForm"
-import OwnerProfile from "../components/userFlow/owner/ownerProfile/OwnerProfile"
-import SuccessfulRegistration from "../components/bothFlows/successfulRegistration/SuccessfulRegistration"
-import RegisterForm from "../components/bothFlows/registerForm/RegisterForm"
+import {
+  Routes,
+  Route,
+  BrowserRouter,
+  Navigate,
+  useNavigate,
+} from "react-router-dom"
 import { useAuthStore } from "../hooks/useAuthStore"
+import LoginForm from "../components/Login/LoginForm"
+import RegisterForm from "../components/registerForm/RegisterForm"
+import FormPropietario from "../components/profOwner/FormPropietario"
+import PerfilPropietario from "../components/profOwner/PerfilPropietario"
+import SuccessfulRegistration from "../components/Register/SuccessfulRegistration"
+import HomePage from "../components/home/HomePage"
 
 const AppRouter = () => {
   const { status, checkAuthToken } = useAuthStore()
@@ -31,8 +37,12 @@ const AppRouter = () => {
         </>
       ) : (
         <>
-          <Route path="/Profowner" element={<OwnerProfile />} /> 
-          <Route path="/completeRegister" element={<OwnerForm />} />
+          {/* RUTAS PARA NAVEGAR DENTRO DE LA APP */}
+          <Route path="/" element={<HomePage />} />
+          {/* <Route path='/homePage' element={ <HomePage/> } /> */}
+          <Route path="/formOwner" element={<PerfilPropietario />} />
+          <Route path="/completRegister" element={<FormPropietario />} />
+          <Route path="/*" element={<Navigate to="/" />} />
         </>
       )}
     </Routes>

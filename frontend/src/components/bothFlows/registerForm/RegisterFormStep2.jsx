@@ -1,9 +1,17 @@
-import InputImage from "../../recycleComponents/inputImage/InputImage"
-import axios from "axios"
-import { registerUSerStore } from "../../../hooks/registerUserStore"
 import { useForm } from "react-hook-form"
-import { useNavigate } from "react-router-dom"
-import VioletBtnM from "../../recycleComponents/violetBtnM/VioletBtnM"
+import {
+  Routes,
+  Route,
+  BrowserRouter,
+  Navigate,
+  useNavigate,
+} from "react-router-dom"
+import InputForm from "../inputForm/InputForm"
+import InputImage from "../InputImage/InputImage"
+import axios from "axios"
+import { registerUSerStore } from "../../hooks/registerUserStore"
+import MainBtn from "../MainBtn/MainBtn"
+// import { useState, useEffect } from "react";
 
 const RegisterFormStep2 = (props) => {
   const {
@@ -55,12 +63,15 @@ const RegisterFormStep2 = (props) => {
       role: data.role,
     })
 
-    navigate("/success")
+    navigate("/succes")
+    // console.log(data);
+    // console.log('DAta:{data.role}')
   }
 
   function handleImageChange(files) {
     register("avatar", { value: files })
     console.log(files)
+    // setImageFiles(files);
   }
 
   const imageUrl = "https://cdn-icons-png.flaticon.com/512/3177/3177440.png"
@@ -92,7 +103,7 @@ const RegisterFormStep2 = (props) => {
         </div>
         <br />
         <br />
-        <VioletBtnM text={"Registrar"} type={"submit"} />
+        <MainBtn text={"Registrar"} type={"submit"} />
       </form>
     </div>
   )
