@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom"
-import MainBtn from "../MainBtn/MainBtn"
+import MainBtn from "../VioletBtnMS/VioletBtnMS"
 
 const RegisterFormStep1 = (props) => {
   const {

@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 import { registerUSerStore } from "../../hooks/registerUserStore"
 import InputImage from "../InputImage/InputImage"
-import MainBtn from "../MainBtn/MainBtn"
+import MainBtn from "../VioletBtnMS/VioletBtnMS"
 // import { useState, useEffect } from "react";
 
 const RegisterFormStep2 = (props) => {

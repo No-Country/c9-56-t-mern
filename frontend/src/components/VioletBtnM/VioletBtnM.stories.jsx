@@ -1,7 +1,7 @@
-import MainBtn from "./MainBtn"
+import VioletBtnM from "./VioletBtnM"
 
 export default {
-  title: "Components/MainBtn",
+  title: "Components/VioletBtnM",
   component: MainBtn,
   args: {},
   argTypes: {

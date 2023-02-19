@@ -3,7 +3,7 @@ import "../../styles/styles.css"
 import logo from "../../assets/react.svg"
 import { MdEdit, MdRoom, MdPhone, MdAddCircle } from "react-icons/md"
 
-const PerfilPropietario = () => {
+const OwnerProfile = () => {
   const url =
     "https://img.freepik.com/fotos-premium/cientificos-datos-programador-hombre-utilizando-algoritmo-analisis-desarrollo-computadora-portatil_34200-491.jpg?w=1380"
   return (
@@ -75,4 +75,4 @@ const PerfilPropietario = () => {
   )
 }
 
-export default PerfilPropietario
+export default OwnerProfile

@@ -1,7 +1,8 @@
 import React from "react"
+import { Link } from "react-router-dom"
+import MainBtn from "../VioletBtnMS/VioletBtnMS"
+import TransparentBtnBg from "../TransparentBtnBg/TransparentBtnBg"
 import CategoriesHome from "./CategoriesHome"
-import SecondaryBtn from "../SecondaryBtn/SecondaryBtn"
-import MainBtn from "../MainBtn/MainBtn"
 
 const HomePage = () => {
   return (
@@ -18,7 +19,9 @@ const HomePage = () => {
       </div>
       <br />
       <MainBtn text={"Nuestros servicios"} />
-      <SecondaryBtn text={"SER PROFESIONAL"} />
+      <Link to="/auth/login">
+        <SecondaryBtn text={"SER PROFESIONAL"} />
+      </Link>
     
       <br />
 

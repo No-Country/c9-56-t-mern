@@ -1,4 +1,4 @@
-import SecondaryBtn from "./SecondaryBtn"
+import SecondaryBtn from "./TransparentBtnBg"
 
 export default {
   title: "Components/SecondaryBtn",

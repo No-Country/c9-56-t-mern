@@ -10,7 +10,7 @@ import {
   MdOutlinePersonOutline,
 } from "react-icons/md"
 
-const ProfilePet = () => {
+const PetProfile = () => {
   const url =
     "https://img.freepik.com/fotos-premium/cientificos-datos-programador-hombre-utilizando-algoritmo-analisis-desarrollo-computadora-portatil_34200-491.jpg?w=1380"
 
@@ -104,4 +104,4 @@ const ProfilePet = () => {
   )
 }
 
-export default ProfilePet
+export default PetProfile
