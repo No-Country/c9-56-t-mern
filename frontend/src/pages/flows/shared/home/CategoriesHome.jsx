@@ -1,5 +1,5 @@
 import React from "react"
-import Card from "../../recycleComponents/card/Card"
+import Card from "../../../../components/card/Card"
 
 const CategoriesHome = () => {
   let categoryDetails = [

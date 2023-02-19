@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import VioletBtnM from "../../recycleComponents/violetBtnM/VioletBtnM"
-import TransparentBtnBg from "../../recycleComponents/transparentBtnBg/TransparentBtnBg"
+import VioletBtnM from "../../../../components/violetBtnM/VioletBtnM"
+import TransparentBtnBg from "../../../../components/transparentBtnBg/TransparentBtnBg"
 import CategoriesHome from "./CategoriesHome"
 
 const HomePage = () => {
