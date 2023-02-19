@@ -32,13 +32,12 @@ const CategoriesHome = () => {
         imageSide="right"
         service={categories.category}
         paragraph={categories.categoryDescription}
-        key='ImRight'
       />
     ) : (
       <Card
         service={categories.category}
         paragraph={categories.categoryDescription}
-        key='ImLeft'
+      
 
       />
     ),

@@ -1,7 +1,6 @@
-import logo from "../../assets/react.svg"
 import { MdEdit } from "react-icons/md"
 import { Link, Form, Navigate } from "react-router-dom"
-import "../../styles/styles.css"
+import "../../../../../styles/styles"
 import VioletBtnM from "../../components/recycleComponents/VioletBtnM/VioletBtnM"
 
 const OwnerForm = () => {
@@ -22,7 +21,6 @@ const OwnerForm = () => {
     })
   }
   return (
-    // <div className='flex flex-col h-screen p-4'>
     <div className="div-principal">
       <div className="div-encabezados">
         <h2 className="h2-titulo">¡Vamos a conocernos!</h2>
