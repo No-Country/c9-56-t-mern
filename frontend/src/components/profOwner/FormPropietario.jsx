@@ -8,11 +8,14 @@ import PerfilPropietario from "./PerfilPropietario"
 import SimpleText from "../SimpleText/SimpleText"
 import InputImage from "../InputImage/InputImage"
 import React, { useState } from "react"
+import InputForm from "../inputForm/InputForm"
+import MainBtn from "../MainBtn/MainBtn"
 
 
 const FormPropietario = () => {
   // const [inputValues, dispatch] = useNewForm()
   const [image, setImage] = useState(null);
+
   const handleSubmit = (evt) => {
     evt.preventDefault()
     // onAddInfoProp(inputValues)
@@ -36,7 +39,7 @@ const FormPropietario = () => {
   const log = "https://cdn-icons-png.flaticon.com/512/3177/3177440.png"
   return (
     // <div className='flex flex-col h-screen p-4'>
-    <div className="div-principal">
+    <div >
       <div className="div-encabezados">
         <SimpleText
           title={"¡Vamos a conocernos!"}
@@ -51,41 +54,32 @@ const FormPropietario = () => {
               onChange={handleChangeImage}
             />
           </div>
-          <div className="container-inputs">
-            <div className="div-input-label">
-              <label htmlFor="">Nombre completo</label>
+          <div className="flex flex-col justify-center gap-6">
+            <div>
+              <label className="block font-medium mb-2">Nombre Completo</label>
               <input
-                onChange={handleChange}
-                name="names"
-                className="inputs"
-                placeholder="Ingrese nombre aquí"
-                type="text"
+                className="border border-gray-400 p-2 w-full"
+                placeholder="Ingrese nombre aqui"
               />
             </div>
-            <div className="div-input-label">
-              <label htmlFor="">Nombre completo</label>
+            <div>
+              <label className="block font-medium mb-2">Numero de telefono</label>
               <input
-                onChange={handleChange}
-                name="phone"
-                className="inputs"
-                type="text"
-                placeholder="Ingrese número aquí"
+                className="border border-gray-400 p-2 w-full"
+                placeholder="Ingrese numero aqui"
               />
             </div>
-            <div className="div-input-label">
-              <label htmlFor="">Nombre completo</label>
-              <textarea
-                onChange={handleChange}
-                name="addres"
-                className="inputs"
-                placeholder="DIngrese su dirección aquí"
+            <div>
+              <label className="block font-medium mb-2">Dirección</label>
+              <input
+                className="border border-gray-400 p-2 w-full"
+                placeholder="Ingrese su dirección aqui"
               />
             </div>
+
           </div>
         </div>
-        <button className="bg-gray-800 p-2 rounded-lg text-gray-50">
-          GUARDAR DATOS
-        </button>
+        <MainBtn text={" GUARDAR DATOS"} type={"submit"} />
       </form>
     </div>
   )

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { registerUSerStore } from "../../hooks/registerUserStore"
 import InputImage from "../InputImage/InputImage"
 import MainBtn from "../MainBtn/MainBtn"
+import uploadIageDataForm from "../../hooks/uploadImageCloudinary"
 // import { useState, useEffect } from "react";
 
 const RegisterFormStep2 = (props) => {
@@ -16,7 +17,8 @@ const RegisterFormStep2 = (props) => {
     defaultValues: props.formValues,
   })
 
-  const { addUSer } = registerUSerStore()
+  const { addUSer, resp, dataResp } = registerUSerStore()
+  const { upImage, urlImage } = uploadIageDataForm()
 
   const navigate = useNavigate()
 
@@ -26,42 +28,29 @@ const RegisterFormStep2 = (props) => {
   }
 
   const onSubmit = async (data) => {
-    ;<div>Data{data}</div>
+    // ; <div>Data{data}</div>
     props.setFormValues({ ...props.formValues, ...data })
-    const formData = new FormData()
-    formData.append("file", data.avatar)
-    formData.append("upload_preset", "v3mcaqee")
-    formData.append("cloud_name", "dvm4qew1i")
 
-    await axios
-      .post(
-        "https://api.cloudinary.com/v1_1/dvm4qew1i/image/upload",
-        formData,
-        {
-          headers: { "X-Requested-With": "XMLHttpRequest" },
-        },
-      )
-      .then((response) => {
-        console.log(response)
-        data.avatar = response.data.secure_url
-        console.log("Image URL:", data.avatar)
-      })
-
-    console.log("DATA.AVATAR URL:", data.avatar)
-
+    upImage(data)
+    // console.log(`Imagen ${urlImage}`)
     addUSer({
       email: data.email,
       password: data.password,
-      avatar: data.avatar,
+      avatar: urlImage,
       role: data.role,
     })
 
-    navigate("/success")
+    if (resp === 'ok') {
+      navigate("/success")
+      console.log(`DATA DEVUELTA: ${dataResp}`)
+    } else {
+      console.log("Algo salio mal")
+    }
   }
 
   function handleImageChange(files) {
     register("avatar", { value: files })
-    console.log(files)
+    // console.log(files)
     // setImageFiles(files);
   }
 
