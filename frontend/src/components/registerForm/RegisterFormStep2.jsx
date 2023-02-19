@@ -1,15 +1,8 @@
-import { useForm } from "react-hook-form"
-import {
-  Routes,
-  Route,
-  BrowserRouter,
-  Navigate,
-  useNavigate,
-} from "react-router-dom"
-import InputForm from "../inputForm/InputForm"
-import InputImage from "../InputImage/InputImage"
 import axios from "axios"
+import { useForm } from "react-hook-form"
+import { useNavigate } from "react-router-dom"
 import { registerUSerStore } from "../../hooks/registerUserStore"
+import InputImage from "../InputImage/InputImage"
 import MainBtn from "../MainBtn/MainBtn"
 // import { useState, useEffect } from "react";
 
@@ -63,9 +56,7 @@ const RegisterFormStep2 = (props) => {
       role: data.role,
     })
 
-    navigate("/succes")
-    // console.log(data);
-    // console.log('DAta:{data.role}')
+    navigate("/success")
   }
 
   function handleImageChange(files) {
