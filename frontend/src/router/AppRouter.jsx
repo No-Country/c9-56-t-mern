@@ -7,11 +7,11 @@ import {
   useNavigate,
 } from "react-router-dom"
 import { useAuthStore } from "../utils/hooks/useAuthStore"
-import LoginForm from "../components/bothFlows/login/LoginForm"
-import RegisterForm from "../components/bothFlows/registerForm/RegisterForm"
-import SuccessfulRegistration from "../components/Register/SuccessfulRegistration"
-import HomePage from "../components/bothFlows/home/HomePage"
-import OwnerForm from "../views/ownerForm/OwnerForm"
+import LoginForm from "../pages/flows/shared/login/LoginForm"
+import RegisterForm from "../pages/flows/shared/registerForm/RegisterForm"
+import SuccessfulRegistration from "../pages/flows/shared/successfulRegistration/SuccessfulRegistration"
+import HomePage from "../pages/flows/shared/home/HomePage"
+import OwnerForm from "../pages/flows/user/owner/ownerForm/OwnerForm"
 
 const AppRouter = () => {
   const { status, checkAuthToken } = useAuthStore()
