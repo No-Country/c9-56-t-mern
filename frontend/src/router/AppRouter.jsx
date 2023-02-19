@@ -7,12 +7,11 @@ import {
   useNavigate,
 } from "react-router-dom"
 import { useAuthStore } from "../hooks/useAuthStore"
-import LoginForm from "../components/Login/LoginForm"
-import RegisterForm from "../components/registerForm/RegisterForm"
-import FormPropietario from "../components/profOwner/FormPropietario"
-import PerfilPropietario from "../components/profOwner/PerfilPropietario"
+import LoginForm from "../components/bothFlows/login/LoginForm"
+import RegisterForm from "../components/bothFlows/registerForm/RegisterForm"
 import SuccessfulRegistration from "../components/Register/SuccessfulRegistration"
-import HomePage from "../components/home/HomePage"
+import HomePage from "../components/bothFlows/home/HomePage"
+import OwnerForm from "../components/userFlow/owner/ownerForm/OwnerForm"
 
 const AppRouter = () => {
   const { status, checkAuthToken } = useAuthStore()
@@ -40,8 +39,8 @@ const AppRouter = () => {
           {/* RUTAS PARA NAVEGAR DENTRO DE LA APP */}
           <Route path="/" element={<HomePage />} />
           {/* <Route path='/homePage' element={ <HomePage/> } /> */}
-          <Route path="/formOwner" element={<PerfilPropietario />} />
-          <Route path="/completRegister" element={<FormPropietario />} />
+          <Route path="/formOwner" element={<OwnerProfile />} />
+          <Route path="/completRegister" element={<OwnerForm />} />
           <Route path="/*" element={<Navigate to="/" />} />
         </>
       )}

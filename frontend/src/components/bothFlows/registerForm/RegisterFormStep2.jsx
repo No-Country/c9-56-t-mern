@@ -6,12 +6,11 @@ import {
   Navigate,
   useNavigate,
 } from "react-router-dom"
-import InputForm from "../inputForm/InputForm"
-import InputImage from "../InputImage/InputImage"
+import InputForm from "../../recycleComponents/inputForm/InputForm"
+import InputImage from "../../recycleComponents/inputImage/InputImage"
 import axios from "axios"
 import { registerUSerStore } from "../../hooks/registerUserStore"
-import MainBtn from "../MainBtn/MainBtn"
-// import { useState, useEffect } from "react";
+import VioletBtnM from "../../recycleComponents/VioletBtnM/VioletBtnM"
 
 const RegisterFormStep2 = (props) => {
   const {
@@ -103,7 +102,7 @@ const RegisterFormStep2 = (props) => {
         </div>
         <br />
         <br />
-        <MainBtn text={"Registrar"} type={"submit"} />
+        <VioletBtnM text={"Registrar"} type={"submit"} />
       </form>
     </div>
   )

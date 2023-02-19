@@ -1,16 +1,13 @@
 import logo from "../../assets/react.svg"
 import { MdEdit } from "react-icons/md"
-
 import { Link, Form, Navigate } from "react-router-dom"
 import "../../styles/styles.css"
-import PerfilPropietario from "./PerfilPropietario"
+import VioletBtnM from "../../../recycleComponents/VioletBtnM/VioletBtnM"
 
-const FormPropietario = () => {
-  // const [inputValues, dispatch] = useNewForm()
+const OwnerForm = () => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
-    // onAddInfoProp(inputValues)
   }
 
   const handleChange = (evt) => {
@@ -69,19 +66,19 @@ const FormPropietario = () => {
               <label htmlFor="">Nombre completo</label>
               <textarea
                 onChange={handleChange}
-                name="addres"
+                name="address"
                 className="inputs"
-                placeholder="DIngrese su dirección aquí"
+                placeholder="Ingrese su dirección aquí"
               />
             </div>
           </div>
         </div>
-        <button className="bg-gray-800 p-2 rounded-lg text-gray-50">
-          GUARDAR DATOS
-        </button>
+        <VioletBtnM
+          text={'GUARDAR DATOS'}
+        />
       </form>
     </div>
   )
 }
 
-export default FormPropietario
+export default OwnerForm
