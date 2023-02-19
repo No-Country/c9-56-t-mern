@@ -3,7 +3,7 @@ import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom"
 import MainBtn from "../MainBtn/MainBtn"
 
 const RegisterFormStep1 = (props) => {
-  const {formValues, setFormValues, currentStep, updateStep} = props
+  const { formValues, setFormValues, currentStep, updateStep } = props
   const {
     register,
     formState: { errors },

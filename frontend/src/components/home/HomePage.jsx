@@ -24,8 +24,8 @@ const HomePage = () => {
         <SecondaryBtn text={"SER PROFESIONAL"} />
       </Link>
       {/* <button className="bg-black text-white py-3 px-6 rounded-lg sm:py-4 sm:px-8 sm:rounded-xl">
-                Boton ser profesional
-            </button> */}
+          Boton ser profesional
+        </button> */}
       <br />
 
       <div className="flex flex-col justify-center items-center w-80 mx-auto overflow-x-scroll">

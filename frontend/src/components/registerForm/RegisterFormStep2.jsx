@@ -5,12 +5,17 @@ import { useRegisterUSerStore } from "../../hooks/useRegisterUserStore"
 import InputImage from "../InputImage/InputImage"
 import MainBtn from "../MainBtn/MainBtn"
 import useCloudinaryImage from "../../hooks/useCloudinaryImage"
-import { useState, useEffect } from "react";
-
+import { useState, useEffect } from "react"
+import { useAuthStore } from "../../hooks/useAuthStore"
+import { useDispatch } from "react-redux"
+import {
+  clearErrorMessage,
+  onChecking,
+  onLogin,
+  onLogout,
+} from "../../store/auth/authSlice"
 const RegisterFormStep2 = (props) => {
-
   const { formValues, setFormValues } = props
-
 
   const {
     register,
@@ -21,9 +26,10 @@ const RegisterFormStep2 = (props) => {
     defaultValues: formValues,
   })
 
-
   const { addUser, resp, dataResp } = useRegisterUSerStore()
   const { urlImage, uploadImage } = useCloudinaryImage()
+  const { startLogin } = useAuthStore()
+  const dispatch = useDispatch()
 
   const navigate = useNavigate()
 
@@ -33,26 +39,36 @@ const RegisterFormStep2 = (props) => {
   }
 
   const onSubmit = async (data) => {
-
     setFormValues({ ...formValues, ...data })
 
     const imageUrlCloud = await uploadImage(data)
 
-    addUser({
+    await addUser({
       email: data.email,
       password: data.password,
       avatar: imageUrlCloud,
       role: data.role,
     })
+
+    dispatch(
+      onLogin({
+        email: data.email,
+        uid: data.id,
+        token: data.token,
+      }),
+    )
+
+    // startLogin({ email: data.email, password: data.password})
   }
   useEffect(() => {
-    if (resp === 'ok') {
-      navigate('/success')
+    if (resp === "ok") {
+      console.log("Respuesta obtenida")
+      navigate("/success")
     }
   }, [resp])
 
   function handleImageChange(files) {
-    register("avatar", { value: files })
+    register("image", { value: files })
   }
 
   const imageUrl = "https://cdn-icons-png.flaticon.com/512/3177/3177440.png"
@@ -84,7 +100,7 @@ const RegisterFormStep2 = (props) => {
         </div>
         <br />
         <br />
-        <MainBtn text={"Registrar"} type={"submit"} />
+        <MainBtn text="Registrar" type="submit" />
       </form>
     </div>
   )

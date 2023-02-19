@@ -26,7 +26,6 @@ export const useAuthStore = () => {
           token: data.token,
         }),
       )
-
       // console.log(data)
     } catch (error) {
       dispath(onLogout("Credenciales incorrectas"))
@@ -41,7 +40,7 @@ export const useAuthStore = () => {
     if (!token) return dispath(onLogout())
 
     try {
-      const {} = pawfulApi.get("/auth/renew")
+      const { data } = pawfulApi.post("/auth/login")
       localStorage.setItem("token", token)
       localStorage.setItem("token-init-date", new Date().getTime())
       dispath(onLogin({ name: data.name, uid: data.id }))
@@ -49,6 +48,11 @@ export const useAuthStore = () => {
       localStorage.clear()
       dispath(onLogout())
     }
+  }
+
+  const startLogout = () => {
+    localStorage.clear()
+    dispath(onLogout())
   }
 
   return {
@@ -60,5 +64,6 @@ export const useAuthStore = () => {
     //Metodos
     checkAuthToken,
     startLogin,
+    startLogout,
   }
 }
