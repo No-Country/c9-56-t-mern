@@ -2,17 +2,17 @@ import axios from "axios"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 import PurpleButtom from "../../../../components/PurpleButtom"
-import { registerUSerStore } from "../../../../utils/hooks/registerUserStore"
+import { registerUSerStore } from "../../../../hooks/registerUserStore"
 import InputImage from "../../../../components/InputImage"
 
-const RegisterFormStep2 = (props) => {
+const RegisterFormStep2 = (formValues, setFormValues) => {
   const {
     register,
     formState: { errors },
     handleSubmit,
     setValue,
   } = useForm({
-    defaultValues: props.formValues,
+    defaultValues: formValues,
   })
 
   const { addUSer } = registerUSerStore()
@@ -26,7 +26,7 @@ const RegisterFormStep2 = (props) => {
 
   const onSubmit = async (data) => {
     ;<div>Data{data}</div>
-    props.setFormValues({ ...props.formValues, ...data })
+    setFormValues({ ...formValues, ...data })
     const formData = new FormData()
     formData.append("file", data.avatar)
     formData.append("upload_preset", "v3mcaqee")

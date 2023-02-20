@@ -6,6 +6,5 @@ export const store = configureStore({
   reducer: {
     auth: authSlice.reducer,
     register: registerSlice.reducer,
-    
   },
 })

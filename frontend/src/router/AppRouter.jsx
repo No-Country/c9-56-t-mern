@@ -6,7 +6,7 @@ import {
   Navigate,
   useNavigate,
 } from "react-router-dom"
-import { useAuthStore } from "../utils/hooks/useAuthStore"
+import { useAuthStore } from "../hooks/useAuthStore"
 import LoginForm from "../pages/flows/shared/LoginForm"
 import RegisterForm from "../pages/flows/shared/RegisterForm"
 import SuccessfulRegistration from "../pages/flows/shared/SuccessfulRegistration"
@@ -35,7 +35,6 @@ const AppRouter = () => {
         </>
       ) : (
         <>
-          
           <Route path="/" element={<HomePage />} />
           <Route path="/formOwner" element={<OwnerProfile />} />
           <Route path="/completRegister" element={<OwnerForm />} />

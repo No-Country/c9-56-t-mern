@@ -27,7 +27,6 @@ const PetForm = () => {
     console.log("Pet Gender:", petGender)
     console.log("Pet Size:", petSize)
     console.log("Pet Age:", petAge)
-
   }
 
   return (
@@ -149,8 +148,7 @@ const PetForm = () => {
           onClick={handleSubmit}
           disabled={!petName || !petRace || !petGender || !petSize || !petAge}
         >
-          <PurpleButtom 
-          text='Guardar datos' />
+          <PurpleButtom text="Guardar datos" />
         </button>
       </form>
     </div>

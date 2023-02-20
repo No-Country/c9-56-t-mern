@@ -2,19 +2,19 @@ import { useForm } from "react-hook-form"
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import PurpleButtom from "../../../../components/PurpleButtom"
 
-const RegisterFormStep1 = (props) => {
+const RegisterFormStep1 = (formValues,setFormValues, currentStep, updateStep) => {
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm({
-    defaultValues: props.formValues,
+    defaultValues: formValues,
   })
 
   const onSubmit = (data) => {
     ;<div>Data{data}</div>
-    props.setFormValues({ ...props.formValues, ...data })
-    props.updateStep(props.currentStep + 1)
+    setFormValues({ ...formValues, ...data })
+    updateStep(currentStep + 1)
     console.log(data)
   }
   return (
@@ -24,7 +24,7 @@ const RegisterFormStep1 = (props) => {
           <div
             style={{
               backgroundColor: "gray",
-              width: props.currentStep === 0 ? "66.6%" : "100%",
+              width: currentStep === 0 ? "66.6%" : "100%",
             }}
           ></div>
           <label className="block font-medium mb-2">Email</label>

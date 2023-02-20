@@ -37,8 +37,6 @@ const CategoriesHome = () => {
       <Card
         service={categories.category}
         paragraph={categories.categoryDescription}
-      
-
       />
     ),
   )

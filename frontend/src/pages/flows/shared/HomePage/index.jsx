@@ -22,7 +22,7 @@ const HomePage = () => {
       <Link to="/auth/login">
         <BareButtom text={"SER PROFESIONAL"} />
       </Link>
-    
+
       <br />
 
       <div className="flex flex-col justify-center items-center w-80 mx-auto">

@@ -4,7 +4,7 @@ import RegisterFormStep2 from "../RegisterFormStep2"
 import SimpleText from "../../../../components/SimpleText"
 import StepNavigation from "../../../../components/stepper/StepNavigation"
 
-const RegisterForm = (props) => {
+const RegisterForm = () => {
   const labelArray = ["Step 1", "Step 2"]
   const [currentStep, setCurrentStep] = useState(1)
 
@@ -67,7 +67,7 @@ const RegisterForm = (props) => {
       {getInfoPerPage()}
 
       <p>
-        Ya tienes una cuenta? <a href="/auth/login">Inciar Sesion</a>{" "}
+        Ya tienes una cuenta? <a href="/auth/login">Iniciar Sesion</a>{" "}
       </p>
       <br />
       <br />

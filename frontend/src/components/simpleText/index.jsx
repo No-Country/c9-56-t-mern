@@ -10,5 +10,3 @@ const SimpleText = ({ title, paragraph }) => {
 }
 
 export default SimpleText
-
- 

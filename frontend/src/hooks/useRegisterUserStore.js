@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import pawfulApi from "../api/pawfulApi"
+import pawfulApi from "../utils/api/pawfulApi"
 import { useState } from "react"
 import { onChecking, onLogin } from "../store/auth/authSlice"
 import { useAuthStore } from "./useAuthStore"

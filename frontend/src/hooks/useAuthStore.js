@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux"
-import pawfulApi from "../api/pawfulApi"
+import pawfulApi from "../utils/api/pawfulApi"
 import {
   clearErrorMessage,
   onChecking,
   onLogin,
   onLogout,
-} from "../../store/auth/authSlice"
+} from "../store/auth/authSlice"
 
 export const useAuthStore = () => {
   const { status, user, errorMessage } = useSelector((state) => state.auth)

@@ -2,13 +2,13 @@ import React, { useState } from "react"
 import { IoMdCreate } from "react-icons/io"
 import { AiOutlineUser } from "react-icons/ai"
 
-const InputImage = (props) => {
+const InputImage = (onChange, urlImage) => {
   const [image, setImage] = useState(null)
 
   const handleImageChange = (e) => {
     const selectedImage = e.target.files[0]
     setImage(URL.createObjectURL(selectedImage))
-    props.onChange(e.target.files[0])
+    onChange(e.target.files[0])
     console.log(image)
   }
   return (
@@ -20,9 +20,9 @@ const InputImage = (props) => {
             alt="profile"
             className="object-cover w-full h-full rounded-full"
           />
-        ) : props.urlImage ? (
+        ) : urlImage ? (
           <img
-            src={props.urlImage}
+            src={urlImage}
             alt="profile"
             className="object-cover w-full h-full rounded-full"
           />

@@ -5,7 +5,6 @@ import PurpleButtom from "../../../../../components/PurpleButtom"
 import logo from "../../../../../assets/svg/react.svg"
 
 const OwnerForm = () => {
-
   const handleSubmit = (evt) => {
     evt.preventDefault()
   }
@@ -72,9 +71,7 @@ const OwnerForm = () => {
             </div>
           </div>
         </div>
-        <PurpleButtom
-          text={'GUARDAR DATOS'}
-        />
+        <PurpleButtom text={"GUARDAR DATOS"} />
       </form>
     </div>
   )

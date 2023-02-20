@@ -1,4 +1,4 @@
-import pawfulApi from "../api/pawfulApi"
+import pawfulApi from "../utils/api/pawfulApi"
 
 export const registerUSerStore = () => {
   const addUSer = async ({ email, password, avatar, role }) => {

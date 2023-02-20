@@ -21,9 +21,6 @@ const Panel = ({ title, placeholder }) => {
         </div>
       ) : (
         <div className="py-4 px-4 w-full max-w-sm text-center">
-          {/* {panel.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))} */}
           <Card />
           <Card />
           <Card />
