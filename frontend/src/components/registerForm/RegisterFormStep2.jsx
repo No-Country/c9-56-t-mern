@@ -1,17 +1,14 @@
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
+import { useAuthStore } from "../../hooks/useAuthStore"
+import useCloudinaryImage from "../../hooks/useCloudinaryImage"
 import { useRegisterUSerStore } from "../../hooks/useRegisterUserStore"
 import InputImage from "../InputImage/InputImage"
 import MainBtn from "../MainBtn/MainBtn"
-import useCloudinaryImage from "../../hooks/useCloudinaryImage"
-import { useState, useEffect } from "react"
-import { useAuthStore } from "../../hooks/useAuthStore"
-import { useDispatch } from "react-redux"
-import { setRegisterSuccess } from "../../store/register/registerSlice"
 
 const RegisterFormStep2 = (props) => {
   const { formValues, setFormValues } = props
-  const [isRegisterSuccessFull, setRegisterSuccessFull] = useState(false)
+
   const {
     register,
     formState: { errors },
@@ -24,10 +21,8 @@ const RegisterFormStep2 = (props) => {
   const { addUser, resp, dataResp } = useRegisterUSerStore()
   const { urlImage, uploadImage } = useCloudinaryImage()
   const { startLogin } = useAuthStore()
-  const dispatch = useDispatch()
 
   const navigate = useNavigate()
-
 
   const handleClickDiv = (valor) => {
     register("role", { value: valor })
@@ -35,29 +30,24 @@ const RegisterFormStep2 = (props) => {
   }
 
   const onSubmit = async (data) => {
+    const { email, password, role } = data
+
     setFormValues({ ...formValues, ...data })
 
     const imageUrlCloud = await uploadImage(data)
 
     try {
       await addUser({
-        email: data.email,
-        password: data.password,
+        email,
+        password,
         avatar: imageUrlCloud,
-        role: data.role,
+        role,
       })
-      dispatch(setRegisterSuccess())
-      startLogin({ email: data.email, password: data.password })
-      setRegisterSuccessFull(true)
+
+      await startLogin({ email, password })
+
       navigate("/success")
-    } catch (error) {
-
-    }
-
-    if (isRegisterSuccessFull) {
-      navigate("/success")
-    }
-
+    } catch (error) {}
   }
   // useEffect(() => {
   //   if (resp === "ok") {
