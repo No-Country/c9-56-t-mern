@@ -15,7 +15,7 @@ class DeleteCategoryController {
     this.categoryDeleteOne = new CategoryDeleteOne(this.categoryRepository)
   }
 
-  async run(req: Request, res: Response): Promise<void> {
+  async run(req: Request, res: Response): Promise<void | null> {
     const fields = req.params as { [key: string]: unknown }
     const { id } = fields
 
@@ -23,8 +23,12 @@ class DeleteCategoryController {
       throw new MissingFieldsError()
     }
 
-    await this.categoryDeleteOne.run(id)
-    res.status(HttpCode.Ok).send({ msg: "category removed successfully" })
+    const data = await this.categoryDeleteOne.run(id)
+    if (data === undefined) {
+      res.status(HttpCode.Ok).send({ msg: "category removed successfully" })
+    } else {
+      res.status(HttpCode.NotFound).send({ msg: "category not found" })
+    }
   }
 }
 
