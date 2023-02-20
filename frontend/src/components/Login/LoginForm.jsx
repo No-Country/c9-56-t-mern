@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useAuthStore } from "../../hooks/useAuthStore"
 import "../../styles/styles.css"
+import InputForm from "../inputForm/InputForm"
 
 const LoginForm = () => {
   const { startLogin, errorMessage } = useAuthStore()
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const navigate = useNavigate()
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
     console.log(`Email: ${email}, Password: ${password}`)
 
-    startLogin({ email: email, password: password })
+    await startLogin({ email, password })
+    navigate("/profile")
   }
 
   useEffect(() => {
@@ -29,6 +32,7 @@ const LoginForm = () => {
       <p className="text-gray-600 mb-8">Bienvenido</p>
       <br />
       <form className="w-full max-w-sm" onSubmit={handleSubmit}>
+        <InputForm />
         <div className="mb-4">
           <label className="block font-medium mb-2" htmlFor="email">
             Email/Username

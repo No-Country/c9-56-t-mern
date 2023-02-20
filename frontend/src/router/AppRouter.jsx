@@ -3,10 +3,10 @@ import { Navigate, Route, Routes } from "react-router-dom"
 import HomePage from "../components/home/HomePage"
 import LoginForm from "../components/Login/LoginForm"
 import FormPropietario from "../components/profOwner/FormPropietario"
-import PerfilPropietario from "../components/profOwner/PerfilPropietario"
 import SuccessfulRegistration from "../components/Register/SuccessfulRegistration"
 import RegisterForm from "../components/registerForm/RegisterForm"
 import { useAuthStore } from "../hooks/useAuthStore"
+import OwnerProfile from '../components/OwnerProfile/index'
 
 const AppRouter = () => {
   const { status, checkAuthToken } = useAuthStore()
@@ -31,7 +31,7 @@ const AppRouter = () => {
       ) : (
         <>
           <Route path="/success" element={<SuccessfulRegistration />} />
-          <Route path="/perfil" element={<PerfilPropietario />} />
+          <Route path="/profile" element={<OwnerProfile />} />
           <Route path="/completeRegister" element={<FormPropietario />} />
         </>
       )}

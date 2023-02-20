@@ -10,6 +10,7 @@ import useCloudinaryImage from "../../hooks/useCloudinaryImage"
 import { useRegisterProfile } from "../../hooks/useRegisterProfile"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
+
 const FormPropietario = () => {
   const [image, setImage] = useState(null)
   const { urlImage, uploadImage } = useCloudinaryImage()
@@ -42,7 +43,7 @@ const FormPropietario = () => {
       )
       if (respBack === "ok") {
         console.log("SI PASA")
-        navigate("/perfil")
+        navigate("/profile")
       }
     } catch (error) {}
   }
