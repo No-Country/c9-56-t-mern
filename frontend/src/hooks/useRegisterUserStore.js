@@ -1,7 +1,6 @@
-import { useDispatch, useSelector } from "react-redux"
-import pawfulApi from "../api/pawfulApi"
 import { useState } from "react"
-import { onChecking, onLogin } from "../store/auth/authSlice"
+import { useDispatch } from "react-redux"
+import pawfulApi from "../api/pawfulApi"
 import { useAuthStore } from "./useAuthStore"
 
 export const useRegisterUSerStore = () => {
@@ -11,7 +10,7 @@ export const useRegisterUSerStore = () => {
   const { startLogin } = useAuthStore()
   const dispatch = useDispatch()
 
-  const addUser = async ({ email, password, avatar, role }) => {
+  const addUser = async ({ email, password, role }) => {
     // dispatch(onChecking())
 
     try {
@@ -19,7 +18,6 @@ export const useRegisterUSerStore = () => {
         .post("/users", {
           email,
           password,
-          avatar,
           role,
         })
         .then((response) => {
