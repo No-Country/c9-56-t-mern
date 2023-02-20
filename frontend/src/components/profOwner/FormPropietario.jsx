@@ -4,7 +4,6 @@ import { MdEdit } from "react-icons/md"
 // import useNewForm from '../../hooks/propietarioForm';
 import { Link, Form, Navigate } from "react-router-dom"
 import "../../styles/styles.css"
-import PerfilPropietario from "./PerfilPropietario"
 import SimpleText from "../SimpleText/SimpleText"
 import InputImage from "../InputImage/InputImage"
 import React, { useState } from "react"
