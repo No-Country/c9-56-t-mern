@@ -31,7 +31,7 @@ const AppRouter = () => {
       ) : (
         <>
           <Route path="/success" element={<SuccessfulRegistration />} />
-          <Route path="/formOwner" element={<PerfilPropietario />} />
+          <Route path="/perfil" element={<PerfilPropietario />} />
           <Route path="/completeRegister" element={<FormPropietario />} />
         </>
       )}

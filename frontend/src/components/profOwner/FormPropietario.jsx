@@ -1,41 +1,62 @@
 import logo from "../../assets/react.svg"
-import { MdEdit } from "react-icons/md"
-// import { Propietario } from '../../types/typesPropie';
-// import useNewForm from '../../hooks/propietarioForm';
 import { Link, Form, Navigate } from "react-router-dom"
 import "../../styles/styles.css"
-import PerfilPropietario from "./PerfilPropietario"
 import SimpleText from "../SimpleText/SimpleText"
 import InputImage from "../InputImage/InputImage"
-import React, { useState } from "react"
-import InputForm from "../inputForm/InputForm"
+import React, { useState, useEffect } from "react"
 import MainBtn from "../MainBtn/MainBtn"
-
+import { useForm } from "react-hook-form"
+import useCloudinaryImage from "../../hooks/useCloudinaryImage"
+import { useRegisterProfile } from "../../hooks/useRegisterProfile"
+import { useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom"
 const FormPropietario = () => {
   const [image, setImage] = useState(null)
+  const { urlImage, uploadImage } = useCloudinaryImage()
+  const { role, email, uid, token } = useSelector((state) => state.auth.user)
+  const [rol, setRol] = useState("")
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault()
+  const navigate = useNavigate()
+  const { respBackend, registerProfile } = useRegisterProfile()
+
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({})
+
+  const onSubmit = async (data) => {
+    const { name, lastname, phone, address } = data
+    const imageUrl = await uploadImage(data)
+    try {
+      const respBack = await registerProfile(
+        {
+          name,
+          lastname,
+          image: imageUrl,
+          phone,
+          address,
+          rol,
+        },
+        token,
+      )
+      if (respBack === "ok") {
+        console.log("SI PASA")
+        navigate("/perfil")
+      }
+    } catch (error) {}
   }
 
-  const handleChangeImage = (file) => {
-    setImage(file)
+  useEffect(() => {
+    if (role.includes("OWNER")) {
+      setRol("OWNER")
+    }
+  }, [role])
+  function handleImageChange(files) {
+    console.log(files)
+    register("image", { value: files })
   }
-
-  const handleChange = (evt) => {
-    const { name, value } = evt.target
-
-    dispatch({
-      type: "change_value",
-      payload: {
-        inputName: name,
-        inputValue: value,
-      },
-    })
-  }
-  const log = "https://cdn-icons-png.flaticon.com/512/3177/3177440.png"
   return (
-    // <div className='flex flex-col h-screen p-4'>
     <div>
       <div className="div-encabezados">
         <SimpleText
@@ -45,39 +66,48 @@ const FormPropietario = () => {
           }
         />
       </div>
-      <form onSubmit={handleSubmit} className="form">
-        <div className="flex flex-col justify-center">
-          <div className="flex flex-row justify-center">
-            <InputImage urlImage={logo} onChange={handleChangeImage} />
-          </div>
+      <div className="flex flex-col items-center p-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-sm">
+          <InputImage onChange={handleImageChange} />
           <div className="flex flex-col justify-center gap-6">
-            <div>
+            <div className="mb-4">
               <label className="block font-medium mb-2">Nombre Completo</label>
               <input
                 className="border border-gray-400 p-2 w-full"
                 placeholder="Ingrese nombre aquí"
+                {...register("name", {})}
               />
             </div>
-            <div>
+            <div className="mb-4">
+              <label className="block font-medium mb-2">Nombre Completo</label>
+              <input
+                className="border border-gray-400 p-2 w-full"
+                placeholder="Ingrese apellidos aquí"
+                {...register("lastname", {})}
+              />
+            </div>
+            <div className="mb-4">
               <label className="block font-medium mb-2">
                 Número de télefono
               </label>
               <input
                 className="border border-gray-400 p-2 w-full"
                 placeholder="Ingrese número aquí"
+                {...register("phone", {})}
               />
             </div>
-            <div>
+            <div className="mb-4">
               <label className="block font-medium mb-2">Dirección</label>
               <input
                 className="border border-gray-400 p-2 w-full"
                 placeholder="Ingrese su dirección aquí"
+                {...register("address", {})}
               />
             </div>
           </div>
-        </div>
-        <MainBtn text=" GUARDAR DATOS" type="submit" />
-      </form>
+          <MainBtn text=" GUARDAR DATOS" type="submit" />
+        </form>
+      </div>
     </div>
   )
 }
