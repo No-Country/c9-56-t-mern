@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import pawfulApi from "../../api/pawfulApi"
-import LoadingSpinner from "../../components/LoadingSpinner"
-import Panel from "../../components/Panel/Panel"
-import ProfileInfo from "../../components/ProfileInfo"
-import useCloudinaryImage from "../../hooks/useCloudinaryImage"
+import pawfulApi from "../../../../api/pawfulApi"
+import LoadingSpinner from "../../../../components/LoadingSpinner"
+import Panel from "../../../../components/Panel/Panel"
+import ProfileInfo from "../../../../components/ProfileInfo"
+import useCloudinaryImage from "../../../../hooks/useCloudinaryImage"
 
 const OwnerProfile = () => {
   const [profile, setProfile] = useState()

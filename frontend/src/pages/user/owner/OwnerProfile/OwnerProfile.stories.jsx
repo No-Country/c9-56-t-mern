@@ -1,7 +1,7 @@
 import MockAdapter from "axios-mock-adapter"
 import { MemoryRouter } from "react-router-dom"
 import OwnerProfile from "."
-import pawfulApi from "../../api/pawfulApi"
+import pawfulApi from "../../../../api/pawfulApi"
 
 const mock = new MockAdapter(pawfulApi)
 mock.onGet("/perfil").reply(200, {

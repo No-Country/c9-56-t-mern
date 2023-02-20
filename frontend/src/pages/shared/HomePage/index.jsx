@@ -1,21 +1,21 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import MainBtn from "../MainBtn/MainBtn"
-import SecondaryBtn from "../SecondaryBtn/SecondaryBtn"
-import CategoriesHome from "./CategoriesHome"
+import MainBtn from "../../../components/MainBtn/MainBtn"
+import SecondaryBtn from "../../../components/SecondaryBtn/SecondaryBtn"
+import CategoriesHome from "../CategoriesHome"
 
 const HomePage = () => {
   return (
     <div className="flex flex-col items-center p-4">
       <div>
-        <div id="homeTitle" className="flex m-6 overflow-hidden w-56 h-40">
+        <div id="homeTitle" className="flex m-6 w-56 h-40">
           <h2 className="font-poppins font-semibold text-2xl leading-8 text-start">
             {" "}
             Conectá con expertos para el cuidado de tus mascotas
           </h2>
         </div>
       </div>
-      <div id="homeMainImage" className="flex m-6 overflow-hidden w-56 h-40">
+      <div id="homeMainImage" className="flex m-6  w-56 h-40">
         <img className="w-full h-full object-cover rounded-full bg-gray-500" />
       </div>
       <br />
@@ -23,12 +23,9 @@ const HomePage = () => {
       <Link to="/auth/login">
         <SecondaryBtn text={"SER PROFESIONAL"} />
       </Link>
-      {/* <button className="bg-black text-white py-3 px-6 rounded-lg sm:py-4 sm:px-8 sm:rounded-xl">
-          Boton ser profesional
-        </button> */}
       <br />
 
-      <div className="flex flex-col justify-center items-center w-80 mx-auto overflow-x-scroll">
+      <div className="flex flex-col justify-center items-center w-80 mx-auto ">
         <CategoriesHome />
       </div>
     </div>
