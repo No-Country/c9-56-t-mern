@@ -22,12 +22,11 @@ class CreateUserController {
 
   async run(req: Request, res: Response): Promise<void> {
     const fields = req.body as { [key: string]: unknown }
-    const { email, password, avatar, role } = fields
+    const { email, password, role } = fields
 
     if (
       typeof email !== "string" ||
       typeof password !== "string" ||
-      typeof avatar !== "string" ||
       !isValidRole(role)
     ) {
       throw new MissingFieldsError()
@@ -37,9 +36,7 @@ class CreateUserController {
 
     const objectId = new Types.ObjectId()
 
-    const user = new User(objectId.toString(), email, hashPassword, avatar, [
-      role,
-    ])
+    const user = new User(objectId.toString(), email, hashPassword, [role])
 
     await this.userCreator.run(user)
 
