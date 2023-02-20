@@ -1,6 +1,5 @@
-import React from "react"
-import "../../../../styles/styles.css"
-import logo from "../../../../assets/react.svg"
+import "../../../../../styles/styles.css"
+import logo from "../../../../../assets/svg/react.svg"
 import { MdEdit, MdRoom, MdPhone, MdAddCircle } from "react-icons/md"
 
 const OwnerProfile = () => {
