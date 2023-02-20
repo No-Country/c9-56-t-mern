@@ -40,7 +40,7 @@ export const useAuthStore = () => {
     if (!token) return dispath(onLogout())
 
     try {
-      const { data } = pawfulApi.post("/auth/login")
+      const { data } = await pawfulApi.post("/auth/login")
       localStorage.setItem("token", token)
       localStorage.setItem("token-init-date", new Date().getTime())
       dispath(onLogin({ name: data.name, uid: data.id }))

@@ -1,4 +1,3 @@
-import axios from "axios"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 import { useRegisterUSerStore } from "../../hooks/useRegisterUserStore"
@@ -8,15 +7,11 @@ import useCloudinaryImage from "../../hooks/useCloudinaryImage"
 import { useState, useEffect } from "react"
 import { useAuthStore } from "../../hooks/useAuthStore"
 import { useDispatch } from "react-redux"
-import {
-  clearErrorMessage,
-  onChecking,
-  onLogin,
-  onLogout,
-} from "../../store/auth/authSlice"
+import { setRegisterSuccess } from "../../store/register/registerSlice"
+
 const RegisterFormStep2 = (props) => {
   const { formValues, setFormValues } = props
-
+  const [isRegisterSuccessFull, setRegisterSuccessFull] = useState(false)
   const {
     register,
     formState: { errors },
@@ -33,6 +28,7 @@ const RegisterFormStep2 = (props) => {
 
   const navigate = useNavigate()
 
+
   const handleClickDiv = (valor) => {
     register("role", { value: valor })
     console.log(valor)
@@ -43,29 +39,32 @@ const RegisterFormStep2 = (props) => {
 
     const imageUrlCloud = await uploadImage(data)
 
-    await addUser({
-      email: data.email,
-      password: data.password,
-      avatar: imageUrlCloud,
-      role: data.role,
-    })
-
-    dispatch(
-      onLogin({
+    try {
+      await addUser({
         email: data.email,
-        uid: data.id,
-        token: data.token,
-      }),
-    )
+        password: data.password,
+        avatar: imageUrlCloud,
+        role: data.role,
+      })
+      dispatch(setRegisterSuccess())
+      startLogin({ email: data.email, password: data.password })
+      setRegisterSuccessFull(true)
+      navigate("/success")
+    } catch (error) {
 
-    // startLogin({ email: data.email, password: data.password})
-  }
-  useEffect(() => {
-    if (resp === "ok") {
-      console.log("Respuesta obtenida")
+    }
+
+    if (isRegisterSuccessFull) {
       navigate("/success")
     }
-  }, [resp])
+
+  }
+  // useEffect(() => {
+  //   if (resp === "ok") {
+  //     console.log("Respuesta obtenida")
+  //     // navigate("/success")
+  //   }
+  // }, [resp])
 
   function handleImageChange(files) {
     register("image", { value: files })
