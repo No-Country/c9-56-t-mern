@@ -26,9 +26,11 @@ const InputImage = (props) => {
             alt="profile"
             className="object-cover w-full h-full rounded-full"
           />
-        ) : <span className="text-white text-5xl">
-          <AiOutlineUser />
-        </span>}
+        ) : (
+          <span className="text-white text-5xl">
+            <AiOutlineUser />
+          </span>
+        )}
         <label
           htmlFor="image"
           className="absolute bottom-0 right-0 mb-1 mr-1 bg-black rounded-full p-2 z-10"

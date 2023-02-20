@@ -27,10 +27,10 @@ const AppRouter = () => {
         <>
           <Route path="/auth/login" element={<LoginForm />} />
           <Route path="/register" element={<RegisterForm />} />
-          <Route path="/success" element={<SuccessfulRegistration />} />
         </>
       ) : (
         <>
+          <Route path="/success" element={<SuccessfulRegistration />} />
           <Route path="/formOwner" element={<PerfilPropietario />} />
           <Route path="/completeRegister" element={<FormPropietario />} />
         </>
