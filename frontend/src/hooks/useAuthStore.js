@@ -23,6 +23,7 @@ export const useAuthStore = () => {
         onLogin({
           email: data.user.email,
           uid: data.user.id,
+          role: data.user.roles,
           token: data.token,
         }),
       )

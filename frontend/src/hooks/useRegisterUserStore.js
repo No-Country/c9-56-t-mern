@@ -23,7 +23,6 @@ export const useRegisterUSerStore = () => {
         .then((response) => {
           if (response.status === 201) {
             setResp("ok")
-            // role === "OWNER" ? setTipeProfile("OWNER") : setTipeProfile("PROFESSIONAL");
             console.log(`RESP: ${resp}`)
           }
         })
