@@ -1,16 +1,10 @@
 import axios from "axios"
 import { useForm } from "react-hook-form"
-import {
-  Routes,
-  Route,
-  BrowserRouter,
-  Navigate,
-  useNavigate,
-} from "react-router-dom"
-import InputForm from "../../../../components/inputForm/InputForm"
-import InputImage from "../../../../components/inputImage/InputImage"
-import { registerUSerStore } from "../../../../utils/hooks/registerUserStore"
-import VioletBtnM from "../../../../components/violetBtnM/VioletBtnM"
+import { useNavigate } from "react-router-dom"
+import { registerUSerStore } from "../../hooks/registerUserStore"
+import InputImage from "../InputImage/InputImage"
+import MainBtn from "../MainBtn/MainBtn"
+// import { useState, useEffect } from "react";
 
 const RegisterFormStep2 = (props) => {
   const {
@@ -62,9 +56,7 @@ const RegisterFormStep2 = (props) => {
       role: data.role,
     })
 
-    navigate("/succes")
-    // console.log(data);
-    // console.log('DAta:{data.role}')
+    navigate("/success")
   }
 
   function handleImageChange(files) {
@@ -102,7 +94,7 @@ const RegisterFormStep2 = (props) => {
         </div>
         <br />
         <br />
-        <VioletBtnM text={"Registrar"} type={"submit"} />
+        <MainBtn text={"Registrar"} type={"submit"} />
       </form>
     </div>
   )

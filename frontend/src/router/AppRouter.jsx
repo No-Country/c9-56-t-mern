@@ -32,13 +32,11 @@ const AppRouter = () => {
         <>
           <Route path="/auth/login" element={<LoginForm />} />
           <Route path="/register" element={<RegisterForm />} />
-          <Route path="/success" element={<SuccessfulRegistration />} />
         </>
       ) : (
         <>
-          {/* RUTAS PARA NAVEGAR DENTRO DE LA APP */}
+          
           <Route path="/" element={<HomePage />} />
-          {/* <Route path='/homePage' element={ <HomePage/> } /> */}
           <Route path="/formOwner" element={<OwnerProfile />} />
           <Route path="/completRegister" element={<OwnerForm />} />
           <Route path="/*" element={<Navigate to="/" />} />
