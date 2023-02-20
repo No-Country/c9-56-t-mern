@@ -15,12 +15,11 @@ class UpdateUserController {
   private static fieldsAreValid(fields: {
     [key: string]: unknown
   }): fields is { [key: string]: string | undefined } {
-    const { email, password, avatar, roleId } = fields
+    const { email, password, roleId } = fields
 
     return (
       (!email || typeof email === "string") &&
       (!password || typeof password === "string") &&
-      (!avatar || typeof avatar === "string") &&
       (!roleId || typeof roleId === "string")
     )
   }
@@ -62,9 +61,9 @@ class UpdateUserController {
       newUser.passwordHash = passwordHash
     }
 
-    const { email, avatar, roles } = await this.userUpdater.run(newUser)
+    const { email, roles } = await this.userUpdater.run(newUser)
 
-    res.status(HttpCode.Ok).send({ id, email, avatar, roles })
+    res.status(HttpCode.Ok).send({ id, email, roles })
   }
 }
 

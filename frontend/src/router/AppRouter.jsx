@@ -6,7 +6,7 @@ import FormPropietario from "../components/profOwner/FormPropietario"
 import SuccessfulRegistration from "../components/Register/SuccessfulRegistration"
 import RegisterForm from "../components/registerForm/RegisterForm"
 import { useAuthStore } from "../hooks/useAuthStore"
-import OwnerProfile from '../components/OwnerProfile/index'
+import OwnerProfile from "../pages/OwnerProfile"
 
 const AppRouter = () => {
   const { status, checkAuthToken } = useAuthStore()

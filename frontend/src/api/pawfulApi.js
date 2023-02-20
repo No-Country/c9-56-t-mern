@@ -7,16 +7,12 @@ const pawfulApi = axios.create({
 
 pawfulApi.interceptors.request.use((config) => {
   const token = localStorage.getItem("token")
-  if (token) {
-    config.headers = {
-      ...config.headers,
-      Authorization: `Bearer ${token}`,
-    }
+
+  config.headers = {
+    ...config.headers,
+    Authorization: `Bearer ${token}`,
   }
-  // config.headers = {
-  //   ...config.headers,
-  //   Authorization: `Bearer ${token}`,
-  // }
+
   return config
 })
 

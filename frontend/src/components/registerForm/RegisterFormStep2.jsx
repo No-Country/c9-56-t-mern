@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 import { useAuthStore } from "../../hooks/useAuthStore"
-import useCloudinaryImage from "../../hooks/useCloudinaryImage"
 import { useRegisterUSerStore } from "../../hooks/useRegisterUserStore"
 import InputImage from "../InputImage/InputImage"
 import MainBtn from "../MainBtn/MainBtn"
@@ -19,7 +18,6 @@ const RegisterFormStep2 = (props) => {
   })
 
   const { addUser, resp, dataResp } = useRegisterUSerStore()
-  const { urlImage, uploadImage } = useCloudinaryImage()
   const { startLogin } = useAuthStore()
 
   const navigate = useNavigate()
@@ -34,13 +32,10 @@ const RegisterFormStep2 = (props) => {
 
     setFormValues({ ...formValues, ...data })
 
-    const imageUrlCloud = await uploadImage(data)
-
     try {
       await addUser({
         email,
         password,
-        avatar: imageUrlCloud,
         role,
       })
 
