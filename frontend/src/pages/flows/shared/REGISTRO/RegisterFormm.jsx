@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SimpleText from "../../../../components/simpleText/SimpleText";
-import RegisterFormStep1 from "./RegisterFormStepOne";
+import RegisterFormStepOne from "./RegisterFormStepOne";
 import RegisterFormStepTwo from "./RegisterFormStepTwo";
 
 function RegisterFormm() {
@@ -30,7 +30,7 @@ function RegisterFormm() {
             title={"Registro"}
             paragraph={"Te pediremos algunos datos para crear tu perfil"}
           />
-        <RegisterFormStep1 
+        <RegisterFormStepOne
       formData={formData} 
       setFormData={setFormData} />;</div> //envia las props
     } else if (page === 1) {
@@ -74,15 +74,16 @@ function RegisterFormm() {
             onClick={() => {
               // estas al final de la pagina haz esto
               if (page === FormTitles.length - 1) {
-                alert("Formulario Enviado");
-                console.log(formData); //aca captura la data del formulario entero
+                alert(console.log(formData));
+                ; //aca captura la data del formulario entero
               } else {
                 //si no estas en el final sigue
                 setPage((currentStep) => currentStep + 1);
               }
             }}
          > 
-         {/* si la pagina termina su recorrido el boton cambia a submit */}
+         {/* si la pagina termina su recorrido el boton cambia el nombre a 
+         guardar */}
             {page === FormTitles.length - 1 ? "Guardar" : "Continuar"}
           </button>
         </div>
