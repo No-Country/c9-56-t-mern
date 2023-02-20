@@ -3,18 +3,18 @@ import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom"
 import MainBtn from "../MainBtn/MainBtn"
 
 const RegisterFormStep1 = (props) => {
+  const { formValues, setFormValues, currentStep, updateStep } = props
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm({
-    defaultValues: props.formValues,
+    defaultValues: formValues,
   })
 
   const onSubmit = (data) => {
-    ;<div>Data{data}</div>
-    props.setFormValues({ ...props.formValues, ...data })
-    props.updateStep(props.currentStep + 1)
+    setFormValues({ ...formValues, ...data })
+    updateStep(currentStep + 1)
     console.log(data)
   }
   return (
@@ -63,7 +63,7 @@ const RegisterFormStep1 = (props) => {
         <br />
         <br />
         <br />
-        <MainBtn text={"Continuar"} type={"submit"} />
+        <MainBtn text="Continuar" type="submit" />
       </form>
     </div>
   )

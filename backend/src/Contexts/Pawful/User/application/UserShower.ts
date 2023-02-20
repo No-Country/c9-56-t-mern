@@ -13,9 +13,9 @@ class UserShower {
       throw new UserDoesNotExistError()
     }
 
-    const { email, passwordHash, avatar, roles } = userFound
+    const { email, passwordHash, roles } = userFound
 
-    return new User(id, email, passwordHash, avatar, roles)
+    return new User(id, email, passwordHash, roles)
   }
 }
 

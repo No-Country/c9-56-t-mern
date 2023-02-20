@@ -64,7 +64,6 @@ const swaggerDefinition: OAS3Definition = {
                 register: {
                   value: {
                     email: "nametest@gmail.com",
-                    avatar: "url",
                     password: "123456",
                     role: "PROFESSIONAL",
                   },
@@ -169,26 +168,26 @@ const swaggerDefinition: OAS3Definition = {
       },
     },
     "/services/{id}": {
-      "get": {
-          "description": "Servicios de un perfil Profesional",
-          "summary": "lista todos los servicios de un perfil profesional",
-          "tags": ["services"],
-          "security": [{ "bearerAuth": [] }],
-          "parameters": [
-              {
-                  "name":"id",
-                  "in":"path",
-                  "description": "id para lista los servicios",
-                  "required": true
-              }
-          ],
-          "responses": {
-              "200": {
-                  "description": "ok",
-              }
-          }
-      }
-  }
+      get: {
+        description: "Servicios de un perfil Profesional",
+        summary: "lista todos los servicios de un perfil profesional",
+        tags: ["services"],
+        security: [{ bearerAuth: [] }],
+        parameters: [
+          {
+            name: "id",
+            in: "path",
+            description: "id para lista los servicios",
+            required: true,
+          },
+        ],
+        responses: {
+          "200": {
+            description: "ok",
+          },
+        },
+      },
+    },
   },
   components: {
     securitySchemes: {
@@ -212,12 +211,9 @@ const swaggerDefinition: OAS3Definition = {
       },
       register: {
         type: "object",
-        required: ["email", "avatar", "password", "role"],
+        required: ["email", "password", "role"],
         properties: {
           email: {
-            type: "string",
-          },
-          avatar: {
             type: "string",
           },
           password: {
@@ -260,7 +256,12 @@ const swaggerDefinition: OAS3Definition = {
       },
       service: {
         type: "object",
-        required: ["presentacionPersonal", "presentacion_del_servicio", "profileId", "categoryId"],
+        required: [
+          "presentacionPersonal",
+          "presentacion_del_servicio",
+          "profileId",
+          "categoryId",
+        ],
         properties: {
           presentacionPersonal: {
             type: "string",

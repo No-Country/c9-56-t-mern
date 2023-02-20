@@ -1,22 +1,24 @@
-import axios from "axios"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
-import { registerUSerStore } from "../../hooks/registerUserStore"
+import { useAuthStore } from "../../hooks/useAuthStore"
+import { useRegisterUSerStore } from "../../hooks/useRegisterUserStore"
 import InputImage from "../InputImage/InputImage"
 import MainBtn from "../MainBtn/MainBtn"
-// import { useState, useEffect } from "react";
 
 const RegisterFormStep2 = (props) => {
+  const { formValues, setFormValues } = props
+
   const {
     register,
     formState: { errors },
     handleSubmit,
     setValue,
   } = useForm({
-    defaultValues: props.formValues,
+    defaultValues: formValues,
   })
 
-  const { addUSer } = registerUSerStore()
+  const { addUser, resp, dataResp } = useRegisterUSerStore()
+  const { startLogin } = useAuthStore()
 
   const navigate = useNavigate()
 
@@ -26,43 +28,31 @@ const RegisterFormStep2 = (props) => {
   }
 
   const onSubmit = async (data) => {
-    ;<div>Data{data}</div>
-    props.setFormValues({ ...props.formValues, ...data })
-    const formData = new FormData()
-    formData.append("file", data.avatar)
-    formData.append("upload_preset", "v3mcaqee")
-    formData.append("cloud_name", "dvm4qew1i")
+    const { email, password, role } = data
 
-    await axios
-      .post(
-        "https://api.cloudinary.com/v1_1/dvm4qew1i/image/upload",
-        formData,
-        {
-          headers: { "X-Requested-With": "XMLHttpRequest" },
-        },
-      )
-      .then((response) => {
-        console.log(response)
-        data.avatar = response.data.secure_url
-        console.log("Image URL:", data.avatar)
+    setFormValues({ ...formValues, ...data })
+
+    try {
+      await addUser({
+        email,
+        password,
+        role,
       })
 
-    console.log("DATA.AVATAR URL:", data.avatar)
+      await startLogin({ email, password })
 
-    addUSer({
-      email: data.email,
-      password: data.password,
-      avatar: data.avatar,
-      role: data.role,
-    })
-
-    navigate("/success")
+      navigate("/success")
+    } catch (error) {}
   }
+  // useEffect(() => {
+  //   if (resp === "ok") {
+  //     console.log("Respuesta obtenida")
+  //     // navigate("/success")
+  //   }
+  // }, [resp])
 
   function handleImageChange(files) {
-    register("avatar", { value: files })
-    console.log(files)
-    // setImageFiles(files);
+    register("image", { value: files })
   }
 
   const imageUrl = "https://cdn-icons-png.flaticon.com/512/3177/3177440.png"
@@ -94,7 +84,7 @@ const RegisterFormStep2 = (props) => {
         </div>
         <br />
         <br />
-        <MainBtn text={"Registrar"} type={"submit"} />
+        <MainBtn text="Registrar" type="submit" />
       </form>
     </div>
   )

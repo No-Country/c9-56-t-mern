@@ -6,7 +6,6 @@ const MongooseUserSchema = new Schema<UserModel>({
   id: { type: String, required: true },
   email: { type: String, required: true },
   passwordHash: { type: String, required: true },
-  avatar: { type: String, required: true },
   roles: [{ type: String, required: true }],
 })
 

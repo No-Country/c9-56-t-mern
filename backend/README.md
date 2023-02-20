@@ -31,7 +31,6 @@ Body:
 interface PostUserBody {
   email: string
   password: string
-  avatar: string // URL
   role: Role // Debe ser uno de los valores de Role
 }
 ```
@@ -51,7 +50,6 @@ interface EditUserUrlParams {
 interface EditUserBody {
   email?: string
   password?: string
-  avatar?: string
   roleId?: string
 }
 ```
