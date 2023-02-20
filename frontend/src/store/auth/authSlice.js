@@ -12,7 +12,6 @@ export const authSlice = createSlice({
       state.status = "checking"
       state.user = {}
       state.errorMessage = undefined
-
     },
     onLogin: (state, { payload }) => {
       state.status = "authenticated"

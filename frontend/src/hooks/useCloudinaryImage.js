@@ -5,7 +5,8 @@ const useCloudinaryImage = () => {
   const [urlImage, setUrlImage] = useState("")
 
   const uploadImage = async (data) => {
-    console.log(data)
+    // console.log(data)
+
     const formData = new FormData()
     formData.append("file", data.image)
     formData.append("upload_preset", "v3mcaqee")

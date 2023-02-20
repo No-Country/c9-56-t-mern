@@ -14,7 +14,7 @@ const InputImage = (props) => {
     <div className="flex flex-col items-center bg-gray-50 py-4">
       <ImageSelector
         image={image}
-        urlImage={urlImage}
+        urlImage={props.urlImage}
         handleImageChange={handleImageChange}
       />
     </div>

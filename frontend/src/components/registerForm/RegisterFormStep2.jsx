@@ -44,12 +44,6 @@ const RegisterFormStep2 = (props) => {
       navigate("/success")
     } catch (error) {}
   }
-  // useEffect(() => {
-  //   if (resp === "ok") {
-  //     console.log("Respuesta obtenida")
-  //     // navigate("/success")
-  //   }
-  // }, [resp])
 
   function handleImageChange(files) {
     register("image", { value: files })
