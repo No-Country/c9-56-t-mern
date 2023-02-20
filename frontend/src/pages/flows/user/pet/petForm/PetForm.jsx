@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import VioletBtnM from "../../../recycleComponents/violetBtnM"
+import VioletBtnM from "../../../../../components/violetBtnM/VioletBtnM.stories"
 
 const PetForm = () => {
   const [petName, setPetName] = useState("")
