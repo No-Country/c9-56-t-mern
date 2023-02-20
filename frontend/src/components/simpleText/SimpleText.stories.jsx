@@ -1,4 +1,4 @@
-import SimpleText from "./SimpleText"
+import SimpleText from "."
 
 export default {
   title: "Components/SimpleText",

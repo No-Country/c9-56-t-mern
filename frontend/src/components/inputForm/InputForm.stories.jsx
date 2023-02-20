@@ -1,6 +1,6 @@
 import React from "react"
 
-import InputForm from "./InputForm"
+import InputForm from "."
 
 export default {
   title: "Components/InputForm",

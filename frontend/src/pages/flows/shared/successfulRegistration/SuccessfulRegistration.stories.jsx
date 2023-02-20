@@ -1,6 +1,6 @@
 import { MemoryRouter } from "react-router-dom"
 
-import SuccessfulRegistration from "./SuccessfulRegistration"
+import SuccessfulRegistration from "."
 
 export default {
   title: "Components/SuccessfulRegistration",

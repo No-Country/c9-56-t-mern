@@ -1,8 +1,8 @@
-import VioletBtnM from "./VioletBtnM"
+import PurpleButtom from "."
 
 export default {
-  title: "Components/VioletBtnM",
-  component: VioletBtnM,
+  title: "Components/PurpleButtom",
+  component: PurpleButtom,
   args: {},
   argTypes: {
     type: {

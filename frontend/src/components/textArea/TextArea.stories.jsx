@@ -1,4 +1,4 @@
-import TextArea from "./TextArea"
+import TextArea from "."
 
 export default {
   title: "Components/TextArea",

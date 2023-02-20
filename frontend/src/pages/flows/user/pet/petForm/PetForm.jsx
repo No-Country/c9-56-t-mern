@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import VioletBtnM from "../../../../../components/violetBtnM/VioletBtnM.stories"
+import PurpleButtom from "../../../../../components/PurpleButtom/PurpleButtom.stories"
 
 const PetForm = () => {
   const [petName, setPetName] = useState("")
@@ -149,7 +149,7 @@ const PetForm = () => {
           onClick={handleSubmit}
           disabled={!petName || !petRace || !petGender || !petSize || !petAge}
         >
-          <VioletBtnM 
+          <PurpleButtom 
           text='Guardar datos' />
         </button>
       </form>

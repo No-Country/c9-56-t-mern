@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import AddBtn from "../AddBtn/AddBtn"
+import AddBtn from "../AddBtn"
 import Card from "../Card"
 
 const Panel = ({ title, placeholder }) => {

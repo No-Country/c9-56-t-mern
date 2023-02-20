@@ -1,9 +1,9 @@
 import axios from "axios"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
-import { registerUSerStore } from "../../hooks/registerUserStore"
-import InputImage from "../InputImage/InputImage"
-import MainBtn from "../MainBtn/MainBtn"
+import PurpleButtom from "../../../../components/PurpleButtom"
+import { registerUSerStore } from "../../../../utils/hooks/registerUserStore"
+import InputImage from "../../../../components/InputImage"
 
 const RegisterFormStep2 = (props) => {
   const {
@@ -93,7 +93,7 @@ const RegisterFormStep2 = (props) => {
         </div>
         <br />
         <br />
-        <MainBtn text={"Registrar"} type={"submit"} />
+        <PurpleButtom text={"Registrar"} type={"submit"} />
       </form>
     </div>
   )

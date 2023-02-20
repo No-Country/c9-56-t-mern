@@ -1,7 +1,7 @@
 import React, { useState } from "react"
-import RegisterFormStep1 from "./RegisterFormStep1"
-import RegisterFormStep2 from "./RegisterFormStep2"
-import SimpleText from "../../../../components/simpleText/SimpleText"
+import RegisterFormStep1 from "../RegisterFormStep1"
+import RegisterFormStep2 from "../RegisterFormStep2"
+import SimpleText from "../../../../components/SimpleText"
 import StepNavigation from "../../../../components/stepper/StepNavigation"
 
 const RegisterForm = (props) => {

@@ -1,4 +1,4 @@
-import AddBtn from "./AddBtn"
+import AddBtn from "."
 
 export default {
   title: "Components/recycleComponents/addBtn/addBtn",

@@ -1,7 +1,7 @@
 import { MdEdit } from "react-icons/md"
 import { Link, Form, Navigate } from "react-router-dom"
 import "../../../../../styles/styles.css"
-import VioletBtnM from "../../../../../components/violetBtnM/VioletBtnM"
+import PurpleButtom from "../../../../../components/PurpleButtom"
 import logo from "../../../../../assets/svg/react.svg"
 
 const OwnerForm = () => {
@@ -72,7 +72,7 @@ const OwnerForm = () => {
             </div>
           </div>
         </div>
-        <VioletBtnM
+        <PurpleButtom
           text={'GUARDAR DATOS'}
         />
       </form>

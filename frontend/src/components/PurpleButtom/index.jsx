@@ -1,6 +1,6 @@
 import React from "react"
 
-const VioletBtnM = ({ text, type }) => {
+const PurpleButtom = ({ text, type }) => {
   return (
     <div className="flex bg-gray-50 py-4">
       <button
@@ -13,4 +13,4 @@ const VioletBtnM = ({ text, type }) => {
   )
 }
 
-export default VioletBtnM
+export default PurpleButtom

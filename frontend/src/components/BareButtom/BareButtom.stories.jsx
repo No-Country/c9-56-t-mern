@@ -1,8 +1,8 @@
-import TransparentBtnBg from "./TransparentBtnBg"
+import BareButtom from "."
 
 export default {
-  title: "Components/TransparentBtnBg",
-  component: TransparentBtnBg,
+  title: "Components/BareButtom",
+  component: BareButtom,
   args: {},
 }
 
