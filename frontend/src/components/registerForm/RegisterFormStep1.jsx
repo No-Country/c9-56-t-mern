@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom"
-import MainBtn from "../MainBtn/MainBtn"
+import PurpleButton from "../PurpleButton/PurpleButton"
 
 const RegisterFormStep1 = (props) => {
   const { formValues, setFormValues, currentStep, updateStep } = props
@@ -63,7 +63,7 @@ const RegisterFormStep1 = (props) => {
         <br />
         <br />
         <br />
-        <MainBtn text="Continuar" type="submit" />
+        <PurpleButton text="Continuar" type="submit" />
       </form>
     </div>
   )

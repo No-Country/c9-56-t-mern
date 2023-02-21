@@ -4,7 +4,7 @@ import "../../styles/styles.css"
 import SimpleText from "../SimpleText/SimpleText"
 import InputImage from "../InputImage/InputImage"
 import React, { useState, useEffect } from "react"
-import MainBtn from "../MainBtn/MainBtn"
+import PurpleButton from "../PurpleButton/PurpleButton"
 import { useForm } from "react-hook-form"
 import useCloudinaryImage from "../../hooks/useCloudinaryImage"
 import { useRegisterProfile } from "../../hooks/useRegisterProfile"
@@ -106,7 +106,7 @@ const FormPropietario = () => {
               />
             </div>
           </div>
-          <MainBtn text=" GUARDAR DATOS" type="submit" />
+          <PurpleButton text=" GUARDAR DATOS" type="submit" />
         </form>
       </div>
     </div>

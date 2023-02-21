@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import MainBtn from "../../../components/MainBtn/MainBtn"
-import SecondaryBtn from "../../../components/SecondaryBtn/SecondaryBtn"
+import PurpleButton from "../../../components/PurpleButton/PurpleButton"
+import BareButton from "../../../components/BareButton"
 import CategoriesHome from "../CategoriesHome"
 
 const HomePage = () => {
@@ -19,9 +19,9 @@ const HomePage = () => {
         <img className="w-full h-full object-cover rounded-full bg-gray-500" />
       </div>
       <br />
-      <MainBtn text={"Nuestros servicios"} />
+      <PurpleButton text={"Nuestros servicios"} />
       <Link to="/auth/login">
-        <SecondaryBtn text={"SER PROFESIONAL"} />
+        <BareButton text={"SER"} />
       </Link>
       <br />
 

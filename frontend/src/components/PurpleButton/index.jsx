@@ -1,6 +1,6 @@
 import React from "react"
 
-const MainBtn = ({ text, type }) => {
+const PurpleButton = ({ text, type }) => {
   return (
     <div className="flex bg-gray-50 py-4">
       <button
@@ -13,4 +13,4 @@ const MainBtn = ({ text, type }) => {
   )
 }
 
-export default MainBtn
+export default PurpleButton
