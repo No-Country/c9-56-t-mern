@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import PurpleButton from "../../../components/PurpleButton/PurpleButton"
+import PurpleButton from "../../../components/PurpleButton"
 import BareButton from "../../../components/BareButton"
 import CategoriesHome from "../CategoriesHome"
 
@@ -19,7 +19,7 @@ const HomePage = () => {
         <img className="w-full h-full object-cover rounded-full bg-gray-500" />
       </div>
       <br />
-      <PurpleButton text={"Nuestros servicios"} />
+      <PurpleButton text={"Nuestros"} />
       <Link to="/auth/login">
         <BareButton text={"SER"} />
       </Link>
