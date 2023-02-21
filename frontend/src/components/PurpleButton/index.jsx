@@ -2,10 +2,10 @@ import React from "react"
 
 const PurpleButton = ({ text, type }) => {
   return (
-    <div className="flex bg-gray-50 py-4">
+    <div className="flex bg-gray-50 items-center">
       <button
         type={type}
-        className="w-48 max-w-xs bg-violet-800 m-auto px-6 py-3 rounded-lg text-gray-50 text-sm font-medium uppercase"
+        className="w-96 max-w-xs font-medium bg-violet-800 px-7 py-4 rounded-lg text-gray-50 text-base self-center	"
       >
         {text}{" "}
       </button>

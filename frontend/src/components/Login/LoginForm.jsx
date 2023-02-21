@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { useAuthStore } from "../../hooks/useAuthStore"
 import "../../styles/styles.css"
-import InputForm from "../inputForm/InputForm"
 
 const LoginForm = () => {
   const { startLogin, errorMessage } = useAuthStore()
@@ -32,7 +31,6 @@ const LoginForm = () => {
       <p className="text-gray-600 mb-8">Bienvenido</p>
       <br />
       <form className="w-full max-w-sm" onSubmit={handleSubmit}>
-        <InputForm />
         <div className="mb-4">
           <label className="block font-medium mb-2" htmlFor="email">
             Email/Username
