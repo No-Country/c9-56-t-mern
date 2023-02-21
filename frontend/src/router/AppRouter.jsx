@@ -1,12 +1,13 @@
 import React, { useEffect } from "react"
 import { Navigate, Route, Routes } from "react-router-dom"
-import HomePage from "../components/home/HomePage"
+import HomePage from "../pages/shared/HomePage"
 import LoginForm from "../components/Login/LoginForm"
 import FormPropietario from "../components/profOwner/FormPropietario"
 import SuccessfulRegistration from "../components/Register/SuccessfulRegistration"
 import RegisterForm from "../components/registerForm/RegisterForm"
 import { useAuthStore } from "../hooks/useAuthStore"
-import OwnerProfile from "../pages/OwnerProfile"
+import OwnerProfile from "../pages/user/owner/OwnerProfile"
+
 
 const AppRouter = () => {
   const { status, checkAuthToken } = useAuthStore()

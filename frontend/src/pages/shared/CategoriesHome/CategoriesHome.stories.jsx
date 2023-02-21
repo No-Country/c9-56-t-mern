@@ -1,6 +1,6 @@
 import React from "react"
 
-import CategoriesHome from "./CategoriesHome"
+import CategoriesHome from "."
 
 export default {
   title: "Components/CategoriesHome",
