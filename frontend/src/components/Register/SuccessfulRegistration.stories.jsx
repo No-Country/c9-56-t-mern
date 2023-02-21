@@ -1,5 +1,6 @@
+import { Provider } from "react-redux"
 import { MemoryRouter } from "react-router-dom"
-
+import { store } from "../../store/store"
 import SuccessfulRegistration from "./SuccessfulRegistration"
 
 export default {
@@ -9,9 +10,11 @@ export default {
 }
 
 const Template = (args) => (
-  <MemoryRouter>
-    <SuccessfulRegistration {...args} />
-  </MemoryRouter>
+  <Provider store={store}>
+    <MemoryRouter>
+      <SuccessfulRegistration {...args} />
+    </MemoryRouter>
+  </Provider>
 )
 
 export const Default = Template.bind({})
