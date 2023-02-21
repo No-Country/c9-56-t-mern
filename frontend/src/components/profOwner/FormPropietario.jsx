@@ -10,10 +10,11 @@ import useCloudinaryImage from "../../hooks/useCloudinaryImage"
 import { useRegisterProfile } from "../../hooks/useRegisterProfile"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
+import ImageSelector from "../ImageSelector"
 
 const FormPropietario = () => {
-  const [image, setImage] = useState(null)
-  const { urlImage, uploadImage } = useCloudinaryImage()
+  const [images, setImages] = useState(null)
+  const { uploadImage } = useCloudinaryImage()
   const { role, email, uid, token } = useSelector((state) => state.auth.user)
   const [rol, setRol] = useState("")
 
@@ -26,15 +27,26 @@ const FormPropietario = () => {
     handleSubmit,
   } = useForm({})
 
+  const handleImageChange = async (e) => {
+    try {
+      const image = await uploadImage({ image: e.target.files[0] })
+      setImages(image)
+
+      register("image", { value: image })
+    } catch (error) {
+      navigate("/error")
+    }
+  }
+
   const onSubmit = async (data) => {
+
     const { name, lastname, phone, address } = data
-    const imageUrl = await uploadImage(data)
     try {
       const respBack = await registerProfile(
         {
           name,
           lastname,
-          image: imageUrl,
+          image: images,
           phone,
           address,
           rol,
@@ -45,7 +57,7 @@ const FormPropietario = () => {
         console.log("SI PASA")
         navigate("/profile")
       }
-    } catch (error) {}
+    } catch (error) { }
   }
 
   useEffect(() => {
@@ -53,10 +65,9 @@ const FormPropietario = () => {
       setRol("OWNER")
     }
   }, [role])
-  function handleImageChange(files) {
-    console.log(files)
-    register("image", { value: files })
-  }
+
+
+
   return (
     <div>
       <div className="div-encabezados">
@@ -69,7 +80,10 @@ const FormPropietario = () => {
       </div>
       <div className="flex flex-col items-center p-4">
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-sm">
-          <InputImage onChange={handleImageChange} />
+          <div className="flex justify-center">
+            <ImageSelector urlImage={images} onChange={handleImageChange} />
+          </div>
+          {/* <InputImage handleImageChange={handleImageChange} /> */}
           <div className="flex flex-col justify-center gap-6">
             <div className="mb-4">
               <label className="block font-medium mb-2">Nombre Completo</label>

@@ -16,8 +16,8 @@ const Stepper1 = () => {
           x2="220"
           y2="16"
           stroke="url(#paint0_linear_277_68)"
-          stroke-width="6"
-          stroke-linecap="round"
+          strokeWidth="6"
+          strokeLinecap="round"
         />
         <circle cx="16" cy="16" r="16" fill="#5B21B6" />
         <circle cx="223" cy="16" r="16" fill="#E5E5E5" />
@@ -38,8 +38,8 @@ const Stepper1 = () => {
             y2="19"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#6D28D9" />
-            <stop offset="1" stop-color="#E5E5E5" />
+            <stop stopColor="#6D28D9" />
+            <stop offset="1" stopColor="#E5E5E5" />
           </linearGradient>
         </defs>
       </svg>
