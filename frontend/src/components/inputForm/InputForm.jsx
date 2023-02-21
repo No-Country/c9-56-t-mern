@@ -15,8 +15,9 @@ const InputForm = ({ label, placeholder }) => {
           {label}
         </label>
         <input
-          className="border border-neutral-200 rounded-lg pl-2"
+          className="border border-neutral-200 focus:outline-none focus:ring focus:ring-[#2684FF] rounded-lg pl-2"
           type="text"
+          id="input"
           placeholder={placeholder}
           value={value}
           onChange={handleChange}
