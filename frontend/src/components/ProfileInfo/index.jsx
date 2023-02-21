@@ -5,7 +5,7 @@ import PencilIcon from "../PencilIcon"
 
 const ProfileInfo = ({
   bannerColor,
-  image,
+  urlImage,
   handleImageChange,
   name,
   lastname,
@@ -26,7 +26,10 @@ const ProfileInfo = ({
 
       <div className="px-6">
         <div className="-translate-y-1/2">
-          <ImageSelector image={image} handleImageChange={handleImageChange} />
+          <ImageSelector
+            urlImage={urlImage}
+            handleImageChange={handleImageChange}
+          />
         </div>
 
         <div className="flex justify-between items-center">

@@ -10,5 +10,10 @@ export default {
 
 const Template = (args) => <InputImage {...args} />
 
-export const Default = Template.bind({})
-Default.args = {}
+export const Sample = Template.bind({})
+Sample.args = {
+  urlImage: "https://www.w3schools.com/howto/img_avatar.png",
+}
+
+export const NoImage = Template.bind({})
+NoImage.args = {}

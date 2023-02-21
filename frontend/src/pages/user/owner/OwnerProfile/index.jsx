@@ -75,7 +75,7 @@ const OwnerProfile = () => {
     <>
       <ProfileInfo
         bannerColor="#ac82fe"
-        image={image}
+        urlImage={image}
         handleImageChange={handleImageChange}
         name={name}
         lastname={lastname}
