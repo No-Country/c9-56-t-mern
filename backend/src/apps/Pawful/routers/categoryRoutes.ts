@@ -3,6 +3,7 @@ import { asyncHandler } from "../../shared/framework/asyncHandler"
 import { CreateCategoryController } from "../controllers/category/CreateCategoryController"
 import { CategorySearchOneController } from "../controllers/category/categorySearchOneController"
 import { CategorySearchAllController } from "../controllers/category/categorySeachAllController"
+import { DeleteCategoryController } from "../controllers/category/DeleteCategoryController"
 
 const categoryRouter = Router()
 
@@ -28,6 +29,14 @@ categoryRouter.get(
   asyncHandler(async (req: Request, res: Response) => {
     const categorySearchAllController = new CategorySearchAllController()
     await categorySearchAllController.run(req, res)
+  }),
+)
+
+categoryRouter.delete(
+  "/categories/:id",
+  asyncHandler(async (req: Request, res: Response) => {
+    const deleteCategoryController = new DeleteCategoryController()
+    await deleteCategoryController.run(req, res)
   }),
 )
 
