@@ -9,13 +9,13 @@ const InputForm = ({ label, placeholder }) => {
   }
 
   return (
-    <div className="flex flex-col m-auto max-w-xs bg-gray-50 py-4">
-      <div className="container flex flex-col justify-center  max-w-sm">
+    <div className="flex flex-col  max-w-xs bg-gray-50">
+      <div className="container flex flex-col justify-center max-w-sm">
         <label htmlFor="" className="py-2">
           {label}
         </label>
         <input
-          className="border border-neutral-200 rounded-lg pl-2 w-full"
+          className="border border-neutral-200 rounded-lg pl-2"
           type="text"
           placeholder={placeholder}
           value={value}

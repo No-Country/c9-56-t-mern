@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { useAuthStore } from "../../hooks/useAuthStore"
 import { useRegisterUSerStore } from "../../hooks/useRegisterUserStore"
 import InputImage from "../InputImage/InputImage"
-import MainBtn from "../MainBtn/MainBtn"
+import PurpleButton from "../PurpleButton"
 
 const RegisterFormStep2 = (props) => {
   const { formValues, setFormValues } = props
@@ -78,7 +78,7 @@ const RegisterFormStep2 = (props) => {
         </div>
         <br />
         <br />
-        <MainBtn text="Registrar" type="submit" />
+        <PurpleButton text="Registrar" type="submit" />
       </form>
     </div>
   )

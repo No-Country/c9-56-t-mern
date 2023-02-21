@@ -1,8 +1,8 @@
-import MainBtn from "./MainBtn"
+import PurpleButton from "."
 
 export default {
-  title: "Components/MainBtn",
-  component: MainBtn,
+  title: "Components/PurpleButton",
+  component: PurpleButton,
   args: {},
   argTypes: {
     type: {
@@ -14,7 +14,7 @@ export default {
   },
 }
 
-const Template = (args) => <MainBtn {...args} />
+const Template = (args) => <PurpleButton {...args} />
 
 export const Sample = Template.bind({})
 Sample.args = {
