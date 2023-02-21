@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { useAuthStore } from "../../hooks/useAuthStore"
 import "../../styles/styles.css"
+import PurpleButton from "../PurpleButton"
 
 const LoginForm = () => {
   const { startLogin, errorMessage } = useAuthStore()
@@ -26,14 +27,18 @@ const LoginForm = () => {
 
   return (
     <div className="flex flex-col items-center p-4">
-      <h2 className="text-3xl font-medium mb-4">Iniciar Sesión</h2>
+      <h2 className="text-3xl font-medium ">Iniciar sesión</h2>
       <br />
-      <p className="text-gray-600 mb-8">Bienvenido</p>
+      <div id="homeMainImage" className="flexs items-center">
+      {/* lo deje de esta manera ya que el svg sobresale */}
+        <img className="w-60 h-60 rounded-full bg-gray-500" 
+        src='../../../assets/react.svg'/> 
+      </div>
       <br />
       <form className="w-full max-w-sm" onSubmit={handleSubmit}>
-        <div className="mb-4">
+        <div className="#">
           <label className="block font-medium mb-2" htmlFor="email">
-            Email/Username
+            Email o nombre de usuario
           </label>
           <input
             className="border border-gray-400 p-2 w-full"
@@ -45,7 +50,7 @@ const LoginForm = () => {
           />
         </div>
 
-        <div className="mb-4">
+        <div className="flex flex-col ">
           <label className="block font-medium mb-2" htmlFor="password">
             Contraseña
           </label>
@@ -56,27 +61,27 @@ const LoginForm = () => {
             name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-
-        <div className="flex items-center justify-between mb-4">
-          <a href="#" className="text-gray-600 hover:text-gray-800 text-sm">
-            Recuperar Contraseña
+          /><a href="#"className="self-end text-blue-600 hover:text-blue-800 underline">
+            Olvidé mi contraseña
           </a>
-          <button
-            type="submit"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full"
-          >
-            Iniciar Sesión
-          </button>
+          <br />
         </div>
+ 
+        <div className="flex flex-col items-center justify-center">
+         
 
-        <p className="text-center text-gray-600 text-sm">
-          ¿No tienes una cuenta?{" "}
-          <Link to="/register" className="text-blue-600 hover:text-blue-800">
-            Registrate aqui
+          
+        <PurpleButton            
+        text='Iniciar sesión'
+        type="submit"
+          />
+         <p className="text-center text-gray-600 text-sm py-3">
+          ¿Aún no tienes una cuenta?{" "}
+          <Link to="/register" className="text-blue-600 hover:text-blue-800 underline">
+            Registrate
           </Link>
-        </p>
+        </p> 
+        </div>
       </form>
     </div>
   )

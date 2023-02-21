@@ -72,7 +72,7 @@ const RegisterForm = (props) => {
       {getInfoPerPage()}
 
       <p>
-        Ya tienes una cuenta? <a href="/auth/login">Inciar Sesion</a>{" "}
+        Ya tienes una cuenta? <a href="/auth/login" className="text-blue-600 hover:text-blue-800 underline">Iniciar sesión</a>{" "}
       </p>
       <br />
       <br />
