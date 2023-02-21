@@ -1,5 +1,6 @@
+import { Provider } from "react-redux"
 import { MemoryRouter } from "react-router-dom"
-
+import { store } from "../../store/store"
 import RegisterFormStep2 from "./RegisterFormStep2"
 
 export default {
@@ -11,9 +12,11 @@ export default {
   },
   decorators: [
     (Story) => (
-      <MemoryRouter>
-        <Story />
-      </MemoryRouter>
+      <Provider store={store}>
+        <MemoryRouter>
+          <Story />
+        </MemoryRouter>
+      </Provider>
     ),
   ],
 }
