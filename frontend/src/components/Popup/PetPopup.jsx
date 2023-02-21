@@ -27,7 +27,7 @@ const PetPopup = () => {
             className={`cursor-pointer flex items-center justify-center rounded-full bg-gray-200 p-4 ${
               selectedOption === "cat" ? "bg-gray-400 shadow-lg" : ""
             }`}
-            // onClick={() => handleOptionSelect('cat')}
+             onClick={() => handleOptionSelect('cat')}
           >
             <FaCat className="text-3xl mr-2" />
           </div>
