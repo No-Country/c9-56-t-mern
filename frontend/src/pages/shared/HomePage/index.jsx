@@ -6,7 +6,7 @@ import CategoriesHome from "../CategoriesHome"
 
 const HomePage = () => {
   return (
-    <div className="">
+    <div className="max-w-sm w-full m-auto">
       <div>
         <div id="homeTitle" className="flex">
           <h2 className="font-poppins font-bold text-3xl p-4 leading-10 text-start">
