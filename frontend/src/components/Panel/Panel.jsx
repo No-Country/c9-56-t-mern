@@ -8,7 +8,7 @@ const Panel = ({ title, placeholder, children }) => {
         <h2 className="font-bold text-xl text-neutral-900">{title}</h2>
         <AddBtn />
       </div>
-      {Children.toArray(children) === 0 ? (
+      {Children.toArray(children).length === 0 ? (
         <div className="py-16 px-4 w-full text-center">
           <h2 className="font-normal text-base text-neutral-900">
             {placeholder}
