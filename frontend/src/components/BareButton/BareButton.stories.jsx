@@ -1,4 +1,4 @@
-import BareButton from "./BareButton"
+import BareButton from "."
 
 export default {
   title: "Components/BareButton",
