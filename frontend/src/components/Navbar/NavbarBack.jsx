@@ -10,7 +10,7 @@ const NavbarBack = () => {
       </span>
 
       <button className="text-lg text-violet-700 px-1.5 py-1.5 border-2 border-neutral-200 rounded-xl  focus:border-violet-700 ml-4">
-        <IoChevronBackOutline/>
+        <IoChevronBackOutline />
       </button>
     </header>
   )

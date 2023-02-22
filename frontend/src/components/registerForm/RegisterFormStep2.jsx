@@ -2,14 +2,11 @@ import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 import { useAuthStore } from "../../hooks/useAuthStore"
 import { useRegisterUSerStore } from "../../hooks/useRegisterUserStore"
-import InputImage from "../InputImage/InputImage"
-import MainBtn from "../MainBtn/MainBtn"
-import { useState } from "react"
 import PurpleButton from "../PurpleButton"
+import { useState } from "react"
 
 const RegisterFormStep2 = (props) => {
   const { formValues, setFormValues } = props
-
   const {
     register,
     formState: { errors },
@@ -18,37 +15,29 @@ const RegisterFormStep2 = (props) => {
   } = useForm({
     defaultValues: formValues,
   })
+  const [option, setOption] = useState("")
 
-  const { addUser, resp, dataResp } = useRegisterUSerStore()
+  const { addUser } = useRegisterUSerStore()
   const { startLogin } = useAuthStore()
-
   const navigate = useNavigate()
-
-  const handleClickDiv = (valor) => {
-    register("role", { value: valor })
-    // setIsSelected(!isSelected)
-    console.log(valor)
-  }
 
   const onSubmit = async (data) => {
     const { email, password, role } = data
-
     setFormValues({ ...formValues, ...data })
-
+    console.log(role)
     try {
       await addUser({
         email,
         password,
         role,
       })
-
       await startLogin({ email, password })
-
       navigate("/success")
     } catch (error) {}
   }
-  function handleImageChange(files) {
-    register("image", { value: files })
+  const handleOptionChange = (event) => {
+    setOption(event.target.value)
+    register("role", { value: event.target.value })
   }
 
   const imageUrl = "https://cdn-icons-png.flaticon.com/512/3177/3177440.png"
@@ -60,14 +49,16 @@ const RegisterFormStep2 = (props) => {
           <div>
             <input
               id="owner"
-              name="profile"
+              name="options"
               className="hidden peer"
               type="radio"
+              value="OWNER"
+              checked={option == "OWNER"}
+              onChange={handleOptionChange}
             />
             <label
               for="owner"
               className=" flex flex-col gap-4 cursor-pointer justify-center w-36 h-36 border border-gray-300 rounded-xl peer-checked:border-violet-700 peer-checked:text-neutral-900"
-              onClick={handleClickDiv("OWNER")}
             >
               <div className=" justify-center flex">
                 <img src={imageUrl} width={80} height={80} />
@@ -78,14 +69,16 @@ const RegisterFormStep2 = (props) => {
           <div>
             <input
               id="professional"
-              name="profile"
+              name="options"
               className="hidden peer"
               type="radio"
+              value="PROFESSIONAL"
+              checked={option == "PROFESSIONAL"}
+              onChange={handleOptionChange}
             />
             <label
               for="professional"
               className=" flex flex-col gap-4  cursor-pointer justify-center w-36 h-36 border border-gray-300 rounded-xl peer-checked:border-violet-700 peer-checked:text-neutral-900"
-              onClick={handleClickDiv("PROFESSIONAL")}
             >
               <div className="justify-center flex">
                 <img src={imageUrl} width={80} height={80} />

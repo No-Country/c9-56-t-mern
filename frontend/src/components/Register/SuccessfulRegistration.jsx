@@ -9,7 +9,9 @@ const SuccessfulRegistration = () => {
 
   const handleCLick = () => {
     console.log(role)
-    role.includes("OWNER") ? navigate("/completeRegister") : navigate("/profile")
+    role.includes("OWNER")
+      ? navigate("/completeRegister")
+      : navigate("/registerProfessional")
   }
 
   return (
