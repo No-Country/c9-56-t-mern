@@ -6,9 +6,7 @@ const RadioButtonContainer = ({ label, children }) => {
       <div className="font-normal text-base m-1">
         <p className="font-semibold">{label}</p>
       </div>
-      <div className="flex flex-row flex-wrap">
-        {children}
-      </div>
+      <div className="flex flex-row flex-wrap">{children}</div>
     </div>
   )
 }
@@ -16,7 +14,8 @@ const RadioButtonContainer = ({ label, children }) => {
 export default RadioButtonContainer
 
 //ejemplo de uso
-{/* <div>
+{
+  /* <div>
 <RadioButtonContainer label={"Tipo de mascota"}>
   <RadioButton title={"Perro"} desc={""} />
   <RadioButton title={"Gato"} desc={""} />
@@ -28,4 +27,5 @@ export default RadioButtonContainer
   <RadioButton title={"Grande"} desc={"21 - 40kg"} />
   <RadioButton title={"Muy grande"} desc={"más de 40"} />
 </RadioButtonContainer>
-</div> */}
+</div> */
+}

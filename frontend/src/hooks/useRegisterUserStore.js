@@ -7,12 +7,8 @@ export const useRegisterUSerStore = () => {
   const [resp, setResp] = useState("")
   const [dataResp, setDataResp] = useState({})
   const [tipeProfile, setTipeProfile] = useState("")
-  const { startLogin } = useAuthStore()
-  const dispatch = useDispatch()
 
   const addUser = async ({ email, password, role }) => {
-    // dispatch(onChecking())
-
     try {
       await pawfulApi
         .post("/users", {

@@ -39,7 +39,6 @@ const FormPropietario = () => {
   }
 
   const onSubmit = async (data) => {
-
     const { name, lastname, phone, address } = data
     try {
       const respBack = await registerProfile(
@@ -57,7 +56,7 @@ const FormPropietario = () => {
         console.log("SI PASA")
         navigate("/profile")
       }
-    } catch (error) { }
+    } catch (error) {}
   }
 
   useEffect(() => {
@@ -65,8 +64,6 @@ const FormPropietario = () => {
       setRol("OWNER")
     }
   }, [role])
-
-
 
   return (
     <div>

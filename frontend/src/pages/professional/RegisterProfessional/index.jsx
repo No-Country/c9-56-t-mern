@@ -1,31 +1,32 @@
-// import React, { useState } from "react";
 import React, { useState } from "react"
-import RegisterFormStep2 from "./RegisterFormStep2"
-import RegisterFormStep1 from "./RegisterFormStep1"
-import StepNavigation from "../stepper/StepNavigation"
-import SimpleText from "../SimpleText/SimpleText"
-import Stepper1 from "../Stepper1and2/Stepper1"
-import Stepper2 from "../Stepper1and2/Stepper2"
+import SimpleText from "../../../components/SimpleText/SimpleText"
+import Stepper1 from "../../../components/Stepper1and2/Stepper1"
+import FormProfessionalInit from "../../../components/RegisterProfessional/FormProfessionalInit"
+import Stepper2 from "../../../components/Stepper1and2/Stepper2"
+import FormDataExtra from "../../../components/RegisterProfessional/FormDataExtra"
+import StepNavigation from "../../../components/stepper/StepNavigation"
 
-const RegisterForm = (props) => {
+const FormRegisterProfessional = (props) => {
   const labelArray = ["Step 1", "Step 2"]
   const [currentStep, setCurrentStep] = useState(1)
-
   const [formValues, setFormValues] = useState({})
 
   const updateStep = (step) => {
     setCurrentStep(step)
   }
-  const getInfoPerPage = () => {
+
+  const getForm = () => {
     if (currentStep === 1) {
       return (
         <div>
           <SimpleText
-            title={"Registro"}
-            paragraph={"Crea tu cuenta ensimple pasos"}
+            title={"Vamos a conocernos"}
+            paragraph={
+              "Completa tu perfil para comenzar a ofrecer tus servicios"
+            }
           />
           <Stepper1 />
-          <RegisterFormStep1
+          <FormProfessionalInit
             labelArray={labelArray}
             currentStep={currentStep}
             setCurrentStep={setCurrentStep}
@@ -39,11 +40,11 @@ const RegisterForm = (props) => {
       return (
         <div>
           <SimpleText
-            title={"Registro"}
-            paragraph={"¡Estas cada vez más cerca!"}
+            title={"¡Ya casi!"}
+            paragraph={"último paso para crear tu perfil"}
           />
           <Stepper2 />
-          <RegisterFormStep2
+          <FormDataExtra
             labelArray={labelArray}
             currentStep={currentStep}
             setCurrentStep={setCurrentStep}
@@ -56,10 +57,6 @@ const RegisterForm = (props) => {
     }
   }
 
-  const handleForm = (data) => {
-    console.log(data)
-  }
-
   return (
     <div className="max-w-sm mt-5 mx-auto p-6 rounded-lg flex flex-col items-center">
       <StepNavigation
@@ -69,21 +66,10 @@ const RegisterForm = (props) => {
       ></StepNavigation>
 
       <br />
-      {getInfoPerPage()}
 
-      <p>
-        Ya tienes una cuenta?{" "}
-        <a
-          href="/auth/login"
-          className="text-blue-600 hover:text-blue-800 underline"
-        >
-          Iniciar sesión
-        </a>{" "}
-      </p>
-      <br />
-      <br />
+      {getForm()}
     </div>
   )
 }
 
-export default RegisterForm
+export default FormRegisterProfessional

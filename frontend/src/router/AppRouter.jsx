@@ -7,6 +7,9 @@ import SuccessfulRegistration from "../components/Register/SuccessfulRegistratio
 import RegisterForm from "../components/registerForm/RegisterForm"
 import { useAuthStore } from "../hooks/useAuthStore"
 import OwnerProfile from "../pages/user/owner/OwnerProfile"
+import FormProfessionalInit from "../components/RegisterProfessional/FormProfessionalInit"
+import FormDataExtra from "../components/RegisterProfessional/FormDataExtra"
+import FormRegisterProfessional from "../pages/professional/RegisterProfessional"
 
 const AppRouter = () => {
   const { status, checkAuthToken } = useAuthStore()
@@ -33,6 +36,10 @@ const AppRouter = () => {
           <Route path="/success" element={<SuccessfulRegistration />} />
           <Route path="/profile" element={<OwnerProfile />} />
           <Route path="/completeRegister" element={<FormPropietario />} />
+          <Route
+            path="/registerProfessional"
+            element={<FormRegisterProfessional />}
+          />
         </>
       )}
     </Routes>

@@ -1,9 +1,8 @@
-import NavbarBack from "./NavbarBack";
-
+import NavbarBack from "./NavbarBack"
 
 export default {
-  title: 'Components/NavbarBack',
-  component: NavbarBack
+  title: "Components/NavbarBack",
+  component: NavbarBack,
 }
 
 const Template = (args) => <NavbarBack {...args} />

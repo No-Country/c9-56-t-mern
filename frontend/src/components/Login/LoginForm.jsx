@@ -30,9 +30,11 @@ const LoginForm = () => {
       <h2 className="text-3xl font-medium ">Iniciar sesión</h2>
       <br />
       <div id="homeMainImage" className="flexs items-center">
-      {/* lo deje de esta manera ya que el svg sobresale */}
-        <img className="w-60 h-60 rounded-full bg-gray-500" 
-        src='../../../assets/react.svg'/> 
+        {/* lo deje de esta manera ya que el svg sobresale */}
+        <img
+          className="w-60 h-60 rounded-full bg-gray-500"
+          src="../../../assets/react.svg"
+        />
       </div>
       <br />
       <form className="w-full max-w-sm" onSubmit={handleSubmit}>
@@ -61,26 +63,27 @@ const LoginForm = () => {
             name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          /><a href="#"className="self-end text-blue-600 hover:text-blue-800 underline">
+          />
+          <a
+            href="#"
+            className="self-end text-blue-600 hover:text-blue-800 underline"
+          >
             Olvidé mi contraseña
           </a>
           <br />
         </div>
- 
-        <div className="flex flex-col items-center justify-center">
-         
 
-          
-        <PurpleButton            
-        text='Iniciar sesión'
-        type="submit"
-          />
-         <p className="text-center text-gray-600 text-sm py-3">
-          ¿Aún no tienes una cuenta?{" "}
-          <Link to="/register" className="text-blue-600 hover:text-blue-800 underline">
-            Registrate
-          </Link>
-        </p> 
+        <div className="flex flex-col items-center justify-center">
+          <PurpleButton text="Iniciar sesión" type="submit" />
+          <p className="text-center text-gray-600 text-sm py-3">
+            ¿Aún no tienes una cuenta?{" "}
+            <Link
+              to="/register"
+              className="text-blue-600 hover:text-blue-800 underline"
+            >
+              Registrate
+            </Link>
+          </p>
         </div>
       </form>
     </div>
