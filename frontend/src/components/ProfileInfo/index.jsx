@@ -23,7 +23,7 @@ const ProfileInfo = ({
       </div>
 
       <div className="flex justify-between items-center">
-        <h2 className="font-title text-title">
+        <h2 className="font-title text-title text-neutral-900">
           {name} {lastname}
         </h2>
 
@@ -36,7 +36,9 @@ const ProfileInfo = ({
         {personalInfo.map(({ type, value }) => (
           <div className="flex gap-2 items-center" key={`${type}${value}`}>
             <span className="text-violet-700">{iconsByType[type]}</span>
-            <span className="font-body text-body">{value}</span>
+            <span className="font-body text-body text-neutral-900">
+              {value}
+            </span>
           </div>
         ))}
       </div>

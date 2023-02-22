@@ -82,7 +82,10 @@ const OwnerProfile = () => {
         personalInfo={personalInfo}
       />
       <div className="py-6">
-        <Panel title="Mis Mascotas" placeholder="Añade mascotas" />
+        <Panel
+          title="Mis Mascotas"
+          placeholder="¡Aún no tienes mascotas agregadas!"
+        />
       </div>
     </>
   )
