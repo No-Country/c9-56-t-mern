@@ -6,7 +6,7 @@ const RadioButtonContainer = ({ label, children }) => {
       <div className="font-normal text-base m-1">
         <p className="font-semibold">{label}</p>
       </div>
-      <div className="flex flex-row flex-wrap">{children}</div>
+      <div className="flex flex-row flex-wrap w-80">{children}</div>
     </div>
   )
 }
