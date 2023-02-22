@@ -16,8 +16,8 @@ const Stepper2 = () => {
           x2="220"
           y2="16"
           stroke="#5B21B6"
-          stroke-width="6"
-          stroke-linecap="round"
+          strokeWidth="6"
+          strokeLinecap="round"
         />
         <circle cx="16" cy="16" r="16" fill="#5B21B6" />
         <circle cx="223" cy="16" r="16" fill="#5B21B6" />

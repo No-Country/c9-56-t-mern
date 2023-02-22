@@ -4,6 +4,8 @@ import RegisterFormStep2 from "./RegisterFormStep2"
 import RegisterFormStep1 from "./RegisterFormStep1"
 import StepNavigation from "../stepper/StepNavigation"
 import SimpleText from "../SimpleText/SimpleText"
+import Stepper1 from "../Stepper1and2/Stepper1"
+import Stepper2 from "../Stepper1and2/Stepper2"
 
 const RegisterForm = (props) => {
   const labelArray = ["Step 1", "Step 2"]
@@ -20,8 +22,9 @@ const RegisterForm = (props) => {
         <div>
           <SimpleText
             title={"Registro"}
-            paragraph={"Te pediremos algunos datos para crear tu perfil"}
+            paragraph={"Crea tu cuenta ensimple pasos"}
           />
+          <Stepper1 />
           <RegisterFormStep1
             labelArray={labelArray}
             currentStep={currentStep}
@@ -37,8 +40,9 @@ const RegisterForm = (props) => {
         <div>
           <SimpleText
             title={"Registro"}
-            paragraph={"¡Falta poco! Ya casi tenés tu cuenta en Pawful. "}
+            paragraph={"¡Estas cada vez más cerca!"}
           />
+          <Stepper2 />
           <RegisterFormStep2
             labelArray={labelArray}
             currentStep={currentStep}

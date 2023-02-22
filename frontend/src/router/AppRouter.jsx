@@ -8,7 +8,6 @@ import RegisterForm from "../components/registerForm/RegisterForm"
 import { useAuthStore } from "../hooks/useAuthStore"
 import OwnerProfile from "../pages/user/owner/OwnerProfile"
 
-
 const AppRouter = () => {
   const { status, checkAuthToken } = useAuthStore()
 
