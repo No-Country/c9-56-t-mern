@@ -9,9 +9,9 @@ const InputForm = ({ label, placeholder }) => {
   }
 
   return (
-    <div className="flex flex-col  max-w-xs bg-gray-50">
+    <div className="flex flex-col m-auto max-w-xs py-2">
       <div className="container flex flex-col justify-center max-w-sm">
-        <label htmlFor="" className="py-2">
+        <label htmlFor="input" className="py-2">
           {label}
         </label>
         <input
