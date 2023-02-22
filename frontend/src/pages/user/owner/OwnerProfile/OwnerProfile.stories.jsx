@@ -26,9 +26,6 @@ export default {
   title: "Pages/OwnerProfile",
   component: OwnerProfile,
   args: {},
-  parameters: {
-    layout: "fullscreen",
-  },
   decorators: [
     (Story) => (
       <MemoryRouter>
