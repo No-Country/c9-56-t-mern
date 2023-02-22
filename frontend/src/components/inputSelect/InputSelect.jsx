@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Select from "react-select"
 
-const Edad = [
+const options = [
   { value: "1", label: "1" },
   { value: "2", label: "2" },
   { value: "3", label: "3" },
@@ -29,7 +29,7 @@ const Edad = [
   { value: "25", label: "25" },
 ]
 
-const InputSelect = ({ label, options1}) => {
+const InputSelect = ({ label}) => {
   const [value, setValue] = useState(null)
 
   const handleChange = (selectOption) => {
@@ -42,7 +42,7 @@ const InputSelect = ({ label, options1}) => {
         {label}
       </label>
       <Select
-        options={options1}
+        options={options}
         autoFocus={true}
         isClearable={true}
         inputId={"select"}

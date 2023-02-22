@@ -14,28 +14,30 @@ const petForm = () => {
       <NavbarBack />
       <h1 className="flex justify-center text-2xl">Mi mascota</h1>
       <InputImage />
-      <div>
+      <div className="flex flex-col items-center">
         <RadioButtonContainer label={"Tipo de mascota "}>
-          <RadioButton title={"Perro"}/>
-          <RadioButton title={"Gato"}/>
+          <RadioButton title={"Perro"} />
+          <RadioButton title={"Gato"} />
         </RadioButtonContainer>
         <RadioButtonContainer label={"Género "}>
-          <RadioButton title={"Macho"}/>
-          <RadioButton title={"Hembra"}/>
+          <RadioButton title={"Macho"} />
+          <RadioButton title={"Hembra"} />
         </RadioButtonContainer>
       </div>
       <InputForm
         label={"Nombre"}
         placeholder={"Escribe el nombre de tu mascota"}
       />
-      <InputSelect label={"Edad"} options1={"Edad"} />
+      <InputSelect label={"Edad"} />
       <InputSelect label={"Raza"} />
-      <RadioButtonContainer label={"¿ Qué tamaño tiene tu mascota ? "}>
-        <RadioButton title={"Chico"} desc={"Hasta 10kg"} />
-        <RadioButton title={"Mediano"} desc={"11-20kg"} />
-        <RadioButton title={"Grande"} desc={"21-40kg"} />
-        <RadioButton title={"Muy grande"} desc={"21-40kg"} />
-      </RadioButtonContainer>
+      <div className="flex justify-center items-center">
+        <RadioButtonContainer label={"¿ Qué tamaño tiene tu mascota ? "} >
+          <RadioButton title={"Chico"} desc={"Hasta 10kg"} />
+          <RadioButton title={"Mediano"} desc={"11-20kg"} />
+          <RadioButton title={"Grande"} desc={"21-40kg"} />
+          <RadioButton title={"Muy grande"} desc={"21-40kg"} />
+        </RadioButtonContainer>
+      </div>
       <TextArea
         label={"Sobre tu mascota (opcional)"}
         placeholder={"Escribe tu descripción aquí..."}
