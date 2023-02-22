@@ -1,10 +1,9 @@
 import { BsTelephoneFill } from "react-icons/bs"
 import { HiLocationMarker } from "react-icons/hi"
-import ImageSelector from "../ImageSelector"
+import InputImage from "../InputImage/InputImage"
 import PencilIcon from "../PencilIcon"
 
 const ProfileInfo = ({
-  bannerColor,
   urlImage,
   handleImageChange,
   name,
@@ -13,41 +12,35 @@ const ProfileInfo = ({
   personalInfo,
 }) => {
   const iconsByType = {
-    address: <HiLocationMarker />,
-    phone: <BsTelephoneFill />,
+    address: <HiLocationMarker size={20} className="scale-110" />,
+    phone: <BsTelephoneFill size={20} />,
   }
 
   return (
     <>
-      <div
-        className="w-full h-[20vh]"
-        style={{ backgroundColor: bannerColor }}
-      ></div>
+      <div className="pb-9">
+        <InputImage urlImage={urlImage} handleImageChange={handleImageChange} />
+      </div>
 
-      <div className="px-6">
-        <div className="-translate-y-1/2">
-          <ImageSelector
-            urlImage={urlImage}
-            handleImageChange={handleImageChange}
-          />
-        </div>
+      <div className="flex justify-between items-center">
+        <h2 className="font-title text-title text-neutral-900">
+          {name} {lastname}
+        </h2>
 
-        <div className="flex justify-between items-center">
-          <h2>{`${name} ${lastname}`}</h2>
+        <span onClick={handleEdit}>
+          <PencilIcon />
+        </span>
+      </div>
 
-          <span onClick={handleEdit}>
-            <PencilIcon />
-          </span>
-        </div>
-
-        <div className="py-3">
-          {personalInfo.map(({ type, value }) => (
-            <div className="flex gap-2 items-center" key={`${type}${value}`}>
-              {iconsByType[type]}
-              <span>{value}</span>
-            </div>
-          ))}
-        </div>
+      <div className="py-3 flex flex-col gap-5">
+        {personalInfo.map(({ type, value }) => (
+          <div className="flex gap-2 items-center" key={`${type}${value}`}>
+            <span className="text-violet-700">{iconsByType[type]}</span>
+            <span className="font-body text-body text-neutral-900">
+              {value}
+            </span>
+          </div>
+        ))}
       </div>
     </>
   )

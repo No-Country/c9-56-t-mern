@@ -3,7 +3,7 @@ import ImageSelector from "../ImageSelector"
 
 const InputImage = ({ urlImage, onChange }) => {
   return (
-    <div className="flex flex-col items-center bg-gray-50 py-4">
+    <div className="flex flex-col items-center">
       <ImageSelector urlImage={urlImage} handleImageChange={onChange} />
     </div>
   )

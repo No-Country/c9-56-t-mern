@@ -74,7 +74,6 @@ const OwnerProfile = () => {
   return (
     <>
       <ProfileInfo
-        bannerColor="#ac82fe"
         urlImage={image}
         handleImageChange={handleImageChange}
         name={name}
@@ -82,8 +81,11 @@ const OwnerProfile = () => {
         handleEdit={handleEdit}
         personalInfo={personalInfo}
       />
-      <div className="p-6">
-        <Panel title="Mis Mascotas" placeholder={"Añade mascotas"} />
+      <div className="py-6">
+        <Panel
+          title="Mis Mascotas"
+          placeholder="¡Aún no tienes mascotas agregadas!"
+        />
       </div>
     </>
   )
