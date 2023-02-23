@@ -33,6 +33,10 @@ class MongoosePetRepository implements PetRepository {
       about,
     )
   }
+
+  async findByProfileId(id: string): Promise<Pet[]> {
+    return await MongoosePetModel.find({ profileId: id })
+  }
 }
 
 export { MongoosePetRepository }
