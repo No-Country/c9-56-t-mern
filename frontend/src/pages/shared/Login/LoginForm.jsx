@@ -30,10 +30,9 @@ const LoginForm = () => {
       <h2 className="text-3xl font-medium ">Iniciar sesión</h2>
       <br />
       <div id="homeMainImage" className="flexs items-center">
-        {/* lo deje de esta manera ya que el svg sobresale */}
         <img
-          className="w-60 h-60 rounded-full bg-gray-500"
-          src="../../../assets/react.svg"
+          className="w-90 h-60"
+          src="https://images2.imgbox.com/ff/5e/cwCK1YM4_o.png"
         />
       </div>
       <br />
