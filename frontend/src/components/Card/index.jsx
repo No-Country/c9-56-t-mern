@@ -1,5 +1,5 @@
 import React from "react"
-import Navbar from "../Navbar/Navbar"
+import Navbar from "../../pages/shared/Navbar/Navbar"
 
 const Card = ({ imageSide = "left", image, service, paragraph }) => {
   if (!["left", "right"].includes(imageSide))
