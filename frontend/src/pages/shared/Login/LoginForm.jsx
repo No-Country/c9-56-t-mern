@@ -4,6 +4,8 @@ import { useAuthStore } from "../../../hooks/useAuthStore"
 import "../../../styles/styles.css"
 import PurpleButton from "../../../components/PurpleButton"
 import InputForm from "../../../components/inputForm/InputForm"
+import Navbar from "../Navbar/Navbar"
+import Footer from "../Footer/Footer"
 
 const LoginForm = () => {
   const { startLogin, errorMessage } = useAuthStore()
@@ -27,7 +29,8 @@ const LoginForm = () => {
   }, [])
 
   return (
-    <div className="flex flex-col items-center max-w-sm w-full m-auto mt-10">
+    <div className="flex flex-col max-w-sm  m-auto bg-slate-50 w-screen sm:w-auto">
+        <Navbar/>
       <h2 className="text-3xl font-semibold ">Iniciar sesión</h2>
       <br />
       <div id="homeMainImage" className="flexs items-center">
@@ -77,6 +80,8 @@ const LoginForm = () => {
           </p>
         </div>
       </form>
+      <Footer/>
+
     </div>
   )
 }
