@@ -2,7 +2,7 @@ import React from "react"
 import { FiCheckCircle } from "react-icons/fi"
 import { useSelector } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
-import NavBar from "../Navbar/Navbar"
+import NavBar from "../../pages/shared/Navbar/Navbar"
 
 const SuccessfulRegistration = () => {
   const { role, email, uid, token } = useSelector((state) => state.auth.user)
