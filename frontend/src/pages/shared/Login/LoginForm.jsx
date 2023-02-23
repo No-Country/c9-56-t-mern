@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { useAuthStore } from "../../../hooks/useAuthStore"
-import "../../styles/styles.css"
+import "../../../styles/styles.css"
 import PurpleButton from "../../../components/PurpleButton"
 
 const LoginForm = () => {
