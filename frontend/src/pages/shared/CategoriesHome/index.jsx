@@ -1,6 +1,6 @@
 import React from "react"
 import Card from "../../../components/Card"
-    
+
 const CategoriesHome = () => {
   let categoryDetails = [
     { img:'https://images2.imgbox.com/91/4a/094P6JH8_o.png',
