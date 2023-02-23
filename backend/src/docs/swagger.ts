@@ -225,6 +225,25 @@ const swaggerDefinition: OAS3Definition = {
           },
         },
       },
+      get: {
+        summary: "Encontrar mascotas",
+        description: "Lista las mascotas que cumplan con los filtros",
+        tags: ["pets"],
+        security: [{ bearerAuth: [] }],
+        parameters: [
+          {
+            name: "profileID",
+            in: "query",
+            description: "id del perfil",
+            required: true,
+          },
+        ],
+        responses: {
+          "200": {
+            description: "ok",
+          },
+        },
+      },
     },
   },
   components: {
