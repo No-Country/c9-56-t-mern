@@ -9,7 +9,7 @@ import Footer from "../Footer/Footer"
 
 const HomePage = () => {
   return (
-    <div className="max-w-sm w-full m-auto bg-slate-50">
+    <div className="max-w-sm  m-auto bg-slate-50 w-screen sm:w-auto">
       <Navbar/>
       <div>
         <div id="homeTitle" className="flex">

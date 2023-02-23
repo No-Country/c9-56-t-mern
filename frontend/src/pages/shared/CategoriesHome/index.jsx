@@ -1,8 +1,5 @@
 import React from "react"
 import Card from "../../../components/Card"
-import Parties from '../../../assets/CategoriesHome/Parties.png'
-import DogGrooming from '../../../assets/CategoriesHome/DogGrooming.png'
-
 
 const CategoriesHome = () => {
   let categoryDetails = [
@@ -39,8 +36,7 @@ const CategoriesHome = () => {
       />
     ) : (
       <Card
-      image={categories.img}
-
+        image={categories.img}
         service={categories.category}
         paragraph={categories.categoryDescription}
       />
