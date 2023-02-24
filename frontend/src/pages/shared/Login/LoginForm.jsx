@@ -6,17 +6,26 @@ import PurpleButton from "../../../components/PurpleButton"
 import InputForm from "../../../components/inputForm/InputForm"
 import Navbar from "../Navbar/Navbar"
 import Footer from "../Footer/Footer"
+import { useForm } from "react-hook-form";
 
 const LoginForm = () => {
   const { startLogin, errorMessage } = useAuthStore()
 
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  // const [email, setEmail] = useState("")
+  // const [password, setPassword] = useState("")
   const navigate = useNavigate()
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({
+  })
 
-  const handleSubmit = async (event) => {
-    event.preventDefault()
+  const onSubmit = async (data) => {
+    const { email, password } = data
+    // event.preventDefault()
     console.log(`Email: ${email}, Password: ${password}`)
+    console.log(data)
 
     await startLogin({ email, password })
     navigate("/profile")
@@ -30,7 +39,7 @@ const LoginForm = () => {
 
   return (
     <div className="flex flex-col max-w-sm  m-auto bg-slate-50 w-screen sm:w-auto">
-        <Navbar/>
+      <Navbar />
       <h2 className="text-3xl font-semibold ">Iniciar sesión</h2>
       <br />
       <div id="homeMainImage" className="flexs items-center">
@@ -40,14 +49,13 @@ const LoginForm = () => {
         />
       </div>
       <br />
-      <form className="w-full max-w-sm" onSubmit={handleSubmit}>
+      <form className="w-full max-w-sm" onSubmit={handleSubmit(onSubmit)}>
         <div className="#">
           <InputForm
             label={"Email o nombre de usuario"}
             placeholder={"Escribe tu email"}
             type={"email"}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            register={register("email", {})}
           />
         </div>
 
@@ -56,8 +64,7 @@ const LoginForm = () => {
             label={"Contraseña"}
             placeholder={"Escribe tu contraseña"}
             type={"password"}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            register={register("password", {})}
           />
         </div>
 
@@ -68,7 +75,7 @@ const LoginForm = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center">
-          <PurpleButton text="Iniciar sesión" type="submit"/>
+          <PurpleButton text="Iniciar sesión" type="submit" />
           <p className="text-center text-neutral-900 text-sm py-3 mt-6">
             ¿Aún no tienes una cuenta?{" "}
             <Link
@@ -80,7 +87,7 @@ const LoginForm = () => {
           </p>
         </div>
       </form>
-      <Footer/>
+      <Footer />
 
     </div>
   )

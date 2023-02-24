@@ -1,12 +1,8 @@
 import React from "react"
 import { useState } from "react"
+import { useForm } from "react-hook-form";
 
-const InputForm = ({ label, placeholder, type }) => {
-  const [value, setValue] = useState("")
-
-  const handleChange = (e) => {
-    setValue(e.target.value)
-  }
+const InputForm = ({ label, placeholder, type, register }) => {
 
   return (
     <div className="flex flex-col m-auto max-w-sm py-2 mx-4">
@@ -19,8 +15,8 @@ const InputForm = ({ label, placeholder, type }) => {
           type={type}
           id="input"
           placeholder={placeholder}
-          value={value}
-          onChange={handleChange}
+          {...register}
+
         />
       </div>
     </div>
