@@ -23,6 +23,15 @@ class MongooseServiceRepository implements ServiceRepository {
 
     return services
   }
+  async getDetailService(idService: string): Promise<Service | null> {
+    const services: Service | null = await MongooseServiceModel.findOne({ id: idService })
+
+    if (!services) {
+      return null
+    }
+
+    return services
+  }
 }
 
 export { MongooseServiceRepository }

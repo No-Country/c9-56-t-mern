@@ -3,6 +3,7 @@ import { Router, type Request, type Response } from "express"
 import { asyncHandler } from "../../shared/framework/asyncHandler"
 import { CreateServiceController } from "../controllers/service/CreateServiceController"
 import { ShowServiceController } from "../controllers/service/ShowServiceController"
+import { ShowServiceDetailController } from "../controllers/service/ShowServiceDetailController"
 
 const serviceRouter = Router()
 
@@ -21,6 +22,15 @@ serviceRouter.get(
     const showServiceController = new ShowServiceController()
 
     await showServiceController.run(req, res)
+  }),
+)
+
+serviceRouter.get(
+  "/services/detail/:id",
+  asyncHandler(async (req: Request, res: Response) => {
+    const showServiceDetailController = new ShowServiceDetailController()
+
+    await showServiceDetailController.run(req, res)
   }),
 )
 
