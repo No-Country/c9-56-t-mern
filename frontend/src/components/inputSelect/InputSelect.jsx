@@ -29,7 +29,7 @@ const options = [
   { value: "25", label: "25" },
 ]
 
-const InputSelect = ({ label}) => {
+const InputSelect = ({ label }) => {
   const [value, setValue] = useState(null)
 
   const handleChange = (selectOption) => {

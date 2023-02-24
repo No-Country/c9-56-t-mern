@@ -23,9 +23,9 @@ module.exports = {
         button: ["0.875rem", { lineHeight: "1.3125rem", fontWeight: 600 }],
         link: ["0.875rem", { lineHeight: "1.3125rem", fontWeight: 400 }],
       },
-      colors:{
-        "regal-blue": "#2684FF"
-      }
+      colors: {
+        "regal-blue": "#2684FF",
+      },
     },
   },
   plugins: [],

@@ -45,7 +45,7 @@ const LoginForm = () => {
           <input
             className="border border-gray-400 p-2 w-full"
             type="text"
-            id="email"
+            // id="email"
             name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -59,7 +59,7 @@ const LoginForm = () => {
           <input
             className="border border-gray-400 p-2 w-full"
             type="password"
-            id="password"
+            // id="password"
             name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}

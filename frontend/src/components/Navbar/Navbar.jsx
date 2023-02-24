@@ -15,7 +15,11 @@ const Navbar = () => {
   return (
     <header className="flex flex-row-reverse max-w-sm justify-between items-center m-auto bg-slate-50">
       <span className="text-violet-700 p-4 text-2xl">
-        <img className="h-6 w-6" src="https://res.cloudinary.com/axiever/image/upload/v1677028424/Logo-principal_s7b5oq.svg" alt="" />
+        <img
+          className="h-6 w-6"
+          src="https://res.cloudinary.com/axiever/image/upload/v1677028424/Logo-principal_s7b5oq.svg"
+          alt=""
+        />
       </span>
 
       <button
