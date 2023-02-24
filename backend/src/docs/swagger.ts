@@ -188,6 +188,30 @@ const swaggerDefinition: OAS3Definition = {
         },
       },
     },
+    "/services/detail/{id}": {
+      get: {
+        description: "Detalle de un servicio",
+        summary: "lista el detalle de un servicio",
+        tags: ["services"],
+        security: [{ bearerAuth: [] }],
+        parameters: [
+          {
+            name: "id",
+            in: "path",
+            description: "id para listar el detalle de un servicio",
+            required: true,
+          },
+        ],
+        responses: {
+          "200": {
+            description: "ok",
+          },
+          "404": {
+            description: "not found",
+          },
+        },
+      },
+    },
     "/pets": {
       post: {
         summary: "Registro de una mascota",
