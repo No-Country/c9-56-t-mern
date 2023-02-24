@@ -13,7 +13,7 @@ const Navbar = () => {
   }
 
   return (
-    <header className="flex flex-row-reverse max-w-sm justify-between items-center m-auto bg-slate-50">
+    <header className="sticky top-0 z-10 flex flex-row-reverse max-w-sm w-full justify-between items-center m-auto bg-slate-50">
       <span className="text-violet-700 p-4 text-2xl">
         <img
           className="h-6 w-6"
@@ -30,7 +30,7 @@ const Navbar = () => {
       </button>
 
       {visible ? (
-        <nav className="transition-all duration-500 ease-in-out flex flex-col items-start max-w-sm absolute top-0 left-0 bottom-0 bg-gray-100 w-64  rounded-r-2xl pt-16 pl-3 shadow-2xl ">
+        <nav className="transition-all duration-500 ease-in-out fixed  z-50 flex flex-col items-start max-w-sm top-0 left-0 bottom-0 h-full bg-gray-100 w-64  rounded-r-2xl pt-16 pl-3 shadow-2xl ">
           <div className="flex flex-row w-full items-center justify-between">
             <div>
               <h2 className="text-slate-900 font-normal text-2xl ml-3">

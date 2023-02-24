@@ -17,7 +17,7 @@ const Panel = ({ title, placeholder, children }) => {
           </h2>
         </div>
       ) : (
-        <div className="py-4 px-4 w-full text-center">{children}</div>
+        <div className="flex flex-row flex-wrap">{children}</div>
       )}
     </div>
   )

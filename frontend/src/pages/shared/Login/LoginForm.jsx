@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import { useAuthStore } from "../../hooks/useAuthStore"
-import "../../styles/styles.css"
-import PurpleButton from "../PurpleButton"
+import { useAuthStore } from "../../../hooks/useAuthStore"
+import "../../../styles/styles.css"
+import PurpleButton from "../../../components/PurpleButton"
+import InputForm from "../../../components/inputForm/InputForm"
+import Navbar from "../Navbar/Navbar"
+import Footer from "../Footer/Footer"
 
 const LoginForm = () => {
   const { startLogin, errorMessage } = useAuthStore()
@@ -26,66 +29,59 @@ const LoginForm = () => {
   }, [])
 
   return (
-    <div className="flex flex-col items-center p-4">
-      <h2 className="text-3xl font-medium ">Iniciar sesión</h2>
+    <div className="flex flex-col max-w-sm  m-auto bg-slate-50 w-screen sm:w-auto">
+        <Navbar/>
+      <h2 className="text-3xl font-semibold ">Iniciar sesión</h2>
       <br />
       <div id="homeMainImage" className="flexs items-center">
-        {/* lo deje de esta manera ya que el svg sobresale */}
         <img
-          className="w-60 h-60 rounded-full bg-gray-500"
-          src="../../../assets/react.svg"
+          className="w-90 h-60"
+          src="https://images2.imgbox.com/ff/5e/cwCK1YM4_o.png"
         />
       </div>
       <br />
       <form className="w-full max-w-sm" onSubmit={handleSubmit}>
         <div className="#">
-          <label className="block font-medium mb-2" htmlFor="email">
-            Email o nombre de usuario
-          </label>
-          <input
-            className="border border-gray-400 p-2 w-full"
-            type="text"
-            // id="email"
-            name="email"
+          <InputForm
+            label={"Email o nombre de usuario"}
+            placeholder={"Escribe tu email"}
+            type={"email"}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
-        <div className="flex flex-col ">
-          <label className="block font-medium mb-2" htmlFor="password">
-            Contraseña
-          </label>
-          <input
-            className="border border-gray-400 p-2 w-full"
-            type="password"
-            // id="password"
-            name="password"
+        <div className="#">
+          <InputForm
+            label={"Contraseña"}
+            placeholder={"Escribe tu contraseña"}
+            type={"password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <a
-            href="#"
-            className="self-end text-blue-600 hover:text-blue-800 underline"
-          >
+        </div>
+
+        <div className="text-end w-full mb-10">
+          <a href="#" className="px-4 text-indigo-600 hover:text-indigo-800 underline">
             Olvidé mi contraseña
           </a>
-          <br />
         </div>
 
         <div className="flex flex-col items-center justify-center">
-          <PurpleButton text="Iniciar sesión" type="submit" />
-          <p className="text-center text-gray-600 text-sm py-3">
+          <PurpleButton text="Iniciar sesión" type="submit"/>
+          <p className="text-center text-neutral-900 text-sm py-3 mt-6">
             ¿Aún no tienes una cuenta?{" "}
             <Link
               to="/register"
-              className="text-blue-600 hover:text-blue-800 underline"
+              className="text-indigo-600 hover:text-blue-800 underline"
             >
-              Registrate
+              Registrarte
             </Link>
           </p>
         </div>
       </form>
+      <Footer/>
+
     </div>
   )
 }

@@ -3,10 +3,14 @@ import { Link } from "react-router-dom"
 import PurpleButton from "../../../components/PurpleButton"
 import BareButton from "../../../components/BareButton"
 import CategoriesHome from "../CategoriesHome"
+import Navbar from "../Navbar/Navbar"
+import Footer from "../Footer/Footer"
+// import HomeImage from "../../../assets/CategoriesHome/Home.png"
 
 const HomePage = () => {
   return (
-    <div className="max-w-sm w-full m-auto">
+    <div className="max-w-sm  m-auto bg-slate-50 w-screen sm:w-auto">
+      <Navbar/>
       <div>
         <div id="homeTitle" className="flex">
           <h2 className="font-poppins font-bold text-3xl p-4 leading-10 text-start">
@@ -18,27 +22,23 @@ const HomePage = () => {
           </h2>
         </div>
       </div>
-      <div id="homeMainImage" className="flex flex-row-reverse">
-        {/* lo deje de esta manera ya que el svg sobresale */}
-        <img
-          className="w-72 h-72 rounded-full bg-gray-500"
-          src="../../../assets/react.svg"
-        />
+      <div className="flex flex-row-reverse">
+      <div id="homeMainImage" className=" w-72 h-72  bg-center bg-no-repeat bg-contain bg-[url('https://images2.imgbox.com/1c/2c/mCUYROte_o.png')]">
+       </div>
       </div>
       <br />
-      <ul className=" flex flex-col space-y-3 items-center">
-        <li className="pb-1">
+        <div className="mb-4">
           <PurpleButton text={"Contratar"} />
-        </li>
+        </div>
         <Link to="/auth/login">
-          <li className="pb-1">
+          <div className="">
             <BareButton text={"Ofrecer servicios"} />
-          </li>
+          </div>
         </Link>
-      </ul>
       <br />
 
       <CategoriesHome />
+      <Footer/>
     </div>
   )
 }

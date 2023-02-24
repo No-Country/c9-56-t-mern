@@ -188,6 +188,63 @@ const swaggerDefinition: OAS3Definition = {
         },
       },
     },
+    "/pets": {
+      post: {
+        summary: "Registro de una mascota",
+        description:
+          "Esta ruta es responsable de registrar una mascota de un usuario dueño",
+        tags: ["pets"],
+        security: [{ bearerAuth: [] }],
+        requestBody: {
+          content: {
+            "application/json": {
+              schema: {
+                $ref: "#/components/schemas/pet",
+              },
+              examples: {
+                "pet example": {
+                  value: {
+                    name: "Dog Name",
+                    photo: "https://site.com/image.jpg",
+                    size: "Small",
+                    ageRange: "Puppy",
+                    profileId: "63f6866089d102431189e6e5",
+                    race: "Pug",
+                    about: "Extra information",
+                    gender: "MALE",
+                    type: "DOG",
+                  },
+                },
+              },
+            },
+          },
+        },
+        responses: {
+          "201": {
+            description: "Created",
+          },
+        },
+      },
+      get: {
+        summary: "Encontrar mascotas",
+        description: "Lista las mascotas que cumplan con los filtros",
+        tags: ["pets"],
+        security: [{ bearerAuth: [] }],
+        parameters: [
+          {
+            name: "profileID",
+            in: "query",
+            description: "id del perfil",
+            required: true,
+          },
+        ],
+        responses: {
+          "200": {
+            description: "ok",
+          },
+        },
+      },
+    },
   },
   components: {
     securitySchemes: {
@@ -274,6 +331,50 @@ const swaggerDefinition: OAS3Definition = {
           },
           categoryId: {
             type: "string",
+          },
+        },
+      },
+      pet: {
+        type: "object",
+        required: [
+          "name",
+          "photo",
+          "size",
+          "ageRange",
+          "profileId",
+          "race",
+          "gender",
+          "type",
+        ],
+        properties: {
+          name: {
+            type: "string",
+          },
+          photo: {
+            type: "string",
+          },
+          size: {
+            type: "string",
+          },
+          ageRange: {
+            type: "string",
+          },
+          profileId: {
+            type: "string",
+          },
+          race: {
+            type: "string",
+          },
+          about: {
+            type: "string",
+          },
+          gender: {
+            type: "string",
+            enum: ["MALE", "FEMALE"],
+          },
+          type: {
+            type: "string",
+            enum: ["DOG", "CAT"],
           },
         },
       },

@@ -7,6 +7,7 @@ const enum HttpCode {
   Ok = 200,
   Unauthenticated = 401,
   Forbidden = 403,
+  NotImplemented = 501,
 }
 
 export { HttpCode }

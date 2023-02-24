@@ -1,7 +1,5 @@
-export enum Sex {
-  Macho = "macho",
-  Hembra = "hembra",
-}
+import type { PetGender } from "../valueObjects/PetGender"
+import type { PetType } from "../valueObjects/PetType"
 
 interface PetModel {
   id: string
@@ -9,10 +7,11 @@ interface PetModel {
   photo: string
   size: string
   ageRange: string
-  sex: Sex
+  gender: PetGender
   profileId: string
-  typeId: string
-  raceId: string
+  type: PetType
+  race: string
+  about: string
 }
 
 export { type PetModel }
