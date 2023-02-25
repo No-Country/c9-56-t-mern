@@ -8,6 +8,7 @@ import RegisterForm from "../components/registerForm/RegisterForm"
 import { useAuthStore } from "../hooks/useAuthStore"
 import OwnerProfile from "../pages/user/owner/OwnerProfile"
 import FormRegisterProfessional from "../pages/professional/RegisterProfessional"
+import ListServices from "../components/ServicesProfessional/ListServices"
 
 const AppRouter = () => {
   const { status, checkAuthToken } = useAuthStore()
@@ -22,7 +23,9 @@ const AppRouter = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/" element={<ListServices />} />
+
+      {/* <Route path="/" element={<HomePage />} /> */}
       <Route path="/*" element={<Navigate to="/" />} />
       {status === "not-authenticated" ? (
         <>

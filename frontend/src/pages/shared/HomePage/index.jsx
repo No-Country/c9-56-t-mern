@@ -10,7 +10,7 @@ import Footer from "../Footer/Footer"
 const HomePage = () => {
   return (
     <div className="max-w-sm  m-auto bg-slate-50 w-screen sm:w-auto">
-      <Navbar/>
+      <Navbar />
       <div>
         <div id="homeTitle" className="flex">
           <h2 className="font-poppins font-bold text-3xl p-4 leading-10 text-start">
@@ -23,22 +23,24 @@ const HomePage = () => {
         </div>
       </div>
       <div className="flex flex-row-reverse">
-      <div id="homeMainImage" className=" w-72 h-72  bg-center bg-no-repeat bg-contain bg-[url('https://images2.imgbox.com/1c/2c/mCUYROte_o.png')]">
-       </div>
+        <div
+          id="homeMainImage"
+          className=" w-72 h-72  bg-center bg-no-repeat bg-contain bg-[url('https://images2.imgbox.com/1c/2c/mCUYROte_o.png')]"
+        ></div>
       </div>
       <br />
-        <div className="mb-4">
-          <PurpleButton text={"Contratar"} />
+      <div className="mb-4">
+        <PurpleButton text={"Contratar"} />
+      </div>
+      <Link to="/auth/login">
+        <div className="">
+          <BareButton text={"Ofrecer servicios"} />
         </div>
-        <Link to="/auth/login">
-          <div className="">
-            <BareButton text={"Ofrecer servicios"} />
-          </div>
-        </Link>
+      </Link>
       <br />
 
       <CategoriesHome />
-      <Footer/>
+      <Footer />
     </div>
   )
 }

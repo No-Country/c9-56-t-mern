@@ -6,20 +6,17 @@ import PurpleButton from "../../../components/PurpleButton"
 import InputForm from "../../../components/inputForm/InputForm"
 import Navbar from "../Navbar/Navbar"
 import Footer from "../Footer/Footer"
-import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form"
 
 const LoginForm = () => {
   const { startLogin, errorMessage } = useAuthStore()
 
-  // const [email, setEmail] = useState("")
-  // const [password, setPassword] = useState("")
   const navigate = useNavigate()
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm({
-  })
+  } = useForm({})
 
   const onSubmit = async (data) => {
     const { email, password } = data
@@ -69,7 +66,10 @@ const LoginForm = () => {
         </div>
 
         <div className="text-end w-full mb-10">
-          <a href="#" className="px-4 text-indigo-600 hover:text-indigo-800 underline">
+          <a
+            href="#"
+            className="px-4 text-indigo-600 hover:text-indigo-800 underline"
+          >
             Olvidé mi contraseña
           </a>
         </div>
@@ -88,7 +88,6 @@ const LoginForm = () => {
         </div>
       </form>
       <Footer />
-
     </div>
   )
 }
