@@ -6,10 +6,8 @@ export default {
   args: {
     children: "InputSelect",
   },
-};
+}
 
-const Template = (args) => <InputSelect {...args}/>;
+const Template = (args) => <InputSelect {...args} />
 
-export const Primary = Template.bind({});
-
-
+export const Primary = Template.bind({})

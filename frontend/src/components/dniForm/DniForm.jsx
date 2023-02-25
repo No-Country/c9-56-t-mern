@@ -22,7 +22,9 @@ const DniForm = () => {
   return (
     <div className="flex flex-row m-auto max-w-xs">
       <div className="container flex flex-col justify-center">
-        <label className="py-2" htmlFor="selectDni">DNI / CUIT</label>
+        <label className="py-2" htmlFor="selectDni">
+          DNI / CUIT
+        </label>
         <Select
           options={options}
           autoFocus={true}
@@ -34,7 +36,9 @@ const DniForm = () => {
         />
       </div>
       <div className="container flex flex-col justify-center">
-        <label className="py-2" htmlFor="inputNumber">Número</label>
+        <label className="py-2" htmlFor="inputNumber">
+          Número
+        </label>
         <input
           className="border-2 h-10 border-neutral-200 focus:outline-none focus:ring focus:ring-[#2684FF] rounded-lg pl-2"
           type="text"

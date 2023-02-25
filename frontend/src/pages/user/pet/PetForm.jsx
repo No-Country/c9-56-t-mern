@@ -31,7 +31,7 @@ const petForm = () => {
       <InputSelect label={"Edad"} />
       <InputSelect label={"Raza"} />
       <div className="flex justify-center items-center">
-        <RadioButtonContainer label={"¿ Qué tamaño tiene tu mascota ? "} >
+        <RadioButtonContainer label={"¿ Qué tamaño tiene tu mascota ? "}>
           <RadioButton title={"Chico"} desc={"Hasta 10kg"} />
           <RadioButton title={"Mediano"} desc={"11-20kg"} />
           <RadioButton title={"Grande"} desc={"21-40kg"} />

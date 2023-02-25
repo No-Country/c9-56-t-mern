@@ -6,8 +6,8 @@ export default {
   args: {
     children: "RadioButton",
   },
-};
+}
 
-const Template = (args) => <RadioButton {...args}/>;
+const Template = (args) => <RadioButton {...args} />
 
-export const Primary = Template.bind({});
+export const Primary = Template.bind({})

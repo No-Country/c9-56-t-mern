@@ -6,10 +6,11 @@ import { useSelector } from "react-redux"
 import { useRegisterProfile } from "../../hooks/useRegisterProfile"
 import { useAuthStore } from "../../hooks/useAuthStore"
 import { useNavigate } from "react-router-dom"
+import AddBtn from "../AddBtn/AddBtn"
 
 const FormDataExtra = (props) => {
   const { formValues, setFormValues } = props
-  const { role, email, uid, token } = useSelector((state) => state.auth.user)
+  // const { role, email, uid, token } = useSelector((state) => state.auth.user)
   const [rol, setRol] = useState([])
   const [rolProfile, setRolProfile] = useState("")
   const { registerProfProfessioanl } = useRegisterProfile()
@@ -73,18 +74,23 @@ const FormDataExtra = (props) => {
     }
   }
 
-  useEffect(() => {
-    setRol((prevRol) => {
-      if (!prevRol.includes(role)) {
-        return [...prevRol, role]
-      } else {
-        return prevRol
-      }
-    })
-    if (role.includes("PROFESSIONAL")) {
-      setRol("PROFESSIONAL")
-    }
-  }, [role])
+  // useEffect(() => {
+  //   setRol((prevRol) => {
+  //     if (!prevRol.includes(role)) {
+  //       return [...prevRol, role]
+  //     } else {
+  //       return prevRol
+  //     }
+  //   })
+  //   if (role.includes("PROFESSIONAL")) {
+  //     setRol("PROFESSIONAL")
+  //   }
+  // }, [role])
+
+  const handleClick = () => {
+    console.log("HOLA")
+  }
+
   return (
     <>
       <div className="flex flex-col items-center p-4">
@@ -128,6 +134,7 @@ const FormDataExtra = (props) => {
                 {...register("titleCareer", {})}
               />
             </div>
+            {/* <AddBtn type="button" onClick={handleClick} /> */}
           </div>
           <PurpleButton text="Continuar" type="submit" />
         </form>

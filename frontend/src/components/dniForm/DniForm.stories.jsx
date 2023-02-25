@@ -1,4 +1,4 @@
-import DniForm from "./DniForm";
+import DniForm from "./DniForm"
 
 export default {
   title: "components/dniForm",
@@ -6,8 +6,8 @@ export default {
   args: {
     children: "DniForm",
   },
-};
+}
 
-const Template = (args) => <DniForm {...args}/>;
+const Template = (args) => <DniForm {...args} />
 
-export const Primary = Template.bind({});
+export const Primary = Template.bind({})
