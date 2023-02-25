@@ -6,7 +6,6 @@ import StepNavigation from "../stepper/StepNavigation"
 import SimpleText from "../SimpleText/SimpleText"
 import Stepper1 from "../Stepper1and2/Stepper1"
 import Stepper2 from "../Stepper1and2/Stepper2"
-import "../../index.css"
 
 const RegisterForm = (props) => {
   const labelArray = ["Step 1", "Step 2"]
