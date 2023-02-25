@@ -7,7 +7,7 @@ const MongooseServiceSchema = new Schema<ServiceModel>({
   presentacionPersonal: { type: String, required: true },
   presentacion_del_servicio: { type: String, required: true },
   profileId: { type: String, required: true },
-  categoryId: [{ type: String, required: true }],
+  categoryId: { type: String, required: true },
 })
 
 const MongooseServiceModel = model<ServiceModel>("service", MongooseServiceSchema)

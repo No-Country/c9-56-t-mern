@@ -4,6 +4,7 @@ import { ServiceRepository } from "../../../domain/repositories/ServiceRepositor
 import { Service } from "../../../domain/valueObjects/Service"
 
 import { MongooseServiceModel } from "./MongooseServiceModel"
+import { MongooseCategoryModel } from "../../../../Category/infrastructure/persistence/mongoose/MongooseCategoryModel"
 
 class MongooseServiceRepository implements ServiceRepository {
   async save(oneService: Service): Promise<Service> {
@@ -32,6 +33,36 @@ class MongooseServiceRepository implements ServiceRepository {
 
     return services
   }
+
+  async getServiceByCategories(list: String []): Promise<any[] | null> {
+    const resultado = await MongooseCategoryModel.aggregate([
+      {
+        $lookup:
+        {   
+          from: "services",
+          localField: "id",
+          foreignField: "categoryId",
+          as: "servicesByCategories"
+        }
+      },
+      {$unwind: "$servicesByCategories"},
+      {$match: {name: {$in: list} }}
+    ])
+    if (resultado.length == 0) return null
+
+    const servicios = this.filter(resultado)    
+
+    return servicios;
+    
+  }
+
+  private filter(data: any[]): any[]{
+    return data.map( res => ({
+      ...res.servicesByCategories,
+      category: res.name
+    }))
+  }
+
 }
 
 export { MongooseServiceRepository }

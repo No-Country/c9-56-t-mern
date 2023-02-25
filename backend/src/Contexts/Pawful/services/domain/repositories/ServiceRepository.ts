@@ -4,6 +4,7 @@ interface ServiceRepository {
   save: (oneService: Service) => Promise<Service>
   getServices: (id: string) => Promise<Service[] | null>
   getDetailService: (idService: string) => Promise<Service | null> 
+  getServiceByCategories: (list: String []) => Promise<any[] | null> 
 }
 
 export { type ServiceRepository }
