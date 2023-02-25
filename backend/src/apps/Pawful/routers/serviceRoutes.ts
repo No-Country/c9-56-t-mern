@@ -35,8 +35,8 @@ serviceRouter.get(
   }),
 )
 
-serviceRouter.get(
-  "/services",
+serviceRouter.post(
+  "/services/categories",
   asyncHandler(async (req: Request, res: Response) => {
     const showServiceCategoryController = new ShowServiceByCategoryController()
 
