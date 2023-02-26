@@ -10,14 +10,13 @@ import AddBtn from "../AddBtn/AddBtn"
 
 const FormDataExtra = (props) => {
   const { formValues, setFormValues } = props
-  // const { role, email, uid, token } = useSelector((state) => state.auth.user)
+  const { role, email, uid, token } = useSelector((state) => state.auth.user)
   const [rol, setRol] = useState([])
   const [rolProfile, setRolProfile] = useState("")
   const { registerProfProfessioanl } = useRegisterProfile()
   const { startLogin } = useAuthStore()
   const [title, setTitle] = useState(["HOLA"])
   const navigate = useNavigate()
-  // let role = "OWNER"
 
   const {
     register,
@@ -47,9 +46,6 @@ const FormDataExtra = (props) => {
     if (role === "OWNER") {
     }
     if (rol === "PROFESSIONAL") {
-      console.log("DEBE PASAR")
-      console.log(rol)
-      console.log(data)
       try {
         const responseBack = await registerProfProfessioanl(
           {
@@ -65,7 +61,6 @@ const FormDataExtra = (props) => {
           token,
         )
         if (responseBack === "ok") {
-          console.log("SI PASA")
           navigate("/profile")
         }
       } catch (error) {
@@ -74,18 +69,18 @@ const FormDataExtra = (props) => {
     }
   }
 
-  // useEffect(() => {
-  //   setRol((prevRol) => {
-  //     if (!prevRol.includes(role)) {
-  //       return [...prevRol, role]
-  //     } else {
-  //       return prevRol
-  //     }
-  //   })
-  //   if (role.includes("PROFESSIONAL")) {
-  //     setRol("PROFESSIONAL")
-  //   }
-  // }, [role])
+  useEffect(() => {
+    setRol((prevRol) => {
+      if (!prevRol.includes(role)) {
+        return [...prevRol, role]
+      } else {
+        return prevRol
+      }
+    })
+    if (role.includes("PROFESSIONAL")) {
+      setRol("PROFESSIONAL")
+    }
+  }, [role])
 
   const handleClick = () => {
     console.log("HOLA")

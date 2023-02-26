@@ -6,18 +6,19 @@ import PurpleButton from "../../../components/PurpleButton"
 import InputForm from "../../../components/inputForm/InputForm"
 import Navbar from "../Navbar/Navbar"
 import Footer from "../Footer/Footer"
-import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form"
+import { useSelector } from "react-redux"
 
 const LoginForm = () => {
   const { startLogin, errorMessage } = useAuthStore()
+  const { role } = useSelector((state) => state.auth.user)
 
   const navigate = useNavigate()
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm({
-  })
+  } = useForm({})
 
   const onSubmit = async (data) => {
     const { email, password } = data
@@ -25,8 +26,23 @@ const LoginForm = () => {
     console.log(`Email: ${email}, Password: ${password}`)
     console.log(data)
 
-    await startLogin({ email, password })
-    navigate("/profile")
+    const roleResponse = await startLogin({ email, password })
+
+    // console.log(roleResponse)
+
+    if (roleResponse.includes("OWNER")) {
+      navigate("/profile")
+      console.log("OWNER")
+    }
+    if (roleResponse.includes("PROFESSIONAL")) {
+      console.log("PROFESSIONAL")
+    }
+    if (
+      roleResponse.includes("OWNER") &&
+      roleResponse.includes("PROFESSIONAL")
+    ) {
+      console.log("OWNER AND PROFESSINA")
+    }
   }
 
   useEffect(() => {
@@ -66,7 +82,10 @@ const LoginForm = () => {
         </div>
 
         <div className="text-end w-full mb-10">
-          <a href="#" className="px-4 text-indigo-600 hover:text-indigo-800 underline">
+          <a
+            href="#"
+            className="px-4 text-indigo-600 hover:text-indigo-800 underline"
+          >
             Olvidé mi contraseña
           </a>
         </div>
@@ -75,17 +94,13 @@ const LoginForm = () => {
           <PurpleButton text="Iniciar sesión" type="submit" />
           <p className="text-center text-neutral-900 text-sm py-3 mt-6">
             ¿Aún no tienes una cuenta?{" "}
-            <Link
-              to="/register"
-              className="global-link"
-            >
+            <Link to="/register" className="global-link">
               Registrarte
             </Link>
           </p>
         </div>
       </form>
       <Footer />
-
     </div>
   )
 }
