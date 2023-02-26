@@ -1,4 +1,3 @@
-// import React, { useState } from "react";
 import React, { useState } from "react"
 import RegisterFormStep2 from "./RegisterFormStep2"
 import RegisterFormStep1 from "./RegisterFormStep1"
@@ -10,7 +9,6 @@ import Stepper2 from "../Stepper1and2/Stepper2"
 const RegisterForm = (props) => {
   const labelArray = ["Step 1", "Step 2"]
   const [currentStep, setCurrentStep] = useState(1)
-
   const [formValues, setFormValues] = useState({})
 
   const updateStep = (step) => {
@@ -22,7 +20,7 @@ const RegisterForm = (props) => {
         <div>
           <SimpleText
             title={"Registro"}
-            paragraph={"Crea tu cuenta ensimple pasos"}
+            paragraph={"Crea tu cuenta en simple pasos"}
           />
           <Stepper1 />
           <RegisterFormStep1
@@ -68,18 +66,18 @@ const RegisterForm = (props) => {
         updateStep={updateStep}
       ></StepNavigation>
 
-      <br />
       {getInfoPerPage()}
 
+
+<div id='textPlusAnchor'className="flex ">
       <p>
-        Ya tienes una cuenta?{" "}
+        Ya tienes una cuenta?</p>
         <a
           href="/auth/login"
-          className="global-link"
->
+          className="global-link">
           Iniciar sesión
-        </a>{" "}
-      </p>
+        </a>
+        </div>
       <br />
       <br />
     </div>

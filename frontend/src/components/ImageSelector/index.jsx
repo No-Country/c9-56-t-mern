@@ -3,12 +3,12 @@ import React from "react"
 import { AiOutlineUser } from "react-icons/ai"
 import PencilIcon from "../PencilIcon"
 
-const ImageSelector = ({ urlImage, onChange }) => {
+const ImageSelector = ({ image, onChange }) => {
   return (
     <div className="w-24 h-24 rounded-full bg-slate-600 flex items-center justify-center relative">
-      {urlImage ? (
+      {image ? (
         <img
-          src={urlImage}
+          src={image}
           alt="profile"
           className="object-cover w-full h-full rounded-full"
         />

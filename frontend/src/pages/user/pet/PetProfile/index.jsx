@@ -1,6 +1,5 @@
 import React from "react"
-import "../../styles/styles.css"
-import logo from "../../assets/react.svg"
+import Footer from "../../../../pages/shared/Footer/Footer"
 import {
   MdEdit,
   MdRoom,
@@ -10,7 +9,7 @@ import {
   MdOutlinePersonOutline,
 } from "react-icons/md"
 
-const ProfilePet = () => {
+const PetProfile = () => {
   const url =
     "https://img.freepik.com/fotos-premium/cientificos-datos-programador-hombre-utilizando-algoritmo-analisis-desarrollo-computadora-portatil_34200-491.jpg?w=1380"
 
@@ -24,7 +23,7 @@ const ProfilePet = () => {
         </div>
         <div className="flex mx-auto  xl:w-4/6 xl:h-14 w-full h-16">
           <div className="flex bg-white flex-row w-24 h-24 relative xl:bottom-11 bottom-9 left-4 border p-2 border-slate-100 rounded-full">
-            <img className="w-screen" src={logo} alt="" />
+            <img className="w-screen" src="https://res.cloudinary.com/dw639wmis/image/upload/v1677370669/Dog_djdije.png" alt="" />
             <div className="absolute bg-white xl:bottom-2 right-2 bottom-0 w-8 h-8 text-gray-500 px-2 py-2 rounded-full hover:bg-gray-100">
               <MdEdit style={{ fontSize: "1rem", color: "#0A497B" }} />
             </div>
@@ -91,17 +90,9 @@ const ProfilePet = () => {
         </div>
       </div>
 
-      <div className=" flex items-center bg-gray-800 bottom-0 w-full h-28 justify-evenly ">
-        <div>
-          <img src={logo} alt="" className="w-20 h-20" />
-        </div>
-        <div className="flex flex-col">
-          <h2 className="text-white">Unirme como profesional</h2>
-          <h2 className="text-white">Políticas</h2>
-        </div>
-      </div>
+      <Footer />
     </div>
   )
 }
 
-export default ProfilePet
+export default PetProfile
