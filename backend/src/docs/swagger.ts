@@ -167,6 +167,38 @@ const swaggerDefinition: OAS3Definition = {
         },
       },
     },
+    "/services/categories": {
+      "post": {
+        "summary": "lista servicios por categoria seleccionada",
+        "description": "Esta ruta es responsable de mostrar los servicios segun la preferencia del usuario",
+        "tags": ["services"],
+        "security": [{ "bearerAuth": [] }],
+        "requestBody": {
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/filter"
+                    },
+                    examples: {
+                        "filter example": {
+                            "value": {
+                                "filtro": ["GUARDERIA"],
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "responses": {
+            "201": {
+                "description": "ok",
+            },
+            "404": {
+                "description": "not found"
+            }
+        }
+    },
+    },
     "/services/{id}": {
       get: {
         description: "Servicios de un perfil Profesional",
@@ -332,6 +364,14 @@ const swaggerDefinition: OAS3Definition = {
           },
           rol: {
             type: "string",
+          },
+        },
+      },
+      filter: {
+        type: "object",
+        properties: {
+          filtro: {
+            type: "array",
           },
         },
       },

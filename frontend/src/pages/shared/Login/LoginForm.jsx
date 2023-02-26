@@ -37,11 +37,11 @@ const LoginForm = () => {
   return (
     <div className="flex flex-col max-w-sm  m-auto bg-slate-50 w-screen sm:w-auto">
       <Navbar />
-      <h2 className="text-3xl font-semibold ">Iniciar sesión</h2>
+      <h2 className="text-3xl font-semibold self-center	 ">Iniciar sesión</h2>
       <br />
       <div id="homeMainImage" className="flexs items-center">
         <img
-          className="w-90 h-60"
+          className="w-80 h-50"
           src="https://res.cloudinary.com/dw639wmis/image/upload/v1677370573/Login_nvry62.png"
         />
       </div>
@@ -77,7 +77,7 @@ const LoginForm = () => {
             ¿Aún no tienes una cuenta?{" "}
             <Link
               to="/register"
-              className="text-indigo-600 hover:text-blue-800 underline"
+              className="global-link"
             >
               Registrarte
             </Link>
