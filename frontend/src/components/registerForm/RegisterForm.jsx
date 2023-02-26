@@ -75,8 +75,8 @@ const RegisterForm = (props) => {
         Ya tienes una cuenta?{" "}
         <a
           href="/auth/login"
-          className="text-blue-600 hover:text-blue-800 underline"
-        >
+          className="global-link"
+>
           Iniciar sesión
         </a>{" "}
       </p>
