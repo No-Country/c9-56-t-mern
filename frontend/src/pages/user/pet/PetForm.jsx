@@ -1,5 +1,5 @@
 import React from "react"
-import NavbarBack from "../../../components/Navbar/NavbarBack"
+import NavbarBack from "../../shared/Navbar/NavbarBack"
 import InputImage from "../../../components/InputImage/InputImage"
 import PurpleButton from "../../../components/PurpleButton/index"
 import TextArea from "../../../components/TextArea/TextArea"
