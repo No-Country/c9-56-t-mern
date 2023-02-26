@@ -1,5 +1,6 @@
-import React, { useState } from "react"
-import { useSelector } from "react-redux"
+import React, { useState, useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { onClearFilters } from "../../store/servicesProf/loadServicesSlice"
 
 const categorias = [
   "Peluqueria",
@@ -9,6 +10,8 @@ const categorias = [
   "Fiestas",
 ]
 
+
+
 const FilterServices = ({
   showCategories,
   setShowCategories,
@@ -17,6 +20,8 @@ const FilterServices = ({
   const [selectedCategories, setSelectedCategories] = useState([])
 
   const filters = useSelector((state) => state.services.filters)
+  const dispatch = useDispatch()
+
 
   const handleCategoryChange = (event) => {
     const { categories } = filters
@@ -26,26 +31,45 @@ const FilterServices = ({
     if (checked) {
       setSelectedCategories((prevCategories) => {
         if (prevCategories.includes(category)) {
-
           return prevCategories
         } else {
           return [...prevCategories, category]
         }
       })
+      dispatch({
+        type: "services/onAddFilter",
+        payload: {
+          filterType: "categories",
+          filterValue: category,
+        },
+      })
     } else {
       setSelectedCategories((prevCategories) =>
         prevCategories.filter((c) => c !== category),
       )
+      dispatch({
+        type: "services/onRemoveFilter",
+        payload: {
+          filterType: "categories",
+          filterValue: category,
+        },
+      })
     }
     console.log(categorias)
   }
 
   const handleApplyFilters = () => {
+    dispatch(onClearFilters())
     applyFilters(selectedCategories)
     setShowCategories(false)
     console.log("HOLA")
   }
 
+  useEffect(() => {
+    setSelectedCategories([...filters.categories])
+  }, [filters.categories])
+
+  const selectedCategorie = [...filters.categories];
   return (
     <>
       {showCategories && (
@@ -55,7 +79,8 @@ const FilterServices = ({
               <div>
                 <h3>Categorías</h3>
                 {categorias.map((category) => {
-                  const checked = filters.categories.includes(
+
+                  const checked = selectedCategories.includes(
                     category.toUpperCase(),
                   )
                   return (
@@ -65,16 +90,13 @@ const FilterServices = ({
                         id="category"
                         value={category}
                         type="checkbox"
-                         checked={selectedCategories.includes(
-                          category.toUpperCase(),
-                        )
-                          //  checked !== ""
-                          //    ? selectedCategories.includes(...checked,category.toUpperCase())
-                          //    : selectedCategories.includes(
-                          //        category.toUpperCase(),
-                          //      )
-                         }
-                        //  checked={selectedCategories.includes(category.toUpperCase())}
+                        checked={
+                          checked
+                            // ? selectedCategories.includes(...selectedCategorie, category.toUpperCase())
+                            // : selectedCategories.includes(
+                            //   category.toUpperCase(),
+                            // )
+                        }
                         onChange={handleCategoryChange}
                       />
                       {category}
