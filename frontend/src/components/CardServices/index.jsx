@@ -1,10 +1,10 @@
-export const CardServices = ({ urlImgae, serviceName }) => {
+export const CardServices = ({ urlImage, serviceName }) => {
   return (
     <>
       <div className="rounded-2xl items-center shadow-2xl">
         <div className="w-full h-32 rounded-t-2xl">
           <img
-            src={urlImgae}
+            src={urlImage}
             alt=""
             className="rounded-t-2xl shadow-2xl h-32 w-full"
           />
