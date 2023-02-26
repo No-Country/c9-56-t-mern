@@ -11,8 +11,6 @@ import { useForm } from "react-hook-form";
 const LoginForm = () => {
   const { startLogin, errorMessage } = useAuthStore()
 
-  // const [email, setEmail] = useState("")
-  // const [password, setPassword] = useState("")
   const navigate = useNavigate()
   const {
     register,
@@ -33,7 +31,6 @@ const LoginForm = () => {
 
   useEffect(() => {
     if (errorMessage !== undefined) {
-      //SE MUESTRA EL ERROR
     }
   }, [])
 
@@ -45,7 +42,7 @@ const LoginForm = () => {
       <div id="homeMainImage" className="flexs items-center">
         <img
           className="w-90 h-60"
-          src="https://images2.imgbox.com/ff/5e/cwCK1YM4_o.png"
+          src="https://res.cloudinary.com/dw639wmis/image/upload/v1677370573/Login_nvry62.png"
         />
       </div>
       <br />
