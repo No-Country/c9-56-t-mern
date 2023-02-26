@@ -5,7 +5,6 @@ import BareButton from "../../../components/BareButton"
 import CategoriesHome from "../CategoriesHome"
 import Navbar from "../Navbar/Navbar"
 import Footer from "../Footer/Footer"
-// import HomeImage from "../../../assets/CategoriesHome/Home.png"
 
 const HomePage = () => {
   return (
@@ -23,7 +22,7 @@ const HomePage = () => {
         </div>
       </div>
       <div className="flex flex-row-reverse">
-      <div id="homeMainImage" className=" w-72 h-72  bg-center bg-no-repeat bg-contain bg-[url('https://images2.imgbox.com/1c/2c/mCUYROte_o.png')]">
+      <div id="homeMainImage" className=" w-72 h-72  bg-center bg-no-repeat bg-contain bg-[url('https://res.cloudinary.com/dw639wmis/image/upload/v1677370573/Home_zke8ng.png')]">
        </div>
       </div>
       <br />
