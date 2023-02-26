@@ -5,26 +5,40 @@ import "../../../styles/styles.css"
 import PurpleButton from "../../../components/PurpleButton"
 import InputForm from "../../../components/inputForm/InputForm"
 import Navbar from "../Navbar/Navbar"
-import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form"
+import { useSelector } from "react-redux"
 
 const LoginForm = () => {
   const { startLogin, errorMessage } = useAuthStore()
+  const { role } = useSelector((state) => state.auth.user)
 
   const navigate = useNavigate()
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm({
-  })
+  } = useForm({})
 
   const onSubmit = async (data) => {
     const { email, password } = data
     console.log(`Email: ${email}, Password: ${password}`)
     console.log(data)
 
-    await startLogin({ email, password })
-    navigate("/profile")
+    const roleResponse = await startLogin({ email, password })
+
+    if (roleResponse.includes("OWNER")) {
+      navigate("/profile")
+      console.log("OWNER")
+    }
+    if (roleResponse.includes("PROFESSIONAL")) {
+      console.log("PROFESSIONAL")
+    }
+    if (
+      roleResponse.includes("OWNER") &&
+      roleResponse.includes("PROFESSIONAL")
+    ) {
+      console.log("OWNER AND PROFESSINA")
+    }
   }
 
   useEffect(() => {
@@ -33,7 +47,7 @@ const LoginForm = () => {
   }, [])
 
   return (
-    <div className="flex flex-col max-w-sm  m-auto bg-slate-50 w-screen sm:w-auto">
+    <div className="global-main-container">
       <Navbar />      
       <div id="homeMainImagePlusText" className="flex flex-col self-center items-center">
       <h2 className="text-3xl font-semibold">Iniciar sesión</h2>
@@ -63,7 +77,10 @@ const LoginForm = () => {
         </div>
 
         <div className="text-end w-full mb-10">
-          <a href="#" className="px-4 text-indigo-600 hover:text-indigo-800 underline">
+          <a
+            href="#"
+            className="px-4 text-indigo-600 hover:text-indigo-800 underline"
+          >
             Olvidé mi contraseña
           </a>
         </div>
@@ -72,10 +89,7 @@ const LoginForm = () => {
           <PurpleButton text="Iniciar sesión" type="submit" />
           <p className="text-center text-neutral-900 text-sm py-3 mt-6">
             ¿Aún no tienes una cuenta?{" "}
-            <Link
-              to="/register"
-              className="global-link"
-            >
+            <Link to="/register" className="global-link">
               Registrarte
             </Link>
           </p>

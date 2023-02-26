@@ -9,5 +9,5 @@ const Template = (args) => <PetCard {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  name: 'Luly'
+  name: "Luly",
 }

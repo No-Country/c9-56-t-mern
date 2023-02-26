@@ -68,10 +68,8 @@ const RegisterForm = (props) => {
 
       {getInfoPerPage()}
 
-
-<div id='textPlusAnchor'className="flex ">
-      <p>
-        Ya tienes una cuenta?</p>
+      <p>Ya tienes una cuenta?</p>
+      <div>
         <a
           href="/auth/login"
           className="global-link">

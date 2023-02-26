@@ -30,18 +30,13 @@ module.exports = {
         DEFAULT: {
           css: {
             a: {
-              "@apply text-indigo-600 hover:text-blue-800 underline global-link": {},
+              "@apply text-indigo-600 hover:text-blue-800 underline global-link":
+                {},
             },
           },
         },
       },
     },
   },
-  plugins: [
-require("@tailwindcss/typography"),
-  ],
-};
-
-
-
-
+  plugins: [require("@tailwindcss/typography")],
+}
