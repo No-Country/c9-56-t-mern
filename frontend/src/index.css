@@ -10,5 +10,5 @@
 @tailwind utilities;
 
 .global-link {
-    @apply text-indigo-600 hover:text-blue-800 underline;
-  }
+  @apply text-indigo-600 hover:text-blue-800 underline;
+}

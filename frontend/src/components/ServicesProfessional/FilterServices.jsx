@@ -1,89 +1,93 @@
 import React, { useState } from "react"
+import { useSelector } from "react-redux"
 
-const FilterServices = ({ categories, petTypes, sizes, onApplyFilters }) => {
-  const [showFilters, setShowFilters] = useState(false)
+const categorias = [
+  "Peluqueria",
+  "Pasteleria",
+  "Guarderia",
+  "Paseos",
+  "Fiestas",
+]
+
+const FilterServices = ({
+  showCategories,
+  setShowCategories,
+  applyFilters,
+}) => {
   const [selectedCategories, setSelectedCategories] = useState([])
-  const [selectedPetTypes, setSelectedPetTypes] = useState([])
-  const [selectedSizes, setSelectedSizes] = useState([])
 
-  const handleFilters = () => {
-    const filter = {
-      categories: selectedCategories,
-      petTypes: selectedPetTypes,
-      sizes: selectedSizes,
+  const filters = useSelector((state) => state.services.filters)
+
+  const handleCategoryChange = (event) => {
+    const { categories } = filters
+    const { value, checked } = event.target
+    const category = value.toUpperCase()
+
+    if (checked) {
+      setSelectedCategories((prevCategories) => {
+        if (prevCategories.includes(category)) {
+
+          return prevCategories
+        } else {
+          return [...prevCategories, category]
+        }
+      })
+    } else {
+      setSelectedCategories((prevCategories) =>
+        prevCategories.filter((c) => c !== category),
+      )
     }
-    onApplyFilters(filter)
-    setShowFilters(false)
+    console.log(categorias)
+  }
+
+  const handleApplyFilters = () => {
+    applyFilters(selectedCategories)
+    setShowCategories(false)
+    console.log("HOLA")
   }
 
   return (
-    <div>
-      <button onClick={() => setShowFilters(!showFilters)}>
-        {showFilters ? "Ocultar filtros" : "Mostrar filtros"}
-      </button>
-      {showFilters && (
-        <div>
-          <h3>Categorías</h3>
-          {categories.map((category) => (
-            <label key={category}>
-              <input
-                type="checkbox"
-                checked={selectedCategories.includes(category)}
-                onChange={(e) => {
-                  if (e.target.checked) {
-                    setSelectedCategories([...selectedCategories, category])
-                  } else {
-                    selectedCategories(
-                      selectedCategories(
-                        selectedCategories.filter((c) => c !== category),
-                      ),
-                    )
-                  }
-                }}
-              />
-              {category}
-            </label>
-          ))}
-          <h3>Tipo de mascota</h3>,
-          {petTypes.map((petType) => (
-            <label key={petType}>
-              <input
-                type="checkbox"
-                checked={selectedPetTypes.includes(petType)}
-                onChange={(e) => {
-                  if (e.target.checked) {
-                    setSelectedPetTypes([...selectedPetTypes, petType])
-                  } else {
-                    setSelectedPetTypes(
-                      selectedPetTypes.filter((p) => p !== petType),
-                    )
-                  }
-                }}
-              />
-              {petType}
-            </label>
-          ))}
-          <h3>Tamaño</h3>
-          {sizes.map((size) => (
-            <label key={size}>
-              <input
-                type="checkbox"
-                checked={selectedSizes.includes(size)}
-                onChange={(e) => {
-                  if (e.target.checked) {
-                    setSelectedSizes([...selectedSizes, size])
-                  } else {
-                    setSelectedSizes(selectedSizes.filter((s) => s !== size))
-                  }
-                }}
-              />
-              {size}
-            </label>
-          ))}
-          <button onClick={handleFilters}>Aplciar filtros</button>
+    <>
+      {showCategories && (
+        <div className="absolute w-64 h-96 left-20 top-16 bg-yellow-300">
+          <div className="bg-violet-50 rounded-lg flex flex-col items-center p-8">
+            {
+              <div>
+                <h3>Categorías</h3>
+                {categorias.map((category) => {
+                  const checked = filters.categories.includes(
+                    category.toUpperCase(),
+                  )
+                  return (
+                    <label key={category} className="flex p-2">
+                      <input
+                        className="flex mx-5"
+                        id="category"
+                        value={category}
+                        type="checkbox"
+                         checked={selectedCategories.includes(
+                          category.toUpperCase(),
+                        )
+                          //  checked !== ""
+                          //    ? selectedCategories.includes(...checked,category.toUpperCase())
+                          //    : selectedCategories.includes(
+                          //        category.toUpperCase(),
+                          //      )
+                         }
+                        //  checked={selectedCategories.includes(category.toUpperCase())}
+                        onChange={handleCategoryChange}
+                      />
+                      {category}
+                    </label>
+                  )
+                })}
+              </div>
+            }
+          </div>
+          <button onClick={handleApplyFilters}>Aplciar filtros</button>
         </div>
       )}
-    </div>
+    </>
   )
 }
 
