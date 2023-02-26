@@ -1,4 +1,4 @@
-export const CardServices = ({ urlImgae, serviceName }) => {
+export const CardServices = ({ urlImage, serviceName }) => {
   return (
     <>
       <div className="rounded-2xl items-center shadow-2xl">
