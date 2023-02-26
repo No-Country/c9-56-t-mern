@@ -41,7 +41,7 @@ const RegisterFormStep2 = (props) => {
   }
 
   return (
-    <div>
+    <div className="global-main-container">
       <form onSubmit={handleSubmit(onSubmit)}>
         <br />
         <div className="flex flex-row items-center gap-6">

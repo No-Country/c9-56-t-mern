@@ -15,7 +15,7 @@ const SuccessfulRegistration = () => {
   }
 
   return (
-    <div className="flex flex-col max-w-sm  m-auto bg-slate-50 w-screen sm:w-auto">
+    <div className="global-main-container">
         <NavBar />
         <h2 className="text-neutral-900 text-3xl text-center font-semibold my-4 ">
           !Te damos la bienvenida a{" "}

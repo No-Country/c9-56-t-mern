@@ -33,7 +33,7 @@ const LoginForm = () => {
   }, [])
 
   return (
-    <div className="flex flex-col max-w-sm  m-auto bg-slate-50 w-screen sm:w-auto">
+    <div className="global-main-container">
       <Navbar />      
       <div id="homeMainImagePlusText" className="flex flex-col self-center items-center">
       <h2 className="text-3xl font-semibold">Iniciar sesión</h2>

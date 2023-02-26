@@ -18,7 +18,7 @@ const ProfileInfo = ({
 
   return (
     <>
-      <div className="pb-9">
+      <div className="global-main-container">
         <InputImage urlImage={urlImage} handleImageChange={handleImageChange} />
       </div>
 

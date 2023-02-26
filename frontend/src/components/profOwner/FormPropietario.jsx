@@ -67,7 +67,7 @@ const FormPropietario = () => {
 
   return (
     <div>
-      <div className="div-encabezados">
+      <div className="global-main-container">
         <SimpleText
           title={"¡Vamos a conocernos!"}
           paragraph={

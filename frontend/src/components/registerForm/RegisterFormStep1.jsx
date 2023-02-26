@@ -19,7 +19,7 @@ const RegisterFormStep1 = (props) => {
     console.log(data)
   }
   return (
-    <div>
+    <div className="global-main-container">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <InputForm

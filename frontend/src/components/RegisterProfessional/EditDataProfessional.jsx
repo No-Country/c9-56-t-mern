@@ -6,8 +6,8 @@ import InputForm from "../inputForm/InputForm"
 
 const EditDataProfessional = () => {
   return (
-    <>
-      <div>
+    <div className="global-main-container">
+      <div >
         <SimpleText
           title={"Datos personales"}
           paragraph={"Puedes editar o actualizar tu perfil"}
@@ -35,7 +35,7 @@ const EditDataProfessional = () => {
 
         <PurpleButton text={"Guardar datos"} />
       </div>
-    </>
+    </div>
   )
 }
 

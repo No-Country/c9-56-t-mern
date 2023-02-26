@@ -35,7 +35,7 @@ const PetForm = () => {
   }
 
   return (
-    <div className="flex flex-col items-center p-4 ">
+    <div className="global-main-container">
       <form className="w-full max-w-sm" onSubmit={handleSubmit}>
         <h2 className="text-lg font-medium mb-4 text-center">
           Datos de tu mascota

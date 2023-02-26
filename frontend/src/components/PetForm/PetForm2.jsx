@@ -20,7 +20,7 @@ const PetForm2 = () => {
 
   return (
     <form
-      className="max-w-sm mt-5 mx-auto p-6 rounded-lg flex flex-col items-center"
+      className="global-main-container"
       onSubmit={handleSubmit}
     >
       <h2 className="text-lg font-bold mb-4">Guau Guau</h2>

@@ -72,7 +72,7 @@ const OwnerProfile = () => {
   ]
 
   return (
-    <>
+    <div className="global-main-container">
       <ProfileInfo
         urlImage={image}
         handleImageChange={handleImageChange}
@@ -87,7 +87,7 @@ const OwnerProfile = () => {
           placeholder="¡Aún no tienes mascotas agregadas!"
         />
       </div>
-    </>
+    </div>
   )
 }
 

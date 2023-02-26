@@ -14,7 +14,7 @@ const PetProfile = () => {
     "https://img.freepik.com/fotos-premium/cientificos-datos-programador-hombre-utilizando-algoritmo-analisis-desarrollo-computadora-portatil_34200-491.jpg?w=1380"
 
   return (
-    <div className="flex flex-col h-screen p-0 ">
+    <div className="global-main-container">
       <div className="h-9 bg-blue-200"></div>
 
       <div className="flex flex-col bg-white xl:h-2/4 xl:w-full">
