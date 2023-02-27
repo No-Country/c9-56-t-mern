@@ -1,6 +1,5 @@
 import logo from "../../assets/react.svg"
 import { Link, Form, Navigate } from "react-router-dom"
-import "../../styles/styles.css"
 import SimpleText from "../SimpleText/SimpleText"
 import InputImage from "../InputImage/InputImage"
 import React, { useState, useEffect } from "react"
