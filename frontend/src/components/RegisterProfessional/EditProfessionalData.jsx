@@ -1,7 +1,7 @@
 import React from "react"
 import SimpleText from "../SimpleText/SimpleText"
 import PurpleButton from "../PurpleButton"
-import DniForm from "../dniForm/DniForm"
+import IdForm from "../IdForm/index"
 import InputForm from "../inputForm/InputForm"
 
 const EditDataProfessional = () => {
@@ -29,7 +29,7 @@ const EditDataProfessional = () => {
           </div>
 
           <div className="flex flex-row gap-2">
-            <DniForm />
+            <IdForm />
           </div>
         </div>
 
