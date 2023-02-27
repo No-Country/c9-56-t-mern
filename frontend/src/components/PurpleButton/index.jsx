@@ -5,7 +5,7 @@ const PurpleButton = ({ text, type }) => {
     <div className=" flex w-full max-w-sm">
       <button
         type={type}
-        className="w-full  font-medium bg-violet-800  mx-4  px-7 py-3 rounded-lg text-gray-50 text-base"
+        className="w-full font-button text-button bg-violet-800  mx-4  px-7 py-3 rounded-lg text-gray-50"
       >
         {text}{" "}
       </button>

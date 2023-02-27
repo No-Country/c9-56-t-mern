@@ -2,9 +2,9 @@ import React from "react"
 
 const SimpleText = ({ title, paragraph }) => {
   return (
-    <div className="mx-auto w-full text-center px-4 py-6  text-neutral-900">
-      <h2 className="text-2xl font-semibold mb-2">{title}</h2>
-      <p className="text-xl font-normal  ">{paragraph}</p>
+    <div className="w-full max-w-sm m-auto px-4 text-center text-neutral-900">
+      <h2 className="text-title font-title mb-2">{title}</h2>
+      <p className="text-subtitle font-subtitle">{paragraph}</p>
     </div>
   )
 }

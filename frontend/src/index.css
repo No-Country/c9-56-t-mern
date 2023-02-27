@@ -12,7 +12,7 @@
  @apply bg-slate-50 m-0;
 }
 .global-main-container {
-  @apply flex flex-col max-w-sm my-0 py-0 mx-auto bg-slate-50 w-full h-full;
+  @apply flex flex-col max-w-sm mx-auto bg-slate-50 w-full h-full;
 }
 .global-link {
     @apply text-indigo-600 hover:text-blue-800 underline;

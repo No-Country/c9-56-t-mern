@@ -2,7 +2,7 @@ import React from "react"
 
 const Stepper1 = () => {
   return (
-    <div className="flex justify-center m-4">
+    <div className="flex justify-center m-4 my-8">
       <svg
         width="239"
         height="32"

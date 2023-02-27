@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { useAuthStore } from "../../../hooks/useAuthStore"
 import "../../../styles/styles.css"
 import PurpleButton from "../../../components/PurpleButton"
-import InputForm from "../../../components/InputForm/InputForm"
+import InputForm from "../../../components/inputForm/InputForm"
 import Navbar from "../Navbar/Navbar"
 import { useForm } from "react-hook-form"
 import { useSelector } from "react-redux"
@@ -48,17 +48,17 @@ const LoginForm = () => {
 
   return (
     <div className="global-main-container">
-      <Navbar />      
-      <div id="homeMainImagePlusText" className="flex flex-col self-center items-center">
-      <h2 className="text-3xl font-semibold">Iniciar sesión</h2>
+      <Navbar />
+      <h2 className="text-title font-title mt-10  self-center">Iniciar sesión</h2>
+      <br />
+      <div id="homeMainImage" className="flex items-center justify-center">
         <img
-          className="w-80 h-50"
-          src="https://res.cloudinary.com/dw639wmis/image/upload/v1677370573/Login_nvry62.png"
+          className="w-64 h-40"
+          src="https://images2.imgbox.com/ff/5e/cwCK1YM4_o.png"
         />
       </div>
-      <br />
       <form className="w-full max-w-sm" onSubmit={handleSubmit(onSubmit)}>
-        <div className="#">
+      <div className="#">
           <InputForm
             label={"Email o nombre de usuario"}
             placeholder={"Escribe tu email"}
@@ -79,24 +79,26 @@ const LoginForm = () => {
         <div className="text-end w-full">
           <a
             href="#"
-            className="px-4 text-indigo-600 hover:text-indigo-800 underline"
+            className="text-link font-link px-4 text-indigo-600 hover:text-indigo-800 underline"
           >
             Olvidé mi contraseña
           </a>
-         
+
         </div>
- <br />
+        <br />
         <div className="btn-plus-link">
           <PurpleButton text="Iniciar sesión" type="submit" />
-          <div className="text-below">
-            ¿Aún no tienes una cuenta?{" "}
-            <Link to="/register" className="global-link">
-              Registrarte
-            </Link>
-          </div>
+          <p className="text-center text-neutral-900 text-caption font caption py-3 pb-12 mt-6">
+            ¿Aún no tienes una cuenta?{" "} </p>
+          <Link to="/register" className="global-link text-link font-link ">
+            Registrarte
+          </Link>
         </div>
       </form>
-    </div>
+       
+
+
+    </div >
   )
 }
 

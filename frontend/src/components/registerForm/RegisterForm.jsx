@@ -5,7 +5,7 @@ import StepNavigation from "../stepper/StepNavigation"
 import SimpleText from "../SimpleText/SimpleText"
 import Stepper1 from "../Stepper1and2/Stepper1"
 import Stepper2 from "../Stepper1and2/Stepper2"
-import Navbar from "../../pages/shared/Navbar/Navbar"
+import NavbarBack from "../../pages/shared/Navbar/NavbarBack"
 
 const RegisterForm = (props) => {
   const labelArray = ["Step 1", "Step 2"]
@@ -19,10 +19,13 @@ const RegisterForm = (props) => {
     if (currentStep === 1) {
       return (
         <div>
-          <SimpleText
-            title={"Registro"}
-            paragraph={"Crea tu cuenta en simple pasos"}
-          />
+          <NavbarBack />
+          <div className="mt-10">
+            <SimpleText
+              title={"Registro"}
+              paragraph={"Crea tu cuenta en simples pasos"}
+            />
+          </div>
           <Stepper1 />
           <RegisterFormStep1
             labelArray={labelArray}
@@ -61,7 +64,7 @@ const RegisterForm = (props) => {
 
   return (
     <div className="global-main-container">
-      <Navbar/>
+      <NavbarBack/>
       <StepNavigation
         labelArray={labelArray}
         currentStep={currentStep}
@@ -70,19 +73,21 @@ const RegisterForm = (props) => {
 
       {getInfoPerPage()}
 
-<div className="btn-plus-link">
-    <div className="text-below">
-        Ya tienes una cuenta? {" "}
+      <div className="flex w-full justify-center mt-6">
+        <p className="text-caption font-caption mr-2">
+          
+          ¿Ya tienes una cuenta?{" "}
+        </p>
+         
+        {/*etiqueta 'a' dentro de una 'p'???*/}
         <a
           href="/auth/login"
-          className="global-link">
+          className="global-link text-link font-link"        >
           Iniciar sesión
         </a>
         </div>
         </div>
-      <br />
-      <br />
-    </div>
+     
   )
 }
 
