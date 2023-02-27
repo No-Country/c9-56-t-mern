@@ -5,7 +5,6 @@ import { IoChevronBackOutline } from "react-icons/io5"
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false)
-
   const handlerVisible = (e) => {
     e.preventDefault()
     setVisible(!visible)

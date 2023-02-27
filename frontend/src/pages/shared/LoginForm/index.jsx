@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { useAuthStore } from "../../../hooks/useAuthStore"
 import "../../../styles/styles.css"
 import PurpleButton from "../../../components/PurpleButton"
-import InputForm from "../../../components/inputForm/InputForm"
+import InputForm from "../../../components/InputForm/InputForm"
 import Navbar from "../Navbar/Navbar"
 import { useForm } from "react-hook-form"
 import { useSelector } from "react-redux"
@@ -76,23 +76,24 @@ const LoginForm = () => {
           />
         </div>
 
-        <div className="text-end w-full mb-10">
+        <div className="text-end w-full">
           <a
             href="#"
             className="px-4 text-indigo-600 hover:text-indigo-800 underline"
           >
             Olvidé mi contraseña
           </a>
+         
         </div>
-
-        <div className="flex flex-col items-center justify-center">
+ <br />
+        <div className="btn-plus-link">
           <PurpleButton text="Iniciar sesión" type="submit" />
-          <p className="text-center text-neutral-900 text-sm py-3 mt-6">
+          <div className="text-below">
             ¿Aún no tienes una cuenta?{" "}
             <Link to="/register" className="global-link">
               Registrarte
             </Link>
-          </p>
+          </div>
         </div>
       </form>
     </div>

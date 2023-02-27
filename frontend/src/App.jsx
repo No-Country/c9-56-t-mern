@@ -7,7 +7,7 @@ function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <div id="globalBody" className="bg-slate-50">
+        <div className="App">
           <AppRouter />
         </div>
       </BrowserRouter>
