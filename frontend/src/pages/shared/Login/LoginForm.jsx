@@ -5,7 +5,6 @@ import "../../../styles/styles.css"
 import PurpleButton from "../../../components/PurpleButton"
 import InputForm from "../../../components/inputForm/InputForm"
 import Navbar from "../Navbar/Navbar"
-import Footer from "../Footer/Footer"
 import { useForm } from "react-hook-form"
 import { useSelector } from "react-redux"
 

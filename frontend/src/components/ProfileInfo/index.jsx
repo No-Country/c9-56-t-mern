@@ -20,7 +20,11 @@ const ProfileInfo = ({
   return (
     <>
       <div className="global-main-container">
-        <InputImage urlImage={urlImage} handleImageChange={handleImageChange} />
+        <InputImage
+          urlImage={urlImage}
+          handleImageChange={handleImageChange}
+          disabled={!editable}
+        />
       </div>
 
       <div className="flex justify-between items-center">

@@ -68,7 +68,6 @@ const RegisterForm = (props) => {
 
       {getInfoPerPage()}
 
-
 <div id='textPlusAnchor'className="flex ">
       <p>
         Ya tienes una cuenta?</p>
