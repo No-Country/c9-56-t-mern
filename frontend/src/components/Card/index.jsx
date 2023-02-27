@@ -22,8 +22,8 @@ const Card = ({ imageSide = "left", image, service, paragraph }) => {
           />
         </div>
         <div className="w-56 h-20">
-          <h2 className="text-2xl font-semibold">{service}</h2>
-          <p className="text-base font-normal">{paragraph}</p>
+          <h2 className="text-title font-title">{service}</h2>
+          <p className="text-sans font-subtitle">{paragraph}</p>
         </div>
       </div>
     </div>

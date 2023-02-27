@@ -17,7 +17,7 @@ const SuccessfulRegistration = () => {
   return (
     <div className="global-main-container">
         <NavBar />
-        <h2 className="text-neutral-900 text-3xl text-center font-semibold my-4 ">
+        <h2 className="text-neutral-900 text-title font-title mt-10 mb-4">
           !Te damos la bienvenida a{" "}
           <span className="text-violet-700">Pawful!</span>
         </h2>

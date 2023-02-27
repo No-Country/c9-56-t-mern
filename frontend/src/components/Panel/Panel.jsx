@@ -3,7 +3,7 @@ import AddBtn from "../AddBtn/AddBtn"
 
 const Panel = ({ title, placeholder, children, editable }) => {
   return (
-    <div className="flex items-center flex-col">
+    <div className="flex items-center flex-col mx-4">
       <div className="flex items-center justify-between w-full">
         <h2 className="font-subtitle text-subtitle-bold text-neutral-900">
           {title}

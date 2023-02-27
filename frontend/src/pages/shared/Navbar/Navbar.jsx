@@ -13,7 +13,7 @@ const Navbar = () => {
   }
 
   return (
-    <header className="sticky top-0 z-10 flex flex-row-reverse max-w-sm w-full justify-between items-center m-auto bg-slate-50">
+    <header className="sticky top-0 z-20 flex flex-row-reverse max-w-sm w-full justify-between items-center m-auto bg-slate-50">
       <span className="text-violet-700 p-4 text-2xl">
         <img
           className="h-6 w-6"
