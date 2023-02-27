@@ -12,8 +12,7 @@ import FilterServices from "./FilterServices"
 const ListServices = () => {
   const [showCategories, setShowCategories] = useState(false)
   const [searchText, setSearchText] = useState("")
-  const [currentPage, setCurrentPage] = useState(1)
-  const [resultsPerPage, setResultsPerPage] = useState(5)
+
 
   const dispatch = useDispatch()
 
