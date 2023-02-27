@@ -14,7 +14,7 @@ const petForm = () => {
       <Navbar />
       <h2 className="flex justify-center text-2xl">Mi mascota</h2>
       <InputImage 
-      image={'https://res.cloudinary.com/dw639wmis/image/upload/v1677370669/Dog_djdije.png'}
+      UrlImage={'https://res.cloudinary.com/dw639wmis/image/upload/v1677370669/Dog_djdije.png'}
       />
       <div className="flex flex-col items-center">
         <RadioButtonContainer label={"Tipo de mascota "}>
