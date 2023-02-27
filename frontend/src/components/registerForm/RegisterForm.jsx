@@ -64,7 +64,6 @@ const RegisterForm = (props) => {
 
   return (
     <div className="global-main-container">
-      <NavbarBack/>
       <StepNavigation
         labelArray={labelArray}
         currentStep={currentStep}
