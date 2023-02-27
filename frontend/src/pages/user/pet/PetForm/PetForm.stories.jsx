@@ -1,7 +1,7 @@
 import PetForm from "./PetForm"
 
 export default {
-  title: "pages/user/pet/PetForm",
+  title: "Pages/PetForm",
   component: PetForm,
 }
 
