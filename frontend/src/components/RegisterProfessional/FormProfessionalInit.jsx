@@ -41,7 +41,7 @@ const FormProfessionalInit = (props) => {
 
   return (
     <>
-      <div className="flex flex-col items-center p-4">
+      <div className="global-main-container">
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-sm">
           <div className="flex justify-center mb-9 mt-8">
             <ImageSelector urlImage={images} onChange={handleImageChange} />

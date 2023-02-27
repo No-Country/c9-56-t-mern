@@ -8,7 +8,7 @@ import Footer from "../Footer/Footer"
 const TittleProfessional = () => {
   return (
     <>
-      <div>
+      <div className="global-main-container">
         <SimpleText
           title={"Títulos profesinoales"}
           paragraph={

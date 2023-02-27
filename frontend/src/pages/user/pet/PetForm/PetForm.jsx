@@ -10,12 +10,12 @@ import Navbar from "../../../shared/Navbar/Navbar"
 
 const petForm = () => {
   return (
-    <div className="flex flex-col max-w-sm  m-auto bg-slate-50 w-screen sm:w-auto">
+    <div className="global-main-container">
       <Navbar />
       <h2 className="flex justify-center text-2xl">Mi mascota</h2>
-      <InputImage
+      <InputImage 
       urlImage={'https://res.cloudinary.com/dw639wmis/image/upload/v1677370669/Dog_djdije.png'}
-      /> 
+      />
       <div className="flex flex-col items-center">
         <RadioButtonContainer label={"Tipo de mascota "}>
           <RadioButton title={"Perro"} />
