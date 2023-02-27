@@ -59,6 +59,6 @@ export const WithPets = () => {
 }
 
 export const Own = () => {
-  mock.onGet("/pets").reply(200, [])
+  mockContent()
   return <PetsPanel own />
 }
