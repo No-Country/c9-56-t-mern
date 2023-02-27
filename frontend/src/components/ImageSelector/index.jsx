@@ -5,7 +5,7 @@ import PencilIcon from "../PencilIcon"
 const ImageSelector = ({ urlImage, onChange, disabled }) => {
   return (
     <div className="w-24 h-24 rounded-full bg-slate-600 flex items-center justify-center relative">
-      {image ? (
+      {urlImage ? (
         <img
           src={image}
           alt="profile"
