@@ -3,7 +3,7 @@ import SimpleText from "../SimpleText/SimpleText"
 import { MdBusinessCenter } from "react-icons/md"
 import AddBtn from "../AddBtn/AddBtn"
 import PurpleButton from "../PurpleButton"
-import Footer from "../Footer/Footer"
+import Footer from "../../pages/shared/Footer/Footer"
 
 const TittleProfessional = () => {
   return (
