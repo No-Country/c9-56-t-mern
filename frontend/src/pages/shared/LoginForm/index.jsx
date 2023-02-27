@@ -58,7 +58,7 @@ const LoginForm = () => {
         />
       </div>
       <form className="w-full max-w-sm" onSubmit={handleSubmit(onSubmit)}>
-        <div className="#">
+      <div className="#">
           <InputForm
             label={"Email o nombre de usuario"}
             placeholder={"Escribe tu email"}
@@ -76,27 +76,29 @@ const LoginForm = () => {
           />
         </div>
 
-        <div className="text-end w-full mb-10">
+        <div className="text-end w-full">
           <a
             href="#"
             className="text-link font-link px-4 text-indigo-600 hover:text-indigo-800 underline"
           >
             Olvidé mi contraseña
           </a>
-        </div>
 
-        <div className="flex flex-col items-center justify-center">
+        </div>
+        <br />
+        <div className="btn-plus-link">
           <PurpleButton text="Iniciar sesión" type="submit" />
           <p className="text-center text-neutral-900 text-caption font caption py-3 pb-12 mt-6">
-            ¿Aún no tienes una cuenta?{" "}
-            <Link to="/register" className="global-link text-link font-link ">
-              Registrarte
-            </Link>
-          </p>
+            ¿Aún no tienes una cuenta?{" "} </p>
+          <Link to="/register" className="global-link text-link font-link ">
+            Registrarte
+          </Link>
         </div>
       </form>
+       
 
-    </div>
+
+    </div >
   )
 }
 

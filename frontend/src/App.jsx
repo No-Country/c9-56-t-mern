@@ -6,15 +6,13 @@ import PetProfile from "./pages/user/pet/PetProfile"
 
 function App() {
   return (
-
-    <PetProfile/>
-    // <Provider store={store}>
-    //   <BrowserRouter>
-    //     <div id="globalBody" className="bg-slate-50">
-    //       <AppRouter />
-    //     </div>
-    //   </BrowserRouter>
-    // </Provider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <div className="App">
+          <AppRouter />
+        </div>
+      </BrowserRouter>
+    </Provider>
   )
 }
 
