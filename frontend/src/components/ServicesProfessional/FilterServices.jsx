@@ -69,7 +69,7 @@ const FilterServices = ({
     setSelectedCategories([...filters.categories])
   }, [filters.categories])
 
-  const selectedCategorie = [...filters.categories];
+  
   return (
     <>
       {showCategories && (
