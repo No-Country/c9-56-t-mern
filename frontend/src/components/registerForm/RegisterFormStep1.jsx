@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form"
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom"
+import InputForm from "../inputForm/InputForm"
 import PurpleButton from "../PurpleButton"
 
 const RegisterFormStep1 = (props) => {
@@ -21,47 +22,36 @@ const RegisterFormStep1 = (props) => {
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <div
-            style={{
-              backgroundColor: "gray",
-              width: props.currentStep === 0 ? "66.6%" : "100%",
-            }}
-          ></div>
-          <label className="block font-medium mb-2">Email</label>
-          <input
-            className="border border-gray-400 p-2 w-full"
-            type="email"
-            {...register("email", {
+          <InputForm
+          label={'Email'}
+            placeholder={"nombre@ejemplo.com"}
+            type={"email"}
+            register={{...register("email", {
               pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i,
-            })}
+            })}}
           />
+       
           {errors.email?.type === "pattern" && (
             <p>El formato del email es incorrecto</p>
           )}
         </div>
-
-        <br />
         <div>
-          <label className="block font-medium mb-2">Contraseña</label>
-          <input
-            className="border border-gray-400 p-2 w-full"
-            type="password"
-            {...register("password", {})}
+          <InputForm
+          label={'Contraseña'}
+          placeholder={"Escribe una contraseña"}
+          type="password"
+          register={{...register("password", {})}}
           />
         </div>
-        <br />
-
         <div>
-          <label className="block font-medium mb-2">Repetir contraseña</label>
-          <input
-            className="border border-gray-400 p-2 w-full"
+          <InputForm
+            label={'Repetir contraseña'}
+            placeholder={"Repite la contraseña"}
             type="password"
-            {...register("password", {})}
+            register={{...register("password", {})}}
           />
         </div>
-        <br />
-        <br />
-        <br />
+        
         <br />
         <PurpleButton text="Continuar" type="submit" />
       </form>

@@ -1,19 +1,21 @@
 import React from "react"
-import NavbarBack from "../../shared/Navbar/NavbarBack"
-import InputImage from "../../../components/InputImage/InputImage"
-import PurpleButton from "../../../components/PurpleButton/index"
-import TextArea from "../../../components/TextArea/TextArea"
-import InputForm from "../../../components/inputForm/InputForm"
-import InputSelect from "../../../components/inputSelect/InputSelect"
-import RadioButtonContainer from "../../../components/RadioButtonContainer/RadioButtonContainer"
-import RadioButton from "../../../components/RadioButton/RadioButton"
+import InputImage from "../../../../components/InputImage/InputImage"
+import PurpleButton from "../../../../components/PurpleButton/index"
+import TextArea from "../../../../components/TextArea/TextArea"
+import InputForm from "../../../../components/inputForm/InputForm"
+import InputSelect from "../../../../components/inputSelect/InputSelect"
+import RadioButtonContainer from "../../../../components/RadioButtonContainer/RadioButtonContainer"
+import RadioButton from "../../../../components/RadioButton"
+import Navbar from "../../../shared/Navbar/Navbar"
 
 const petForm = () => {
   return (
-    <div>
-      <NavbarBack />
-      <h1 className="flex justify-center text-2xl">Mi mascota</h1>
-      <InputImage />
+    <div className="flex flex-col max-w-sm  m-auto bg-slate-50 w-screen sm:w-auto">
+      <Navbar />
+      <h2 className="flex justify-center text-2xl">Mi mascota</h2>
+      <InputImage
+      urlImage={'https://res.cloudinary.com/dw639wmis/image/upload/v1677370669/Dog_djdije.png'}
+      /> 
       <div className="flex flex-col items-center">
         <RadioButtonContainer label={"Tipo de mascota "}>
           <RadioButton title={"Perro"} />

@@ -5,7 +5,6 @@ import "../../../styles/styles.css"
 import PurpleButton from "../../../components/PurpleButton"
 import InputForm from "../../../components/inputForm/InputForm"
 import Navbar from "../Navbar/Navbar"
-import Footer from "../Footer/Footer"
 import { useForm } from "react-hook-form"
 import { useSelector } from "react-redux"
 
@@ -22,13 +21,10 @@ const LoginForm = () => {
 
   const onSubmit = async (data) => {
     const { email, password } = data
-    // event.preventDefault()
     console.log(`Email: ${email}, Password: ${password}`)
     console.log(data)
 
     const roleResponse = await startLogin({ email, password })
-
-    // console.log(roleResponse)
 
     if (roleResponse.includes("OWNER")) {
       navigate("/profile")
@@ -51,11 +47,10 @@ const LoginForm = () => {
   }, [])
 
   return (
-    <div className="flex flex-col max-w-sm  m-auto bg-slate-50 w-screen sm:w-auto">
-      <Navbar />
-      <h2 className="text-3xl font-semibold self-center	 ">Iniciar sesión</h2>
-      <br />
-      <div id="homeMainImage" className="flexs items-center">
+    <div className="global-main-container">
+      <Navbar />      
+      <div id="homeMainImagePlusText" className="flex flex-col self-center items-center">
+      <h2 className="text-3xl font-semibold">Iniciar sesión</h2>
         <img
           className="w-80 h-50"
           src="https://res.cloudinary.com/dw639wmis/image/upload/v1677370573/Login_nvry62.png"
@@ -100,7 +95,6 @@ const LoginForm = () => {
           </p>
         </div>
       </form>
-      <Footer />
     </div>
   )
 }

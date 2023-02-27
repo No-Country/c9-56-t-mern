@@ -1,7 +1,7 @@
-import ProfilePet from "./ProfilePet"
+import ProfilePet from "."
 
 export default {
-  title: "Components/ProfilePet",
+  title: "Components/PetProfile",
   component: ProfilePet,
   args: {},
 }

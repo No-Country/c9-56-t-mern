@@ -1,13 +1,12 @@
 import React from "react"
-import { FiCheckCircle } from "react-icons/fi"
 import { useSelector } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
 import NavBar from "../../pages/shared/Navbar/Navbar"
+import PurpleButton from "../PurpleButton"
 
 const SuccessfulRegistration = () => {
   const { role, email, uid, token } = useSelector((state) => state.auth.user)
   const navigate = useNavigate()
-
   const handleCLick = () => {
     console.log(role)
     role.includes("OWNER")
@@ -16,24 +15,26 @@ const SuccessfulRegistration = () => {
   }
 
   return (
-    <div className="flex items-center justify-center h-screen">
-      <div className="bg-white text-center w-full max-w-sm">
+    <div className="flex flex-col max-w-sm  m-auto bg-slate-50 w-screen sm:w-auto">
         <NavBar />
-        <h2 className="text-neutral-900 text-3xl font-semibold my-4">
+        <h2 className="text-neutral-900 text-3xl text-center font-semibold my-4 ">
           !Te damos la bienvenida a{" "}
           <span className="text-violet-700">Pawful!</span>
         </h2>
-        <button
+        <br />
+        <img src='https://res.cloudinary.com/dw639wmis/image/upload/v1677388098/Registro-exitoso_o1qyq0.png'/>
+        <br />        
+        
+        {/* agregar clase global con padding */}
+        <div id='btnPluslink' className="text-center mt-4 text-violet-700 underline pointer hover:text-violet-900">
+        <PurpleButton 
           onClick={handleCLick}
-          className="bg-violet-800 hover:bg-violet-900 text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full my-3"
-        >
-          Completar perfil
-        </button>
-        <p className="text-center mt-4 text-violet-700 underline pointer hover:text-violet-900">
-          <Link to="/homePage">Hacerlo en otro momento</Link>
-        </p>
+          text='Completar perfil'
+        />
+          <Link to="/homePage" className="global-link">
+            Hacerlo en otro momento</Link>
+        </div>
       </div>
-    </div>
   )
 }
 

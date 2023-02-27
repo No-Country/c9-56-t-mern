@@ -40,7 +40,6 @@ const RegisterFormStep2 = (props) => {
     register("role", { value: event.target.value })
   }
 
-  const imageUrl = "https://cdn-icons-png.flaticon.com/512/3177/3177440.png"
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -61,7 +60,7 @@ const RegisterFormStep2 = (props) => {
               className=" flex flex-col gap-4 cursor-pointer justify-center w-36 h-36 border border-gray-300 rounded-xl peer-checked:border-violet-700 peer-checked:text-neutral-900"
             >
               <div className=" justify-center flex">
-                <img src={imageUrl} width={80} height={80} />
+                <img src='https://res.cloudinary.com/dw639wmis/image/upload/v1677370701/Cliente_eosn5h.png' width={80} height={80} />
               </div>
               <h2 className="flex justify-center">Soy usuario</h2>
             </label>
@@ -81,7 +80,7 @@ const RegisterFormStep2 = (props) => {
               className=" flex flex-col gap-4  cursor-pointer justify-center w-36 h-36 border border-gray-300 rounded-xl peer-checked:border-violet-700 peer-checked:text-neutral-900"
             >
               <div className="justify-center flex">
-                <img src={imageUrl} width={80} height={80} />
+                <img src='https://res.cloudinary.com/dw639wmis/image/upload/v1677370701/Profesional_veto9g.png' width={80} height={80} />
               </div>
               <h2 className="flex justify-center">Soy profesional</h2>
             </label>
