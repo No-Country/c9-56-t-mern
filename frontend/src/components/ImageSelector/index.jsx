@@ -7,7 +7,7 @@ const ImageSelector = ({ urlImage, onChange, disabled }) => {
     <div className="w-24 h-24 rounded-full bg-slate-600 flex items-center justify-center relative">
       {urlImage ? (
         <img
-          src={image}
+          src={urlImage}
           alt="profile"
           className="object-cover w-full h-full rounded-full"
         />
