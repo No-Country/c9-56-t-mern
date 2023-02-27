@@ -1,14 +1,14 @@
 import React, { Children } from "react"
 import AddBtn from "../AddBtn/AddBtn"
 
-const Panel = ({ title, placeholder, children }) => {
+const Panel = ({ title, placeholder, children, editable }) => {
   return (
     <div className="flex items-center flex-col">
       <div className="flex items-center justify-between w-full">
         <h2 className="font-subtitle text-subtitle-bold text-neutral-900">
           {title}
         </h2>
-        <AddBtn />
+        {editable && <AddBtn />}
       </div>
       {Children.toArray(children).length === 0 ? (
         <div className="py-16 px-4 w-full text-center">

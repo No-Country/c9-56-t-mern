@@ -1,10 +1,14 @@
 import React from "react"
 import ImageSelector from "../ImageSelector"
 
-const InputImage = ({image, onChange }) => {
+const InputImage = ({ urlImage, onChange, disabled }) => {
   return (
     <div className="flex flex-col items-center">
-      <ImageSelector image={image} handleImageChange={onChange} />
+      <ImageSelector
+        urlImage={urlImage}
+        handleImageChange={onChange}
+        disabled={disabled}
+      />
     </div>
   )
 }
