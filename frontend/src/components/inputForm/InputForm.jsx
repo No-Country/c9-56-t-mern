@@ -6,7 +6,7 @@ const InputForm = ({ label, placeholder, type, register }) => {
   return (
     <div className="flex flex-col m-auto max-w-sm py-2 mx-4">
       <div className="flex flex-col justify-center max-w-sm">
-        <label htmlFor="input" className="py-2 font-semibold">
+        <label htmlFor="input" className="label-style">
           {label}
         </label>
         <input

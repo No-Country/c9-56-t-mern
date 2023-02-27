@@ -8,9 +8,26 @@
 @tailwind components;
 @tailwind utilities;
 
+.App{
+ @apply bg-slate-50 h-screen m-0;
+}
 .global-main-container {
-  @apply flex flex-col max-w-sm mx-auto bg-slate-50 w-screen h-screen sm:w-auto;
+  @apply flex flex-col max-w-sm my-0 py-0 mx-auto bg-slate-50 w-screen h-screen sm:w-auto;
 }
 .global-link {
     @apply text-indigo-600 hover:text-blue-800 underline;
   }
+.btn-plus-link{
+  @apply flex flex-col items-center justify-center space-y-1 ;
+}
+
+.text-below{
+  @apply text-center text-neutral-900 text-sm py-3 mt-6;
+}
+.label-style{
+  @apply py-2 font-semibold
+}
+
+.placeholder-style{
+  @apply font-sans font-normal font-medium text-base text-gray-400;
+}

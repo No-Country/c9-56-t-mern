@@ -4,6 +4,7 @@ import { useAuthStore } from "../../hooks/useAuthStore"
 import { useRegisterUSerStore } from "../../hooks/useRegisterUserStore"
 import PurpleButton from "../PurpleButton"
 import { useState } from "react"
+import InputForm from "../InputForm/InputForm"
 
 const RegisterFormStep2 = (props) => {
   const { formValues, setFormValues } = props
@@ -41,50 +42,71 @@ const RegisterFormStep2 = (props) => {
   }
 
   return (
-    <div className="global-main-container">
+    <div className="#">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <br />
-        <div className="flex flex-row items-center gap-6">
-          <div>
-            <input
-              id="owner"
-              name="options"
-              className="hidden peer"
-              type="radio"
-              value="OWNER"
-              checked={option == "OWNER"}
-              onChange={handleOptionChange}
-            />
-            <label
-              for="owner"
-              className=" flex flex-col gap-4 cursor-pointer justify-center w-36 h-36 border border-gray-300 rounded-xl peer-checked:border-violet-700 peer-checked:text-neutral-900"
-            >
-              <div className=" justify-center flex">
-                <img src='https://res.cloudinary.com/dw639wmis/image/upload/v1677370701/Cliente_eosn5h.png' width={80} height={80} />
-              </div>
-              <h2 className="flex justify-center">Soy usuario</h2>
-            </label>
-          </div>
-          <div>
-            <input
-              id="professional"
-              name="options"
-              className="hidden peer"
-              type="radio"
-              value="PROFESSIONAL"
-              checked={option == "PROFESSIONAL"}
-              onChange={handleOptionChange}
-            />
-            <label
-              for="professional"
-              className=" flex flex-col gap-4  cursor-pointer justify-center w-36 h-36 border border-gray-300 rounded-xl peer-checked:border-violet-700 peer-checked:text-neutral-900"
-            >
-              <div className="justify-center flex">
-                <img src='https://res.cloudinary.com/dw639wmis/image/upload/v1677370701/Profesional_veto9g.png' width={80} height={80} />
-              </div>
-              <h2 className="flex justify-center">Soy profesional</h2>
-            </label>
-          </div>
+        <div>
+          <InputForm
+            label="Nombre de usuario"
+            placeholder={"Escribe tu nombre de usuario"}
+          />
+          <p className="label-style px-3">
+            ¿Cómo querés comenzar? <br />{" "}
+            <span className="placeholder-style">
+              Podrás cambiarlo mas tarde{" "}
+            </span>
+          </p>
+        </div>
+        <div className="flex place-content-evenly pt-px">
+          <input
+            id="owner"
+            name="options"
+            className="hidden peer"
+            type="radio"
+            value="OWNER"
+            checked={option == "OWNER"}
+            onChange={handleOptionChange}
+          />
+          <label
+            for="owner"
+            className="flex flex-col cursor-pointer justify-center w-full mx-4 h-48 border border-gray-300 rounded-xl peer-checked:border-violet-700 peer-checked:text-neutral-900"
+          >
+            <div className="flex justify-center ">
+              <img
+                width={80}
+                height={80}
+                src="https://res.cloudinary.com/dw639wmis/image/upload/v1677370701/Cliente_eosn5h.png"
+              />
+            </div>
+            <div className="flex flex-col text-center ">
+              <p className="font-bold">Buscar</p>
+              <p>servicios</p>
+            </div>
+          </label>
+          <input
+            id="professional"
+            name="options"
+            className="hidden peer"
+            type="radio"
+            value="PROFESSIONAL"
+            checked={option == "PROFESSIONAL"}
+            onChange={handleOptionChange}
+          />
+          <label
+            for="professional"
+            className="flex flex-col cursor-pointer justify-center w-full mx-4 h-48 border border-gray-300 rounded-xl peer-checked:border-violet-700 peer-checked:text-neutral-900"
+          >
+            <div className="flex justify-center">
+              <img
+                width={80}
+                height={80}
+                src="https://res.cloudinary.com/dw639wmis/image/upload/v1677370701/Profesional_veto9g.png"
+              />
+            </div>
+            <div className="flex flex-col text-center ">
+              <p className="font-bold">Ofrecer</p>
+              <p>servicios</p>
+            </div>
+          </label>
         </div>
         <br />
         <br />

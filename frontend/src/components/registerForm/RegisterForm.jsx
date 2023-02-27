@@ -5,6 +5,7 @@ import StepNavigation from "../stepper/StepNavigation"
 import SimpleText from "../SimpleText/SimpleText"
 import Stepper1 from "../Stepper1and2/Stepper1"
 import Stepper2 from "../Stepper1and2/Stepper2"
+import Navbar from "../../pages/shared/Navbar/Navbar"
 
 const RegisterForm = (props) => {
   const labelArray = ["Step 1", "Step 2"]
@@ -60,6 +61,7 @@ const RegisterForm = (props) => {
 
   return (
     <div className="global-main-container">
+      <Navbar/>
       <StepNavigation
         labelArray={labelArray}
         currentStep={currentStep}
@@ -68,14 +70,15 @@ const RegisterForm = (props) => {
 
       {getInfoPerPage()}
 
-<div id='textPlusAnchor'className="flex ">
-      <p>
-        Ya tienes una cuenta?</p>
+<div className="btn-plus-link">
+    <div className="text-below">
+        Ya tienes una cuenta? {" "}
         <a
           href="/auth/login"
           className="global-link">
           Iniciar sesión
         </a>
+        </div>
         </div>
       <br />
       <br />
