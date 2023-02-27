@@ -10,6 +10,7 @@ const ProfileInfo = ({
   lastname,
   handleEdit,
   personalInfo,
+  editable,
 }) => {
   const iconsByType = {
     address: <HiLocationMarker size={20} className="scale-110" />,
@@ -27,9 +28,11 @@ const ProfileInfo = ({
           {name} {lastname}
         </h2>
 
-        <span onClick={handleEdit}>
-          <PencilIcon />
-        </span>
+        {editable && (
+          <span onClick={handleEdit}>
+            <PencilIcon />
+          </span>
+        )}
       </div>
 
       <div className="py-3 flex flex-col gap-5">

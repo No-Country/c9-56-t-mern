@@ -1,9 +1,8 @@
 import React from "react"
 import { useState } from "react"
-import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form"
 
 const InputForm = ({ label, placeholder, type, register }) => {
-
   return (
     <div className="flex flex-col m-auto max-w-sm py-2 mx-4">
       <div className="flex flex-col justify-center max-w-sm">
@@ -16,7 +15,6 @@ const InputForm = ({ label, placeholder, type, register }) => {
           id="input"
           placeholder={placeholder}
           {...register}
-
         />
       </div>
     </div>

@@ -19,6 +19,7 @@ export const useAuthStore = () => {
       const { data } = await pawfulApi.post("/auth/login", { email, password })
       localStorage.setItem("token", data.token)
       localStorage.setItem("token-init-date", new Date().getTime())
+      const rol = data.user.roles
       dispath(
         onLogin({
           email: data.user.email,
@@ -27,6 +28,9 @@ export const useAuthStore = () => {
           token: data.token,
         }),
       )
+
+      return rol
+
       // console.log(data)
     } catch (error) {
       dispath(onLogout("Credenciales incorrectas"))
