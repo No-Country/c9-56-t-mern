@@ -6,7 +6,7 @@ import FormPropietario from "../components/profOwner/FormPropietario"
 import SuccessfulRegistration from "../components/Register/SuccessfulRegistration"
 import RegisterForm from "../components/registerForm/RegisterForm"
 import { useAuthStore } from "../hooks/useAuthStore"
-import OwnerProfile from "../pages/user/owner/OwnerProfile"
+import Profile from "../pages/shared/Profile"
 import FormRegisterProfessional from "../pages/professional/RegisterProfessional"
 import ListServices from "../components/ServicesProfessional/ListServices"
 
@@ -34,7 +34,7 @@ const AppRouter = () => {
       ) : (
         <>
           <Route path="/success" element={<SuccessfulRegistration />} />
-          <Route path="/profile" element={<OwnerProfile />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/completeRegister" element={<FormPropietario />} />
           <Route
             path="/registerProfessional"

@@ -17,7 +17,7 @@ const Panel = ({ title, placeholder, children, editable }) => {
           </h2>
         </div>
       ) : (
-        <div className="flex flex-row flex-wrap">{children}</div>
+        children
       )}
     </div>
   )

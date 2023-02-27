@@ -1,5 +1,5 @@
 import { BsTelephoneFill } from "react-icons/bs"
-import { HiLocationMarker } from "react-icons/hi"
+import { HiIdentification, HiLocationMarker } from "react-icons/hi"
 import InputImage from "../InputImage/InputImage"
 import PencilIcon from "../PencilIcon"
 
@@ -15,6 +15,7 @@ const ProfileInfo = ({
   const iconsByType = {
     address: <HiLocationMarker size={20} className="scale-110" />,
     phone: <BsTelephoneFill size={20} />,
+    document: <HiIdentification size={20} />,
   }
 
   return (
