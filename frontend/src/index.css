@@ -5,10 +5,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
 @tailwind base;
-
 @tailwind components;
 @tailwind utilities;
 
-.global-link {
-  @apply text-indigo-600 hover:text-blue-800 underline;
+.global-main-container {
+  @apply flex flex-col max-w-sm mx-auto bg-slate-50 w-screen h-screen sm:w-auto;
 }
+.global-link {
+    @apply text-indigo-600 hover:text-blue-800 underline;
+  }

@@ -23,10 +23,8 @@ const AddService = () => {
   }
 
   return (
-    <>
-      <div>
+      <div className="global-main-container">
         <InputForm label={"Nombre del servicio"} />
-
         <div className="container flex flex-col justify-center">
           <label className="py-2" htmlFor="selectDni">
             Categoria del servicio
@@ -52,10 +50,9 @@ const AddService = () => {
         />
 
         <PurpleButton text={"Guardar datos"} />
-      </div>
 
-      <Footer />
-    </>
+      <Footer />      </div>
+
   )
 }
 

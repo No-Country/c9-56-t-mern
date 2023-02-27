@@ -88,7 +88,7 @@ const FormDataExtra = (props) => {
 
   return (
     <>
-      <div className="flex flex-col items-center p-4">
+      <div className="global-main-container">
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-sm">
           <div className=" flex flex-col gap-4 mb-6">
             <div className="flex flex-row gap-2">

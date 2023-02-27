@@ -8,8 +8,8 @@ import Footer from "../Footer/Footer"
 
 const HomePage = () => {
   return (
-    <div className="max-w-sm  m-auto bg-slate-50 w-screen sm:w-auto">
-      <Navbar />
+    <div className="global-main-container">
+      <Navbar/>
       <div>
         <div id="homeTitle" className="flex">
           <h2 className="font-poppins font-bold text-3xl p-4 leading-10 text-start">
