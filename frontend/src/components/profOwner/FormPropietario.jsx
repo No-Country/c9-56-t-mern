@@ -79,7 +79,6 @@ const FormPropietario = () => {
           <div className="flex justify-center">
             <ImageSelector urlImage={images} onChange={handleImageChange} />
           </div>
-          {/* <InputImage handleImageChange={handleImageChange} /> */}
           <div className="flex flex-col justify-center gap-6">
             <div className="mb-4">
               <label className="block font-medium mb-2">Nombre Completo</label>
