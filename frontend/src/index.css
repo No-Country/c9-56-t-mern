@@ -8,18 +8,50 @@
 @tailwind components;
 @tailwind utilities;
 
+/* #root{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
 .App{
- @apply bg-slate-50 m-0;
+ @apply flex bg-slate-50 m-0 p-0;
+ height: 100%;
+
 }
 .global-main-container {
   @apply flex flex-col max-w-sm mx-auto bg-slate-50 w-full h-full;
+
+  /* @media (min-width: 640px) {
+    .global-main-container {
+      /* @apply max-w-md; */
+      /* @apply w-60 h-1/2 self-start; */
+
+      
+    /* }
+  }
+  
+  @media (min-width: 768px) {
+    .global-main-container {
+      @apply max-w-lg;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .global-main-container {
+      @apply max-w-xl;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .global-main-container {
+      @apply max-w-2xl;
+    }
+  }} */ 
 }
 .global-link {
     @apply text-indigo-600 hover:text-blue-800 underline;
   }
-.btn-plus-link{
-  @apply flex flex-col items-center justify-center space-y-1 ;
-}
+
 
 .text-below{
   @apply text-center text-neutral-900 text-sm py-3 mt-6;

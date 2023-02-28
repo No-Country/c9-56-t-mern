@@ -5,7 +5,7 @@ import IdForm from "../IdForm/index"
 import InputForm from "../InputForm/InputForm"
 import NavbarBack from "../../pages/shared/Navbar/NavbarBack"
 
-const EditDataProfessional = () => {
+const EditProfessionalData = () => {
   return (
     <>
     <NavbarBack/>
@@ -48,4 +48,4 @@ const EditDataProfessional = () => {
   )
 }
 
-export default EditDataProfessional
+export default EditProfessionalData

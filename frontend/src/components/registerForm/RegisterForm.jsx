@@ -78,7 +78,7 @@ const RegisterForm = (props) => {
           ¿Ya tienes una cuenta?{" "}
         </p>
          
-        {/*etiqueta 'a' dentro de una 'p'???*/}
+        {/*etiqueta 'a' dentro de una 'p'???* LO MISMO DIJE*/} 
         <a
           href="/auth/login"
           className="global-link text-link font-link"        >
