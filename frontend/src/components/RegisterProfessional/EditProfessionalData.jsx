@@ -5,7 +5,7 @@ import InputForm from "../inputForm/InputForm"
 import PurpleButton from "../PurpleButton"
 import SimpleText from "../SimpleText/SimpleText"
 
-const EditProfessionalData = () => {
+const EditDataProfessional = () => {
   return (
     <>
       <NavbarBack />
@@ -47,4 +47,4 @@ const EditProfessionalData = () => {
   )
 }
 
-export default EditProfessionalData
+export default EditDataProfessional
