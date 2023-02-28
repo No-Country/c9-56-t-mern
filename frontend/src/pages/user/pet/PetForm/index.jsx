@@ -1,11 +1,11 @@
 import React from "react"
-import InputImage from "../../../../components/InputImage/InputImage"
-import PurpleButton from "../../../../components/PurpleButton/index"
-import TextArea from "../../../../components/TextArea/TextArea"
 import InputForm from "../../../../components/inputForm/InputForm"
+import InputImage from "../../../../components/inputImage/InputImage"
 import InputSelect from "../../../../components/inputSelect/InputSelect"
-import RadioButtonContainer from "../../../../components/RadioButtonContainer/RadioButtonContainer"
+import PurpleButton from "../../../../components/PurpleButton/index"
 import RadioButton from "../../../../components/RadioButton"
+import RadioButtonContainer from "../../../../components/RadioButtonContainer/RadioButtonContainer"
+import TextArea from "../../../../components/TextArea/TextArea"
 import Navbar from "../../../shared/Navbar/Navbar"
 
 const petForm = () => {
