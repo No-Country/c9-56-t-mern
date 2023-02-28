@@ -4,6 +4,7 @@ interface UserModel {
   id: string
   email: string
   passwordHash: string
+  username: string
   roles: Role[]
 }
 
