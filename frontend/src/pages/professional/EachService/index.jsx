@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Navbar from "../../shared/Navbar/Navbar"
 import CoverPhoto from "../../../components/CoverPhoto/CoverPhoto"
 import Panel from "../../../components/Panel/Panel"
@@ -7,8 +7,24 @@ import SimpleText from "../../../components/SimpleText/SimpleText"
 import TextArea from "../../../components/TextArea/TextArea"
 import PurpleButton from "../../../components/PurpleButton/"
 import Footer from "../../../pages/shared/Footer/Footer"
+import { useSelector } from "react-redux"
 
 const EachService = () => {
+  // const serviceData = useSelector((state) => state.service.serviceData)
+  // // const {profileId} = useSelector((state)=>state.services.services)
+  // const [detailService, setDetailService] = useState()
+
+  // if (!serviceData) {
+  //   return null
+  // }
+  // const { id,profileId } = serviceData
+
+  // useEffect(() => {
+  //   return () => {
+  //     effect
+  //   };
+  // }, [input]);
+
   const gato =
     "https://cdn.pixabay.com/photo/2017/11/09/21/41/cat-2934720_1280.jpg"
   return (
