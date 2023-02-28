@@ -8,12 +8,15 @@ import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import { onAddFilter } from "../../store/servicesProf/loadServicesSlice"
 import FilterServices from "./FilterServices"
+import { servicesSlice } from "../../store/servicesProf/serviceSlice"
+import { useNavigate } from "react-router-dom"
 
 const ListServices = () => {
   const [showCategories, setShowCategories] = useState(false)
   const [searchText, setSearchText] = useState("")
 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const services = useSelector((state) => state.services.services)
   const serviceIds = services.map((service) => service.id)
@@ -57,6 +60,11 @@ const ListServices = () => {
               .includes(searchText.toLowerCase()),
         )
 
+  const handleServiceSelect = (serviceSelect) => {
+    dispatch(servicesSlice({ serviceSelect }))
+    navigate("/serviceInfo")
+  }
+
   return (
     <>
       <Navbar />
@@ -91,6 +99,7 @@ const ListServices = () => {
             key={service.id}
             urlImage={service.urlImageService}
             serviceName={service.nameService}
+            onClick={handleServiceSelect(service.id)}
           />
         ))}
 

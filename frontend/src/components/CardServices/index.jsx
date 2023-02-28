@@ -1,7 +1,14 @@
-export const CardServices = ({ urlImage, serviceName }) => {
+export const CardServices = ({ urlImage, serviceName, onClick = () => {} }) => {
+  const handleClick = () => {
+    onClick()
+  }
+
   return (
     <>
-      <div className="rounded-2xl items-center shadow-2xl">
+      <div
+        className="rounded-2xl items-center shadow-2xl"
+        onClick={handleClick}
+      >
         <div className="w-full h-32 rounded-t-2xl">
           <img
             src={urlImage}

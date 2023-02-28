@@ -8,12 +8,13 @@ export const useRegisterUSerStore = () => {
   const [dataResp, setDataResp] = useState({})
   const [tipeProfile, setTipeProfile] = useState("")
 
-  const addUser = async ({ email, password, role }) => {
+  const addUser = async ({ email, password, username, role }) => {
     try {
       await pawfulApi
         .post("/users", {
           email,
           password,
+          username,
           role,
         })
         .then((response) => {

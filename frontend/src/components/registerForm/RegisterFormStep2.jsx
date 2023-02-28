@@ -23,13 +23,14 @@ const RegisterFormStep2 = (props) => {
   const navigate = useNavigate()
 
   const onSubmit = async (data) => {
-    const { email, password, role } = data
+    const { email, password,username, role } = data
     setFormValues({ ...formValues, ...data })
     console.log(role)
     try {
       await addUser({
         email,
         password,
+        username,
         role,
       })
       await startLogin({ email, password })
@@ -44,17 +45,18 @@ const RegisterFormStep2 = (props) => {
   return (
     <div className="#">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
+      <div>
           <InputForm
-            label="Nombre de usuario"
-            placeholder={"Escribe tu nombre de usuario"}
+            label={"Nombre de usuario"}
+            placeholder={"nombre@ejemplo.com"}
+            register={{
+              ...register("username", {}),
+            }}
           />
-          <p className="label-style px-3">
-            ¿Cómo querés comenzar? <br />{" "}
-            <span className="placeholder-style">
-              Podrás cambiarlo mas tarde{" "}
-            </span>
-          </p>
+
+          {errors.email?.type === "pattern" && (
+            <p>El formato del email es incorrecto</p>
+          )}
         </div>
         <div className="flex place-content-evenly pt-px">
           <input
