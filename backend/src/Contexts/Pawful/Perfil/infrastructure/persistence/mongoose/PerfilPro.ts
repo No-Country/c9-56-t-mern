@@ -1,14 +1,10 @@
-import { Schema, model } from "mongoose"
+import { model, Schema } from "mongoose"
 import { PerfilProfesionalModel } from "../../../domain/models/PerfilProfesionalModel"
 
 const PerfilSchema = new Schema<PerfilProfesionalModel>(
   {
     id: { type: String, required: true },
     name: {
-      type: String,
-      required: true,
-    },
-    lastname: {
       type: String,
       required: true,
     },

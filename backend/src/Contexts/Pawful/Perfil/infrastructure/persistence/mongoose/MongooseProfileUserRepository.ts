@@ -10,31 +10,21 @@ class MongoosePerfilUserRepository implements PerfilUserRepository {
     const newUser = new MongoosePerfilUserModel(perfil)
     const savedUser: PerfilUser = await newUser.save()
 
-    const { id, address, image, lastname, name, phone, userId } = savedUser
+    const { id, address, image, name, phone, userId } = savedUser
 
-    return new PerfilUser(id, name, lastname, image, userId, phone, address)
+    return new PerfilUser(id, name, image, userId, phone, address)
   }
 
   async savePerfilUserPro(perfil: PerfilUserPro): Promise<PerfilUserPro> {
     const newUser = new MongoosePerfilUserProModel(perfil)
     const savedUser: PerfilUserPro = await newUser.save()
 
-    const {
-      id,
-      address,
-      image,
-      lastname,
-      dni,
-      name,
-      phone,
-      userId,
-      titleCareer,
-    } = savedUser
+    const { id, address, image, dni, name, phone, userId, titleCareer } =
+      savedUser
 
     return new PerfilUserPro(
       id,
       name,
-      lastname,
       dni,
       image,
       userId,
@@ -53,11 +43,10 @@ class MongoosePerfilUserRepository implements PerfilUserRepository {
       userId: idUser,
     })
     if (dataStandar) {
-      const { id, address, image, lastname, name, phone, userId } = dataStandar
+      const { id, address, image, name, phone, userId } = dataStandar
       const profileStandardfound = new PerfilUser(
         id,
         name,
-        lastname,
         image,
         userId,
         phone,
@@ -66,21 +55,11 @@ class MongoosePerfilUserRepository implements PerfilUserRepository {
       profiles.push(profileStandardfound)
     }
     if (dataProfessional) {
-      const {
-        id,
-        address,
-        image,
-        lastname,
-        name,
-        phone,
-        userId,
-        dni,
-        titleCareer,
-      } = dataProfessional
+      const { id, address, image, name, phone, userId, dni, titleCareer } =
+        dataProfessional
       const profileProfessionalfound = new PerfilUserPro(
         id,
         name,
-        lastname,
         dni,
         image,
         userId,
@@ -96,30 +75,38 @@ class MongoosePerfilUserRepository implements PerfilUserRepository {
   }
 
   async findByProfileId(idProfile: string): Promise<PerfilUser | null> {
-    const profileUser: PerfilUser | null = await MongoosePerfilUserModel.findOne({
-      id: idProfile,
-    })
+    const profileUser: PerfilUser | null =
+      await MongoosePerfilUserModel.findOne({
+        id: idProfile,
+      })
 
     if (!profileUser) return null
 
-    const { id, name, lastname, image, userId, phone, address, } = profileUser
-    return new PerfilUser(id, name, lastname, image, userId, phone, address)
-
+    const { id, name, image, userId, phone, address } = profileUser
+    return new PerfilUser(id, name, image, userId, phone, address)
   }
 
   async findByProfileProId(idProfile: string): Promise<PerfilUserPro | null> {
-   
-    const profileUserPro: PerfilUserPro | null = await MongoosePerfilUserProModel.findOne({
-      id: idProfile,
-    })
+    const profileUserPro: PerfilUserPro | null =
+      await MongoosePerfilUserProModel.findOne({
+        id: idProfile,
+      })
 
     if (!profileUserPro) return null
 
-    const { id, name, lastname, dni, image, userId, phone, address, titleCareer } = profileUserPro
-    return new PerfilUserPro(id, name, lastname, dni, image, userId, phone, address, titleCareer)
-
+    const { id, name, dni, image, userId, phone, address, titleCareer } =
+      profileUserPro
+    return new PerfilUserPro(
+      id,
+      name,
+      dni,
+      image,
+      userId,
+      phone,
+      address,
+      titleCareer,
+    )
   }
-
 }
 
 export { MongoosePerfilUserRepository }
