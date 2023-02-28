@@ -25,7 +25,7 @@ class ProfileSearchOneController {
 
     const data = await this.profilerSearchOne.run(id)
 
-    res.status(HttpCode.Created).send({ data })
+    res.status(HttpCode.Created).send(data)
   }
 }
 
