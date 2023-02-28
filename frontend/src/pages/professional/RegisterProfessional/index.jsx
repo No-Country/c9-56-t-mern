@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 import SimpleText from "../../../components/SimpleText/SimpleText"
 import Stepper1 from "../../../components/Stepper1and2/Stepper1"
-import FormProfessionalInit from "../../../components/RegisterProfessional/FormProfessionalInit"
+import ProfessionalDataOne from "../../../components/RegisterProfessional/ProfessionalDataOne"
 import Stepper2 from "../../../components/Stepper1and2/Stepper2"
-import FormDataExtra from "../../../components/RegisterProfessional/FormDataExtra"
+import ProfessionalDataTwo from "../../../components/RegisterProfessional/ProfessionalDataTwo"
 import StepNavigation from "../../../components/stepper/StepNavigation"
 
 const FormRegisterProfessional = (props) => {
@@ -26,7 +26,7 @@ const FormRegisterProfessional = (props) => {
             }
           />
           <Stepper1 />
-          <FormProfessionalInit
+          <ProfessionalDataOne
             labelArray={labelArray}
             currentStep={currentStep}
             setCurrentStep={setCurrentStep}
@@ -44,7 +44,7 @@ const FormRegisterProfessional = (props) => {
             paragraph={"último paso para crear tu perfil"}
           />
           <Stepper2 />
-          <FormDataExtra
+          <ProfessionalDataTwo
             labelArray={labelArray}
             currentStep={currentStep}
             setCurrentStep={setCurrentStep}

@@ -1,13 +1,13 @@
 import React from "react"
-import SimpleText from "../SimpleText/SimpleText"
+import SimpleText from "../../../components/SimpleText/SimpleText"
 import { MdBusinessCenter } from "react-icons/md"
-import AddBtn from "../AddBtn/AddBtn"
-import PurpleButton from "../PurpleButton"
-import Footer from "../../pages/shared/Footer/Footer"
-import NavbarBack from "../../pages/shared/Navbar/NavbarBack"
-import InputForm from "../InputForm/InputForm"
+import AddBtn from "../../../components/AddBtn/AddBtn"
+import PurpleButton from "../../../components/PurpleButton"
+import Footer from "../../shared/Footer/Footer"
+import NavbarBack from "../../shared/Navbar/NavbarBack"
+import InputForm from "../../../components/InputForm/InputForm"
 
-const TittleProfessional = () => {
+const ProfessionalDegrees = () => {
   return (
     <>
       <NavbarBack />
@@ -58,4 +58,4 @@ const TittleProfessional = () => {
   )
 }
 
-export default TittleProfessional
+export default ProfessionalDegrees

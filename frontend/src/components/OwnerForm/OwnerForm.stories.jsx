@@ -2,13 +2,13 @@ import { Provider } from "react-redux"
 import { MemoryRouter } from "react-router-dom"
 import { onLogin } from "../../store/auth/authSlice"
 import { store } from "../../store/store"
-import FormPropietario from "./FormPropietario"
+import OwnerForm from "./OwnerForm"
 
 store.dispatch(onLogin({ role: ["OWNER"] }))
 
 export default {
-  title: "Components/FormPropietario",
-  component: FormPropietario,
+  title: "Components/OwnerForm",
+  component: OwnerForm,
   args: {},
   decorators: [
     (Story) => (
@@ -21,7 +21,7 @@ export default {
   ],
 }
 
-const Template = (args) => <FormPropietario {...args} />
+const Template = (args) => <OwnerForm {...args} />
 
 export const Default = Template.bind({})
 Default.args = {}

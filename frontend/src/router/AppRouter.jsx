@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { Navigate, Route, Routes } from "react-router-dom"
 import HomePage from "../pages/shared/HomePage"
 import LoginForm from "../pages/shared/LoginForm"
-import FormPropietario from "../components/OwnerForm/FormPropietario"
+import OwnerForm from "../components/OwnerForm/OwnerForm"
 import SuccessfulRegistration from "../components/Register/SuccessfulRegistration"
 import RegisterForm from "../components/registerForm/RegisterForm"
 import { useAuthStore } from "../hooks/useAuthStore"
@@ -35,7 +35,7 @@ const AppRouter = () => {
         <>
           <Route path="/success" element={<SuccessfulRegistration />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/completeRegister" element={<FormPropietario />} />
+          <Route path="/completeRegister" element={<OwnerForm />} />
           <Route
             path="/registerProfessional"
             element={<FormRegisterProfessional />}
