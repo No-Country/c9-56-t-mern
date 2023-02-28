@@ -2,7 +2,7 @@ import React from "react"
 import SimpleText from "../SimpleText/SimpleText"
 import PurpleButton from "../PurpleButton"
 import IdForm from "../IdForm/index"
-import InputForm from "../InputForm/InputForm"
+import InputForm from "../inputForm/InputForm"
 import NavbarBack from "../../pages/shared/Navbar/NavbarBack"
 
 const EditDataProfessional = () => {
