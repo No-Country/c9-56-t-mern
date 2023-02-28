@@ -94,6 +94,32 @@ class MongoosePerfilUserRepository implements PerfilUserRepository {
     if (profiles.length == 0) return null
     return profiles
   }
+
+  async findByProfileId(idProfile: string): Promise<PerfilUser | null> {
+    const profileUser: PerfilUser | null = await MongoosePerfilUserModel.findOne({
+      id: idProfile,
+    })
+
+    if (!profileUser) return null
+
+    const { id, name, lastname, image, userId, phone, address, } = profileUser
+    return new PerfilUser(id, name, lastname, image, userId, phone, address)
+
+  }
+
+  async findByProfileProId(idProfile: string): Promise<PerfilUserPro | null> {
+   
+    const profileUserPro: PerfilUserPro | null = await MongoosePerfilUserProModel.findOne({
+      id: idProfile,
+    })
+
+    if (!profileUserPro) return null
+
+    const { id, name, lastname, dni, image, userId, phone, address, titleCareer } = profileUserPro
+    return new PerfilUserPro(id, name, lastname, dni, image, userId, phone, address, titleCareer)
+
+  }
+
 }
 
 export { MongoosePerfilUserRepository }
