@@ -48,7 +48,7 @@ const RegisterFormStep2 = (props) => {
       <div>
           <InputForm
             label={"Nombre de usuario"}
-            placeholder={"nombre@ejemplo.com"}
+            placeholder={"Escribe un nombre de usuario"}
             register={{
               ...register("username", {}),
             }}
