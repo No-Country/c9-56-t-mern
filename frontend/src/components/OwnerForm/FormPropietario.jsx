@@ -11,6 +11,7 @@ import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import ImageSelector from "../ImageSelector"
 import NavbarBack from "../../pages/shared/Navbar/NavbarBack"
+import InputForm from "../InputForm/InputForm"
 
 const FormPropietario = () => {
   const [images, setImages] = useState(null)
@@ -85,28 +86,28 @@ const FormPropietario = () => {
             <div className="flex flex-col justify-center gap-6">
               <div className="mb-4">
                 <label className="block font-medium mb-2">Nombre Completo</label>
-                <input
+                <InputForm
                   className="border border-gray-400 p-2 w-full"
                   placeholder="Ingrese nombre aquí"
-                  {...register("name", {})}
+                  register={{...register("name", {})}}
                 />
               </div>
               <div className="mb-4">
                 <label className="block font-medium mb-2">
                   Número de teléfono
                 </label>
-                <input
+                <InputForm
                   className="border border-gray-400 p-2 w-full"
                   placeholder="Ingrese número aquí"
-                  {...register("phone", {})}
+                  register={{...register("phone", {})}}
                 />
               </div>
               <div className="mb-4">
                 <label className="block font-medium mb-2">Dirección</label>
-                <input
+                <InputForm
                   className="border border-gray-400 p-2 w-full"
                   placeholder="Ingrese su dirección aquí"
-                  {...register("address", {})}
+                  register={{...register("address", {})}}
                 />
               </div>
             </div>
