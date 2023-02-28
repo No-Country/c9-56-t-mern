@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { useForm } from "react-hook-form"
-import SimpleText from "../SimpleText/SimpleText"
-import PurpleButton from "../PurpleButton"
-import useCloudinaryImage from "../../hooks/useCloudinaryImage"
 import { useNavigate } from "react-router-dom"
-import { useSelector } from "react-redux"
+import useCloudinaryImage from "../../hooks/useCloudinaryImage"
 import ImageSelector from "../ImageSelector"
+import PurpleButton from "../PurpleButton"
 
 const ProfessionalDataOne = (props) => {
   const { formValues, setFormValues, currentStep, updateStep } = props
@@ -48,19 +46,11 @@ const ProfessionalDataOne = (props) => {
           </div>
           <div className=" flex flex-col gap-4 mb-6">
             <div>
-              <label className="block font-medium mb-2"> Nombre(s)</label>
+              <label className="block font-medium mb-2">Nombre completo</label>
               <input
                 className="border border-gray-400 p-2 w-full"
                 placeholder="Ingrese nombre aquí"
                 {...register("name", {})}
-              />
-            </div>
-            <div>
-              <label className="block font-medium mb-2"> Apellido(s)</label>
-              <input
-                className="border border-gray-400 p-2 w-full"
-                placeholder="Ingrese nombre aquí"
-                {...register("lastname", {})}
               />
             </div>
             <div className="mb-4">
