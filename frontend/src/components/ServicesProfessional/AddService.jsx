@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import InputForm from "../inputForm/InputForm"
+import InputForm from "../InputForm/InputForm"
 import Select from "react-select"
 import TextArea from "../TextArea/TextArea"
 import PurpleButton from "../PurpleButton"
