@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { useAuthStore } from "../../../hooks/useAuthStore"
 import "../../../styles/styles.css"
 import PurpleButton from "../../../components/PurpleButton"
-import InputForm from "../../../components/InputForm/InputForm"
+import InputForm from "../../../components/inputForm/InputForm"
 import Navbar from "../../shared/Navbar/Navbar"
 import { useForm } from "react-hook-form"
 import { useSelector } from "react-redux"
@@ -49,7 +49,9 @@ const LoginForm = () => {
   return (
     <div className="global-main-container">
       <Navbar />
-      <h2 className="text-title font-title mt-10  self-center">Iniciar sesión</h2>
+      <h2 className="text-title font-title mt-10  self-center">
+        Iniciar sesión
+      </h2>
       <br />
       <div id="homeMainImage" className="flex items-center justify-center">
         <img
@@ -58,7 +60,7 @@ const LoginForm = () => {
         />
       </div>
       <form className="w-full max-w-sm" onSubmit={handleSubmit(onSubmit)}>
-      <div className="#">
+        <div className="#">
           <InputForm
             label={"Email o nombre de usuario"}
             placeholder={"Escribe tu email"}
@@ -83,22 +85,19 @@ const LoginForm = () => {
           >
             Olvidé mi contraseña
           </a>
-
         </div>
         <br />
         <div className="btn-plus-link">
           <PurpleButton text="Iniciar sesión" type="submit" />
           <p className="text-center text-neutral-900 text-caption font caption py-3 pb-12 mt-6">
-            ¿Aún no tienes una cuenta?{" "} </p>
+            ¿Aún no tienes una cuenta?{" "}
+          </p>
           <Link to="/register" className="global-link text-link font-link ">
             Registrarte
           </Link>
         </div>
       </form>
-       
-
-
-    </div >
+    </div>
   )
 }
 

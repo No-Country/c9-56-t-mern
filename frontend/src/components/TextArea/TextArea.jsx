@@ -9,7 +9,10 @@ const TextArea = ({ label, placeholder }) => {
 
   return (
     <div className="flex flex-col m-auto max-w-sm mx-4 bg-gray-50 py-4">
-      <label htmlFor="text-area" className="font-subtitle text-subtitle-bold my-2">
+      <label
+        htmlFor="text-area"
+        className="font-subtitle text-subtitle-bold my-2"
+      >
         {label}
       </label>
       <textarea

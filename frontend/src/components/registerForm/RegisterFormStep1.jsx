@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom"
-import InputForm from "../InputForm/InputForm"
+import InputForm from "../inputForm/InputForm"
 import PurpleButton from "../PurpleButton"
 
 const RegisterFormStep1 = (props) => {
@@ -23,35 +23,37 @@ const RegisterFormStep1 = (props) => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <InputForm
-          label={'Email'}
+            label={"Email"}
             placeholder={"nombre@ejemplo.com"}
             type={"email"}
-            register={{...register("email", {
-              pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i,
-            })}}
+            register={{
+              ...register("email", {
+                pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i,
+              }),
+            }}
           />
-       
+
           {errors.email?.type === "pattern" && (
             <p>El formato del email es incorrecto</p>
           )}
         </div>
         <div>
           <InputForm
-          label={'Contraseña'}
-          placeholder={"Escribe una contraseña"}
-          type="password"
-          register={{...register("password", {})}}
+            label={"Contraseña"}
+            placeholder={"Escribe una contraseña"}
+            type="password"
+            register={{ ...register("password", {}) }}
           />
         </div>
         <div>
           <InputForm
-            label={'Repetir contraseña'}
+            label={"Repetir contraseña"}
             placeholder={"Repite la contraseña"}
             type="password"
-            register={{...register("password", {})}}
+            register={{ ...register("password", {}) }}
           />
         </div>
-        
+
         <br />
         <PurpleButton text="Continuar" type="submit" />
       </form>

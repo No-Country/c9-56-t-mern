@@ -11,7 +11,7 @@ import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import ImageSelector from "../ImageSelector"
 import NavbarBack from "../../pages/shared/Navbar/NavbarBack"
-import InputForm from "../InputForm/InputForm"
+import InputForm from "../inputForm/InputForm"
 
 const OwnerForm = () => {
   const [images, setImages] = useState(null)

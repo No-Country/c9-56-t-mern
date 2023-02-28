@@ -19,10 +19,7 @@ const PetForm2 = () => {
   }
 
   return (
-    <form
-      className="global-main-container"
-      onSubmit={handleSubmit}
-    >
+    <form className="global-main-container" onSubmit={handleSubmit}>
       <h2 className="text-lg font-bold mb-4">Guau Guau</h2>
       <p className="text-sm font-normal mb-4 text-center">
         Te pediremos los siguientes datos para crear el perfil de tu mascota

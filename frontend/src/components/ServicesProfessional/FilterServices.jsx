@@ -10,8 +10,6 @@ const categorias = [
   "Fiestas",
 ]
 
-
-
 const FilterServices = ({
   showCategories,
   setShowCategories,
@@ -21,7 +19,6 @@ const FilterServices = ({
 
   const filters = useSelector((state) => state.services.filters)
   const dispatch = useDispatch()
-
 
   const handleCategoryChange = (event) => {
     const { categories } = filters
@@ -69,7 +66,6 @@ const FilterServices = ({
     setSelectedCategories([...filters.categories])
   }, [filters.categories])
 
-  
   return (
     <>
       {showCategories && (
@@ -79,7 +75,6 @@ const FilterServices = ({
               <div>
                 <h3>Categorías</h3>
                 {categorias.map((category) => {
-
                   const checked = selectedCategories.includes(
                     category.toUpperCase(),
                   )
@@ -92,10 +87,10 @@ const FilterServices = ({
                         type="checkbox"
                         checked={
                           checked
-                            // ? selectedCategories.includes(...selectedCategorie, category.toUpperCase())
-                            // : selectedCategories.includes(
-                            //   category.toUpperCase(),
-                            // )
+                          // ? selectedCategories.includes(...selectedCategorie, category.toUpperCase())
+                          // : selectedCategories.includes(
+                          //   category.toUpperCase(),
+                          // )
                         }
                         onChange={handleCategoryChange}
                       />

@@ -23,36 +23,33 @@ const AddService = () => {
   }
 
   return (
-      <div className="global-main-container">
-        <InputForm label={"Nombre del servicio"} />
-        <div className="container flex flex-col justify-center">
-          <label className="py-2" htmlFor="selectDni">
-            Categoria del servicio
-          </label>
-          <Select
-            options={options}
-            autoFocus={true}
-            inputId={"selectDni"}
-            placeholder={"Opción"}
-            value={value}
-            onChange={handleChange}
-            className="text-sm"
-          />
-        </div>
-        <TextArea
-          label={"Sobre el servicio"}
-          placeholder={"Escribe tu descripción aqui"}
+    <div className="global-main-container">
+      <InputForm label={"Nombre del servicio"} />
+      <div className="container flex flex-col justify-center">
+        <label className="py-2" htmlFor="selectDni">
+          Categoria del servicio
+        </label>
+        <Select
+          options={options}
+          autoFocus={true}
+          inputId={"selectDni"}
+          placeholder={"Opción"}
+          value={value}
+          onChange={handleChange}
+          className="text-sm"
         />
-
-        <TextArea
-          label={"Sobre tí"}
-          placeholder={"Escribe tu descripción aqui"}
-        />
-
-        <PurpleButton text={"Guardar datos"} />
-
-      <Footer />      </div>
-
+      </div>
+      <TextArea
+        label={"Sobre el servicio"}
+        placeholder={"Escribe tu descripción aqui"}
+      />
+      <TextArea
+        label={"Sobre tí"}
+        placeholder={"Escribe tu descripción aqui"}
+      />
+      <PurpleButton text={"Guardar datos"} />
+      <Footer />{" "}
+    </div>
   )
 }
 
