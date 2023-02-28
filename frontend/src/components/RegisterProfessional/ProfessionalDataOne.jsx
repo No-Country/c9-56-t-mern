@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom"
 import { useSelector } from "react-redux"
 import ImageSelector from "../ImageSelector"
 
-const FormProfessionalInit = (props) => {
+const ProfessionalDataOne = (props) => {
   const { formValues, setFormValues, currentStep, updateStep } = props
   const { uploadImage } = useCloudinaryImage()
   const [images, setImages] = useState(null)
@@ -82,4 +82,4 @@ const FormProfessionalInit = (props) => {
   )
 }
 
-export default FormProfessionalInit
+export default ProfessionalDataOne

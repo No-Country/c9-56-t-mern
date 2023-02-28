@@ -13,7 +13,7 @@ import ImageSelector from "../ImageSelector"
 import NavbarBack from "../../pages/shared/Navbar/NavbarBack"
 import InputForm from "../InputForm/InputForm"
 
-const FormPropietario = () => {
+const OwnerForm = () => {
   const [images, setImages] = useState(null)
   const { uploadImage } = useCloudinaryImage()
   const { role, email, uid, token } = useSelector((state) => state.auth.user)
@@ -121,4 +121,4 @@ const FormPropietario = () => {
   )
 }
 
-export default FormPropietario
+export default OwnerForm
