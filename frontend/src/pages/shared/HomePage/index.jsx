@@ -9,7 +9,7 @@ import Footer from "../Footer/Footer"
 const HomePage = () => {
   return (
     <div className="global-main-container">
-      <Navbar/>
+      <Navbar />
       <div>
         <div id="homeTitle" className="flex mt-10">
           <h2 className="text-main font-title m-3 text-start">
@@ -22,14 +22,16 @@ const HomePage = () => {
         </div>
       </div>
       <div className="flex flex-row-reverse">
-          <div
+        <div
           id="homeMainImage"
           className="w-72 h-72  bg-center bg-no-repeat bg-contain bg-[url('https://res.cloudinary.com/dw639wmis/image/upload/v1677370573/Home_zke8ng.png')]"
-         ></div>
+        ></div>
       </div>
       <br />
       <div className="mb-4">
-        <PurpleButton text={"Contratar"} />
+        <Link to={"/services"}>
+          <PurpleButton text={"Contratar"} />
+        </Link>
       </div>
       <Link to="/auth/login">
         <div className="">
@@ -38,7 +40,9 @@ const HomePage = () => {
       </Link>
       <br />
 
-      <p className="text-title font-title text-center mt-12 mb-5">Nuestros servicios</p>
+      <p className="text-title font-title text-center mt-12 mb-5">
+        Nuestros servicios
+      </p>
 
       <CategoriesHome />
       <Footer />

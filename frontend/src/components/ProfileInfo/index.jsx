@@ -23,14 +23,13 @@ const ProfileInfo = ({
 
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <div className="global-main-container pt-10">
         <InputImage
           urlImage={urlImage}
           handleImageChange={handleImageChange}
           disabled={editable}
         />
-
 
         <div className="flex justify-between items-center mt-9 mx-4">
           <h2 className="font-title text-title text-neutral-900">
@@ -55,9 +54,13 @@ const ProfileInfo = ({
           ))}
         </div>
         <div className="mb-12">
-        <Panel title={'Mis mascotas'} placeholder={'¡Aún no tienes mascotas agregadas!'} editable={true}/>
+          <Panel
+            title={"Mis mascotas"}
+            placeholder={"¡Aún no tienes mascotas agregadas!"}
+            editable={true}
+          />
         </div>
-        <Footer/>
+        <Footer />
       </div>
     </>
   )

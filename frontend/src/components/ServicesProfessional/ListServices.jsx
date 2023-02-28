@@ -13,7 +13,6 @@ const ListServices = () => {
   const [showCategories, setShowCategories] = useState(false)
   const [searchText, setSearchText] = useState("")
 
-
   const dispatch = useDispatch()
 
   const services = useSelector((state) => state.services.services)
@@ -26,8 +25,8 @@ const ListServices = () => {
     const filteredServices =
       categories.length > 0
         ? services.filter((service) =>
-          categories.includes(service.categoryService),
-        )
+            categories.includes(service.categoryService),
+          )
         : services
 
     return filteredServices
@@ -45,18 +44,18 @@ const ListServices = () => {
       )
     }
   }
-  const filteredServices = searchText === ""
-    ? filterServices(services, filters)
-    : services
-      .filter(
-        (service) =>
-          service.nameService
-            .toLowerCase()
-            .includes(searchText.toLowerCase()) ||
-          service.categoryService
-            .toLowerCase()
-            .includes(searchText.toLowerCase())
-      );
+  const filteredServices =
+    searchText === ""
+      ? filterServices(services, filters)
+      : services.filter(
+          (service) =>
+            service.nameService
+              .toLowerCase()
+              .includes(searchText.toLowerCase()) ||
+            service.categoryService
+              .toLowerCase()
+              .includes(searchText.toLowerCase()),
+        )
 
   return (
     <>
@@ -87,15 +86,13 @@ const ListServices = () => {
       </div>
 
       <div className="flex flex-col p-4 h-48 gap-6">
-        {
-          filteredServices.map((service) => (
-            <CardServices
-              key={service.id}
-              urlImage={service.urlImageService}
-              serviceName={service.nameService}
-            />
-          ))
-        }
+        {filteredServices.map((service) => (
+          <CardServices
+            key={service.id}
+            urlImage={service.urlImageService}
+            serviceName={service.nameService}
+          />
+        ))}
 
         {/* {searchText === ""
           ? filterServices(services, filters).map((service) => (
@@ -123,8 +120,6 @@ const ListServices = () => {
                 />
               ))} */}
       </div>
-
-
 
       {/* <button onClick={() => handleClick(["guarderia"])}>CLICK</button> */}
     </>

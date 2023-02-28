@@ -40,6 +40,7 @@ const FormPropietario = () => {
 
   const onSubmit = async (data) => {
     const { name, lastname, phone, address } = data
+    console.log(data)
     try {
       const respBack = await registerProfile(
         {
@@ -56,7 +57,7 @@ const FormPropietario = () => {
         console.log("SI PASA")
         navigate("/profile")
       }
-    } catch (error) { }
+    } catch (error) {}
   }
 
   useEffect(() => {
@@ -72,9 +73,7 @@ const FormPropietario = () => {
         <div className="mt-10 mb-6">
           <SimpleText
             title={"¡Vamos a conocernos!"}
-            paragraph={
-              "Completa tu perfil para comenzar a buscar"
-            }
+            paragraph={"Completa tu perfil para comenzar a buscar"}
           />
         </div>
         <div className="flex flex-col items-center">
@@ -84,11 +83,21 @@ const FormPropietario = () => {
             </div>
             <div className="flex flex-col justify-center gap-6">
               <div className="mb-4">
-                <label className="block font-medium mb-2">Nombre Completo</label>
+                <label className="block font-medium mb-2">
+                  Nombre Completo
+                </label>
                 <input
                   className="border border-gray-400 p-2 w-full"
                   placeholder="Ingrese nombre aquí"
                   {...register("name", {})}
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block font-medium mb-2">Apellidos</label>
+                <input
+                  className="border border-gray-400 p-2 w-full"
+                  placeholder="Ingrese nombre aquí"
+                  {...register("lastname", {})}
                 />
               </div>
               <div className="mb-4">
@@ -111,7 +120,7 @@ const FormPropietario = () => {
               </div>
             </div>
             <div className="mt-10">
-            <PurpleButton text=" GUARDAR DATOS" type="submit" />
+              <PurpleButton text=" GUARDAR DATOS" type="submit" />
             </div>
           </form>
         </div>

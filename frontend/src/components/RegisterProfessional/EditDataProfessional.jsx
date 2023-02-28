@@ -7,7 +7,7 @@ import InputForm from "../inputForm/InputForm"
 const EditDataProfessional = () => {
   return (
     <div className="global-main-container">
-      <div >
+      <div>
         <SimpleText
           title={"Datos personales"}
           paragraph={"Puedes editar o actualizar tu perfil"}

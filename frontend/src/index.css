@@ -8,26 +8,26 @@
 @tailwind components;
 @tailwind utilities;
 
-.App{
- @apply bg-slate-50 m-0;
+.App {
+  @apply bg-slate-50 m-0;
 }
 .global-main-container {
   @apply flex flex-col max-w-sm mx-auto bg-slate-50 w-full h-full;
 }
 .global-link {
-    @apply text-indigo-600 hover:text-blue-800 underline;
-  }
-.btn-plus-link{
-  @apply flex flex-col items-center justify-center space-y-1 ;
+  @apply text-indigo-600 hover:text-blue-800 underline;
+}
+.btn-plus-link {
+  @apply flex flex-col items-center justify-center space-y-1;
 }
 
-.text-below{
+.text-below {
   @apply text-center text-neutral-900 text-sm py-3 mt-6;
 }
-.label-style{
-  @apply py-2 font-semibold
+.label-style {
+  @apply py-2 font-semibold;
 }
 
-.placeholder-style{
+.placeholder-style {
   @apply font-sans font-normal font-medium text-base text-gray-400;
 }
