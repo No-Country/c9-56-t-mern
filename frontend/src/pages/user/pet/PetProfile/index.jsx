@@ -1,19 +1,10 @@
 import React from "react"
-import Footer from "../../../../pages/shared/Footer/Footer"
-import {
-  MdEdit,
-  MdRoom,
-  MdPhone,
-  MdAddCircle,
-  MdOutlinePets,
-  MdOutlinePersonOutline,
-} from "react-icons/md"
-import Navbar from "../../../shared/Navbar/Navbar"
-import CoverPhoto from "../../../../components/CoverPhoto/CoverPhoto"
-import InputImage from "../../../../components/InputImage/InputImage"
-import InputSelect from "../../../../components/inputSelect/InputSelect"
+import { MdOutlinePersonOutline, MdOutlinePets } from "react-icons/md"
+import InputImage from "../../../../components/inputImage/InputImage"
 import PencilIcon from "../../../../components/PencilIcon"
 import TextArea from "../../../../components/TextArea/TextArea"
+import Footer from "../../../../pages/shared/Footer/Footer"
+import Navbar from "../../../shared/Navbar/Navbar"
 
 const PetProfile = () => {
   const url =
