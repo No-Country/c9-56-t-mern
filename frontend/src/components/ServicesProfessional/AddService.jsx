@@ -1,9 +1,9 @@
 import React, { useState } from "react"
-import InputForm from "../InputForm/InputForm"
 import Select from "react-select"
-import TextArea from "../TextArea/TextArea"
-import PurpleButton from "../PurpleButton"
 import Footer from "../Footer/Footer"
+import InputForm from "../inputForm/InputForm"
+import PurpleButton from "../PurpleButton"
+import TextArea from "../TextArea/TextArea"
 const options = [
   { value: "TEMP", label: "PASEOS" },
   // { value: "CUIT", label: "CUIT" },

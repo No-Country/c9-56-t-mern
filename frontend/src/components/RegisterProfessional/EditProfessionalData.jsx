@@ -1,21 +1,21 @@
 import React from "react"
-import SimpleText from "../SimpleText/SimpleText"
-import PurpleButton from "../PurpleButton"
-import IdForm from "../IdForm/index"
-import InputForm from "../InputForm/InputForm"
 import NavbarBack from "../../pages/shared/Navbar/NavbarBack"
+import IdForm from "../IdForm/index"
+import InputForm from "../inputForm/InputForm"
+import PurpleButton from "../PurpleButton"
+import SimpleText from "../SimpleText/SimpleText"
 
 const EditDataProfessional = () => {
   return (
     <>
-    <NavbarBack/>
+      <NavbarBack />
       <div className="global-main-container">
-        <div >
+        <div>
           <div className="mt-10 mb-8">
-          <SimpleText
-            title={"Datos personales"}
-            paragraph={"Puedes editar o actualizar tu perfil"}
-          />
+            <SimpleText
+              title={"Datos personales"}
+              paragraph={"Puedes editar o actualizar tu perfil"}
+            />
           </div>
 
           <div className="mb-6">
@@ -39,11 +39,10 @@ const EditDataProfessional = () => {
           </div>
 
           <div className="pb-16">
-          <PurpleButton text={"Guardar datos"} />
+            <PurpleButton text={"Guardar datos"} />
           </div>
         </div>
       </div>
-
     </>
   )
 }
