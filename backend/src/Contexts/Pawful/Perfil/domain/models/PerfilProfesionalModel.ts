@@ -1,7 +1,6 @@
 interface PerfilProfesionalModel {
   id: string
   name: string
-  lastname: string
   dni: number
   image: string
   userId: string
