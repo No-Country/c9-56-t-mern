@@ -2,7 +2,7 @@ import { BsTelephoneFill } from "react-icons/bs"
 import { HiIdentification, HiLocationMarker } from "react-icons/hi"
 import Footer from "../../pages/shared/Footer/Footer"
 import Navbar from "../../pages/shared/Navbar/Navbar"
-import InputImage from "../InputImage/InputImage"
+import InputImage from "../inputImage/InputImage"
 import Panel from "../Panel/Panel"
 import PencilIcon from "../PencilIcon"
 
