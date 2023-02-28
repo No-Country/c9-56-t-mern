@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
-import SimpleText from "../SimpleText/SimpleText"
-import PurpleButton from "../PurpleButton"
 import { useSelector } from "react-redux"
-import { useRegisterProfile } from "../../hooks/useRegisterProfile"
-import { useAuthStore } from "../../hooks/useAuthStore"
 import { useNavigate } from "react-router-dom"
-import AddBtn from "../AddBtn/AddBtn"
+import { useAuthStore } from "../../hooks/useAuthStore"
+import { useRegisterProfile } from "../../hooks/useRegisterProfile"
+import PurpleButton from "../PurpleButton"
 
 const ProfessionalDataTwo = (props) => {
   const { formValues, setFormValues } = props
@@ -26,8 +24,7 @@ const ProfessionalDataTwo = (props) => {
     defaultValues: formValues,
   })
   // {
-  //   "name": "un Nombre",
-  //   "lastname": "un apellido",
+  //   "name": "Nombre Apellido",
   //   "dni": 3131,
   //   "image": "link",
   //   "phone": "48848484",
@@ -40,7 +37,7 @@ const ProfessionalDataTwo = (props) => {
 
   const onSubmit = async (data) => {
     console.log(rol)
-    const { name, lastname, dni, image, phone, address, titleCareer } = data
+    const { name, dni, image, phone, address, titleCareer } = data
     setFormValues({ ...formValues, ...data })
 
     if (role === "OWNER") {
@@ -50,7 +47,6 @@ const ProfessionalDataTwo = (props) => {
         const responseBack = await registerProfProfessioanl(
           {
             name,
-            lastname,
             dni,
             image,
             phone,
