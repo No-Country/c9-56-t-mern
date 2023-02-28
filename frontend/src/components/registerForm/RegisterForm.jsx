@@ -75,10 +75,11 @@ const RegisterForm = (props) => {
       <div className="flex w-full justify-center mt-6">
         <p className="text-caption font-caption mr-2">
           ¿Ya tienes una cuenta?{" "}
-        </p>
-
-        {/*etiqueta 'a' dentro de una 'p'???*/}
-        <a href="/auth/login" className="global-link text-link font-link">
+        </p>         
+        {/*etiqueta 'a' dentro de una 'p'???* LO MISMO DIJE*/} 
+        <a
+          href="/auth/login"
+          className="global-link text-link font-link"        
           Iniciar sesión
         </a>
       </div>
