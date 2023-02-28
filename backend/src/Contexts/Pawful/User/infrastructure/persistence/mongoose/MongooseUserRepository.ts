@@ -10,9 +10,9 @@ class MongooseUserRepository implements UserRepository {
     const newUser = new MongooseUserModel(user)
     const savedUser: User = await newUser.save()
 
-    const { id, email, passwordHash, roles } = savedUser
+    const { id, email, passwordHash, username, roles } = savedUser
 
-    return new User(id, email, passwordHash, roles)
+    return new User(id, email, passwordHash, username, roles)
   }
 
   async findById(id: string): Promise<User | null> {
@@ -22,9 +22,9 @@ class MongooseUserRepository implements UserRepository {
       return null
     }
 
-    const { email, passwordHash, roles } = user
+    const { email, passwordHash, username, roles } = user
 
-    return new User(id, email, passwordHash, roles)
+    return new User(id, email, passwordHash, username, roles)
   }
 
   async findByEmail(email: string): Promise<User | null> {
@@ -34,9 +34,9 @@ class MongooseUserRepository implements UserRepository {
       return null
     }
 
-    const { id, passwordHash, roles } = user
+    const { id, passwordHash, username, roles } = user
 
-    return new User(id, email, passwordHash, roles)
+    return new User(id, email, passwordHash, username, roles)
   }
 
   async updateById(user: PartialExcept<UserModel, "id">): Promise<User | null> {
@@ -49,9 +49,9 @@ class MongooseUserRepository implements UserRepository {
       return null
     }
 
-    const { email, passwordHash, roles } = newUser
+    const { email, passwordHash, username, roles } = newUser
 
-    return new User(id, email, passwordHash, roles)
+    return new User(id, email, passwordHash, username, roles)
   }
 }
 
