@@ -3,8 +3,8 @@ import { Link } from "react-router-dom"
 import PurpleButton from "../../../components/PurpleButton"
 import BareButton from "../../../components/BareButton"
 import CategoriesHome from "../CategoriesHome"
-import Navbar from "../Navbar/Navbar"
-import Footer from "../Footer/Footer"
+import Navbar from "../../shared/Navbar/Navbar"
+import Footer from "../../shared/Footer/Footer"
 
 const HomePage = () => {
   return (

@@ -8,7 +8,7 @@ import { useAuthStore } from "../../hooks/useAuthStore"
 import { useNavigate } from "react-router-dom"
 import AddBtn from "../AddBtn/AddBtn"
 
-const FormDataExtra = (props) => {
+const ProfessionalDataTwo = (props) => {
   const { formValues, setFormValues } = props
   const { role, email, uid, token } = useSelector((state) => state.auth.user)
   const [rol, setRol] = useState([])
@@ -138,4 +138,4 @@ const FormDataExtra = (props) => {
   )
 }
 
-export default FormDataExtra
+export default ProfessionalDataTwo

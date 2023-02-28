@@ -11,8 +11,9 @@ import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import ImageSelector from "../ImageSelector"
 import NavbarBack from "../../pages/shared/Navbar/NavbarBack"
+import InputForm from "../InputForm/InputForm"
 
-const FormPropietario = () => {
+const OwnerForm = () => {
   const [images, setImages] = useState(null)
   const { uploadImage } = useCloudinaryImage()
   const { role, email, uid, token } = useSelector((state) => state.auth.user)
@@ -40,7 +41,6 @@ const FormPropietario = () => {
 
   const onSubmit = async (data) => {
     const { name, lastname, phone, address } = data
-    console.log(data)
     try {
       const respBack = await registerProfile(
         {
@@ -57,7 +57,7 @@ const FormPropietario = () => {
         console.log("SI PASA")
         navigate("/profile")
       }
-    } catch (error) {}
+    } catch (error) { }
   }
 
   useEffect(() => {
@@ -73,7 +73,9 @@ const FormPropietario = () => {
         <div className="mt-10 mb-6">
           <SimpleText
             title={"¡Vamos a conocernos!"}
-            paragraph={"Completa tu perfil para comenzar a buscar"}
+            paragraph={
+              "Completa tu perfil para comenzar a buscar"
+            }
           />
         </div>
         <div className="flex flex-col items-center">
@@ -83,44 +85,34 @@ const FormPropietario = () => {
             </div>
             <div className="flex flex-col justify-center gap-6">
               <div className="mb-4">
-                <label className="block font-medium mb-2">
-                  Nombre Completo
-                </label>
-                <input
+                <label className="block font-medium mb-2">Nombre Completo</label>
+                <InputForm
                   className="border border-gray-400 p-2 w-full"
                   placeholder="Ingrese nombre aquí"
-                  {...register("name", {})}
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block font-medium mb-2">Apellidos</label>
-                <input
-                  className="border border-gray-400 p-2 w-full"
-                  placeholder="Ingrese nombre aquí"
-                  {...register("lastname", {})}
+                  register={{...register("name", {})}}
                 />
               </div>
               <div className="mb-4">
                 <label className="block font-medium mb-2">
                   Número de teléfono
                 </label>
-                <input
+                <InputForm
                   className="border border-gray-400 p-2 w-full"
                   placeholder="Ingrese número aquí"
-                  {...register("phone", {})}
+                  register={{...register("phone", {})}}
                 />
               </div>
               <div className="mb-4">
                 <label className="block font-medium mb-2">Dirección</label>
-                <input
+                <InputForm
                   className="border border-gray-400 p-2 w-full"
                   placeholder="Ingrese su dirección aquí"
-                  {...register("address", {})}
+                  register={{...register("address", {})}}
                 />
               </div>
             </div>
             <div className="mt-10">
-              <PurpleButton text=" GUARDAR DATOS" type="submit" />
+            <PurpleButton text=" GUARDAR DATOS" type="submit" />
             </div>
           </form>
         </div>
@@ -129,4 +121,4 @@ const FormPropietario = () => {
   )
 }
 
-export default FormPropietario
+export default OwnerForm

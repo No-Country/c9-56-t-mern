@@ -1,7 +1,7 @@
 import DniForm from "."
 
 export default {
-  title: "components/dniForm",
+  title: "components/IdForm",
   component: DniForm,
   args: {
     children: "IdForm",
