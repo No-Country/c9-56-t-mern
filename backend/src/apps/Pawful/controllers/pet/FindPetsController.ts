@@ -23,7 +23,7 @@ class FindPetsController {
 
     const pets = await this.petFinder.run(profileId)
 
-    res.status(HttpCode.Ok).send({ pets })
+    res.status(HttpCode.Ok).send(pets)
   }
 }
 
