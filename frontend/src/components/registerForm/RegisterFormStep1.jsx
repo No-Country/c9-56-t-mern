@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom"
-import InputForm from "../InputForm/InputForm"
+import InputForm from "../inputForm/InputForm"
 import PurpleButton from "../PurpleButton"
 
 const RegisterFormStep1 = (props) => {
