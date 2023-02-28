@@ -87,13 +87,14 @@ const LoginForm = () => {
           </a>
         </div>
         <br />
-        <div className="flex flex-col">
-          <PurpleButton className="self-center" text="Iniciar sesión" type="submit" />
-          <div className="text-center text-neutral-900 text-caption font caption mt-6">
-            ¿Aún no tienes una cuenta?{" "} 
+        <div className="btn-plus-link">
+          <PurpleButton text="Iniciar sesión" type="submit" />
+          <p className="text-center text-neutral-900 text-caption font caption py-3 pb-12 mt-6">
+            ¿Aún no tienes una cuenta?{" "}
+          </p>
           <Link to="/register" className="global-link text-link font-link ">
             Registrarte
-          </Link></div> 
+          </Link>
         </div>
       </form>
     </div>

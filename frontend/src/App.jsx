@@ -8,7 +8,7 @@ function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <div className="App"  style={{ maxWidth: "1200px", margin: "0 auto" }}>
+        <div className="App">
           <AppRouter />
         </div>
       </BrowserRouter>
