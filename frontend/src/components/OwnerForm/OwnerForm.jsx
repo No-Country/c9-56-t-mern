@@ -1,17 +1,14 @@
-import logo from "../../assets/react.svg"
-import { Link, Form, Navigate } from "react-router-dom"
-import SimpleText from "../SimpleText/SimpleText"
-import InputImage from "../InputImage/InputImage"
-import React, { useState, useEffect } from "react"
-import PurpleButton from "../PurpleButton"
+import React, { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
-import useCloudinaryImage from "../../hooks/useCloudinaryImage"
-import { useRegisterProfile } from "../../hooks/useRegisterProfile"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
-import ImageSelector from "../ImageSelector"
+import useCloudinaryImage from "../../hooks/useCloudinaryImage"
+import { useRegisterProfile } from "../../hooks/useRegisterProfile"
 import NavbarBack from "../../pages/shared/Navbar/NavbarBack"
-import InputForm from "../InputForm/InputForm"
+import ImageSelector from "../ImageSelector"
+import InputForm from "../inputForm/InputForm"
+import PurpleButton from "../PurpleButton"
+import SimpleText from "../SimpleText/SimpleText"
 
 const OwnerForm = () => {
   const [images, setImages] = useState(null)
@@ -40,12 +37,11 @@ const OwnerForm = () => {
   }
 
   const onSubmit = async (data) => {
-    const { name, lastname, phone, address } = data
+    const { name, phone, address } = data
     try {
       const respBack = await registerProfile(
         {
           name,
-          lastname,
           image: images,
           phone,
           address,
@@ -57,7 +53,7 @@ const OwnerForm = () => {
         console.log("SI PASA")
         navigate("/profile")
       }
-    } catch (error) { }
+    } catch (error) {}
   }
 
   useEffect(() => {
@@ -73,9 +69,7 @@ const OwnerForm = () => {
         <div className="mt-10 mb-6">
           <SimpleText
             title={"¡Vamos a conocernos!"}
-            paragraph={
-              "Completa tu perfil para comenzar a buscar"
-            }
+            paragraph={"Completa tu perfil para comenzar a buscar"}
           />
         </div>
         <div className="flex flex-col items-center">
@@ -85,11 +79,13 @@ const OwnerForm = () => {
             </div>
             <div className="flex flex-col justify-center gap-6">
               <div className="mb-4">
-                <label className="block font-medium mb-2">Nombre Completo</label>
+                <label className="block font-medium mb-2">
+                  Nombre Completo
+                </label>
                 <InputForm
                   className="border border-gray-400 p-2 w-full"
                   placeholder="Ingrese nombre aquí"
-                  register={{...register("name", {})}}
+                  register={{ ...register("name", {}) }}
                 />
               </div>
               <div className="mb-4">
@@ -99,7 +95,7 @@ const OwnerForm = () => {
                 <InputForm
                   className="border border-gray-400 p-2 w-full"
                   placeholder="Ingrese número aquí"
-                  register={{...register("phone", {})}}
+                  register={{ ...register("phone", {}) }}
                 />
               </div>
               <div className="mb-4">
@@ -107,12 +103,12 @@ const OwnerForm = () => {
                 <InputForm
                   className="border border-gray-400 p-2 w-full"
                   placeholder="Ingrese su dirección aquí"
-                  register={{...register("address", {})}}
+                  register={{ ...register("address", {}) }}
                 />
               </div>
             </div>
             <div className="mt-10">
-            <PurpleButton text=" GUARDAR DATOS" type="submit" />
+              <PurpleButton text=" GUARDAR DATOS" type="submit" />
             </div>
           </form>
         </div>

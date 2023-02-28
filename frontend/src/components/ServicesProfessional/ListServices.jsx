@@ -8,13 +8,15 @@ import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import { onAddFilter } from "../../store/servicesProf/loadServicesSlice"
 import FilterServices from "./FilterServices"
+import { servicesSlice } from "../../store/servicesProf/serviceSlice"
+import { useNavigate } from "react-router-dom"
 
 const ListServices = () => {
   const [showCategories, setShowCategories] = useState(false)
   const [searchText, setSearchText] = useState("")
 
-
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const services = useSelector((state) => state.services.services)
   const serviceIds = services.map((service) => service.id)
@@ -26,8 +28,8 @@ const ListServices = () => {
     const filteredServices =
       categories.length > 0
         ? services.filter((service) =>
-          categories.includes(service.categoryService),
-        )
+            categories.includes(service.categoryService),
+          )
         : services
 
     return filteredServices
@@ -45,18 +47,23 @@ const ListServices = () => {
       )
     }
   }
-  const filteredServices = searchText === ""
-    ? filterServices(services, filters)
-    : services
-      .filter(
-        (service) =>
-          service.nameService
-            .toLowerCase()
-            .includes(searchText.toLowerCase()) ||
-          service.categoryService
-            .toLowerCase()
-            .includes(searchText.toLowerCase())
-      );
+  const filteredServices =
+    searchText === ""
+      ? filterServices(services, filters)
+      : services.filter(
+          (service) =>
+            service.nameService
+              .toLowerCase()
+              .includes(searchText.toLowerCase()) ||
+            service.categoryService
+              .toLowerCase()
+              .includes(searchText.toLowerCase()),
+        )
+
+  const handleServiceSelect = (serviceSelect) => {
+    dispatch(servicesSlice({ serviceSelect }))
+    navigate("/serviceInfo")
+  }
 
   return (
     <>
@@ -87,15 +94,14 @@ const ListServices = () => {
       </div>
 
       <div className="flex flex-col p-4 h-48 gap-6">
-        {
-          filteredServices.map((service) => (
-            <CardServices
-              key={service.id}
-              urlImage={service.urlImageService}
-              serviceName={service.nameService}
-            />
-          ))
-        }
+        {filteredServices.map((service) => (
+          <CardServices
+            key={service.id}
+            urlImage={service.urlImageService}
+            serviceName={service.nameService}
+            onClick={handleServiceSelect(service.id)}
+          />
+        ))}
 
         {/* {searchText === ""
           ? filterServices(services, filters).map((service) => (
@@ -123,8 +129,6 @@ const ListServices = () => {
                 />
               ))} */}
       </div>
-
-
 
       {/* <button onClick={() => handleClick(["guarderia"])}>CLICK</button> */}
     </>

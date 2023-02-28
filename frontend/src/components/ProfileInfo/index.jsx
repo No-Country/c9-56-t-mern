@@ -1,16 +1,15 @@
 import { BsTelephoneFill } from "react-icons/bs"
 import { HiIdentification, HiLocationMarker } from "react-icons/hi"
-import InputImage from "../InputImage/InputImage"
-import PencilIcon from "../PencilIcon"
-import Navbar from "../../pages/shared/Navbar/Navbar"
-import Panel from "../Panel/Panel"
 import Footer from "../../pages/shared/Footer/Footer"
+import Navbar from "../../pages/shared/Navbar/Navbar"
+import InputImage from "../InputImage/InputImage"
+import Panel from "../Panel/Panel"
+import PencilIcon from "../PencilIcon"
 
 const ProfileInfo = ({
   urlImage,
   handleImageChange,
   name,
-  lastname,
   handleEdit,
   personalInfo,
   editable,
@@ -23,7 +22,7 @@ const ProfileInfo = ({
 
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <div className="global-main-container pt-10">
         <InputImage
           urlImage={urlImage}
@@ -31,11 +30,8 @@ const ProfileInfo = ({
           disabled={editable}
         />
 
-
         <div className="flex justify-between items-center mt-9 mx-4">
-          <h2 className="font-title text-title text-neutral-900">
-            {name} {lastname}
-          </h2>
+          <h2 className="font-title text-title text-neutral-900">{name}</h2>
 
           {editable && (
             <span onClick={handleEdit}>
@@ -55,9 +51,13 @@ const ProfileInfo = ({
           ))}
         </div>
         <div className="mb-12">
-        <Panel title={'Mis mascotas'} placeholder={'¡Aún no tienes mascotas agregadas!'} editable={true}/>
+          <Panel
+            title={"Mis mascotas"}
+            placeholder={"¡Aún no tienes mascotas agregadas!"}
+            editable={true}
+          />
         </div>
-        <Footer/>
+        <Footer />
       </div>
     </>
   )

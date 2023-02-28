@@ -98,8 +98,7 @@ const swaggerDefinition: OAS3Definition = {
               examples: {
                 "profile example": {
                   value: {
-                    name: "un Nombre",
-                    lastname: "un apellido",
+                    name: "Nombre Apellido",
                     dni: 3131,
                     image: "link",
                     phone: "48848484",
@@ -168,36 +167,37 @@ const swaggerDefinition: OAS3Definition = {
       },
     },
     "/services/categories": {
-      "post": {
-        "summary": "lista servicios por categoria seleccionada",
-        "description": "Esta ruta es responsable de mostrar los servicios segun la preferencia del usuario",
-        "tags": ["services"],
-        "security": [{ "bearerAuth": [] }],
-        "requestBody": {
-            "content": {
-                "application/json": {
-                    "schema": {
-                        "$ref": "#/components/schemas/filter"
-                    },
-                    examples: {
-                        "filter example": {
-                            "value": {
-                                "filtro": ["GUARDERIA"],
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "responses": {
-            "201": {
-                "description": "ok",
+      post: {
+        summary: "lista servicios por categoria seleccionada",
+        description:
+          "Esta ruta es responsable de mostrar los servicios segun la preferencia del usuario",
+        tags: ["services"],
+        security: [{ bearerAuth: [] }],
+        requestBody: {
+          content: {
+            "application/json": {
+              schema: {
+                $ref: "#/components/schemas/filter",
+              },
+              examples: {
+                "filter example": {
+                  value: {
+                    filtro: ["GUARDERIA"],
+                  },
+                },
+              },
             },
-            "404": {
-                "description": "not found"
-            }
-        }
-    },
+          },
+        },
+        responses: {
+          "201": {
+            description: "ok",
+          },
+          "404": {
+            description: "not found",
+          },
+        },
+      },
     },
     "/services/{id}": {
       get: {
@@ -339,12 +339,9 @@ const swaggerDefinition: OAS3Definition = {
       },
       profile: {
         type: "object",
-        required: ["name", "lastname", "image", "phone", "address"],
+        required: ["name", "image", "phone", "address"],
         properties: {
           name: {
-            type: "string",
-          },
-          lastname: {
             type: "string",
           },
           dni: {

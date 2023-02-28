@@ -44,7 +44,6 @@ mock.onGet("/perfil").reply(200, [
     image:
       "https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745",
     name: "Name",
-    lastname: "Lastname",
     phone: "123456789",
     userId: "ownUserId",
     titleCareer: ["Title 1", "Title 2"],
@@ -66,7 +65,6 @@ mock.onGet("/perfil/sampleId").reply(200, [
     image:
       "https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745",
     name: "Name",
-    lastname: "Lastname",
     phone: "123456789",
     userId: "userId",
     titleCareer: ["Cuidador de gatos", "Paseador de perros"],

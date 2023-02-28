@@ -1,6 +1,6 @@
+import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import pawfulApi from "../api/pawfulApi"
-import { useState, useEffect } from "react"
 import { getProfile } from "../store/profile/profileSlice"
 
 export const useRegisterProfile = () => {
@@ -9,7 +9,7 @@ export const useRegisterProfile = () => {
   const dispatch = useDispatch()
 
   const registerProfile = async (
-    { name, lastname, image, phone, address, rol },
+    { name, image, phone, address, rol },
     token,
   ) => {
     try {
@@ -17,7 +17,6 @@ export const useRegisterProfile = () => {
         "/perfil",
         {
           name,
-          lastname,
           image,
           phone,
           address,
@@ -35,7 +34,6 @@ export const useRegisterProfile = () => {
           getProfile({
             id: response.data.perfil.id,
             name: response.data.perfil.name,
-            lastname: response.data.perfil.lastname,
             image: response.data.perfil.image,
             userId: response.data.perfil.userId,
             phone: response.data.perfil.phone,
@@ -50,7 +48,7 @@ export const useRegisterProfile = () => {
   }
 
   const registerProfProfessioanl = async (
-    { name, lastname, dni, image, phone, address, titleCareer, rol },
+    { name, dni, image, phone, address, titleCareer, rol },
     token,
   ) => {
     try {
@@ -58,7 +56,6 @@ export const useRegisterProfile = () => {
         "/perfil",
         {
           name,
-          lastname,
           dni,
           image,
           phone,
@@ -78,7 +75,6 @@ export const useRegisterProfile = () => {
         //   getProfile({
         //     id: response.data.perfil.id,
         //     name: response.data.perfil.name,
-        //     lastname: response.data.perfil.lastname,
         //     dni: response.data.perfil.dni,
         //     image: response.data.perfil.image,
         //     phone: response.data.perfil.phone,

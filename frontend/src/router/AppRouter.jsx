@@ -9,6 +9,8 @@ import { useAuthStore } from "../hooks/useAuthStore"
 import Profile from "../pages/shared/Profile"
 import FormRegisterProfessional from "../pages/professional/RegisterProfessional"
 import ListServices from "../components/ServicesProfessional/ListServices"
+import EachService from "../pages/professional/EachService"
+// import EachService from "../pages/professional"
 
 const AppRouter = () => {
   const { status, checkAuthToken } = useAuthStore()
@@ -30,6 +32,8 @@ const AppRouter = () => {
         <>
           <Route path="/auth/login" element={<LoginForm />} />
           <Route path="/register" element={<RegisterForm />} />
+          <Route path="/services" element={<ListServices />} />
+          <Route path="/serviceInfo" element={<EachService />} />
         </>
       ) : (
         <>

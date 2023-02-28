@@ -88,7 +88,7 @@ const Profile = () => {
     )
   }
 
-  const { image, name, lastname, address, phone } = profile
+  const { image, name, address, phone } = profile
 
   const personalInfo = [
     { type: "address", value: address },
@@ -111,7 +111,6 @@ const Profile = () => {
           urlImage={image}
           handleImageChange={handleImageChange}
           name={name}
-          lastname={lastname}
           handleEdit={handleEdit}
           personalInfo={personalInfo}
           editable={!routeProfileId}

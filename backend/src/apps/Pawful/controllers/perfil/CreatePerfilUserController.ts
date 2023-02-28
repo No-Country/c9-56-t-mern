@@ -20,11 +20,10 @@ class CreatePerfilUserController {
 
   async run(req: Request, res: Response): Promise<void> {
     const fields = req.body as { [key: string]: unknown }
-    const { name, lastname, dni, image, userId, phone, address } = fields
+    const { name, dni, image, userId, phone, address } = fields
 
     if (
       typeof name !== "string" ||
-      typeof lastname !== "string" ||
       typeof image !== "string" ||
       typeof phone !== "string" ||
       typeof address !== "string"
@@ -37,7 +36,6 @@ class CreatePerfilUserController {
       const perfil = new PerfilUser(
         objectId.toString(),
         name,
-        lastname,
         image,
         req.logedInUser?.id!,
         phone,
@@ -49,7 +47,6 @@ class CreatePerfilUserController {
       const perfilProfesional = new PerfilUserPro(
         objectId.toString(),
         name,
-        lastname,
         req.body.dni,
         image,
         req.logedInUser?.id!,
