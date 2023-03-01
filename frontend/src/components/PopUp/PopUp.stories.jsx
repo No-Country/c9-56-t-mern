@@ -1,12 +1,12 @@
-import PetPopup from "."
+import PetPopup from "./"
 
 export default {
   title: "Components/PopUp",
-  component: PopUp,
+  component: PetPopup,
   args: {},
 }
 
-const Template = (args) => <PopUp {...args} />
+const Template = (args) => <PetPopup {...args} />
 
 export const Default = Template.bind({})
 Default.args = {}

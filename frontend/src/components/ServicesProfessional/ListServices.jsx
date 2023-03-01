@@ -8,11 +8,11 @@ import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import { onAddFilter } from "../../store/servicesProf/loadServicesSlice"
 import FilterServices from "./FilterServices"
+import Footer from "../../pages/shared/Footer/Footer"
 
 const ListServices = () => {
   const [showCategories, setShowCategories] = useState(false)
   const [searchText, setSearchText] = useState("")
-
 
   const dispatch = useDispatch()
 
@@ -26,8 +26,8 @@ const ListServices = () => {
     const filteredServices =
       categories.length > 0
         ? services.filter((service) =>
-          categories.includes(service.categoryService),
-        )
+            categories.includes(service.categoryService),
+          )
         : services
 
     return filteredServices
@@ -45,18 +45,18 @@ const ListServices = () => {
       )
     }
   }
-  const filteredServices = searchText === ""
-    ? filterServices(services, filters)
-    : services
-      .filter(
-        (service) =>
-          service.nameService
-            .toLowerCase()
-            .includes(searchText.toLowerCase()) ||
-          service.categoryService
-            .toLowerCase()
-            .includes(searchText.toLowerCase())
-      );
+  const filteredServices =
+    searchText === ""
+      ? filterServices(services, filters)
+      : services.filter(
+          (service) =>
+            service.nameService
+              .toLowerCase()
+              .includes(searchText.toLowerCase()) ||
+            service.categoryService
+              .toLowerCase()
+              .includes(searchText.toLowerCase()),
+        )
 
   return (
     <>
@@ -64,15 +64,16 @@ const ListServices = () => {
       <div className="flex flex-col mb-8  justify-center items-center">
         <SimpleText title={"Servicios"} />
 
-        <div className="flex flex-row border rounded-xl p-2 w-80 h-9 items-center mb-4">
+        <div className="flex flex-row justify-between border rounded-xl p-2 w-[22rem] h-9 items-center mb-4">
           <input
             type="text"
-            className="flex w-72 h-6"
+            placeholder="Filtrar por categoría"
+            className="flex w-72 h-6 bg-[#F8FAFC]"
             value={searchText}
             onChange={(event) => setSearchText(event.target.value)}
           />
           <div>
-            <MdFilterAlt className="w-6 h-6" onClick={handleShowCategories} />
+            <MdFilterAlt className="w-6 h-6 text-[#5B21B6]" onClick={handleShowCategories} />
             {showCategories && (
               <FilterServices
                 showCategories={showCategories}
@@ -82,22 +83,20 @@ const ListServices = () => {
             )}
           </div>
         </div>
-
         <PurpleButton text={"Todas las categorias"} />
       </div>
 
-      <div className="flex flex-col p-4 h-48 gap-6">
-        {
-          filteredServices.map((service) => (
+      <div className="flex justify-center">
+        <div className="flex flex-col w-[22rem] h-full gap-6">
+          {filteredServices.map((service) => (
             <CardServices
               key={service.id}
               urlImage={service.urlImageService}
               serviceName={service.nameService}
             />
-          ))
-        }
+          ))}
 
-        {/* {searchText === ""
+          {/* {searchText === ""
           ? filterServices(services, filters).map((service) => (
               <CardServices
                 key={service.id}
@@ -122,9 +121,9 @@ const ListServices = () => {
                   serviceName={service.nameService}
                 />
               ))} */}
+        </div>
       </div>
-
-
+      <Footer />
 
       {/* <button onClick={() => handleClick(["guarderia"])}>CLICK</button> */}
     </>

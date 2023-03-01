@@ -1,4 +1,4 @@
-import DniForm from "."
+import DniForm from "./"
 
 export default {
   title: "components/dniForm",
@@ -8,6 +8,6 @@ export default {
   },
 }
 
-const Template = (args) => <IdForm {...args} />
+const Template = (args) => <DniForm {...args} />
 
 export const Primary = Template.bind({})

@@ -3,6 +3,9 @@ module.exports = {
   content: ["./index.html", "./src/**/*.jsx"],
   theme: {
     extend: {
+      spacing: {
+        "352px": "22rem",
+      },
       fontFamily: {
         sans: ["Lato", "sans-serif"],
         title: ["Poppins", "sans-serif"],
@@ -25,6 +28,8 @@ module.exports = {
       },
       colors: {
         "regal-blue": "#2684FF",
+        "background": "#F8FAFC",
+        "icon-filter": "#5B21B6",
       },
       typography: {
         DEFAULT: {
