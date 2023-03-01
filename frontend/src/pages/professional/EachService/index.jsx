@@ -8,6 +8,7 @@ import TextArea from "../../../components/TextArea/TextArea"
 import PurpleButton from "../../../components/PurpleButton/"
 import Footer from "../../../pages/shared/Footer/Footer"
 import { useSelector } from "react-redux"
+import Carousel from "../Carousel"
 
 const EachService = () => {
   // const serviceData = useSelector((state) => state.service.serviceData)
@@ -30,7 +31,7 @@ const EachService = () => {
   return (
     <>
       <Navbar />
-      <div>
+      <div className="global-main-container">
         <div className="h-48 bg-green-200 w-full mb-8">
           {/* AQUI VA UNA IMAGEN */}
         </div>
@@ -64,97 +65,10 @@ const EachService = () => {
         <div className="flex flex-col p-4">
           <label htmlFor="">Servicios similares</label>
 
-          <div className="flex flex-row p-4 gap-3 overflow-x-auto whitespace-nowrap hide-scroll-bar">
-            <div className="rounded-2xl w-24 h-40 items-center shadow-2xl bg-green-200 p-2">
-              <div className="flex w-20 h-20  bg-red-200 rounded-t-2xl justify-center">
-                <img
-                  src={gato}
-                  alt=""
-                  className="flex rounded-full shadow-2xl h-20 w-20"
-                />
-              </div>
-              <div className="flex flex-col justify-center items-center ">
-                <p className="flex text-2xl justify-center items-center">
-                  Peludos
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-2xl w-24 h-40 items-center shadow-2xl bg-green-200 p-2">
-              <div className="flex w-20 h-20  bg-red-200 rounded-t-2xl justify-center">
-                <img
-                  src={gato}
-                  alt=""
-                  className="flex rounded-full shadow-2xl h-20 w-20"
-                />
-              </div>
-              <div className="flex flex-col justify-center items-center ">
-                <p className="flex text-2xl justify-center items-center">
-                  Peludos
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-2xl w-24 h-40 items-center shadow-2xl bg-green-200 p-2">
-              <div className="flex w-20 h-20  bg-red-200 rounded-t-2xl justify-center">
-                <img
-                  src={gato}
-                  alt=""
-                  className="flex rounded-full shadow-2xl h-20 w-20"
-                />
-              </div>
-              <div className="flex flex-col justify-center items-center ">
-                <p className="flex text-2xl justify-center items-center">
-                  Peludos
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-2xl w-24 h-40 items-center shadow-2xl bg-green-200 p-2">
-              <div className="flex w-20 h-20  bg-red-200 rounded-t-2xl justify-center">
-                <img
-                  src={gato}
-                  alt=""
-                  className="flex rounded-full shadow-2xl h-20 w-20"
-                />
-              </div>
-              <div className="flex flex-col justify-center items-center ">
-                <p className="flex text-2xl justify-center items-center">
-                  Peludos
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-2xl w-24 h-40 items-center shadow-2xl bg-green-200 p-2">
-              <div className="flex w-20 h-20  bg-red-200 rounded-t-2xl justify-center">
-                <img
-                  src={gato}
-                  alt=""
-                  className="flex rounded-full shadow-2xl h-20 w-20"
-                />
-              </div>
-              <div className="flex flex-col justify-center items-center ">
-                <p className="flex text-2xl justify-center items-center">
-                  Peludos
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-2xl w-24 h-40 items-center shadow-2xl bg-green-200 p-2">
-              <div className="flex w-20 h-20  bg-red-200 rounded-t-2xl justify-center">
-                <img
-                  src={gato}
-                  alt=""
-                  className="flex rounded-full shadow-2xl h-20 w-20"
-                />
-              </div>
-              <div className="flex flex-col justify-center items-center ">
-                <p className="flex text-2xl justify-center items-center">
-                  Peludos
-                </p>
-              </div>
-            </div>
-          </div>
+         
+<Carousel />
+           
+           
         </div>
       </div>
 

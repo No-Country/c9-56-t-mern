@@ -38,14 +38,14 @@ const RegisterFormStep2 = (props) => {
     } catch (error) {}
   }
   const handleOptionChange = (event) => {
-    setOption(event.target.value)
-    register("role", { value: event.target.value })
-  }
-
+    setOption(event.target.value);
+    register("role", { value: event.target.value });
+  };
+  
   return (
     <div className="#">
       <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
+        <div>
           <InputForm
             label={"Nombre de usuario"}
             placeholder={"Escribe un nombre de usuario"}
@@ -53,7 +53,7 @@ const RegisterFormStep2 = (props) => {
               ...register("username", {}),
             }}
           />
-
+  
           {errors.email?.type === "pattern" && (
             <p>El formato del email es incorrecto</p>
           )}
@@ -65,11 +65,11 @@ const RegisterFormStep2 = (props) => {
             className="hidden peer"
             type="radio"
             value="OWNER"
-            checked={option == "OWNER"}
+            checked={option === "OWNER"}
             onChange={handleOptionChange}
           />
           <label
-            for="owner"
+            htmlFor="owner"
             className="flex flex-col cursor-pointer justify-center w-full mx-4 h-48 border border-gray-300 rounded-xl peer-checked:border-violet-700 peer-checked:text-neutral-900"
           >
             <div className="flex justify-center ">
@@ -90,11 +90,11 @@ const RegisterFormStep2 = (props) => {
             className="hidden peer"
             type="radio"
             value="PROFESSIONAL"
-            checked={option == "PROFESSIONAL"}
+            checked={option === "PROFESSIONAL"}
             onChange={handleOptionChange}
           />
           <label
-            for="professional"
+            htmlFor="professional"
             className="flex flex-col cursor-pointer justify-center w-full mx-4 h-48 border border-gray-300 rounded-xl peer-checked:border-violet-700 peer-checked:text-neutral-900"
           >
             <div className="flex justify-center">
@@ -115,7 +115,8 @@ const RegisterFormStep2 = (props) => {
         <PurpleButton text="Registrar" type="submit" />
       </form>
     </div>
-  )
+  );
+  
 }
 
 export default RegisterFormStep2
