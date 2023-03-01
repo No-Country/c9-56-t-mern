@@ -2,7 +2,7 @@ import type { Request, Response } from "express"
 import { Types } from "mongoose"
 
 import { ServiceCreator } from "../../../../Contexts/Pawful/services/application/ServiceCreator"
-import type {  ServiceRepository} from "../../../../Contexts/Pawful/services/domain/repositories/ServiceRepository"
+import type { ServiceRepository } from "../../../../Contexts/Pawful/services/domain/repositories/ServiceRepository"
 import { Service } from "../../../../Contexts/Pawful/services/domain/valueObjects/Service"
 import { MongooseServiceRepository } from "../../../../Contexts/Pawful/services/infrastructure/persistence/mongoose/MongooseServiceRepository"
 import { MissingFieldsError } from "../../../../Contexts/shared/domain/errors/MissingFieldsError"
@@ -19,18 +19,29 @@ class CreateServiceController {
 
   async run(req: Request, res: Response): Promise<void> {
     const fields = req.body as { [key: string]: unknown }
-    const { presentacionPersonal, presentacion_del_servicio} = fields
+    const { name, presentacionPersonal, presentacion_del_servicio, image } =
+      fields
 
     if (
+      typeof name !== "string" ||
       typeof presentacionPersonal !== "string" ||
-      typeof presentacion_del_servicio !== "string"
+      typeof presentacion_del_servicio !== "string" ||
+      typeof image !== "string"
     ) {
       throw new MissingFieldsError()
     }
 
     const objectId = new Types.ObjectId()
 
-    const service = new Service(objectId.toString(), presentacionPersonal, presentacion_del_servicio, req.body.profileId, req.body.categoryId)
+    const service = new Service(
+      objectId.toString(),
+      name,
+      presentacionPersonal,
+      presentacion_del_servicio,
+      image,
+      req.body.profileId,
+      req.body.categoryId,
+    )
 
     await this.serviceCreator.run(service)
 

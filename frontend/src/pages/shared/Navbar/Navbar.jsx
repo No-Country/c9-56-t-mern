@@ -29,7 +29,7 @@ const Navbar = () => {
       </button>
 
       {visible ? (
-        <nav className="transition-all duration-500 ease-in-out fixed  z-50 flex flex-col items-start max-w-sm top-0 left-0 bottom-0 h-full bg-gray-100 w-64  rounded-r-2xl pt-16 pl-3 shadow-2xl ">
+        <nav className="transition-all duration-500 ease-in-out fixed  z-50 flex flex-col items-start max-w-sm top-0 right-0 bottom-0 h-full bg-gray-100 w-64  rounded-r-2xl pt-16 pl-3 shadow-2xl ">
           <div className="flex flex-row w-full items-center justify-between">
             <div>
               <h2 className="text-slate-900 font-normal text-2xl ml-3">
