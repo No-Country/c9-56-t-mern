@@ -23,7 +23,7 @@ const RegisterFormStep2 = (props) => {
   const navigate = useNavigate()
 
   const onSubmit = async (data) => {
-    const { email, password,username, role } = data
+    const { email, password, username, role } = data
     setFormValues({ ...formValues, ...data })
     console.log(role)
     try {
