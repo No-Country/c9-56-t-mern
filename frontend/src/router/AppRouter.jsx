@@ -25,9 +25,8 @@ const AppRouter = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<ListServices />} />
 
-      {/* <Route path="/" element={<HomePage />} /> */}
+      <Route path="/" element={<HomePage />} />
       <Route path="/*" element={<Navigate to="/" />} />
       {status === "not-authenticated" ? (
         <>
