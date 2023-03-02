@@ -11,7 +11,7 @@ import pawfulApi from "../../../api/pawfulApi"
 
 const LoginForm = () => {
   const { startLogin, errorMessage } = useAuthStore()
-  const { role,token } = useSelector((state) => state.auth.user)
+  const { role } = useSelector((state) => state.auth.user)
 
   const navigate = useNavigate()
   const {
