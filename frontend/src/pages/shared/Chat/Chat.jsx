@@ -1,4 +1,4 @@
-// @ts-check
+
 import { useState, useEffect } from "react"
 import "./App.css"
 import io from "socket.io-client"
@@ -7,6 +7,8 @@ import { IoChevronBackOutline } from "react-icons/io5"
 import NavbarBack from "../Navbar/NavbarBack"
 import { useSelector } from "react-redux"
 import { useNavigate, useParams } from "react-router"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const socket = io("http://localhost:4000", { autoConnect: false })
 
@@ -16,6 +18,26 @@ function Chat() {
 
   const navigate = useNavigate()
   const { receiverId } = useParams()
+
+  const notify = () => toast('Nuevo mensaje', {
+    position: "top-right",
+    autoClose: 1500,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    style: {
+      background: 'rgb(109 40 217)',
+      color: 'white',
+      width: "160px",
+      height: "20px",
+      marginTop: "60px",
+      left:"16px",
+      borderRadius: '8px' 
+    }
+  });
 
   const profile = useSelector((state) => state.profile.perfil)
 
@@ -53,6 +75,7 @@ function Chat() {
         { content, sentAt, senderId, receiverId },
         ...currentMessages,
       ])
+      notify()
     }
     socket.on("message", receiveMessage)
 
@@ -116,6 +139,7 @@ function Chat() {
         <button className="text-violet-700 text-xl">
           <IoSend />
         </button>
+        <ToastContainer />
       </form>
     </div>
   )
