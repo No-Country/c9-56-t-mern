@@ -20,7 +20,7 @@ const PetProfile = ({image, name, raze, owner, sex, size, age}) => {
 
   return (
     <>
-      <Navbar />
+      
       <div className="global-main-container">
         <div className="mt-10 mb-9">
           <InputImage urlImage={image} />
@@ -76,7 +76,7 @@ const PetProfile = ({image, name, raze, owner, sex, size, age}) => {
           </div>
         </div>
 
-        <Footer />
+       
       </div>
     </>
   )
