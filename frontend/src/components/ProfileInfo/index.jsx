@@ -22,7 +22,7 @@ const ProfileInfo = ({
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="global-main-container pt-10">
         <InputImage
           urlImage={urlImage}
@@ -50,14 +50,14 @@ const ProfileInfo = ({
             </div>
           ))}
         </div>
-        <div className="mb-12">
+        {/* <div className="mb-12">
           <Panel
             title={"Mis mascotas"}
             placeholder={"¡Aún no tienes mascotas agregadas!"}
             editable={true}
           />
         </div>
-        <Footer />
+        <Footer /> */}
       </div>
     </>
   )

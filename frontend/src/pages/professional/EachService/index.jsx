@@ -11,56 +11,63 @@ import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 
 const EachService = () => {
-  
-    // // const {profileId} = useSelector((state)=>state.services.services)
-    // const [detailService, setDetailService] = useState()
-  
-    // if (!serviceData) {
-    //   return null
-    // }
-    // const { id,profileId } = serviceData
+  // // const {profileId} = useSelector((state)=>state.services.services)
+  // const [detailService, setDetailService] = useState()
 
-    const [dataProfile, setDataProfile] = useState()
-    const serviceData = useSelector((state) => state.service.serviceData.serviceSelect)
-    const services = useSelector((state) => state.services.services)
-    const { token } = useSelector((state) => state.auth.user)
-    const navigate = useNavigate()
+  // if (!serviceData) {
+  //   return null
+  // }
+  // const { id,profileId } = serviceData
 
-  const { id, urlImageService, nameService, categoryService, aboutService, profileId } = serviceData
+  const [dataProfile, setDataProfile] = useState()
+  const serviceData = useSelector(
+    (state) => state.service.serviceData.serviceSelect,
+  )
+  const services = useSelector((state) => state.services.services)
+  const { token } = useSelector((state) => state.auth.user)
+  const navigate = useNavigate()
 
-    
-      useEffect(() => {
-        const fetchProfileData = async () => {
-          try {
-            let url = "/perfil"
-    
-            if (profileId) {
-              url += `/${profileId}`
-            }
-    
-            const { data } = await pawfulApi.get(url)
-            setDataProfile(data)
-          } catch (error) {
-            console.log(error)
-          }
+  const {
+    id,
+    urlImageService,
+    nameService,
+    categoryService,
+    aboutService,
+    profileId,
+  } = serviceData
+
+  useEffect(() => {
+    const fetchProfileData = async () => {
+      try {
+        let url = "/perfil"
+
+        if (profileId) {
+          url += `/${profileId}`
         }
-        fetchProfileData()
-        
-      }, [])
 
-      const { username } = dataProfile 
+        const { data } = await pawfulApi.get(url)
+        setDataProfile(data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchProfileData()
+  }, [])
 
-  const servicesSimilar = services.filter(service => categoryService === service.categoryService );
-  
+  const { username } = dataProfile
+
+  const servicesSimilar = services.filter(
+    (service) => categoryService === service.categoryService,
+  )
+
   const handleLoginChat = () => {
     console.log("object")
-    if(!token){
+    if (!token) {
       console.log("object")
       navigate("/auth/login")
-    }else{
+    } else {
       navigate("/profile")
     }
-
   }
 
   return (
@@ -97,31 +104,31 @@ const EachService = () => {
             value={aboutService}
           ></textarea>
         </div>
-        <PurpleButton text={"Iniciar chat"}  onClick={handleLoginChat} />
+        <PurpleButton text={"Iniciar chat"} onClick={handleLoginChat} />
 
         <div className="flex flex-col p-4">
           <label htmlFor="">Servicios similares</label>
 
           <div className="flex flex-row p-4 gap-3 overflow-x-auto whitespace-nowrap hide-scroll-bar">
-            {
-              servicesSimilar.map((serviceSimilars)=>(
-
-            <div key={serviceSimilars.id} className="rounded-2xl w-24 h-40 items-center shadow-2xl bg-green-200 p-2">
-              <div className="flex w-20 h-20  bg-red-200 rounded-t-2xl justify-center">
-                <img
-                  src={serviceSimilars.urlImageService}
-                  alt=""
-                  className="flex rounded-full shadow-2xl h-20 w-20"
-                />
+            {servicesSimilar.map((serviceSimilars) => (
+              <div
+                key={serviceSimilars.id}
+                className="rounded-2xl w-24 h-40 items-center shadow-2xl bg-green-200 p-2"
+              >
+                <div className="flex w-20 h-20  bg-red-200 rounded-t-2xl justify-center">
+                  <img
+                    src={serviceSimilars.urlImageService}
+                    alt=""
+                    className="flex rounded-full shadow-2xl h-20 w-20"
+                  />
+                </div>
+                <div className="flex flex-col justify-center items-center ">
+                  <p className="flex text-2xl justify-center items-center">
+                    {serviceSimilars.nameService}
+                  </p>
+                </div>
               </div>
-              <div className="flex flex-col justify-center items-center ">
-                <p className="flex text-2xl justify-center items-center">
-                  {serviceSimilars.nameService}
-                </p>
-              </div>
-            </div>
-              ) )
-            }
+            ))}
           </div>
         </div>
       </div>

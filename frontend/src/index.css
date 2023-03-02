@@ -16,10 +16,9 @@
   /* @media (min-width: 640px) {
     .global-main-container {
       /* @apply max-w-md; */
-      /* @apply w-60 h-1/2 self-start; */
+  /* @apply w-60 h-1/2 self-start; */
 
-
-    /* }
+  /* }
   }
   
   @media (min-width: 768px) {
@@ -38,7 +37,7 @@
     .global-main-container {
       @apply max-w-2xl;
     }
-  }} */ 
+  }} */
 }
 .global-link {
   @apply text-indigo-600 hover:text-blue-800 underline;

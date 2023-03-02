@@ -59,56 +59,61 @@ const RegisterFormStep2 = (props) => {
           )}
         </div>
         <div className="flex place-content-evenly pt-px">
-          <input
-            id="owner"
-            name="options"
-            className="hidden peer"
-            type="radio"
-            value="OWNER"
-            checked={option == "OWNER"}
-            onChange={handleOptionChange}
-          />
-          <label
-            for="owner"
-            className="flex flex-col cursor-pointer justify-center w-full mx-4 h-48 border border-gray-300 rounded-xl peer-checked:border-violet-700 peer-checked:text-neutral-900"
-          >
-            <div className="flex justify-center ">
-              <img
-                width={80}
-                height={80}
-                src="https://res.cloudinary.com/dw639wmis/image/upload/v1677370701/Cliente_eosn5h.png"
-              />
-            </div>
-            <div className="flex flex-col text-center ">
-              <p className="font-bold">Buscar</p>
-              <p>servicios</p>
-            </div>
-          </label>
-          <input
-            id="professional"
-            name="options"
-            className="hidden peer"
-            type="radio"
-            value="PROFESSIONAL"
-            checked={option == "PROFESSIONAL"}
-            onChange={handleOptionChange}
-          />
-          <label
-            for="professional"
-            className="flex flex-col cursor-pointer justify-center w-full mx-4 h-48 border border-gray-300 rounded-xl peer-checked:border-violet-700 peer-checked:text-neutral-900"
-          >
-            <div className="flex justify-center">
-              <img
-                width={80}
-                height={80}
-                src="https://res.cloudinary.com/dw639wmis/image/upload/v1677370701/Profesional_veto9g.png"
-              />
-            </div>
-            <div className="flex flex-col text-center ">
-              <p className="font-bold">Ofrecer</p>
-              <p>servicios</p>
-            </div>
-          </label>
+          <div>
+            <input
+              id="owner"
+              name="options"
+              className="hidden peer"
+              type="radio"
+              value="OWNER"
+              checked={option == "OWNER"}
+              onChange={handleOptionChange}
+            />
+            <label
+              for="owner"
+              className="flex flex-col cursor-pointer justify-center w-full mx-4 h-48 border border-gray-300 rounded-xl peer-checked:border-violet-700 peer-checked:text-neutral-900"
+            >
+              <div className="flex justify-center ">
+                <img
+                  width={80}
+                  height={80}
+                  src="https://res.cloudinary.com/dw639wmis/image/upload/v1677370701/Cliente_eosn5h.png"
+                />
+              </div>
+              <div className="flex flex-col text-center ">
+                <p className="font-bold">Buscar</p>
+                <p>servicios</p>
+              </div>
+            </label>
+          </div>
+
+          <div>
+            <input
+              id="professional"
+              name="optionsP"
+              className="hidden peer"
+              type="radio"
+              value="PROFESSIONAL"
+              checked={option == "PROFESSIONAL"}
+              onChange={handleOptionChange}
+            />
+            <label
+              for="professional"
+              className="flex flex-col cursor-pointer justify-center w-full mx-4 h-48 border border-gray-300 rounded-xl peer-checked:border-violet-700 peer-checked:text-neutral-900"
+            >
+              <div className="flex justify-center">
+                <img
+                  width={80}
+                  height={80}
+                  src="https://res.cloudinary.com/dw639wmis/image/upload/v1677370701/Profesional_veto9g.png"
+                />
+              </div>
+              <div className="flex flex-col text-center ">
+                <p className="font-bold">Ofrecer</p>
+                <p>servicios</p>
+              </div>
+            </label>
+          </div>
         </div>
         <br />
         <br />

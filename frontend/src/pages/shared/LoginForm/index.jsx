@@ -7,10 +7,11 @@ import InputForm from "../../../components/inputForm/InputForm"
 import Navbar from "../../shared/Navbar/Navbar"
 import { useForm } from "react-hook-form"
 import { useSelector } from "react-redux"
+import pawfulApi from "../../../api/pawfulApi"
 
 const LoginForm = () => {
   const { startLogin, errorMessage } = useAuthStore()
-  const { role } = useSelector((state) => state.auth.user)
+  const { role,token } = useSelector((state) => state.auth.user)
 
   const navigate = useNavigate()
   const {
@@ -24,21 +25,21 @@ const LoginForm = () => {
     console.log(`Email: ${email}, Password: ${password}`)
     console.log(data)
 
-    const roleResponse = await startLogin({ email, password })
+    await startLogin({ email, password })
 
-    if (roleResponse.includes("OWNER")) {
-      navigate("/profile")
-      console.log("OWNER")
-    }
-    if (roleResponse.includes("PROFESSIONAL")) {
-      console.log("PROFESSIONAL")
-    }
-    if (
-      roleResponse.includes("OWNER") &&
-      roleResponse.includes("PROFESSIONAL")
-    ) {
-      console.log("OWNER AND PROFESSINA")
-    }
+    navigate("/profile")
+    // if (roleResponse.includes("OWNER")) {
+    //   console.log("OWNER")
+    // }
+    // if (roleResponse.includes("PROFESSIONAL")) {
+    //   console.log("PROFESSIONAL")
+    // }
+    // if (
+    //   roleResponse.includes("OWNER") &&
+    //   roleResponse.includes("PROFESSIONAL")
+    // ) {
+    //   console.log("OWNER AND PROFESSINA")
+    // }
   }
 
   useEffect(() => {
@@ -88,12 +89,17 @@ const LoginForm = () => {
         </div>
         <br />
         <div className="flex flex-col">
-          <PurpleButton className="self-center" text="Iniciar sesión" type="submit" />
+          <PurpleButton
+            className="self-center"
+            text="Iniciar sesión"
+            type="submit"
+          />
           <div className="text-center text-neutral-900 text-caption font caption mt-6">
-            ¿Aún no tienes una cuenta?{" "} 
-          <Link to="/register" className="global-link text-link font-link ">
-            Registrarte
-          </Link> </div>
+            ¿Aún no tienes una cuenta?{" "}
+            <Link to="/register" className="global-link text-link font-link ">
+              Registrarte
+            </Link>{" "}
+          </div>
         </div>
       </form>
     </div>

@@ -130,7 +130,7 @@ const Profile = () => {
           )}
         </div>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }
