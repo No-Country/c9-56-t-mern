@@ -7,6 +7,11 @@ import CoverPhoto from "../../../components/CoverPhoto/CoverPhoto"
 import InputForm from "../../../components/inputForm/InputForm"
 import TextArea from "../../../components/TextArea/TextArea"
 import PurpleButton from "../../../components/PurpleButton"
+import InputSelect from "../../../components/inputSelect/InputSelect"
+
+const options = [
+    {value:"Paseos", label:"Paseos"}
+  ]
 
 const AddServices = () => {
     const {
@@ -15,7 +20,7 @@ const AddServices = () => {
         handleSubmit,
     } = useForm()
 
-    const { registerService } = useAddService()
+    // const { registerService } = useAddService()
 
     const onSubmit = async (data) => {
         const { name, presentacionPersonal, presentacion_del_servicio, image } = data
@@ -42,7 +47,12 @@ const AddServices = () => {
                     <InputForm
                         label={"Nombre del servicio"}
                         placeholder={"Ingrese el nombre del servicio"}
-                        register={...register("name", {})}
+                        register={{...register("name", {})}}
+                    />
+
+                    <InputSelect 
+                    label={"Selecciona la categoria del servicio"}
+                    options={options}
                     />
 
                     <TextArea
