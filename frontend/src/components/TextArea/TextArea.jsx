@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-const TextArea = ({ label, placeholder }) => {
+const TextArea = ({ label, placeholder, register }) => {
   const [value, setValue] = useState("")
 
   const handleChange = (e) => {
@@ -21,8 +21,9 @@ const TextArea = ({ label, placeholder }) => {
         cols="30"
         rows="10"
         placeholder={placeholder}
-        value={value}
-        onChange={handleChange}
+        // value={value}
+        // onChange={handleChange}
+        {...register}
       ></textarea>
     </div>
   )

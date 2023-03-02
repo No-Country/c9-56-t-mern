@@ -16,6 +16,7 @@ import {
   servicesSlice,
 } from "../../store/servicesProf/serviceSlice"
 import { useNavigate } from "react-router-dom"
+import { useServiceStore } from "../../hooks/useServiceStore"
 
 const ListServices = () => {
   const [showCategories, setShowCategories] = useState(false)
@@ -23,6 +24,7 @@ const ListServices = () => {
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const { startLoadingServices } = useServiceStore()
 
   const services = useSelector((state) => state.services.services)
   const serviceIds = services.map((service) => service.id)
@@ -47,6 +49,10 @@ const ListServices = () => {
   //   fetchGetServices()
 
   // }, [])
+
+  useEffect(() => {
+    startLoadingServices()
+  }, [])
 
   const filterServices = (services, filters) => {
     const { categories, petTypes, sizes } = filters
