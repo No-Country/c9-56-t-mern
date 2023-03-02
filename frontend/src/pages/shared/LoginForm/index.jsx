@@ -28,7 +28,6 @@ const LoginForm = () => {
     await startLogin({ email, password })
 
     navigate("/profile")
-   
   }
 
   useEffect(() => {

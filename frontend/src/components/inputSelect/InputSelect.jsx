@@ -1,11 +1,12 @@
 import React, { useState } from "react"
 import Select from "react-select"
 
-const InputSelect = ({ label,options }) => {
+const InputSelect = ({ label, options, onChange }) => {
   const [value, setValue] = useState(null)
 
   const handleChange = (selectOption) => {
     setValue(selectOption)
+    onChange(selectOption)
   }
 
   return (
