@@ -5,6 +5,7 @@ import { CreateServiceController } from "../controllers/service/CreateServiceCon
 import { ShowServiceController } from "../controllers/service/ShowServiceController"
 import { ShowServiceDetailController } from "../controllers/service/ShowServiceDetailController"
 import { ShowServiceByCategoryController } from "../controllers/service/ShowServiceByCategiesController"
+import { ShowAllServiceController } from "../controllers/service/ShowAllServiceController"
 
 const serviceRouter = Router()
 
@@ -41,6 +42,15 @@ serviceRouter.post(
     const showServiceCategoryController = new ShowServiceByCategoryController()
 
     await showServiceCategoryController.run(req, res)
+  }),
+)
+
+serviceRouter.get(
+  "/services",
+  asyncHandler(async (req: Request, res: Response) => {
+    const showAllServiceController = new ShowAllServiceController()
+
+    await showAllServiceController.run(req, res)
   }),
 )
 
