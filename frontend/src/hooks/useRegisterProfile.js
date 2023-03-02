@@ -71,19 +71,19 @@ export const useRegisterProfile = () => {
       )
       if (response.status === 201) {
         const respBackendRegister = "ok"
-        // dispatch(
-        //   getProfile({
-        //     id: response.data.perfil.id,
-        //     name: response.data.perfil.name,
-        //     dni: response.data.perfil.dni,
-        //     image: response.data.perfil.image,
-        //     phone: response.data.perfil.phone,
-        //     address: response.data.perfil.address,
-        //     titleCareer: response.data.perfil.titleCareer,
-        //     rol: response.data.perfil.rol,
-        //     userId: response.data.perfil.userId,
-        //   }),
-        // )
+        dispatch(
+          getProfile({
+            id: response.data.perfil.id,
+            name: response.data.perfil.name,
+            dni: response.data.perfil.dni,
+            image: response.data.perfil.image,
+            phone: response.data.perfil.phone,
+            address: response.data.perfil.address,
+            titleCareer: response.data.perfil.titleCareer,
+            rol: response.data.perfil.rol,
+            userId: response.data.perfil.userId,
+          }),
+        )
         return respBackendRegister
       }
     } catch (error) {}
