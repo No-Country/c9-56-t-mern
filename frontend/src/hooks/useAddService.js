@@ -2,7 +2,14 @@ import pawfulApi from "../api/pawfulApi"
 
 export const useAddService = () => {
   const registerService = async (
-    { name, presentacionPersonal, presentacion_del_servicio, image, profileId },
+    {
+      name,
+      presentacionPersonal,
+      presentacion_del_servicio,
+      image,
+      profileId,
+      categoryId,
+    },
     token,
   ) => {
     try {
@@ -14,6 +21,7 @@ export const useAddService = () => {
           presentacion_del_servicio,
           image,
           profileId,
+          categoryId,
         },
         {
           headers: {
@@ -23,13 +31,14 @@ export const useAddService = () => {
       )
 
       if (response.status === 201) {
-        return (respBack = "ok")
+        const respBack = "ok"
+        return respBack
       }
     } catch (error) {
       console.log(error)
     }
-    return {
-      registerService,
-    }
+  }
+  return {
+    registerService,
   }
 }
