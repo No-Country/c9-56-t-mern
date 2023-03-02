@@ -22,30 +22,32 @@ export const useAuthStore = () => {
       localStorage.setItem("token-init-date", new Date().getTime())
       const rol = data.data.user.roles
 
-     
-      
       // console.log(data)
-      if(data.status === 201){
-         const response = await pawfulApi.get("/perfil",{},
-         {
-           headers: {
-             Authorization: `Bearer ${data.data.token}`,
-           },
-         },
-         )    
-         response.data.forEach((profile) => {
+      if (data.status === 201) {
+        const response = await pawfulApi.get(
+          "/perfil",
+          {},
+          {
+            headers: {
+              Authorization: `Bearer ${data.data.token}`,
+            },
+          },
+        )
+        response.data.forEach((profile) => {
           console.log(profile.name)
-          dispath(getProfile({
-            id: profile.id,
-            name: profile.name,
-            image: profile.image,
-            userId: profile.userId,
-            phone: profile.phone,
-            address: profile.address,
-          }))     
-         });
+          dispath(
+            getProfile({
+              id: profile.id,
+              name: profile.name,
+              image: profile.image,
+              userId: profile.userId,
+              phone: profile.phone,
+              address: profile.address,
+            }),
+          )
+        })
         //  console.log(response.data.name)
-      } 
+      }
       dispath(
         onLogin({
           email: data.data.user.email,

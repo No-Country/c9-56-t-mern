@@ -10,68 +10,75 @@ import PurpleButton from "../../../components/PurpleButton"
 import InputSelect from "../../../components/inputSelect/InputSelect"
 
 const options = [
-    {value:"Paseos", label:"Paseos"}
-  ]
+  { value: "Peluquería", label: "Peluquería" },
+  { value: "Guardería", label: "Guardería" },
+  { value: "Pastelería", label: "Pastelería" },
+  { value: "Fiestas", label: "Fiestas" },
+  { value: "Paseos", label: "Paseos" },
+]
 
 const AddServices = () => {
-    const {
-        register,
-        formState: { errors },
-        handleSubmit,
-    } = useForm()
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm()
 
-    // const { registerService } = useAddService()
+  // const { registerService } = useAddService()
+  const [selectedOption, setSelectedOption] = useState("")
 
-    const onSubmit = async (data) => {
-        const { name, presentacionPersonal, presentacion_del_servicio, image } = data
+  const onSubmit = async (data) => {
+    const { name, presentacionPersonal, presentacion_del_servicio, image } =
+      data
 
-        try {
-            const resp = await registerService({
-                name,
-                presentacion_del_servicio,
-                presentacionPersonal,
-                image
-            })
-        } catch (error) {
-            console.log(error)
-
-        }
+    try {
+      const resp = await registerService({
+        name,
+        presentacion_del_servicio,
+        presentacionPersonal,
+        image,
+      })
+    } catch (error) {
+      console.log(error)
     }
+  }
 
-    return (
-        <>
-            <NavbarBack />
-            <CoverPhoto />
-            <div>
-                <form onSubmit={handleSubmit(onSubmit)} >
-                    <InputForm
-                        label={"Nombre del servicio"}
-                        placeholder={"Ingrese el nombre del servicio"}
-                        register={{...register("name", {})}}
-                    />
+  const onSelectOption = (option) => {
+    setSelectedOption(option.value)
+  }
 
-                    <InputSelect 
-                    label={"Selecciona la categoria del servicio"}
-                    options={options}
-                    />
+  return (
+    <>
+      <NavbarBack />
+      <CoverPhoto />
+      <div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <InputForm
+            label={"Nombre del servicio"}
+            placeholder={"Ingrese el nombre del servicio"}
+            register={{ ...register("name", {}) }}
+          />
 
-                    <TextArea
-                        label={"Sobre el servicio"}
-                        placeholder={"Escribe tu descripción aqui"}
-                    />
-                    <TextArea
-                        label={"Sobre ti"}
-                        placeholder={"Escribe tu descripción aqui"}
-                    />
+          <InputSelect
+            label={"Selecciona la categoria del servicio"}
+            options={options}
+            onChange={onSelectOption}
+          />
 
-                    <PurpleButton
-                    text={"Guardar datos"}
-                    type={"submit"}
-                     />
-                </form>
-            </div>
-        </>
-    )
+          <TextArea
+            label={"Sobre el servicio"}
+            placeholder={"Escribe tu descripción aqui"}
+          />
+          <TextArea
+            label={"Sobre ti"}
+            placeholder={"Escribe tu descripción aqui"}
+          />
+
+          <PurpleButton text={"Guardar datos"} type={"submit"} />
+        </form>
+      </div>
+    </>
+  )
 }
 
 export default AddServices

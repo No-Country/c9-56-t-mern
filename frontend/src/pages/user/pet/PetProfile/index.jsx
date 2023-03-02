@@ -8,7 +8,7 @@ import {
   MdOutlinePets,
   MdOutlinePersonOutline,
 } from "react-icons/md"
-import { IoMdPerson } from 'react-icons/io'
+import { IoMdPerson } from "react-icons/io"
 import Navbar from "../../../shared/Navbar/Navbar"
 import CoverPhoto from "../../../../components/CoverPhoto/CoverPhoto"
 import InputImage from "../../../../components/InputImage/InputImage"
@@ -16,11 +16,9 @@ import InputSelect from "../../../../components/inputSelect/InputSelect"
 import PencilIcon from "../../../../components/PencilIcon"
 import TextArea from "../../../../components/TextArea/TextArea"
 
-const PetProfile = ({image, name, raze, owner, sex, size, age}) => {
-
+const PetProfile = ({ image, name, raze, owner, sex, size, age }) => {
   return (
     <>
-      
       <div className="global-main-container">
         <div className="mt-10 mb-9">
           <InputImage urlImage={image} />
@@ -75,8 +73,6 @@ const PetProfile = ({image, name, raze, owner, sex, size, age}) => {
             </h3>
           </div>
         </div>
-
-       
       </div>
     </>
   )
