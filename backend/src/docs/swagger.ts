@@ -165,6 +165,18 @@ const swaggerDefinition: OAS3Definition = {
           },
         },
       },
+      get: {
+        summary: "Lista todos los servicios",
+        description:
+          "Esta ruta es responsable de mostrar todos los servicios disponibles para un usuario",
+        tags: ["services"],
+        security: [{ bearerAuth: [] }],
+        responses: {
+          "200": {
+            description: "lista de servicios",
+          },
+        },
+      },
     },
     "/services/categories": {
       post: {
