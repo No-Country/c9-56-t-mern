@@ -1,6 +1,9 @@
 import type { PerfilUserRepository } from "../../../domain/repositories/PerfilUserRepository"
 import { PerfilUser } from "../../../domain/valueObjects/PerfilUser"
 import { PerfilUserPro } from "../../../domain/valueObjects/PerfilUserPro"
+import { PerfilUserModel } from "../../../domain/models/PerfilUserModel"
+import { PerfilProfesionalModel } from "../../../domain/models/PerfilProfesionalModel"
+import type { PartialExcept } from "../../../../../shared/domain/types"
 
 import { MongoosePerfilUserModel } from "./Perfil"
 import { MongoosePerfilUserProModel } from "./PerfilPro"
@@ -107,6 +110,37 @@ class MongoosePerfilUserRepository implements PerfilUserRepository {
       titleCareer,
     )
   }
+
+  async profileUserUpdateById (profile: PartialExcept<PerfilUserModel, "id">): Promise<PerfilUser | null> {
+    const { id } = profile
+    const newUser = await MongoosePerfilUserModel.findOneAndUpdate({ id }, profile, {
+      new: true,
+    })
+
+    if (!newUser) {
+      return null
+    }
+
+    const {name, image, userId, phone, address } = newUser
+
+    return new PerfilUser(id, name, image, userId, phone, address)
+  }
+
+  async profileUserProUpdateById (profile: PartialExcept<PerfilProfesionalModel, "id">): Promise<PerfilUserPro | null> {
+    const { id } = profile
+    const newUser = await MongoosePerfilUserProModel.findOneAndUpdate({ id }, profile, {
+      new: true,
+    })
+
+    if (!newUser) {
+      return null
+    }
+
+    const {name, dni, image, userId, phone, address, titleCareer } = newUser
+
+    return new PerfilUserPro(id, name, dni, image, userId, phone, address, titleCareer )
+  }
+
 }
 
 export { MongoosePerfilUserRepository }
