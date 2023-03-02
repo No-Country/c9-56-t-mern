@@ -9,3 +9,6 @@ export default {
 const Template = (args) => <Contact {...args} />
 
 export const Default = Template.bind({})
+Default.args = {
+  name : "Sabrina Islas"
+}
