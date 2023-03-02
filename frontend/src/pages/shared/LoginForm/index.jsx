@@ -28,18 +28,7 @@ const LoginForm = () => {
     await startLogin({ email, password })
 
     navigate("/profile")
-    // if (roleResponse.includes("OWNER")) {
-    //   console.log("OWNER")
-    // }
-    // if (roleResponse.includes("PROFESSIONAL")) {
-    //   console.log("PROFESSIONAL")
-    // }
-    // if (
-    //   roleResponse.includes("OWNER") &&
-    //   roleResponse.includes("PROFESSIONAL")
-    // ) {
-    //   console.log("OWNER AND PROFESSINA")
-    // }
+   
   }
 
   useEffect(() => {
