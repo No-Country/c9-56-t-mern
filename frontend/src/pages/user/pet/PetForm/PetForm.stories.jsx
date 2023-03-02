@@ -1,4 +1,4 @@
-import PetForm from "./PetForm"
+import PetForm from "."
 
 export default {
   title: "Pages/PetForm",
