@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom"
 const Panel = ({ title, placeholder, children, editable }) => {
   const navigate = useNavigate()
   const handle = () => {
-    console.log("QUIERO DORMIR XD")
     navigate("/addService")
   }
 
