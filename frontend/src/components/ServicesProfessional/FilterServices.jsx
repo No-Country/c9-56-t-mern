@@ -69,7 +69,7 @@ const FilterServices = ({
   return (
     <>
       {showCategories && (
-        <div className="absolute w-64 h-96 left-20 top-16 bg-yellow-300">
+        <div className="absolute w-64 h-96 left-20 top-16 ">
           <div className="bg-violet-50 rounded-lg flex flex-col items-center p-8">
             {
               <div>
@@ -87,10 +87,6 @@ const FilterServices = ({
                         type="checkbox"
                         checked={
                           checked
-                          // ? selectedCategories.includes(...selectedCategorie, category.toUpperCase())
-                          // : selectedCategories.includes(
-                          //   category.toUpperCase(),
-                          // )
                         }
                         onChange={handleCategoryChange}
                       />
