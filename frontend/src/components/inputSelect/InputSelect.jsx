@@ -1,20 +1,19 @@
 import React, { useState } from "react"
 import Select from "react-select"
 
-const InputSelect = ({ label, options, onChange }) => {
+const InputSelect = ({ label,options }) => {
   const [value, setValue] = useState(null)
 
   const handleChange = (selectOption) => {
     setValue(selectOption)
-    onChange(selectOption)
   }
 
   return (
-    <div className="container m-auto flex flex-col justify-center max-w-xs py-2">
-      <label className="py-2" htmlFor="select">
+    <div className=" m-auto flex flex-col justify-center max-w-sm mx-4 py-2">
+      <label className="py-2 text-body-bold font-body" htmlFor="select">
         {label}
       </label>
-      <Select
+      <select
         options={options}
         autoFocus={true}
         isClearable={true}
@@ -22,6 +21,7 @@ const InputSelect = ({ label, options, onChange }) => {
         value={value}
         onChange={handleChange}
         placeholder={"Selecciona una opción..."}
+        className="w-full text-caption font-caption bg-slate-50 border-2 h-10 border-neutral-200 focus:outline-none focus:ring focus:ring-violet-700 rounded-lg pl-2"
       />
     </div>
   )
