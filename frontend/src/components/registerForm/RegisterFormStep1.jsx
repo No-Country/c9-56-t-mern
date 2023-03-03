@@ -19,7 +19,7 @@ const RegisterFormStep1 = (props) => {
     console.log(data)
   }
   return (
-    <div className="m-0">
+    <div className="max-w-sm w-full m-auto bg-slate-50">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <InputForm

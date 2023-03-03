@@ -43,8 +43,8 @@ const RegisterFormStep2 = (props) => {
   }
 
   return (
-    <div className="#">
-      <form onSubmit={handleSubmit(onSubmit)}>
+    <div className="max-w-sm w-full m-auto bg-slate-50 pb-10">
+      <form onSubmit={handleSubmit(onSubmit)} >
         <div>
           <InputForm
             label={"Nombre de usuario"}
@@ -55,10 +55,15 @@ const RegisterFormStep2 = (props) => {
           />
 
           {errors.email?.type === "pattern" && (
-            <p>El formato del email es incorrecto</p>
+            <p>El formato es incorrecto</p>
           )}
         </div>
-        <div className="flex place-content-evenly pt-px">
+         <div className="mx-4 mt-6">
+            <h2 className="font-body text-body-bold">¿Cómo querés comenzar?</h2>
+            <p className="text-caption font-caption text-slate-400">Podrás cambiarlo más tarde.</p>
+          </div>
+        <div className="flex item-center justify-center mb-10 mt-6">
+          
           <div>
             <input
               id="owner"
@@ -71,7 +76,7 @@ const RegisterFormStep2 = (props) => {
             />
             <label
               for="owner"
-              className="flex flex-col cursor-pointer justify-center w-full mx-4 h-48 border border-gray-300 rounded-xl peer-checked:border-violet-700 peer-checked:text-neutral-900"
+              className="flex flex-col cursor-pointer justify-center w-40 h-44 m-2 shadow rounded-2xl  peer-checked:shadow-violet-700 peer-checked:text-neutral-900"
             >
               <div className="flex justify-center ">
                 <img
@@ -80,9 +85,9 @@ const RegisterFormStep2 = (props) => {
                   src="https://res.cloudinary.com/dw639wmis/image/upload/v1677370701/Cliente_eosn5h.png"
                 />
               </div>
-              <div className="flex flex-col text-center ">
-                <p className="font-bold">Buscar</p>
-                <p>servicios</p>
+              <div className="flex flex-col text-center mt-4">
+                <p className="font-subtitle text-subtitle-bold">Buscar</p>
+                <p className="text-body font-body">servicios</p>
               </div>
             </label>
           </div>
@@ -99,7 +104,7 @@ const RegisterFormStep2 = (props) => {
             />
             <label
               for="professional"
-              className="flex flex-col cursor-pointer justify-center w-full mx-4 h-48 border border-gray-300 rounded-xl peer-checked:border-violet-700 peer-checked:text-neutral-900"
+              className="flex flex-col cursor-pointer justify-center w-40 h-44 m-2 shadow rounded-2xl  peer-checked:shadow-violet-700 peer-checked:text-neutral-900"
             >
               <div className="flex justify-center">
                 <img
@@ -108,15 +113,13 @@ const RegisterFormStep2 = (props) => {
                   src="https://res.cloudinary.com/dw639wmis/image/upload/v1677370701/Profesional_veto9g.png"
                 />
               </div>
-              <div className="flex flex-col text-center ">
-                <p className="font-bold">Ofrecer</p>
-                <p>servicios</p>
+              <div className="flex flex-col text-center mt-4">
+                <p className="font-subtitle text-subtitle-bold">Ofrecer</p>
+                <p className="text-body font-body">servicios</p>
               </div>
             </label>
           </div>
         </div>
-        <br />
-        <br />
         <PurpleButton text="Registrar" type="submit" />
       </form>
     </div>
