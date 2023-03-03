@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom"
-import InputForm from "../inputForm/InputForm"
+import InputForm from "../InputForm/InputForm"
 import PurpleButton from "../PurpleButton"
 
 const RegisterFormStep1 = (props) => {
@@ -19,7 +19,7 @@ const RegisterFormStep1 = (props) => {
     console.log(data)
   }
   return (
-    <div className="m-0">
+    <div className="max-w-sm w-full m-auto bg-slate-50">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <InputForm

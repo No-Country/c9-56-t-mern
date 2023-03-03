@@ -4,6 +4,7 @@ import { asyncHandler } from "../../shared/framework/asyncHandler"
 import { CreatePerfilUserController } from "../controllers/perfil/CreatePerfilUserController"
 import { ShowProfileController } from "../controllers/perfil/ShowProfileController"
 import { ProfileSearchOneController } from "../controllers/perfil/ProfileSearchOneController"
+import { UpdateUserProfileController } from "../controllers/perfil/UpdateProfileController"
 
 const perfilUserRouter = Router()
 
@@ -31,6 +32,15 @@ perfilUserRouter.get(
     const showProfileController = new ProfileSearchOneController()
 
     await showProfileController.run(req, res)
+  }),
+)
+
+perfilUserRouter.put(
+  "/perfil/:id",
+  asyncHandler(async (req: Request, res: Response) => {
+    const updateProfileController = new UpdateUserProfileController()
+
+    await updateProfileController.run(req, res)
   }),
 )
 

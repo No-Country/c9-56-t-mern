@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import SimpleText from "../SimpleText/SimpleText"
 import { MdFilterAlt } from "react-icons/md"
 import PurpleButton from "../PurpleButton"
@@ -6,13 +6,17 @@ import Navbar from "../../pages/shared/Navbar/Navbar"
 import { CardServices } from "../CardServices"
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
-import { onAddFilter } from "../../store/servicesProf/loadServicesSlice"
+import {
+  onAddFilter,
+  onLoadServices,
+} from "../../store/servicesProf/loadServicesSlice"
 import FilterServices from "./FilterServices"
 import {
   serviceData,
   servicesSlice,
 } from "../../store/servicesProf/serviceSlice"
 import { useNavigate } from "react-router-dom"
+import { useServiceStore } from "../../hooks/useServiceStore"
 
 const ListServices = () => {
   const [showCategories, setShowCategories] = useState(false)
@@ -20,10 +24,35 @@ const ListServices = () => {
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const { startLoadingServices } = useServiceStore()
 
   const services = useSelector((state) => state.services.services)
   const serviceIds = services.map((service) => service.id)
   const filters = useSelector((state) => state.services.filters)
+
+  // useEffect(() => {
+  //   const fetchGetServices = async () => {
+  //     try {
+  //       let url = "/services/detail"
+
+  //       // if (profileId) {
+  //       //   url += `/${profileId}`
+  //       // }
+
+  //       const { data } = await pawfulApi.get(url)
+  //       dispatch(onLoadServices(data))
+  //       // setDataProfile(data)
+  //     } catch (error) {
+  //       console.log(error)
+  //     }
+  //   }
+  //   fetchGetServices()
+
+  // }, [])
+
+  useEffect(() => {
+    startLoadingServices()
+  }, [])
 
   const filterServices = (services, filters) => {
     const { categories, petTypes, sizes } = filters

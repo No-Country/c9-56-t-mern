@@ -6,7 +6,7 @@ const options = [
   { value: "CUIT", label: "CUIT" },
 ]
 
-const DniForm = () => {
+const IdForm = () => {
   const [value, setValue] = useState(null)
 
   const handleChange = (selectOption) => {
@@ -52,4 +52,4 @@ const DniForm = () => {
   )
 }
 
-export default DniForm
+export default IdForm

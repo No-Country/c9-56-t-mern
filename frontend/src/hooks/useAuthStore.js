@@ -6,6 +6,7 @@ import {
   onLogin,
   onLogout,
 } from "../store/auth/authSlice"
+import { getProfile } from "../store/profile/profileSlice"
 
 export const useAuthStore = () => {
   const { status, user, errorMessage } = useSelector((state) => state.auth)
@@ -16,16 +17,43 @@ export const useAuthStore = () => {
     dispath(onChecking())
 
     try {
-      const { data } = await pawfulApi.post("/auth/login", { email, password })
-      localStorage.setItem("token", data.token)
+      const data = await pawfulApi.post("/auth/login", { email, password })
+      localStorage.setItem("token", data.data.token)
       localStorage.setItem("token-init-date", new Date().getTime())
-      const rol = data.user.roles
+      const rol = data.data.user.roles
+
+      // console.log(data)
+      if (data.status === 201) {
+        const response = await pawfulApi.get(
+          "/perfil",
+          {},
+          {
+            headers: {
+              Authorization: `Bearer ${data.data.token}`,
+            },
+          },
+        )
+        response.data.forEach((profile) => {
+          console.log(profile.name)
+          dispath(
+            getProfile({
+              id: profile.id,
+              name: profile.name,
+              image: profile.image,
+              userId: profile.userId,
+              phone: profile.phone,
+              address: profile.address,
+            }),
+          )
+        })
+        //  console.log(response.data.name)
+      }
       dispath(
         onLogin({
-          email: data.user.email,
-          uid: data.user.id,
-          role: data.user.roles,
-          token: data.token,
+          email: data.data.user.email,
+          uid: data.data.user.id,
+          role: data.data.user.roles,
+          token: data.data.token,
         }),
       )
 

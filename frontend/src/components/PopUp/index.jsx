@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { FaCat, FaDog } from "react-icons/fa"
 
-const PetPopup = () => {
+const PopUp = () => {
   const [selectedOption, setSelectedOption] = useState(null)
   const [showError, setShowError] = useState(false)
 
@@ -57,4 +57,4 @@ const PetPopup = () => {
   )
 }
 
-export default PetPopup
+export default PopUp

@@ -10,6 +10,7 @@ import Profile from "../pages/shared/Profile"
 import FormRegisterProfessional from "../pages/professional/RegisterProfessional"
 import ListServices from "../components/ServicesProfessional/ListServices"
 import EachService from "../pages/professional/EachService"
+import AddServices from "../pages/professional/AddServices"
 // import EachService from "../pages/professional"
 
 const AppRouter = () => {
@@ -25,7 +26,6 @@ const AppRouter = () => {
 
   return (
     <Routes>
-
       <Route path="/" element={<HomePage />} />
       <Route path="/*" element={<Navigate to="/" />} />
       {status === "not-authenticated" ? (

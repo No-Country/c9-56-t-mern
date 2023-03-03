@@ -3,10 +3,11 @@ import { Link, useNavigate } from "react-router-dom"
 import { useAuthStore } from "../../../hooks/useAuthStore"
 import "../../../styles/styles.css"
 import PurpleButton from "../../../components/PurpleButton"
-import InputForm from "../../../components/inputForm/InputForm"
+import InputForm from "../../../components/InputForm/InputForm"
 import Navbar from "../../shared/Navbar/Navbar"
 import { useForm } from "react-hook-form"
 import { useSelector } from "react-redux"
+import pawfulApi from "../../../api/pawfulApi"
 
 const LoginForm = () => {
   const { startLogin, errorMessage } = useAuthStore()
@@ -24,21 +25,9 @@ const LoginForm = () => {
     console.log(`Email: ${email}, Password: ${password}`)
     console.log(data)
 
-    const roleResponse = await startLogin({ email, password })
+    await startLogin({ email, password })
 
-    if (roleResponse.includes("OWNER")) {
-      navigate("/profile")
-      console.log("OWNER")
-    }
-    if (roleResponse.includes("PROFESSIONAL")) {
-      console.log("PROFESSIONAL")
-    }
-    if (
-      roleResponse.includes("OWNER") &&
-      roleResponse.includes("PROFESSIONAL")
-    ) {
-      console.log("OWNER AND PROFESSINA")
-    }
+    navigate("/profile")
   }
 
   useEffect(() => {
@@ -88,12 +77,17 @@ const LoginForm = () => {
         </div>
         <br />
         <div className="flex flex-col">
-          <PurpleButton className="self-center" text="Iniciar sesión" type="submit" />
+          <PurpleButton
+            className="self-center"
+            text="Iniciar sesión"
+            type="submit"
+          />
           <div className="text-center text-neutral-900 text-caption font caption mt-6">
-            ¿Aún no tienes una cuenta?{" "} 
-          <Link to="/register" className="global-link text-link font-link ">
-            Registrarte
-          </Link> </div>
+            ¿Aún no tienes una cuenta?{" "}
+            <Link to="/register" className="global-link text-link font-link ">
+              Registrarte
+            </Link>{" "}
+          </div>
         </div>
       </form>
     </div>

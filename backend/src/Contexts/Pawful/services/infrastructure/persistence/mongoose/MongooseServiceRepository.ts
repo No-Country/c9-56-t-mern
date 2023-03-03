@@ -78,6 +78,11 @@ class MongooseServiceRepository implements ServiceRepository {
       category: res.name,
     }))
   }
+
+  async allServices(): Promise<Service[]> {
+    const services: Service[] = await MongooseServiceModel.find()
+    return services
+  }
 }
 
 export { MongooseServiceRepository }
