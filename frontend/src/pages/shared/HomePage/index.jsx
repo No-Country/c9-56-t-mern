@@ -6,11 +6,10 @@ import CategoriesHome from "../CategoriesHome"
 import Navbar from "../../shared/Navbar/Navbar"
 import Footer from "../../shared/Footer/Footer"
 
-
 const HomePage = () => {
   return (
-    <div className="global-main-container contenedor-home">
-      {/* <Navbar /> */}
+    <div className="global-main-container">
+      <Navbar />
       <div>
         <div id="homeTitle" className="flex mt-10">
           <h2 className="text-main font-title m-3 text-start">
@@ -22,14 +21,13 @@ const HomePage = () => {
           </h2>
         </div>
       </div>
-      <div className="flex flex-row-reverse  min-h-72">
+      <div className="flex flex-row-reverse">
         <div
           id="homeMainImage"
-          className="w-72 h-72   min-h-72 bg-center bg-no-repeat bg-contain bg-[url('https://res.cloudinary.com/dw639wmis/image/upload/v1677370573/Home_zke8ng.png')]"
+          className="w-72 h-72  bg-center bg-no-repeat bg-contain bg-[url('https://res.cloudinary.com/dw639wmis/image/upload/v1677370573/Home_zke8ng.png')]"
         ></div>
       </div>
       <br />
-      <div className="purple-plus-bare-btn justify-self-center">
       <div className="mb-4">
         <Link to={"/services"}>
           <PurpleButton text={"Contratar"} />
@@ -40,18 +38,14 @@ const HomePage = () => {
           <BareButton text={"Ofrecer servicios"} />
         </div>
       </Link>
-      </div>
       <br />
-    <div className="our-services md:96 md:bg-slate-50">
-    <p className="text-title font-title text-center mt-12 mb-5">
-    <span className=" hidden md:inline">Algunos de</span>
-    <span className="uppercase md:lowercase"> N</span>uestros servicios
 
+      <p className="text-title font-title text-center mt-12 mb-5">
+        Nuestros servicios
       </p>
+
       <CategoriesHome />
-      </div>
-    
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }

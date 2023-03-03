@@ -31,7 +31,7 @@ const CategoriesHome = () => {
     },
   ]
 
-  return( <div className="flex flex-col gap-4 md:flex-row overflow-auto">{categoryDetails.map((categories) =>
+  return categoryDetails.map((categories) =>
     categories.category === "Guardería" || categories.category === "Fiestas" ? (
       <Card
         image={categories.img}
@@ -47,6 +47,6 @@ const CategoriesHome = () => {
       />
     ),
   )
-}</div>)}
+}
 
 export default CategoriesHome
