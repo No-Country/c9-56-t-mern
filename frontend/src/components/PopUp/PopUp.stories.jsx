@@ -1,4 +1,4 @@
-import PetPopup from "."
+import PopUp from "."
 
 export default {
   title: "Components/PopUp",
