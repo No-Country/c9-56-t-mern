@@ -6,7 +6,7 @@ import useCloudinaryImage from "../../hooks/useCloudinaryImage"
 import { useRegisterProfile } from "../../hooks/useRegisterProfile"
 import NavbarBack from "../../pages/shared/Navbar/NavbarBack"
 import ImageSelector from "../ImageSelector"
-import InputForm from "../inputForm/InputForm"
+import InputForm from "../InputForm/InputForm"
 import PurpleButton from "../PurpleButton"
 import SimpleText from "../SimpleText/SimpleText"
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Select from "react-select"
-import Footer from "../Footer/Footer"
-import InputForm from "../inputForm/InputForm"
+import Footer from "../../pages/shared/Footer/Footer"
+import InputForm from "../InputForm/InputForm"
 import PurpleButton from "../PurpleButton"
 import TextArea from "../TextArea/TextArea"
 const options = [
