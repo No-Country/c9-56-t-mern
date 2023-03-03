@@ -77,37 +77,30 @@ const OwnerForm = () => {
             <div className="flex justify-center mb-9">
               <ImageSelector urlImage={images} onChange={handleImageChange} />
             </div>
-            <div className="flex flex-col justify-center gap-6">
-              <div className="mb-4">
-                <label className="block font-medium mb-2">
-                  Nombre Completo
-                </label>
+            <div className="flex flex-col justify-center">
+              
                 <InputForm
-                  className="border border-gray-400 p-2 w-full"
-                  placeholder="Ingrese nombre aquí"
+                  label={'Nombre(s) y Apellido(s)'}
+                  placeholder="Escribe tu nombre y apellido"
                   register={{ ...register("name", {}) }}
                 />
-              </div>
-              <div className="mb-4">
-                <label className="block font-medium mb-2">
-                  Número de teléfono
-                </label>
+              
+              
                 <InputForm
-                  className="border border-gray-400 p-2 w-full"
-                  placeholder="Ingrese número aquí"
+                  label={'Número de teléfono'}
+                  placeholder="Escribe tu teléfono"
                   register={{ ...register("phone", {}) }}
                 />
-              </div>
-              <div className="mb-4">
-                <label className="block font-medium mb-2">Dirección</label>
+              
+              
                 <InputForm
-                  className="border border-gray-400 p-2 w-full"
-                  placeholder="Ingrese su dirección aquí"
+                  label={'Dirección'}
+                  placeholder="Escribe tu dirección"
                   register={{ ...register("address", {}) }}
                 />
-              </div>
+              
             </div>
-            <div className="mt-10">
+            <div className="mt-10 pb-10">
               <PurpleButton text=" GUARDAR DATOS" type="submit" />
             </div>
           </form>
