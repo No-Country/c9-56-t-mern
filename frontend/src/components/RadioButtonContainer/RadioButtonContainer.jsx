@@ -2,12 +2,12 @@ import React from "react"
 
 const RadioButtonContainer = ({ label, children }) => {
   return (
-    <div className="flex flex-col m-auto max-w-sm">
-      <div className="font-normal text-base m-1">
-        <p className="font-semibold">{label}</p>
+    <form className="flex flex-col justify-center m-auto w-full max-w-sm px-4">
+      <div className="font-body text-body-bold m-1">
+        <p >{label}</p>
       </div>
-      <div className="flex flex-row flex-wrap w-80">{children}</div>
-    </div>
+      <div className="flex flex-row flex-wrap w-full self-center">{children}</div>
+    </form>
   )
 }
 

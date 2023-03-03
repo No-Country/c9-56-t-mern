@@ -39,7 +39,8 @@ const Profile = () => {
 
         setProfile(data[0])
       } catch (error) {
-        if (error.response.status === 404) {
+        if (signal.aborted) {
+        } else if (error.response.status === 404) {
           navigate("/register")
         } else if (!signal.aborted) {
           navigate("/error")

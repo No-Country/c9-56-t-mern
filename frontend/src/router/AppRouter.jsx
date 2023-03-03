@@ -44,6 +44,7 @@ const AppRouter = () => {
             path="/registerProfessional"
             element={<FormRegisterProfessional />}
           />
+          <Route path="/addService" element={<AddServices />} />
         </>
       )}
     </Routes>

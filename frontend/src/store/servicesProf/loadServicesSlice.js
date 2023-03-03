@@ -41,5 +41,18 @@ export const loadServiesSlice = createSlice({
   },
 })
 
-export const { onLoadServices, onAddFilter, onRemoveFilter, onClearFilters } =
+export const loadCategory = createSlice({
+  name: "category",
+  initialState: {
+    // name: "category",
+    categories: {},
+  },
+  reducers: {
+    onLoadCategories: (state, { payload = [] }) => {
+      state.categories = payload
+    },
+  },
+})
+
+export const { onLoadServices, onAddFilter, onRemoveFilter, onClearFilters, onLoadCategories } =
   loadServiesSlice.actions
