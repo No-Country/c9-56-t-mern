@@ -133,6 +133,46 @@ const swaggerDefinition: OAS3Definition = {
         },
       },
     },
+    "/perfil/{id}": {
+      put: {
+        summary: "actualizacion de datos de un Perfil OWNER/PROFESSIONAL",
+        description:
+          "Esta ruta es responsable de actulizar la informacion de un perfil OWNER/PROFESSIONAL este ultimo debe indicarse en el rol",
+        tags: ["profiles"],
+        security: [{ bearerAuth: [] }],
+        parameters: [
+          {
+            name: "id",
+            in: "path",
+            description: "id del perfil a actualizar",
+            required: true,
+          },
+        ],
+        requestBody: {
+          content: {
+            "application/json": {
+              schema: {
+                $ref: "#/components/schemas/profile",
+              },
+              examples: {
+                "profile update example": {
+                  value: {
+                    name: "updatename",
+                    image: "linknuevo",
+                    rol: "tipo de perfil",
+                  },
+                },
+              },
+            },
+          },
+        },
+        responses: {
+          "200": {
+            description: "ok",
+          },
+        },
+      },
+    },
     "/services": {
       post: {
         summary: "Registro de un servicio",
