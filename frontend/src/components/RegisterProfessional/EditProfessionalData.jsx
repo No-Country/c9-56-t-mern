@@ -1,7 +1,7 @@
 import React from "react"
 import NavbarBack from "../../pages/shared/Navbar/NavbarBack"
 import IdForm from "../IdForm/index"
-import InputForm from "../inputForm/InputForm"
+import InputForm from "../InputForm/InputForm"
 import PurpleButton from "../PurpleButton"
 import SimpleText from "../SimpleText/SimpleText"
 

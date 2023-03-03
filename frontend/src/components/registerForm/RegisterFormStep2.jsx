@@ -4,7 +4,7 @@ import { useAuthStore } from "../../hooks/useAuthStore"
 import { useRegisterUSerStore } from "../../hooks/useRegisterUserStore"
 import PurpleButton from "../PurpleButton"
 import { useState } from "react"
-import InputForm from "../inputForm/InputForm"
+import InputForm from "../InputForm/InputForm"
 
 const RegisterFormStep2 = (props) => {
   const { formValues, setFormValues } = props

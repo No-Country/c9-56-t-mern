@@ -1,7 +1,7 @@
 import React from "react"
 import { MdBusinessCenter } from "react-icons/md"
 import AddBtn from "../../../components/AddBtn/AddBtn"
-import InputForm from "../../../components/inputForm/InputForm"
+import InputForm from "../../../components/InputForm/InputForm"
 import PurpleButton from "../../../components/PurpleButton"
 import SimpleText from "../../../components/SimpleText/SimpleText"
 import Footer from "../../shared/Footer/Footer"
