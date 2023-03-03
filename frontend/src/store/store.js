@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit"
 import { authSlice } from "./auth/authSlice"
 import registerSlice from "./register/registerSlice"
 import { profileSlice } from "./profile/profileSlice"
-import { loadServiesSlice } from "./servicesProf/loadServicesSlice"
+import { loadServiesSlice,loadCategory } from "./servicesProf/loadServicesSlice"
 import { servicesSlice } from "./servicesProf/serviceSlice"
 
 export const store = configureStore({
@@ -12,5 +12,6 @@ export const store = configureStore({
     profile: profileSlice.reducer,
     services: loadServiesSlice.reducer,
     service: servicesSlice.reducer,
+    category:loadCategory.reducer
   },
 })

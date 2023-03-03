@@ -24,28 +24,28 @@ export const useAuthStore = () => {
 
       // console.log(data)
       if (data.status === 201) {
-        const response = await pawfulApi.get(
-          "/perfil",
-          {},
-          {
+        try {
+          const response = await pawfulApi.get("/perfil", {
             headers: {
               Authorization: `Bearer ${data.data.token}`,
             },
-          },
-        )
-        response.data.forEach((profile) => {
-          console.log(profile.name)
-          dispath(
-            getProfile({
-              id: profile.id,
-              name: profile.name,
-              image: profile.image,
-              userId: profile.userId,
-              phone: profile.phone,
-              address: profile.address,
-            }),
-          )
-        })
+          })
+          response.data.forEach((profile) => {
+            console.log(profile.name)
+            dispath(
+              getProfile({
+                id: profile.id,
+                name: profile.name,
+                image: profile.image,
+                userId: profile.userId,
+                phone: profile.phone,
+                address: profile.address,
+              }),
+            )
+          })
+        } catch (error) {
+          console.log(error)
+        }
         //  console.log(response.data.name)
       }
       dispath(

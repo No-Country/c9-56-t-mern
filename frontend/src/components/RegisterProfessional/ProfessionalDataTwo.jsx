@@ -15,6 +15,7 @@ const ProfessionalDataTwo = (props) => {
   const { startLogin } = useAuthStore()
   const [title, setTitle] = useState(["HOLA"])
   const navigate = useNavigate()
+  // const [carrer, setCarrer] = useState([])
 
   const {
     register,
@@ -36,33 +37,34 @@ const ProfessionalDataTwo = (props) => {
   // }
 
   const onSubmit = async (data) => {
+    const carrer = []
     console.log(rol)
     const { name, dni, image, phone, address, titleCareer } = data
     setFormValues({ ...formValues, ...data })
+    // setCarrer(...carrer, titleCareer)
+    carrer.push(titleCareer)
 
-    if (role === "OWNER") {
-    }
-    if (rol === "PROFESSIONAL") {
-      try {
-        const responseBack = await registerProfProfessioanl(
-          {
-            name,
-            dni,
-            image,
-            phone,
-            address,
-            titleCareer,
-            rol,
-          },
-          token,
-        )
-        if (responseBack === "ok") {
-          navigate("/profile")
-        }
-      } catch (error) {
-        console.log(error)
+    try {
+      const responseBack = await registerProfProfessioanl(
+        {
+          name,
+          dni,
+          image,
+          phone,
+          address,
+          titleCareer: carrer,
+          rol,
+        },
+        token,
+      )
+      console.log(responseBack)
+      if (responseBack === "ok") {
+        navigate("/profile")
       }
+    } catch (error) {
+      console.log(error)
     }
+    // }
   }
 
   useEffect(() => {
@@ -88,7 +90,7 @@ const ProfessionalDataTwo = (props) => {
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-sm">
           <div className=" flex flex-col gap-4 mb-6">
             <div className="flex flex-row gap-2">
-              <div className="w-2/6">
+              {/* <div className="w-2/6">
                 <label className="block font-medium mb-2">DNI / CUIT</label>
                 <input
                   type="number"
@@ -96,7 +98,7 @@ const ProfessionalDataTwo = (props) => {
                   placeholder="Elegir"
                   {...register("select", {})}
                 />
-              </div>
+              </div> */}
               <div>
                 <label className="block font-medium mb-2">Número</label>
                 <input

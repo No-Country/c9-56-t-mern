@@ -70,23 +70,27 @@ export const useRegisterProfile = () => {
         },
       )
       if (response.status === 201) {
-        const respBackendRegister = "ok"
+        console.log(response)
+        const respBackendRegisters = "ok"
         dispatch(
           getProfile({
-            id: response.data.perfil.id,
-            name: response.data.perfil.name,
-            dni: response.data.perfil.dni,
-            image: response.data.perfil.image,
-            phone: response.data.perfil.phone,
-            address: response.data.perfil.address,
-            titleCareer: response.data.perfil.titleCareer,
-            rol: response.data.perfil.rol,
-            userId: response.data.perfil.userId,
+            id: response.data.perfilProfesional.id,
+            name: response.data.perfilProfesional.name,
+            dni: response.data.perfilProfesional.dni,
+            image: response.data.perfilProfesional.image,
+            phone: response.data.perfilProfesional.phone,
+            address: response.data.perfilProfesional.address,
+            titleCareer: response.data.perfilProfesional.titleCareer,
+            rol: response.data.perfilProfesional.rol,
+            userId: response.data.perfilProfesional.userId,
           }),
         )
-        return respBackendRegister
+        console.log("LLEGA O NO LLEGA")
+        return respBackendRegisters
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return {

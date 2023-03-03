@@ -26,33 +26,13 @@ const ListServices = () => {
   const navigate = useNavigate()
   const { startLoadingServices } = useServiceStore()
 
-  const services = useSelector((state) => state.services.services)
-  const serviceIds = services.map((service) => service.id)
+  const services = useSelector((state) => state.services.services.services)
+  // const serviceIds = services.map((service) => service.id)
   const filters = useSelector((state) => state.services.filters)
 
-  // useEffect(() => {
-  //   const fetchGetServices = async () => {
-  //     try {
-  //       let url = "/services/detail"
-
-  //       // if (profileId) {
-  //       //   url += `/${profileId}`
-  //       // }
-
-  //       const { data } = await pawfulApi.get(url)
-  //       dispatch(onLoadServices(data))
-  //       // setDataProfile(data)
-  //     } catch (error) {
-  //       console.log(error)
-  //     }
-  //   }
-  //   fetchGetServices()
-
-  // }, [])
-
-  useEffect(() => {
-    startLoadingServices()
-  }, [])
+   useEffect(() => {
+     startLoadingServices()
+   }, [])
 
   const filterServices = (services, filters) => {
     const { categories, petTypes, sizes } = filters
@@ -60,7 +40,7 @@ const ListServices = () => {
     const filteredServices =
       categories.length > 0
         ? services.filter((service) =>
-            categories.includes(service.categoryService),
+            categories.includes(service.categoryId),
           )
         : services
 
@@ -84,10 +64,10 @@ const ListServices = () => {
       ? filterServices(services, filters)
       : services.filter(
           (service) =>
-            service.nameService
+            service.name
               .toLowerCase()
               .includes(searchText.toLowerCase()) ||
-            service.categoryService
+            service.categoryId
               .toLowerCase()
               .includes(searchText.toLowerCase()),
         )
@@ -126,43 +106,15 @@ const ListServices = () => {
       </div>
 
       <div className="flex flex-col p-4 h-48 gap-6">
-        {filteredServices.map((service) => (
+        {Array.isArray(filteredServices) && filteredServices.map((service) => (
           <CardServices
             key={service.id}
-            urlImage={service.urlImageService}
-            serviceName={service.nameService}
+            urlImage={service.image}
+            serviceName={service.name}
             onClick={() => handleServiceSelect(service)}
           />
         ))}
-
-        {/* {searchText === ""
-          ? filterServices(services, filters).map((service) => (
-              <CardServices
-                key={service.id}
-                urlImage={service.urlImageService}
-                serviceName={service.nameService}
-              />
-            ))
-          : services
-              .filter(
-                (service) =>
-                  service.nameService
-                    .toLowerCase()
-                    .includes(searchText.toLowerCase()) ||
-                  service.categoryService
-                    .toLowerCase()
-                    .includes(searchText.toLowerCase()),
-              )
-              .map((service) => (
-                <CardServices
-                  key={service.id}
-                  urlImage={service.urlImageService}
-                  serviceName={service.nameService}
-                />
-              ))} */}
       </div>
-
-      {/* <button onClick={() => handleClick(["guarderia"])}>CLICK</button> */}
     </>
   )
 }
