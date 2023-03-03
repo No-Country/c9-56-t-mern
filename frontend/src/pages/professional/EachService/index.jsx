@@ -8,6 +8,7 @@ import TextArea from "../../../components/TextArea/TextArea"
 import PurpleButton from "../../../components/PurpleButton/"
 import Footer from "../../../pages/shared/Footer/Footer"
 import { useSelector } from "react-redux"
+import Carousel from "../Carousel"
 import { useNavigate } from "react-router-dom"
 
 const EachService = () => {
@@ -73,8 +74,8 @@ const EachService = () => {
   return (
     <>
       <Navbar />
-      <div>
-        <div className="h-48 w-full mb-8">
+      <div className="global-main-container">
+        <div className="h-48 bg-green-200 w-full mb-8">
           {/* AQUI VA UNA IMAGEN */}
           <img src={urlImageService} alt="" className="h-48 w-full" />
         </div>

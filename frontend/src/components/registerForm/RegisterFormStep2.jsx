@@ -38,10 +38,10 @@ const RegisterFormStep2 = (props) => {
     } catch (error) {}
   }
   const handleOptionChange = (event) => {
-    setOption(event.target.value)
-    register("role", { value: event.target.value })
-  }
-
+    setOption(event.target.value);
+    register("role", { value: event.target.value });
+  };
+  
   return (
     <div className="max-w-sm w-full m-auto bg-slate-50 pb-10">
       <form onSubmit={handleSubmit(onSubmit)} >
@@ -53,7 +53,7 @@ const RegisterFormStep2 = (props) => {
               ...register("username", {}),
             }}
           />
-
+  
           {errors.email?.type === "pattern" && (
             <p>El formato es incorrecto</p>
           )}
@@ -123,7 +123,8 @@ const RegisterFormStep2 = (props) => {
         <PurpleButton text="Registrar" type="submit" />
       </form>
     </div>
-  )
+  );
+  
 }
 
 export default RegisterFormStep2
