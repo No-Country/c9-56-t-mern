@@ -9,7 +9,7 @@
 @tailwind utilities;
 
 .App {
-  @apply bg-slate-50 m-0;
+  @apply m-0;
 }
 .global-main-container {
   @apply flex flex-col max-w-sm mx-auto bg-slate-50 w-full h-full;
