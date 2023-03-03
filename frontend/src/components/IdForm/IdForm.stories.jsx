@@ -1,8 +1,8 @@
-import DniForm from "."
+import IdForm from "."
 
 export default {
   title: "components/IdForm",
-  component: DniForm,
+  component: IdForm,
   args: {
     children: "IdForm",
   },
