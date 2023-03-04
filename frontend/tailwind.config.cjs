@@ -26,17 +26,7 @@ module.exports = {
       colors: {
         "regal-blue": "#2684FF",
       },
-      typography: {
-        DEFAULT: {
-          css: {
-            a: {
-              "@apply text-indigo-600 hover:text-blue-800 underline global-link":
-                {},
-            },
-          },
-        },
-      },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [],
 }
