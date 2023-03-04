@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react"
+import { Link } from "react-router-dom"
 
-const Contact = ({ urlImage, name }) => {
+const Contact = ({ urlImage, name, profileId }) => {
   return (
-
     <div className="mx-4 max-w-sm flex justify-start items-center py-6 border-b">
       <div className="w-10 h-10 rounded-full bg-slate-600 flex items-center justify-center relative mr-2">
         {urlImage ? (
@@ -19,13 +19,12 @@ const Contact = ({ urlImage, name }) => {
           />
         )}
       </div>
-
-      <p className="text-center hover:text-violet-700 text-body-bold font-body">
-        {name}
-      </p>
+      <Link to={`/chat/${profileId}`}>
+        <p className="text-center hover:text-violet-700 text-body-bold font-body">
+          {name}
+        </p>
+      </Link>
     </div>
-
-   
   )
 }
 
