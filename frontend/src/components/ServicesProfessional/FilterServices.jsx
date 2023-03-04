@@ -85,9 +85,7 @@ const FilterServices = ({
                         id="category"
                         value={category}
                         type="checkbox"
-                        checked={
-                          checked
-                        }
+                        checked={checked}
                         onChange={handleCategoryChange}
                       />
                       {category}

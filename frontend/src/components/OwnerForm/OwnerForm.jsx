@@ -78,27 +78,23 @@ const OwnerForm = () => {
               <ImageSelector urlImage={images} onChange={handleImageChange} />
             </div>
             <div className="flex flex-col justify-center">
-              
-                <InputForm
-                  label={'Nombre(s) y Apellido(s)'}
-                  placeholder="Escribe tu nombre y apellido"
-                  register={{ ...register("name", {}) }}
-                />
-              
-              
-                <InputForm
-                  label={'Número de teléfono'}
-                  placeholder="Escribe tu teléfono"
-                  register={{ ...register("phone", {}) }}
-                />
-              
-              
-                <InputForm
-                  label={'Dirección'}
-                  placeholder="Escribe tu dirección"
-                  register={{ ...register("address", {}) }}
-                />
-              
+              <InputForm
+                label={"Nombre(s) y Apellido(s)"}
+                placeholder="Escribe tu nombre y apellido"
+                register={{ ...register("name", {}) }}
+              />
+
+              <InputForm
+                label={"Número de teléfono"}
+                placeholder="Escribe tu teléfono"
+                register={{ ...register("phone", {}) }}
+              />
+
+              <InputForm
+                label={"Dirección"}
+                placeholder="Escribe tu dirección"
+                register={{ ...register("address", {}) }}
+              />
             </div>
             <div className="mt-10 pb-10">
               <PurpleButton text=" GUARDAR DATOS" type="submit" />
