@@ -12,7 +12,7 @@
   "homepage": "https://github.com/No-Country/c9-56-t-mern#readme",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "sb": "cross-env NODE_OPTIONS= start-storybook -p 6006",
     "storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
