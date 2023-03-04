@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from "react"
-import Navbar from "../../shared/Navbar/Navbar"
-import CoverPhoto from "../../../components/CoverPhoto/CoverPhoto"
-import Panel from "../../../components/Panel/Panel"
+import React, { useEffect, useState } from "react"
 import { MdKeyboardArrowRight, MdPerson } from "react-icons/md"
-import SimpleText from "../../../components/SimpleText/SimpleText"
-import TextArea from "../../../components/TextArea/TextArea"
-import PurpleButton from "../../../components/PurpleButton/"
-import Footer from "../../../pages/shared/Footer/Footer"
 import { useSelector } from "react-redux"
-import Carousel from "../Carousel"
 import { useNavigate } from "react-router-dom"
+import PurpleButton from "../../../components/PurpleButton/"
+import SimpleText from "../../../components/SimpleText/SimpleText"
+import Footer from "../../../pages/shared/Footer/Footer"
+import Navbar from "../../shared/Navbar/Navbar"
 
 const EachService = () => {
   // // const {profileId} = useSelector((state)=>state.services.services)
@@ -98,7 +94,7 @@ const EachService = () => {
             Sobre el servicio
           </label>
           <textarea
-            className="border-2 border-neutral-200 rounded-lg p-2 h-32 bg-slate-50 text-caption font-caption"
+            className="border-2 border-neutral-200 rounded-lg p-2 h-32 text-caption font-caption"
             name="text-area"
             cols="30"
             rows="10"

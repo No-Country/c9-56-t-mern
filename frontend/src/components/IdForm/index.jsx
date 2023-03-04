@@ -32,7 +32,7 @@ const IdForm = () => {
           placeholder={"Opción"}
           value={value}
           onChange={handleChange}
-          className="w-24 text-sm bg-slate-50 border-2 h-10 border-neutral-200 focus:outline-none focus:ring focus:ring-violet-700 rounded-lg"
+          className="w-24 text-sm border-2 h-10 border-neutral-200 focus:outline-none focus:ring focus:ring-violet-700 rounded-lg"
         />
       </div>
       <div className="container flex flex-col justify-center">
@@ -40,7 +40,7 @@ const IdForm = () => {
           Número
         </label>
         <input
-          className="border-2 h-10 w-60 border-neutral-200 focus:outline-none focus:ring focus:ring-[#2684FF] rounded-lg pl-2 bg-slate-50"
+          className="border-2 h-10 w-60 border-neutral-200 focus:outline-none focus:ring focus:ring-[#2684FF] rounded-lg pl-2"
           type="text"
           id="inputNumber"
           placeholder="Escriba el número aquí..."

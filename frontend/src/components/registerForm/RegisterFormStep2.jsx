@@ -1,10 +1,10 @@
+import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 import { useAuthStore } from "../../hooks/useAuthStore"
 import { useRegisterUSerStore } from "../../hooks/useRegisterUserStore"
-import PurpleButton from "../PurpleButton"
-import { useState } from "react"
 import InputForm from "../InputForm/InputForm"
+import PurpleButton from "../PurpleButton"
 
 const RegisterFormStep2 = (props) => {
   const { formValues, setFormValues } = props
@@ -38,13 +38,13 @@ const RegisterFormStep2 = (props) => {
     } catch (error) {}
   }
   const handleOptionChange = (event) => {
-    setOption(event.target.value);
-    register("role", { value: event.target.value });
-  };
-  
+    setOption(event.target.value)
+    register("role", { value: event.target.value })
+  }
+
   return (
-    <div className="max-w-sm w-full m-auto bg-slate-50 pb-10">
-      <form onSubmit={handleSubmit(onSubmit)} >
+    <div className="max-w-sm w-full m-auto pb-10">
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <InputForm
             label={"Nombre de usuario"}
@@ -53,17 +53,16 @@ const RegisterFormStep2 = (props) => {
               ...register("username", {}),
             }}
           />
-  
-          {errors.email?.type === "pattern" && (
-            <p>El formato es incorrecto</p>
-          )}
+
+          {errors.email?.type === "pattern" && <p>El formato es incorrecto</p>}
         </div>
-         <div className="mx-4 mt-6">
-            <h2 className="font-body text-body-bold">¿Cómo querés comenzar?</h2>
-            <p className="text-caption font-caption text-slate-400">Podrás cambiarlo más tarde.</p>
-          </div>
+        <div className="mx-4 mt-6">
+          <h2 className="font-body text-body-bold">¿Cómo querés comenzar?</h2>
+          <p className="text-caption font-caption text-slate-400">
+            Podrás cambiarlo más tarde.
+          </p>
+        </div>
         <div className="flex item-center justify-center mb-10 mt-6">
-          
           <div>
             <input
               id="owner"
@@ -123,8 +122,7 @@ const RegisterFormStep2 = (props) => {
         <PurpleButton text="Registrar" type="submit" />
       </form>
     </div>
-  );
-  
+  )
 }
 
 export default RegisterFormStep2
