@@ -11,37 +11,15 @@
 body{
   @apply p-4;
 }
-/*.App {
+.App {
   @apply m-0;
 }
-  .global-main-container {
-  @apply flex flex-col mx-auto w-full h-screen;
- @media (min-width: 640px) {
-    .global-main-container {
-      /* @apply max-w-md; */
-  /* @apply w-60 h-1/2 self-start; */
+.global-main-container {
+  @apply flex flex-col mx-auto w-full h-screen max-w-sm;}
 
-  /* }
-  }
-  
-  @media (min-width: 768px) {
-    .global-main-container {
-      @apply max-w-lg;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .global-main-container {
-      @apply max-w-xl;
-    }
-  }
-  
-  @media (min-width: 1280px) {
-    .global-main-container {
-      @apply max-w-2xl;
-    }
-  }} 
-}*/
+.Home{
+  @apply flex flex-col mx-auto w-full h-screen;}
+
 .global-link {
   @apply text-indigo-600 hover:text-blue-800 underline;
 }
@@ -64,32 +42,3 @@ body{
 .button-style{
   @apply flex w-full max-w-sm ;
 }
-/* 
-.contenedor-home{
-display: grid;
-min-height: 100vh;
-grid-template-columns: repeat(4, 1fr);
-grid-auto-rows:auto;
-grid-template-areas:
-"uno uno dos dos"
-"tres"
-"cuatro cuatro cuatro" ;
-}
-
-.grid-item{
-border: 1px solid gray;
-
-}
-
-.uno{
-grid-area: uno;
-}
-.dos{
-  grid-area: dos;
-}
-.tres{
-  grid-area:tres;
-}
-.cuatro{
-  grid-area:cuatro;
-} */

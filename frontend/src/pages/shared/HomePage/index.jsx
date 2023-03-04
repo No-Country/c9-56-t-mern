@@ -9,7 +9,7 @@ import Footer from "../../shared/Footer/Footer"
 
 const HomePage = () => {
   return (
-    <div className="global-main-container contenedor-home">
+    <div className="Home">
       {/* <Navbar /> */}
       <div>
         <div id="homeTitle" className="flex mt-10">
