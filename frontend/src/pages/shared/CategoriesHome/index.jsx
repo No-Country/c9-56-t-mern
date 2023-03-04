@@ -31,22 +31,19 @@ const CategoriesHome = () => {
     },
   ]
 
-  return( <div className="flex flex-col gap-4 md:flex-row overflow-auto">{categoryDetails.map((categories) =>
-    categories.category === "Guardería" || categories.category === "Fiestas" ? (
-      <Card
-        image={categories.img}
-        imageSide="right"
-        service={categories.category}
-        paragraph={categories.categoryDescription}
-      />
-    ) : (
-      <Card
-        image={categories.img}
-        service={categories.category}
-        paragraph={categories.categoryDescription}
-      />
-    ),
+  return (
+    <div className="flex flex-col gap-4 md:flex-row flex-wrap md:max-w-[80%] md:m-auto justify-center">
+      {categoryDetails.map(({ img, category, categoryDescription }, i) => (
+        <Card
+          image={img}
+          imageSide={i % 2 === 0 ? "left" : "right"}
+          service={category}
+          paragraph={categoryDescription}
+          key={category}
+        />
+      ))}
+    </div>
   )
-}</div>)}
+}
 
 export default CategoriesHome
