@@ -7,13 +7,16 @@ const PurpleButton = ({ text, type, onClick }) => {
     }
   }
   return (
+    <div className="flex w-full max-w-sm">
+
     <button
       type={type}
-      className="w-full font-button text-button bg-violet-800 py-3 rounded-lg text-gray-50"
+      className="w-full md:w-44	 font-button text-button bg-violet-800 py-3 rounded-lg text-gray-50"
       onClick={handleClick}
     >
       {text}
     </button>
+    </div>
   )
 }
 
