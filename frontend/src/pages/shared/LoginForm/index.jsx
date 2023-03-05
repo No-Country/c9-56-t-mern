@@ -38,7 +38,7 @@ const LoginForm = () => {
   return (
     <>  
     <NavbarBack />
-    <div className="flex flex-col max-w-sm mx-auto w-full h-full">
+    <div className="flex flex-col max-w-sm mx-auto w-full h-full p-4">
     
       <h2 className="text-title font-title mt-10  self-center">
         Iniciar sesión
