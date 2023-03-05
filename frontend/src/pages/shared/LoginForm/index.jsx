@@ -86,7 +86,7 @@ const LoginForm = () => {
           />
           <div className="text-center text-neutral-900 text-caption font caption mt-6">
             ¿Aún no tienes una cuenta?{" "}
-            <Link to="/register" className="global-link text-link font-link ">
+            <Link to="/register" className="text-indigo-600 hover:text-blue-800 underline text-link font-link ">
               Registrarte
             </Link>{" "}
           </div>
