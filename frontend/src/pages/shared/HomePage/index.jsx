@@ -9,8 +9,8 @@ import Navbar from "../Navbar/Navbar"
 
 const HomePage = () => {
   const buttons = (
-    <div className="flex flex-col gap-1 md:flex-row md:gap-5 ">
-      <Link to="/services" >
+    <div className="flex flex-col gap-1 md:flex-row md:gap-5 lg:justify-start md:justify-center">
+      <Link to="/services">
         <PurpleButton text={"Contratar"} />
       </Link>
       <Link to="/auth/login">
