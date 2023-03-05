@@ -60,7 +60,7 @@ const LoginForm = () => {
           />
         </div>
 
-        <div className="#">
+        <div className="py-2">
           <InputForm
             label={"Contraseña"}
             placeholder={"Escribe tu contraseña"}
