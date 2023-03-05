@@ -4,7 +4,7 @@ import { useAuthStore } from "../../../hooks/useAuthStore"
 import "../../../styles/styles.css"
 import PurpleButton from "../../../components/PurpleButton"
 import InputForm from "../../../components/InputForm/InputForm"
-import Navbar from "../../shared/Navbar/Navbar"
+import NavbarBack from "../../shared/Navbar/NavbarBack"
 import { useForm } from "react-hook-form"
 import { useSelector } from "react-redux"
 import pawfulApi from "../../../api/pawfulApi"
@@ -36,8 +36,10 @@ const LoginForm = () => {
   }, [])
 
   return (
+    <>  
+    <NavbarBack />
     <div className="global-main-container">
-      <Navbar />
+    
       <h2 className="text-title font-title mt-10  self-center">
         Iniciar sesión
       </h2>
@@ -91,6 +93,7 @@ const LoginForm = () => {
         </div>
       </form>
     </div>
+    </>
   )
 }
 
