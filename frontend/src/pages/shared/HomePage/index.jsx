@@ -3,11 +3,11 @@ import { Link } from "react-router-dom"
 import PurpleButton from "../../../components/PurpleButton"
 import BareButton from "../../../components/BareButton"
 import CategoriesHome from "../CategoriesHome"
-import Navbar from "../../shared/Navbar/Navbar"
-import Footer from "../../shared/Footer/Footer"
+import Carousel from "../CategoriesHome/Carousel"
 
 
 const HomePage = () => {
+
   return (
     <div className="Home">
       {/* <Navbar /> */}
@@ -42,14 +42,13 @@ const HomePage = () => {
       </Link>
       </div>
       <br />
-    <div className="our-services md:96 md:bg-slate-50">
+    <div id="our-services" className="flex flex-col self-center md:w-4/5	 md:bg-slate-50">
     <p className="text-title font-title text-center mt-12 mb-5">
-    <span className=" hidden md:inline">Algunos de</span>
+    <span className="hidden md:inline">Algunos de</span>
     <span className="uppercase md:lowercase"> N</span>uestros servicios
 
       </p>
-      <CategoriesHome />
-      </div>
+      <Carousel />       </div>
     
       {/* <Footer /> */}
     </div>
