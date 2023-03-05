@@ -1,7 +1,6 @@
 import React, { useState } from "react"
-import Select from "react-select"
 
-const InputSelect = ({ label,options }) => {
+const InputSelect = ({ label, options }) => {
   const [value, setValue] = useState(null)
 
   const handleChange = (selectOption) => {
@@ -21,7 +20,7 @@ const InputSelect = ({ label,options }) => {
         value={value}
         onChange={handleChange}
         placeholder={"Selecciona una opción..."}
-        className="w-full text-caption font-caption bg-slate-50 border-2 h-10 border-neutral-200 focus:outline-none focus:ring focus:ring-violet-700 rounded-lg pl-2"
+        className="w-full text-caption font-caption border-2 h-10 border-neutral-200 focus:outline-none focus:ring focus:ring-violet-700 rounded-lg pl-2"
       />
     </div>
   )

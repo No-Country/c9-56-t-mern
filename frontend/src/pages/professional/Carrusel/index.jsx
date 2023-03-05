@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import Card from "../../../components/Card";
+import React, { useState } from "react"
+import Card from "../../../components/Card"
 
 const Carrusel = ({ data }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   const handlePrev = () => {
-    setCurrentIndex(currentIndex === 0 ? data.length - 1 : currentIndex - 1);
-  };
+    setCurrentIndex(currentIndex === 0 ? data.length - 1 : currentIndex - 1)
+  }
 
   const handleNext = () => {
-    setCurrentIndex(currentIndex === data.length - 1 ? 0 : currentIndex + 1);
-  };
+    setCurrentIndex(currentIndex === data.length - 1 ? 0 : currentIndex + 1)
+  }
 
   return (
     <div className="carousel-container">
@@ -35,7 +35,7 @@ const Carrusel = ({ data }) => {
         <button onClick={handleNext}>Next</button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Carrusel;
+export default Carrusel

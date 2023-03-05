@@ -54,5 +54,10 @@ export const loadCategory = createSlice({
   },
 })
 
-export const { onLoadServices, onAddFilter, onRemoveFilter, onClearFilters, onLoadCategories } =
-  loadServiesSlice.actions
+export const {
+  onLoadServices,
+  onAddFilter,
+  onRemoveFilter,
+  onClearFilters,
+  onLoadCategories,
+} = loadServiesSlice.actions

@@ -1,18 +1,22 @@
 import React, { useState } from "react"
 
 const RadioButton = ({ title, desc }) => {
-  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState(false)
 
   const handleClick = () => {
-    setIsChecked(!isChecked);
-  };
+    setIsChecked(!isChecked)
+  }
 
   return (
     <>
-      <label 
-        htmlFor={title} 
+      <label
+        htmlFor={title}
         className={`bg-neutral-50 w-40 py-3 flex flex-col items-center border-2 border-neutral-200 
-          ${isChecked ? 'border-violet-700  text-neutral-900 ' : 'text-neutral-400 '} 
+          ${
+            isChecked
+              ? "border-violet-700  text-neutral-900 "
+              : "text-neutral-400 "
+          } 
           rounded-lg mx-1 my-1`}
       >
         <h2 className="font-body text-body-bold">{title}</h2>
@@ -26,7 +30,7 @@ const RadioButton = ({ title, desc }) => {
         onClick={handleClick}
       />
     </>
-  );
-};
+  )
+}
 
-export default RadioButton;
+export default RadioButton

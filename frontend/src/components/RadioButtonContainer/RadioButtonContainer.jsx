@@ -4,9 +4,11 @@ const RadioButtonContainer = ({ label, children }) => {
   return (
     <form className="flex flex-col justify-center m-auto w-full max-w-sm px-4">
       <div className="font-body text-body-bold m-1">
-        <p >{label}</p>
+        <p>{label}</p>
       </div>
-      <div className="flex flex-row flex-wrap w-full self-center">{children}</div>
+      <div className="flex flex-row flex-wrap w-full self-center">
+        {children}
+      </div>
     </form>
   )
 }

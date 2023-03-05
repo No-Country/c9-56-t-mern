@@ -16,7 +16,7 @@ const TextArea = ({ label, placeholder, register }) => {
         {label}
       </label>
       <textarea
-        className="border-2 border-neutral-200 rounded-lg p-2 h-32 bg-slate-50 text-caption font-caption"
+        className="border-2 border-neutral-200 rounded-lg p-2 h-32 text-caption font-caption"
         name="text-area"
         cols="30"
         rows="10"

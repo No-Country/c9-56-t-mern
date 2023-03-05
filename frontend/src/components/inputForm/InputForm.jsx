@@ -1,6 +1,4 @@
 import React from "react"
-import { useState } from "react"
-import { useForm } from "react-hook-form"
 
 const InputForm = ({ label, placeholder, type, register }) => {
   return (
@@ -10,7 +8,7 @@ const InputForm = ({ label, placeholder, type, register }) => {
           {label}
         </label>
         <input
-          className="w-full text-caption font-caption bg-slate-50 border-2 h-10 border-neutral-200 focus:outline-none focus:ring focus:ring-violet-700 rounded-lg pl-2"
+          className="w-full text-caption font-caption border-2 h-10 border-neutral-200 focus:outline-none focus:ring focus:ring-violet-700 rounded-lg pl-2"
           type={type}
           id="input"
           placeholder={placeholder}

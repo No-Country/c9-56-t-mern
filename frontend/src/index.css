@@ -7,38 +7,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-body{
-  @apply p-4;
-}
-.App {
-  @apply m-0;
-}
-.global-main-container {
-  @apply flex flex-col mx-auto w-full h-screen max-w-sm;}
-
-.Home{
-  @apply flex flex-col mx-auto w-full h-screen;}
-
-.global-link {
-  @apply text-indigo-600 hover:text-blue-800 underline;
-}
-
-.text-below {
-  @apply text-center text-neutral-900 text-sm py-3 mt-6;
-}
-.label-style {
-  @apply py-2 font-semibold;
-}
-
-.placeholder-style {
-  @apply font-sans font-normal font-medium text-base text-gray-400;
-}
-
-.purple-plus-bare-btn{
-  @apply flex flex-col gap-1 md:flex-row ;
-}
-
-.button-style{
-  @apply flex w-full max-w-sm ;
-}

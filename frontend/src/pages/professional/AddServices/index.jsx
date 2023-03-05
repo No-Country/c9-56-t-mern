@@ -25,18 +25,17 @@ const AddServices = () => {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm({
-  })
+  } = useForm({})
 
   const { registerService } = useAddService()
-  const { startLoadingCategories } = useServiceStore();
-const navigate = useNavigate()
+  const { startLoadingCategories } = useServiceStore()
+  const navigate = useNavigate()
   const [selectedOption, setSelectedOption] = useState("")
   const [images, setImages] = useState(null)
   const [text, setText] = useState("")
   const { uploadImage } = useCloudinaryImage()
   const { role, email, uid, token } = useSelector((state) => state.auth.user)
-  const {id } = useSelector((state) => state.profile.perfil)
+  const { id } = useSelector((state) => state.profile.perfil)
 
   const onSubmit = async (data) => {
     const { name, presentacionPersonal, presentacion_del_servicio, image } =
@@ -52,13 +51,13 @@ const navigate = useNavigate()
           presentacion_del_servicio,
           presentacionPersonal,
           image,
-          profileId:id,
+          profileId: id,
           categoryId: selectedOption,
         },
         token,
       )
 
-      if(resp ===  "ok"){
+      if (resp === "ok") {
         navigate("/profile")
       }
 
@@ -89,8 +88,7 @@ const navigate = useNavigate()
     }
   }
 
-  const handleCateg = () =>{
-
+  const handleCateg = () => {
     console.log("presionado")
     startLoadingCategories()
   }
@@ -125,7 +123,6 @@ const navigate = useNavigate()
           />
 
           <PurpleButton text={"Guardar datos"} type={"submit"} />
-
         </form>
       </div>
     </>
