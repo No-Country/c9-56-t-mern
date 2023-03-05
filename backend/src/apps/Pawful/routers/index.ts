@@ -3,6 +3,7 @@ import { tokenValidator } from "../../shared/framework/middleware/tokenValidator
 
 import { authRouter } from "./authRoutes"
 import { categoryRouter } from "./categoryRoutes"
+import { messageRouter } from "./messageRoutes"
 import { petRouter } from "./petRoutes"
 import { perfilUserRouter } from "./profileRoutes"
 import { serviceRouter } from "./serviceRoutes"
@@ -17,5 +18,6 @@ mainRouter.use(perfilUserRouter)
 mainRouter.use(categoryRouter)
 mainRouter.use(serviceRouter)
 mainRouter.use(petRouter)
+mainRouter.use(messageRouter)
 
 export { mainRouter }
