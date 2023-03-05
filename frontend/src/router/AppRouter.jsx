@@ -1,17 +1,17 @@
 import React, { useEffect } from "react"
 import { Navigate, Route, Routes } from "react-router-dom"
-import HomePage from "../pages/shared/HomePage"
-import LoginForm from "../pages/shared/LoginForm"
 import OwnerForm from "../components/OwnerForm/OwnerForm"
 import SuccessfulRegistration from "../components/Register/SuccessfulRegistration"
 import RegisterForm from "../components/registerForm/RegisterForm"
-import { useAuthStore } from "../hooks/useAuthStore"
-import Profile from "../pages/shared/Profile"
-import FormRegisterProfessional from "../pages/professional/RegisterProfessional"
 import ListServices from "../components/ServicesProfessional/ListServices"
-import EachService from "../pages/professional/EachService"
+import { useAuthStore } from "../hooks/useAuthStore"
 import AddServices from "../pages/professional/AddServices"
-// import EachService from "../pages/professional"
+import EachService from "../pages/professional/EachService"
+import FormRegisterProfessional from "../pages/professional/RegisterProfessional"
+import Chat from "../pages/shared/Chat"
+import HomePage from "../pages/shared/HomePage"
+import LoginForm from "../pages/shared/LoginForm"
+import Profile from "../pages/shared/Profile"
 
 const AppRouter = () => {
   const { status, checkAuthToken } = useAuthStore()
@@ -39,6 +39,7 @@ const AppRouter = () => {
         <>
           <Route path="/success" element={<SuccessfulRegistration />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/chat/:receiverId?" element={<Chat />} />
           <Route path="/completeRegister" element={<OwnerForm />} />
           <Route
             path="/registerProfessional"
