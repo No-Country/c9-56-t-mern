@@ -1,8 +1,7 @@
 import axios from "axios"
 
 const pawfulApi = axios.create({
-  // baseURL: `${API_URL_PAWFUL}`
-  baseURL: "http://localhost:3000/api",
+  baseURL: import.meta.env.VITE_API_URL_PAWFUL || "http://localhost:3000/api",
 })
 
 pawfulApi.interceptors.request.use((config) => {
