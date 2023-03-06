@@ -9,13 +9,13 @@ import Navbar from "../Navbar/Navbar"
 
 const HomePage = () => {
   const buttons = (
-    <div className="flex gap-5">
-      <Link to="/services" className="flex-grow">
-        <PurpleButton text={"Contratar"} />
+    <div className="flex flex-col gap-4 md:flex-row md:gap-5 lg:justify-start md:justify-center">
+      <Link to="/services">
+        <PurpleButton text={"Contratar"} className={"flex md:w-60 max-w-sm"} />
       </Link>
-      <Link to="/auth/login" className="flex-grow">
+      <Link to="/auth/login">
         <div className="">
-          <BareButton text={"Ofrecer servicios"} />
+          <BareButton text={"Ofrecer servicios"} className={"flex md:w-[15rem] md:h-11 max-w-sm"} />
         </div>
       </Link>
     </div>

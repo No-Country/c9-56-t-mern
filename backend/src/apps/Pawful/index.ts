@@ -1,8 +1,10 @@
+import { createServer } from "node:http"
 import { resolve } from "node:path"
 
 import cors from "cors"
 import dotenv from "dotenv"
 import express, { json, urlencoded } from "express"
+import { Server } from "socket.io"
 
 import { connectToDatabase } from "../../config/connectToDatabase"
 import { errorHandler } from "../shared/framework/middleware/errorHandler"
@@ -13,6 +15,7 @@ import { mainRouter } from "./routers"
 
 import swaggerUi from "swagger-ui-express"
 import swaggerSetup from "../../docs/swagger"
+import { createNamespaces } from "./namespaces"
 
 dotenv.config({ path: resolve(__dirname, "../../../.env") })
 
@@ -40,15 +43,25 @@ app.use("/api", mainRouter)
 
 app.use(errorHandler)
 
-const server = app.listen(port, () => {
-  console.info(`server run on port http://localhost:${port}/api`)
+const httpServer = createServer(app)
+
+const socketIoServer = new Server(httpServer, {
+  cors: {
+    origin: "*",
+  },
+})
+
+createNamespaces(socketIoServer)
+
+httpServer.listen(port, () => {
+  console.info(`Server running on port ${port}`)
 })
 
 const shutdown = () => {
-  console.log("Closing http server.")
+  console.log("Closing http and Socket.io server.")
 
-  server.close(() => {
-    console.log("Http server closed. Closing MongoDB connection.")
+  socketIoServer.close(() => {
+    console.log("Server closed. Closing MongoDB connection.")
 
     disconnect(() => {
       console.log("MongoDB connection closed.")
