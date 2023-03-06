@@ -55,4 +55,12 @@ El equipo detrás de Pawful está conformado por talentosos profesionales dedica
 | <img src="https://ca.slack-edge.com/T02KS88FB0E-U02U52VKHJP-9f1d228d0221-512" width="40" height="40"/> | Victor Romero | <a href="https://www.linkedin.com/in/victor-manuel-romero-juarez-6a5940206/">LinkedIn</a> |
 | <img src="https://ca.slack-edge.com/T02KS88FB0E-U04HFDMQACC-a430d5fac2ef-512" width="40" height="40"/> | Abi-ezer Guerra | <a href="https://www.linkedin.com/in/abi-ezer-xavier-guerra-cuadros-7519b921a/">LinkedIn</a> |
 
+### Back-end
+| Foto | Nombre | LinkedIn |
+|------|--------|----------|
+| <img src="https://ca.slack-edge.com/T02KS88FB0E-U04GFFSEBM5-16a5a977802f-512" width="40" height="40"/> | Alexis Uriarte | [LinkedIn] |
+| <img src="https://ca.slack-edge.com/T02KS88FB0E-U044V8EKXHB-3823ce03b279-512" width="40" height="40"/> | Matias Flores | <a href="https://www.linkedin.com/in/matfres/">LinkedIn</a> |
+| <img src="https://ca.slack-edge.com/T02KS88FB0E-U04KGJUSZ5Z-14f9cd5b3d92-512" width="40" height="40"/> | Pietro Palombini | <a href="https://www.linkedin.com/in/pietropalombini/">LinkedIn</a> |
+
+
 
