@@ -85,7 +85,7 @@ const RegisterForm = (props) => {
 
           {getInfoPerPage()}
 
-          <div className="flex w-full justify-center mt-6">
+          <div className="flex justify-center mt-6 lg:m-0 lg:py-1">
             <p className="text-caption font-caption mr-2">
               ¿Ya tienes una cuenta?{" "}
             </p>

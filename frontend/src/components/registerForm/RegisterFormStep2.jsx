@@ -44,7 +44,7 @@ const RegisterFormStep2 = (props) => {
 
   return (
     <div className="max-w-sm w-full m-auto pb-10">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className="lg:px-7" onSubmit={handleSubmit(onSubmit)}>
         <div>
           <InputForm
             label={"Nombre de usuario"}
