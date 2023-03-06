@@ -80,7 +80,6 @@ const LoginForm = () => {
         <br />
         <div className="flex flex-col">
           <PurpleButton
-            className="self-center"
             text="Iniciar sesión"
             type="submit"
           />
