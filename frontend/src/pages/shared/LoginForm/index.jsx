@@ -101,11 +101,11 @@ const LoginForm = () => {
               </div>
             </div>
           </form>
-          <div className="flex flex-col items-center m-auto py-2 md:py-6 hidden sm:block">
+          <div className="flex flex-col items-center m-auto py-2 md:py-6 hidden md:block">
             <img
-              className="w-32 h-6 hidden sm:block "
+              className="w-32 h-6 md:hidden"
               src="https://res.cloudinary.com/dw639wmis/image/upload/v1678093239/pawful_logo_i92k6p.png"
-              alt=""
+              alt="pawful-logo"
             />
           </div>
         </div>
