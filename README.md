@@ -53,7 +53,7 @@ El equipo detrás de Pawful está conformado por talentosos profesionales dedica
 | Foto | Nombre | LinkedIn |
 |------|--------|----------|
 | <img src="https://ca.slack-edge.com/T02KS88FB0E-U04EKK65UJ1-19bc19f0b1aa-512" width="40" height="40"/> | Lucero Gonzalez | <a href="https://www.linkedin.com/in/gonzalezlucerocamila/">LinkedIn</a> |
-| <img src="https://ca.slack-edge.com/T02KS88FB0E-U045H0YJ5NJ-749b433db55f-512" width="40" height="40"/> | Jamir Bances | [LinkedIn] |
+| <img src="https://ca.slack-edge.com/T02KS88FB0E-U045H0YJ5NJ-749b433db55f-512" width="40" height="40"/> | Jamir Bances | <a href="https://www.linkedin.com/in/jamir-bances/">LinkedIn</a> |
 | <img src="https://ca.slack-edge.com/T02KS88FB0E-U02U52VKHJP-9f1d228d0221-512" width="40" height="40"/> | Victor Romero | <a href="https://www.linkedin.com/in/victor-manuel-romero-juarez-6a5940206/">LinkedIn</a> |
 | <img src="https://ca.slack-edge.com/T02KS88FB0E-U04HFDMQACC-a430d5fac2ef-512" width="40" height="40"/> | Abi-ezer Guerra | <a href="https://www.linkedin.com/in/abi-ezer-xavier-guerra-cuadros-7519b921a/">LinkedIn</a> |
 
