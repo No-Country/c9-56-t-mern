@@ -14,12 +14,12 @@ Pawful fue desarrollada utilizando tecnologías de vanguardia para ofrecer una e
 - **Front-end:**
 
 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" height="40"/> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://redux.js.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="redux" width="40" height="40"/> </a> <img src="https://res.cloudinary.com/axiever/image/upload/v1678117833/descargar_1_m83ocn.svg" alt="react-router" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original-wordmark.svg" alt="socket.io" width="40" height="40"/> <img src=" https://cdn.jsdelivr.net/gh/devicons/devicon/icons/storybook/storybook-original.svg" alt="socket.io" width="40" height="40"/> <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/> </a> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" height="40"/> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://redux.js.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="redux" width="40" height="40"/> </a> <img src="https://res.cloudinary.com/axiever/image/upload/v1678117833/descargar_1_m83ocn.svg" alt="react-router" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original-wordmark.svg" alt="socket.io" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/storybook/storybook-original.svg" alt="story-book" width="40" height="40"/> <img src="https://res.cloudinary.com/axiever/image/upload/v1678118395/descargar_2_uymmsz.svg" alt="axios" width="40" height="40"/> <img src="https://res.cloudinary.com/axiever/image/upload/v1678118577/descargar_3_f8bdyd.svg" alt="vite" width="40" height="40"/> <img src="https://res.cloudinary.com/axiever/image/upload/v1678118769/descargar_4_lfn6sa.svg" alt="react-hook-form" width="40" height="40"/> <img src="https://res.cloudinary.com/axiever/image/upload/v1678119234/descargar_5_vknrwc.svg" alt="pretier" width="40" height="40"/> <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/> </a> 
 
 
 - **Back-end:** 
 
-<a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a>    <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a>  <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a>
+<a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a>    <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a>  <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> <img src="https://res.cloudinary.com/axiever/image/upload/v1678119748/jsonwebtokens_e25cqe.svg" alt="json-webtoken" width="40" height="40"/>  <img src="https://res.cloudinary.com/axiever/image/upload/v1678119877/descargar_6_j4pnsl.svg" alt="swagger" width="40" height="40"/> <img src="https://stackjava.com/wp-content/uploads/2018/03/bcrypt-logo.jpg" alt="bcrypt" width="40" height="40"/> <img src="https://res.cloudinary.com/axiever/image/upload/v1678119234/descargar_5_vknrwc.svg" alt="pretier" width="40" height="40"/>
 
 
 - **Comunicación en tiempo real:**
@@ -32,9 +32,7 @@ Acceder a Pawful es fácil: simplemente sigue el enlace proporcionado. Una vez e
 
 ## Características especiales 🔍
 
-Una característica destacada de Pawful es su chat integrado que permite una comunicación fluida entre clientes y profesionales.
-
-<img src="https://res.cloudinary.com/axiever/image/upload/v1678082218/Captura_de_pantalla_2023-03-06_005602_dhlnmf.png" height="300" width="auto"/>
+Integrar el trabajo de los profesionales con las necesidades de los dueños de mascotas a través de la publicación de servicios y la comunicación en tiempo real a través de un chat incorporado
 
 ## Colaboradores 👥
 
@@ -46,10 +44,10 @@ El equipo detrás de Pawful está conformado por talentosos profesionales dedica
 | <img src="https://ca.slack-edge.com/T02KS88FB0E-U04LUQPRH3K-59f6f53f0dc8-512" width="40" height="40"/> | Santiago Roa | [LinkedIn] |
 
 ### Diseño
-| Foto | Nombre | LinkedIn |
-|------|--------|----------|
-| <img src="https://ca.slack-edge.com/T02KS88FB0E-U04KKT58M8C-2cbc1964f34a-512" width="40" height="40"/> | Sabrina Islas | [LinkedIn] |
-| <img src="https://ca.slack-edge.com/T02KS88FB0E-U04L9HHBWKG-40be81b88719-512" width="40" height="40"/> | Tamara Piñeiro | [LinkedIn] | 
+| Foto | Nombre | LinkedIn | Behance |
+|------|--------|----------|---------|
+| <img src="https://cdn.discordapp.com/attachments/1078308908407455744/1082301823928508517/Sabri.Islas.jpeg" width="40" height="40"/> | Sabrina Islas | <a href="https://www.linkedin.com/in/sabrina-islas/">LinkedIn</a> | <a href="https://www.behance.net/tamarabepie901">Behance</a> |
+| <img src="https://mir-s3-cdn-cf.behance.net/user/138/080324191385303.6218130a6177e.jpg" width="40" height="40"/> | Tamara Piñeiro | <a href="https://www.linkedin.com/in/tamarabepiuxdesigner/">LinkedIn</a> | <a href="https://www.behance.net/sabrinaislas">Behance</a> |
 
 ### Front-end
 | Foto | Nombre | LinkedIn |
