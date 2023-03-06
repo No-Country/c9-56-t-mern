@@ -63,7 +63,7 @@ const RegisterForm = (props) => {
   }
 
   return (
-    <div className="#">
+    <div className="flex flex-col self-center max-w-sm mx-auto w-full h-full p-4 lg:px-15 lg:pb-25">
       <StepNavigation
         labelArray={labelArray}
         currentStep={currentStep}
