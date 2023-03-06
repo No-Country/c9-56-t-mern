@@ -19,8 +19,7 @@ const RegisterForm = (props) => {
     if (currentStep === 1) {
       return (
         <div>
-          <NavbarBack />
-          <div className="mt-10">
+          <div className="mt-10 lg:m-0">
             <SimpleText
               title={"Registro"}
               paragraph={"Crea tu cuenta en simples pasos"}
@@ -63,22 +62,41 @@ const RegisterForm = (props) => {
   }
 
   return (
-    <div id="content-container" className="flex flex-col self-center max-w-sm mx-auto w-full h-full p-4 lg:px-15 lg:pb-25">
-      <StepNavigation
-        labelArray={labelArray}
-        currentStep={currentStep}
-        updateStep={updateStep}
-      ></StepNavigation>
+    <div
+      id="bg"
+      className="lg:flex lg:flex-col lg:items-center lg:h-screen lg:bg-violet-50 lg:py-px-11 lg:m-auto"
+    >
+      <div className="lg:hidden">
+        <NavbarBack />
+      </div>
+      <div
+        id="rounded-container"
+        className="md:w-[40%] lg:h-[88%] md:h-[80%] m-auto flex items-center justify-center lg:rounded-2xl lg:bg-[#F9FAFB]"
+      >
+        <div
+          id="content-container"
+          className="flex flex-col self-center max-w-sm m-auto w-full h-full p-4 lg:px-15 lg:pb-25"
+        >
+          <StepNavigation
+            labelArray={labelArray}
+            currentStep={currentStep}
+            updateStep={updateStep}
+          ></StepNavigation>
 
-      {getInfoPerPage()}
+          {getInfoPerPage()}
 
-      <div className="flex w-full justify-center mt-6">
-        <p className="text-caption font-caption mr-2">
-          ¿Ya tienes una cuenta?{" "}
-        </p>
-        <a href="/auth/login" className="text-indigo-600 hover:text-blue-800 underline text-link font-link">
-          Iniciar sesión
-        </a>
+          <div className="flex w-full justify-center mt-6">
+            <p className="text-caption font-caption mr-2">
+              ¿Ya tienes una cuenta?{" "}
+            </p>
+            <a
+              href="/auth/login"
+              className="text-indigo-600 hover:text-blue-800 underline text-link font-link"
+            >
+              Iniciar sesión
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   )
