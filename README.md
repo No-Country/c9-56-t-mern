@@ -29,6 +29,7 @@ Acceder a Pawful es fácil: simplemente sigue el enlace proporcionado. Una vez e
 ## Características especiales 🔍
 
 Una característica destacada de Pawful es su chat integrado que permite una comunicación fluida entre clientes y profesionales.
+
 <img src="https://res.cloudinary.com/axiever/image/upload/v1678082218/Captura_de_pantalla_2023-03-06_005602_dhlnmf.png" height="300" width="auto"/>
 
 ## Colaboradores 👥
@@ -36,15 +37,22 @@ Una característica destacada de Pawful es su chat integrado que permite una com
 El equipo detrás de Pawful está conformado por talentosos profesionales dedicados a ofrecer la mejor experiencia posible a nuestros usuarios:
 
 ### Product Manager
-| Foto | Nombre | GitHub | LinkedIn |
-|------|--------|--------|----------|
-| <img src="https://cdn.discordapp.com/attachments/1078308908407455744/1082163557627592764/Portrait_compressed.jpg" alt="html5" width="40" height="40"/> | Santiago Roa | <a href="https://git-scm.com/" target="_blank">GitHub</a> | ![LinkedIn](https://github.com/Aplietexe)  |
+| Foto | Nombre | LinkedIn |
+|------|--------|--------|
+| <img src="https://ca.slack-edge.com/T02KS88FB0E-U04LUQPRH3K-59f6f53f0dc8-512" width="40" height="40"/> | Santiago Roa | [LinkedIn] |
 
 ### Diseño
-| Foto | Nombre | GitHub | LinkedIn |
-|------|--------|--------|----------|
-| [Foto] | Sabrina Islas | [GitHub] | [LinkedIn] |
-| [Foto] | Tamara Piñeiro  | [GitHub]|  [LinkedIn]| 
+| Foto | Nombre | LinkedIn |
+|------|--------|----------|
+| <img src="https://ca.slack-edge.com/T02KS88FB0E-U04KKT58M8C-2cbc1964f34a-512" width="40" height="40"/> | Sabrina Islas | [LinkedIn] |
+| <img src="https://ca.slack-edge.com/T02KS88FB0E-U04L9HHBWKG-40be81b88719-512" width="40" height="40"/> | Tamara Piñeiro | [LinkedIn] | 
 
 ### Front-end
-| Foto  | Nombre         | GitHub   | LinkedIn   |
+| Foto | Nombre | LinkedIn |
+|------|--------|----------|
+| <img src="https://ca.slack-edge.com/T02KS88FB0E-U04EKK65UJ1-19bc19f0b1aa-512" width="40" height="40"/> | Lucero Gonzalez | <a href="https://www.linkedin.com/in/gonzalezlucerocamila/" target="_blank">LinkedIn</a> |
+| <img src="https://ca.slack-edge.com/T02KS88FB0E-U045H0YJ5NJ-749b433db55f-512" width="40" height="40"/> | Jamir Bances | [LinkedIn] |
+| <img src="https://ca.slack-edge.com/T02KS88FB0E-U02U52VKHJP-9f1d228d0221-512" width="40" height="40"/> | Victor Romero | <a href="https://www.linkedin.com/in/victor-manuel-romero-juarez-6a5940206/" target="_blank">LinkedIn</a> |
+| <img src="https://ca.slack-edge.com/T02KS88FB0E-U04HFDMQACC-a430d5fac2ef-512" width="40" height="40"/> | Abi-ezer Guerra | <a href="https://linkedin.com/in/abi-ezer-xavier-guerra-cuadros-7519b921a" target="_blank">LinkedIn</a> |
+
+
