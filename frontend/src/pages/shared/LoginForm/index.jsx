@@ -6,13 +6,12 @@ import InputForm from "../../../components/InputForm/InputForm"
 import NavbarBack from "../../shared/Navbar/NavbarBack"
 import { useForm } from "react-hook-form"
 import { useSelector } from "react-redux"
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 
 const LoginForm = () => {
   const { startLogin, errorMessage } = useAuthStore()
   const { role } = useSelector((state) => state.auth.user)
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false)
 
   const navigate = useNavigate()
   const {
@@ -42,8 +41,7 @@ const LoginForm = () => {
       className="lg:flex lg:flex-col lg:h-screen lg:bg-violet-50 lg:py-px-11 lg:m-auto"
     >
       {" "}
-      <div 
-      className="lg:hidden">
+      <div className="lg:hidden">
         <NavbarBack />
       </div>
       <div
@@ -81,12 +79,12 @@ const LoginForm = () => {
                 register={register("password", {})}
               />
               <button
-        type="button"
-        onClick={() => setShowPassword(!showPassword)}
-        className="absolute right-0 top-8 bottom-0 px-2 flex justify-center items-center text-gray-500 focus:outline-none"
-        >
-        {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
-      </button>
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-0 top-8 bottom-0 px-2 flex justify-center items-center text-gray-500 focus:outline-none"
+              >
+                {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+              </button>
             </div>
 
             <div className="text-end w-full py-2">
