@@ -7,7 +7,6 @@ import InputForm from "../../../components/InputForm/InputForm"
 import NavbarBack from "../../shared/Navbar/NavbarBack"
 import { useForm } from "react-hook-form"
 import { useSelector } from "react-redux"
-import pawfulApi from "../../../api/pawfulApi"
 
 const LoginForm = () => {
   const { startLogin, errorMessage } = useAuthStore()
