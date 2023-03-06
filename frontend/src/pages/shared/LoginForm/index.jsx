@@ -39,7 +39,11 @@ const LoginForm = () => {
       id="bg"
       className="lg:flex lg:flex-col lg:items-center lg:h-screen lg:bg-violet-50 lg:py-px-11 lg:m-auto"
     >
-      <NavbarBack />
+      {" "}
+      <div 
+      className="lg:hidden">
+        <NavbarBack />
+      </div>
       <div
         id="rounded-container"
         className="md:w-[40%] lg:h-[88%] md:h-[80%] lg:m-auto lg:rounded-2xl lg:bg-[#F9FAFB]"
