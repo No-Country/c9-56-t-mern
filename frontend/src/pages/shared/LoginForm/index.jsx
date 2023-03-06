@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { useAuthStore } from "../../../hooks/useAuthStore"
-import "../../../styles/styles.css"
 import PurpleButton from "../../../components/PurpleButton"
 import InputForm from "../../../components/InputForm/InputForm"
 import NavbarBack from "../../shared/Navbar/NavbarBack"
 import { useForm } from "react-hook-form"
 import { useSelector } from "react-redux"
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+
 
 const LoginForm = () => {
   const { startLogin, errorMessage } = useAuthStore()
   const { role } = useSelector((state) => state.auth.user)
+  const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate()
   const {
@@ -71,13 +73,20 @@ const LoginForm = () => {
               />
             </div>
 
-            <div className="py-2 lg:p-0">
+            <div className="py-2 lg:p-0 relative">
               <InputForm
                 label={"Contraseña"}
                 placeholder={"Escribe tu contraseña"}
-                type={"password"}
+                type={showPassword ? "text" : "password"}
                 register={register("password", {})}
               />
+              <button
+        type="button"
+        onClick={() => setShowPassword(!showPassword)}
+        className="absolute right-0 top-8 bottom-0 px-2 flex justify-center items-center text-gray-500 focus:outline-none"
+        >
+        {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+      </button>
             </div>
 
             <div className="text-end w-full py-2">
