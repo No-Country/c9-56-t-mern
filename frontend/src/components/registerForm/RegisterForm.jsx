@@ -63,7 +63,7 @@ const RegisterForm = (props) => {
   }
 
   return (
-    <div className="global-main-container">
+    <div className="#">
       <StepNavigation
         labelArray={labelArray}
         currentStep={currentStep}
@@ -76,7 +76,7 @@ const RegisterForm = (props) => {
         <p className="text-caption font-caption mr-2">
           ¿Ya tienes una cuenta?{" "}
         </p>
-        <a href="/auth/login" className="global-link text-link font-link">
+        <a href="/auth/login" className="text-indigo-600 hover:text-blue-800 underline text-link font-link">
           Iniciar sesión
         </a>
       </div>
