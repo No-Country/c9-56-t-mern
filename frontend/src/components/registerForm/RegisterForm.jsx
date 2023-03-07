@@ -20,8 +20,7 @@ const RegisterForm = () => {
       return (
         <div>
           <SimpleText
-            paddingTop={4}
-            lgPaddingTop={7}
+          className={"pt-4 lg:pt-7"}
             title={"Registro"}
             paragraph={"Crea tu cuenta en simples pasos"}
           />
@@ -40,8 +39,7 @@ const RegisterForm = () => {
       return (
         <div>
           <SimpleText
-            paddingTop={4}
-            lgPaddingTop={7}
+            className={"pt-4 lg-pt-7"}
             title={"Registro"}
             paragraph={"¡Estas cada vez más cerca!"}
           />

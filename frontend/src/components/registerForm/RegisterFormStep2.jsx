@@ -55,7 +55,7 @@ const RegisterFormStep2 = (props) => {
           />
 
           {errors.email?.type === "pattern" && <p>El formato es incorrecto</p>}
-          <div className="py-1">
+          <div className="py-3">
             <h2 className="font-body text-body-bold">¿Cómo querés comenzar?</h2>
             <p className="text-caption font-caption text-slate-400 py-1">
               Podrás cambiarlo más tarde.
@@ -118,7 +118,7 @@ const RegisterFormStep2 = (props) => {
           </div>
         </div>
 
-        <PurpleButton text="Registrar" type="submit" />
+        <PurpleButton className={"pt-2"} text="Registrar" type="submit" />
       </form>
     </div>
   )

@@ -11,7 +11,7 @@ const Stepper1 = () => {
   window.addEventListener("resize", handleWidthSize);
 
   return (
-    <div className="flex justify-center p-4">
+    <div className="flex justify-center p-4 lg:pb-1">
       <svg
         width={esDesk ? 215 : 239}
         height="32"

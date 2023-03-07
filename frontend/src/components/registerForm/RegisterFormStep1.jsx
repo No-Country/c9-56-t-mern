@@ -19,7 +19,7 @@ const RegisterFormStep1 = (props) => {
   }
   return (
     <div className="max-w-sm w-full m-auto">
-      <form className="lg:px-7"onSubmit={handleSubmit(onSubmit)}>
+      <form className="lg:px-7 flex flex-col gap-1"onSubmit={handleSubmit(onSubmit)}>
         <div>
           <InputForm
             label={"Email"}
