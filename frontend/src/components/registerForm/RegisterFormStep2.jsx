@@ -75,7 +75,7 @@ const RegisterFormStep2 = (props) => {
             />
             <label
               htmlFor="owner"
-              className="flex flex-col w-full lg:px-9 py-4 lg:py-3 cursor-pointer justify-center shadow rounded-2xl peer-checked:shadow-violet-700 peer-checked:text-neutral-900"
+              className="flex flex-col w-full py-4 lg:py-3 cursor-pointer justify-center shadow rounded-2xl peer-checked:shadow-violet-700 peer-checked:text-neutral-900"
             >
               <div className="flex justify-center">
                 <img
@@ -102,7 +102,7 @@ const RegisterFormStep2 = (props) => {
             />
             <label
               htmlFor="professional"
-              className="flex flex-col lg:px-9 py-4 lg:py-3 cursor-pointer justify-center w-full shadow rounded-2xl peer-checked:shadow-violet-700 peer-checked:text-neutral-900"
+              className="flex flex-col py-4 lg:py-3 cursor-pointer justify-center w-full shadow rounded-2xl peer-checked:shadow-violet-700 peer-checked:text-neutral-900"
             >
               <div className="flex justify-center">
                 <img
