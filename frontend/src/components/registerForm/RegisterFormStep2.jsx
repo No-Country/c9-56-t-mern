@@ -84,7 +84,7 @@ const RegisterFormStep2 = (props) => {
                 />
               </div>
               <div className="flex flex-col text-center pt-4 lg:pt-2">
-                <p className="font-subtitle text-subtitle-bold">Buscar</p>
+                <p className="font-subtitle text-subtitle-bold lg:text-lg">Buscar</p>
                 <p className="text-body font-body">servicios</p>
               </div>
             </label>
@@ -111,7 +111,7 @@ const RegisterFormStep2 = (props) => {
                 />
               </div>
               <div className="flex flex-col text-center pt-4 lg:pt-2">
-                <p className="font-subtitle text-subtitle-bold">Ofrecer</p>
+                <p className="font-subtitle text-subtitle-bold lg:text-lg">Ofrecer</p>
                 <p className="text-body font-body">servicios</p>
               </div>
             </label>

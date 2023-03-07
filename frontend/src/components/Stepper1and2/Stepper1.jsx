@@ -13,7 +13,7 @@ const Stepper1 = () => {
   return (
     <div className="flex justify-center p-4 lg:pb-1">
       <svg
-        width={esDesk ? 215 : 239}
+        width={esDesk ? 230 : 239}
         height="32"
         viewBox="0 0 239 32"
         fill="none"
