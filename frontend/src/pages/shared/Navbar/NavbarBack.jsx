@@ -10,7 +10,7 @@ const NavbarBack = ({ goTo = -1 }) => {
   }
 
   return (
-    <header className="sticky top-0 z-20  flex flex-row-reverse max-w-sm justify-between items-center m-auto">
+    <header className="sticky top-0 z-20 flex flex-row-reverse max-w-sm justify-between items-center m-auto">
       <span className="w-full flex justify-center text-violet-700 py-4 mr-11 text-2xl">
         <img
           className="h-6 w-6"
