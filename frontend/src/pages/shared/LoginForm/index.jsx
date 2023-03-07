@@ -36,22 +36,12 @@ const LoginForm = () => {
   }, [])
 
   return (
-    <div
-      id="bg"
-      className="lg:flex lg:flex-col lg:h-screen lg:bg-violet-50 lg:py-px-11 lg:m-auto"
-    >
-      {" "}
+    <div className="lg:flex lg:flex-col lg:h-screen lg:bg-violet-50 lg:py-px-11 lg:m-auto">
       <div className="lg:hidden">
         <NavbarBack />
       </div>
-      <div
-        id="rounded-container"
-        className="md:w-[40%] lg:h-[88%] md:h-[80%] m-auto flex items-center justify-center lg:rounded-2xl lg:bg-[#F9FAFB]"
-      >
-        <div
-          id="content-container"
-          className="flex flex-col self-center max-w-sm mx-auto m-auto w-full h-full p-4 lg:px-15 lg:pb-25"
-        >
+      <div className="md:w-[40%] lg:h-[88%] md:h-[80%] m-auto flex items-center justify-center lg:rounded-2xl lg:bg-[#F9FAFB]">
+        <div className="flex flex-col self-center max-w-sm mx-auto m-auto w-full h-full p-4 lg:px-15 lg:pb-25">
           <h2 className="text-title lg:text-xl font-title mt-10 lg:m-0 lg:py-4 self-center">
             Iniciar sesión
           </h2>
