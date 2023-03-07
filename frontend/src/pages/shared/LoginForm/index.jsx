@@ -87,7 +87,7 @@ const LoginForm = () => {
             </div>
             <div className="flex flex-col">
               <PurpleButton text="Iniciar sesión" type="submit" />
-              <div className="text-center text-neutral-900 text-caption font caption py-6 lg:py-3">
+              <div className="text-center text-neutral-900 text-caption font-caption py-6 lg:py-3">
                 ¿Aún no tienes una cuenta?{" "}
                 <Link
                   to="/register"
