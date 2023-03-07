@@ -10,7 +10,7 @@ const PurpleButton = ({ text, type, onClick, className }) => {
     <div className={className}>
       <button
         type={type}
-        className="w-full w-full font-button text-button bg-violet-800 py-3 rounded-lg text-gray-50"
+        className="w-full self-center font-button text-button bg-violet-800 py-3 rounded-lg text-gray-50"
         onClick={handleClick}
       >
         {text}
