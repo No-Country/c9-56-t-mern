@@ -79,8 +79,7 @@ const RegisterFormStep2 = (props) => {
             >
               <div className="flex justify-center ">
                 <img
-                  width={80}
-                  height={80}
+                  className="w-auto h-20 lg:h-16" 
                   src="https://res.cloudinary.com/dw639wmis/image/upload/v1677370701/Cliente_eosn5h.png"
                 />
               </div>
@@ -107,8 +106,7 @@ const RegisterFormStep2 = (props) => {
             >
               <div className="flex justify-center">
                 <img
-                  width={80}
-                  height={80}
+                  className="w-auto h-20 lg:h-16" 
                   src="https://res.cloudinary.com/dw639wmis/image/upload/v1677370701/Profesional_veto9g.png"
                 />
               </div>
