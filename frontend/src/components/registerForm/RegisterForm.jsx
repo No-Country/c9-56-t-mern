@@ -7,7 +7,7 @@ import Stepper1 from "../Stepper1and2/Stepper1"
 import Stepper2 from "../Stepper1and2/Stepper2"
 import NavbarBack from "../../pages/shared/Navbar/NavbarBack"
 
-const RegisterForm = (props) => {
+const RegisterForm = () => {
   const labelArray = ["Step 1", "Step 2"]
   const [currentStep, setCurrentStep] = useState(1)
   const [formValues, setFormValues] = useState({})
@@ -21,6 +21,8 @@ const RegisterForm = (props) => {
         <div>
           <div className="mt-10 lg:m-0">
             <SimpleText
+              paddingTop={4}
+              lgPaddingTop={7}
               title={"Registro"}
               paragraph={"Crea tu cuenta en simples pasos"}
             />
@@ -40,6 +42,8 @@ const RegisterForm = (props) => {
       return (
         <div>
           <SimpleText
+          paddingTop={4}
+            lgPaddingTop={7}
             title={"Registro"}
             paragraph={"¡Estas cada vez más cerca!"}
           />
@@ -71,7 +75,7 @@ const RegisterForm = (props) => {
       </div>
       <div
         id="rounded-container"
-        className="md:w-[40%] lg:h-[88%] md:h-[80%] m-auto flex items-center justify-center lg:rounded-2xl lg:bg-[#F9FAFB]"
+        className="lg:flex-col md:w-[40%] lg:h-[88%] md:h-[80%] m-auto flex items-center justify-center lg:rounded-2xl lg:bg-[#F9FAFB]"
       >
         <div
           id="content-container"
@@ -86,8 +90,8 @@ const RegisterForm = (props) => {
           {getInfoPerPage()}
 
           <div className="flex justify-center mt-6 lg:m-0 lg:py-1">
-            <p className="text-caption font-caption mr-2">
-              ¿Ya tienes una cuenta?{" "}
+            <p className="text-caption font-caption pr-2">
+              ¿Ya tienes una cuenta?
             </p>
             <a
               href="/auth/login"
@@ -96,6 +100,13 @@ const RegisterForm = (props) => {
               Iniciar sesión
             </a>
           </div>
+        </div>
+        <div className="items-center m-auto py-2 md:py-4 hidden md:block lg:block">
+          <img
+            className="w-32 h-6 md:hidden hidden lg:block"
+            src="https://res.cloudinary.com/dw639wmis/image/upload/v1678093239/pawful_logo_i92k6p.png"
+            alt="pawful-logo"
+          />
         </div>
       </div>
     </div>
