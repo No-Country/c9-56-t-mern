@@ -19,14 +19,12 @@ const RegisterForm = () => {
     if (currentStep === 1) {
       return (
         <div>
-          <div className="mt-10 lg:m-0">
-            <SimpleText
-              paddingTop={4}
-              lgPaddingTop={7}
-              title={"Registro"}
-              paragraph={"Crea tu cuenta en simples pasos"}
-            />
-          </div>
+          <SimpleText
+            paddingTop={4}
+            lgPaddingTop={7}
+            title={"Registro"}
+            paragraph={"Crea tu cuenta en simples pasos"}
+          />
           <Stepper1 />
           <RegisterFormStep1
             labelArray={labelArray}
@@ -42,7 +40,7 @@ const RegisterForm = () => {
       return (
         <div>
           <SimpleText
-          paddingTop={4}
+            paddingTop={4}
             lgPaddingTop={7}
             title={"Registro"}
             paragraph={"¡Estas cada vez más cerca!"}
@@ -89,7 +87,7 @@ const RegisterForm = () => {
 
           {getInfoPerPage()}
 
-          <div className="flex justify-center mt-6 lg:m-0 py-6 lg:py-3">
+          <div className="flex justify-center py-4 lg:py-3">
             <p className="text-caption font-caption pr-2">
               ¿Ya tienes una cuenta?
             </p>
