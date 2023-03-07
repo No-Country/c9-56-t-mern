@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import { useAuthStore } from "../../../hooks/useAuthStore"
-import PurpleButton from "../../../components/PurpleButton"
-import InputForm from "../../../components/InputForm/InputForm"
-import NavbarBack from "../../shared/Navbar/NavbarBack"
 import { useForm } from "react-hook-form"
-import { useSelector } from "react-redux"
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
+import { useSelector } from "react-redux"
+import { Link, useNavigate } from "react-router-dom"
+import InputForm from "../../../components/InputForm/InputForm"
+import PurpleButton from "../../../components/PurpleButton"
+import { useAuthStore } from "../../../hooks/useAuthStore"
+import NavbarBack from "../../shared/Navbar/NavbarBack"
 
 const LoginForm = () => {
   const { startLogin, errorMessage } = useAuthStore()
@@ -42,7 +42,7 @@ const LoginForm = () => {
       </div>
       <div className="md:w-[40%] lg:h-[88%] md:h-[80%] m-auto flex items-center justify-center lg:rounded-2xl lg:bg-[#F9FAFB]">
         <div className="flex flex-col self-center max-w-sm mx-auto m-auto w-full h-full p-4 lg:px-15 lg:pb-25">
-          <h2 className="text-title lg:text-xl font-title mt-10 lg:m-0 lg:py-4 self-center">
+          <h2 className="text-title font-title mt-10 lg:m-0 lg:py-4 self-center">
             Iniciar sesión
           </h2>
           <div className="flex flex-col items-center justify-center">
