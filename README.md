@@ -38,10 +38,10 @@ Integrar el trabajo de los profesionales con las necesidades de los dueños de m
 
 El equipo detrás de Pawful está conformado por talentosos profesionales dedicados a ofrecer la mejor experiencia posible a nuestros usuarios:
 
-### Product Manager
+### Project Manager
 | Foto | Nombre | LinkedIn |
 |------|--------|--------|
-| <img src="https://ca.slack-edge.com/T02KS88FB0E-U04LUQPRH3K-59f6f53f0dc8-512" width="40" height="40"/> | Santiago Roa | [LinkedIn] |
+| <img src="https://ca.slack-edge.com/T02KS88FB0E-U04LUQPRH3K-59f6f53f0dc8-512" width="40" height="40"/> | Santiago Roa | <a href="https://www.linkedin.com/in/santiago-d-roa">LinkedIn</a> |
 
 ### Diseño
 | Foto | Nombre | LinkedIn | Behance |
