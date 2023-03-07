@@ -77,7 +77,7 @@ const LoginForm = () => {
               </button>
             </div>
 
-            <div className="text-end w-full py-2">
+            <div className="text-end w-full pb-6">
               <a
                 href="#"
                 className="text-link font-link px-4 text-indigo-600 hover:text-indigo-800 underline"
@@ -87,7 +87,7 @@ const LoginForm = () => {
             </div>
             <div className="flex flex-col">
               <PurpleButton text="Iniciar sesión" type="submit" />
-              <div className="text-center text-neutral-900 text-caption font caption mt-6 lg:mt-2">
+              <div className="text-center text-neutral-900 text-caption font caption py-6 lg:py-3">
                 ¿Aún no tienes una cuenta?{" "}
                 <Link
                   to="/register"
