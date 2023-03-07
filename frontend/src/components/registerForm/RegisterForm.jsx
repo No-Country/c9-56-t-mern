@@ -89,7 +89,7 @@ const RegisterForm = () => {
 
           {getInfoPerPage()}
 
-          <div className="flex justify-center mt-6 lg:m-0 lg:py-1">
+          <div className="flex justify-center mt-6 lg:m-0 py-6 lg:py-3">
             <p className="text-caption font-caption pr-2">
               ¿Ya tienes una cuenta?
             </p>
@@ -101,7 +101,7 @@ const RegisterForm = () => {
             </a>
           </div>
         </div>
-        <div className="items-center m-auto py-2 md:py-4 hidden md:block lg:block">
+        <div className="items-center m-auto pb-8 hidden md:block lg:block">
           <img
             className="w-32 h-6 md:hidden hidden lg:block"
             src="https://res.cloudinary.com/dw639wmis/image/upload/v1678093239/pawful_logo_i92k6p.png"
