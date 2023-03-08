@@ -67,7 +67,7 @@ const RegisterFormStep2 = (props) => {
             <input
               id="owner"
               name="options"
-              className="hidden peer w-full"
+              className="hidden peer"
               type="radio"
               value="OWNER"
               checked={option == "OWNER"}
