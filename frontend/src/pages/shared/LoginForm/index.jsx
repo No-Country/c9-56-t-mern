@@ -36,23 +36,23 @@ const LoginForm = () => {
   }, [])
 
   return (
-    <div className="lg:flex lg:flex-col lg:h-screen lg:bg-violet-50 lg:py-px-11 lg:m-auto">
+    <div className="lg:flex lg:flex-col lg:h-screen lg:bg-violet-50 lg:m-auto">
       <div className="lg:hidden">
         <NavbarBack />
       </div>
-      <div className="md:w-[40%] lg:h-[88%] md:h-[80%] m-auto flex items-center justify-center lg:rounded-2xl lg:bg-[#F9FAFB]">
-        <div className="flex flex-col self-center max-w-sm mx-auto m-auto w-full h-full p-4 lg:px-15 lg:pb-25">
-          <h2 className="text-title font-title mt-10 lg:m-0 lg:py-4 self-center">
+      <div className="flex initial lg:w-auto lg:h-auto lg:px-[5%] m-auto mt-[8%] lg:mt-auto lg:py-[2%] lg:rounded-2xl lg:bg-[#F9FAFB]">
+        <div className="flex flex-col initial w-96 lg:w-72 px-4 m-auto">
+          <h2 className="text-title font-title lg:text-lg py-4 lg:py-0 text-center">
             Iniciar sesión
           </h2>
           <div className="flex flex-col items-center justify-center">
             <img
-              className="w-64 h-40 lg:w-52 lg:h-32"
+              className="w-64 h-40 lg:w-48 lg:h-auto"
               src="https://images2.imgbox.com/ff/5e/cwCK1YM4_o.png"
             />
           </div>
-          <form className="lg:px-7" onSubmit={handleSubmit(onSubmit)}>
-            <div className="#">
+          <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
+            <div className="pt-2">
               <InputForm
                 label={"Email o nombre de usuario"}
                 placeholder={"Escribe tu email"}
@@ -61,7 +61,7 @@ const LoginForm = () => {
               />
             </div>
 
-            <div className="py-2 lg:p-0 relative">
+            <div className="pt-2 relative">
               <InputForm
                 label={"Contraseña"}
                 placeholder={"Escribe tu contraseña"}
@@ -86,7 +86,7 @@ const LoginForm = () => {
               </a>
             </div>
             <div className="flex flex-col">
-              <PurpleButton text="Iniciar sesión" type="submit" />
+              <PurpleButton lgPy={"2"} text="Iniciar sesión" type="submit" />
               <div className="text-center text-neutral-900 text-caption font caption py-6 lg:py-3">
                 ¿Aún no tienes una cuenta?{" "}
                 <Link
@@ -97,14 +97,14 @@ const LoginForm = () => {
                 </Link>{" "}
               </div>
             </div>
+            <div className="self-center m-auto py-2">
+              <img
+                className="w-24 h-auto md:hidden hidden lg:block"
+                src="https://res.cloudinary.com/dw639wmis/image/upload/v1678093239/pawful_logo_i92k6p.png"
+                alt="pawful-logo"
+              />
+            </div>
           </form>
-          <div className="items-center m-auto py-2 md:py-6 hidden md:block lg:block">
-            <img
-              className="w-32 h-6 md:hidden hidden lg:block"
-              src="https://res.cloudinary.com/dw639wmis/image/upload/v1678093239/pawful_logo_i92k6p.png"
-              alt="pawful-logo"
-            />
-          </div>
         </div>
       </div>
     </div>
