@@ -43,9 +43,9 @@ const RegisterFormStep2 = (props) => {
   }
 
   return (
-    <div className="max-w-sm w-full m-auto pb-10">
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
+    <div className="max-w-sm w-full m-auto">
+      <form className="lg:px-7" onSubmit={handleSubmit(onSubmit)}>
+        <div className="">
           <InputForm
             label={"Nombre de usuario"}
             placeholder={"Escribe un nombre de usuario"}
@@ -55,15 +55,15 @@ const RegisterFormStep2 = (props) => {
           />
 
           {errors.email?.type === "pattern" && <p>El formato es incorrecto</p>}
+          <div className="py-3">
+            <h2 className="font-body text-body-bold">¿Cómo querés comenzar?</h2>
+            <p className="text-caption font-caption text-slate-400 py-1">
+              Podrás cambiarlo más tarde.
+            </p>
+          </div>
         </div>
-        <div className="mx-4 mt-6">
-          <h2 className="font-body text-body-bold">¿Cómo querés comenzar?</h2>
-          <p className="text-caption font-caption text-slate-400">
-            Podrás cambiarlo más tarde.
-          </p>
-        </div>
-        <div className="flex item-center justify-center mb-10 mt-6">
-          <div>
+        <div className="flex items-center justify-center gap-5 w-full pb-4">
+          <div className="flex-1">
             <input
               id="owner"
               name="options"
@@ -74,24 +74,23 @@ const RegisterFormStep2 = (props) => {
               onChange={handleOptionChange}
             />
             <label
-              for="owner"
-              className="flex flex-col cursor-pointer justify-center w-40 h-44 m-2 shadow rounded-2xl  peer-checked:shadow-violet-700 peer-checked:text-neutral-900"
+              htmlFor="owner"
+              className="flex flex-col w-full py-4 lg:py-3 cursor-pointer justify-center shadow rounded-2xl peer-checked:shadow-violet-700 peer-checked:text-neutral-900"
             >
-              <div className="flex justify-center ">
+              <div className="flex justify-center">
                 <img
-                  width={80}
-                  height={80}
+                  className="w-auto h-20 lg:h-16"
                   src="https://res.cloudinary.com/dw639wmis/image/upload/v1677370701/Cliente_eosn5h.png"
                 />
               </div>
-              <div className="flex flex-col text-center mt-4">
-                <p className="font-subtitle text-subtitle-bold">Buscar</p>
+              <div className="flex flex-col text-center pt-4 lg:pt-2">
+                <p className="font-subtitle text-subtitle-bold lg:text-lg">Buscar</p>
                 <p className="text-body font-body">servicios</p>
               </div>
             </label>
           </div>
 
-          <div>
+          <div className="flex-1">
             <input
               id="professional"
               name="optionsP"
@@ -102,24 +101,24 @@ const RegisterFormStep2 = (props) => {
               onChange={handleOptionChange}
             />
             <label
-              for="professional"
-              className="flex flex-col cursor-pointer justify-center w-40 h-44 m-2 shadow rounded-2xl  peer-checked:shadow-violet-700 peer-checked:text-neutral-900"
+              htmlFor="professional"
+              className="flex flex-col py-4 lg:py-3 cursor-pointer justify-center w-full shadow rounded-2xl peer-checked:shadow-violet-700 peer-checked:text-neutral-900"
             >
               <div className="flex justify-center">
                 <img
-                  width={80}
-                  height={80}
+                  className="w-auto h-20 lg:h-16"
                   src="https://res.cloudinary.com/dw639wmis/image/upload/v1677370701/Profesional_veto9g.png"
                 />
               </div>
-              <div className="flex flex-col text-center mt-4">
-                <p className="font-subtitle text-subtitle-bold">Ofrecer</p>
+              <div className="flex flex-col text-center pt-4 lg:pt-2">
+                <p className="font-subtitle text-subtitle-bold lg:text-lg">Ofrecer</p>
                 <p className="text-body font-body">servicios</p>
               </div>
             </label>
           </div>
         </div>
-        <PurpleButton text="Registrar" type="submit" />
+
+        <PurpleButton className={"pt-2"} text="Registrar" type="submit" />
       </form>
     </div>
   )

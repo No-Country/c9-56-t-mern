@@ -24,11 +24,10 @@ const SuccessfulRegistration = () => {
       <br />
       <img
         src="https://res.cloudinary.com/dw639wmis/image/upload/v1677388098/Registro-exitoso_o1qyq0.png"
-        className="w-60 h-70 m-auto w-full"
+        className="w-60 h-70 m-auto"
       />
       <br />
 
-      {/* agregar clase global con padding */}
       <div id="btnPluslink" className="text-center mt-4 mb-6">
         <PurpleButton onClick={handleCLick} text="Completar perfil" />
       </div>
