@@ -32,7 +32,7 @@ const CategoriesHome = () => {
   ]
 
   return (
-    <div className="flex flex-col gap-4 md:flex-row flex-wrap justify-center m-auto">
+    <div className="flex flex-col gap-4 min-[600px]:flex-row flex-wrap justify-center m-auto">
       {categoryDetails.map(({ img, category, categoryDescription }, i) => (
         <Card
           image={img}

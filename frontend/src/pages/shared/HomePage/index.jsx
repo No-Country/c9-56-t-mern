@@ -24,12 +24,12 @@ const HomePage = () => {
     </div>
   )
   return (
-    <div className="flex flex-col mx-auto w-full h-full bg-slate-50">
+    <div className="flex flex-col mx-auto w-full h-screen bg-slate-50">
       <Navbar />
 
       <div className="flex justify-between flex-wrap px-4 lg:max-w-[85%] md:m-auto">
         <div className="lg:w-[60%] flex flex-col gap-10 justify-between">
-          <h2 className="text-main font-bold md:leading-[4.625rem] lg:text-6xl font-title m-3 text-start w-full">
+          <h2 className="max-[500px]:text-main font-bold md:leading-[4.625rem] text-6xl font-title pl-[4%] pt-[5%] text-start w-full">
             Conecta con <span className="text-[#A82DF7]">expertos</span> en el
             cuidado de tus <span className="text-[#6D28D9]">mascotas</span>
           </h2>
@@ -40,7 +40,7 @@ const HomePage = () => {
         </div>
         <div className="w-full lg:hidden px-[4%]">{buttons}</div>
       </div>
-      <div className="flex flex-col lg:p-10 lg:bg-violet-50 md:w-[95%] m-auto lg:rounded-2xl px-[4%]">
+      <div className="flex flex-col lg:p-10 lg:bg-violet-50 md:w-[95%] m-auto lg:rounded-2xl max-[319px]:px-[4%] max-[500px]:px-[7%] ">
         <p className="text-main font-title text-center my-5">
           Nuestros servicios
         </p>
