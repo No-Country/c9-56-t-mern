@@ -1,18 +1,11 @@
 import React from "react"
-import { useState } from "react";
+import { useState } from "react"
 
 const Stepper2 = () => {
-    const [esDesk, setEsDesk] = useState(window.innerWidth >= 1024);
-  
-    const handleWidthSize = () => {
-      setEsDesk(window.innerWidth >= 1024);
-    };
-  
-    window.addEventListener("resize", handleWidthSize);
   return (
-    <div className="flex justify-center p-4 lg:pb-1">
+    <div className="flex justify-center p-[4%] lg:pb-[2%] min-[413px]:py-[9%] min-[1023px]:py-[2%] min-[1280px]:py-[5%]">
       <svg
-        width={esDesk ? 230 : 239}
+        width="239"
         height="32"
         viewBox="0 0 239 32"
         fill="none"

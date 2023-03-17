@@ -18,8 +18,11 @@ const RegisterFormStep1 = (props) => {
     console.log(data)
   }
   return (
-    <div className="max-w-sm w-full m-auto">
-      <form className="lg:px-7 flex flex-col gap-1"onSubmit={handleSubmit(onSubmit)}>
+    <div className="flex flex-col gap-2 min-[360px]:gap-5 min-[1023px]:gap-1 min-[1260px]:gap-5 m-auto">
+      <form
+        className="flex flex-col gap-2 min-[360px]:gap-5 min-[1023px]:gap-1 min-[1260px]:gap-5"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <div>
           <InputForm
             label={"Email"}
@@ -52,10 +55,26 @@ const RegisterFormStep1 = (props) => {
             register={{ ...register("password", {}) }}
           />
         </div>
-
-        <br />
-        <PurpleButton text="Continuar" type="submit" />
+        <div className="pt-[5%]">
+          <PurpleButton text="Continuar" type="submit" />
+        </div>
       </form>
+      <div className="flex flex-wrap items-center justify-center gap-2 py-[4%] lg:py-[3%]">
+        <p className="text-caption font-caption">¿Ya tienes una cuenta?</p>
+        <a
+          href="/auth/login"
+          className="text-indigo-600 hover:text-blue-800 underline text-link font-link"
+        >
+          Iniciar sesión
+        </a>
+      </div>
+      <div className="self-center m-auto p-[2%] min-[1200px]:pt-[12%]">
+        <img
+          className="lg:w-24 min-[1300px]:w-32 h-auto md:hidden hidden lg:block"
+          src="https://res.cloudinary.com/dw639wmis/image/upload/v1678093239/pawful_logo_i92k6p.png"
+          alt="pawful-logo"
+        />
+      </div>
     </div>
   )
 }

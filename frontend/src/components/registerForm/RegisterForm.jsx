@@ -20,7 +20,7 @@ const RegisterForm = () => {
       return (
         <div>
           <SimpleText
-          className={"pt-4 lg:pt-7"}
+            className={"pt-4 lg:pt-7"}
             title={"Registro"}
             paragraph={"Crea tu cuenta en simples pasos"}
           />
@@ -39,7 +39,7 @@ const RegisterForm = () => {
       return (
         <div>
           <SimpleText
-            className={"pt-4 lg-pt-7"}
+            className={"pt-4 lg:pt-7"}
             title={"Registro"}
             paragraph={"¡Estas cada vez más cerca!"}
           />
@@ -62,21 +62,12 @@ const RegisterForm = () => {
   }
 
   return (
-    <div
-      id="bg"
-      className="lg:flex lg:flex-col lg:items-center lg:h-screen lg:bg-violet-50 lg:py-px-11 lg:m-auto"
-    >
+    <div className="lg:flex lg:flex-col lg:h-screen lg:bg-violet-50 lg:m-auto">
       <div className="lg:hidden">
         <NavbarBack />
       </div>
-      <div
-        id="rounded-container"
-        className="lg:flex-col md:w-[40%] lg:h-[88%] md:h-[80%] m-auto flex items-center justify-center lg:rounded-2xl lg:bg-[#F9FAFB]"
-      >
-        <div
-          id="content-container"
-          className="flex flex-col self-center max-w-sm m-auto w-full h-full p-4 lg:px-15 lg:pb-25"
-        >
+      <div className="lg:flex-col lg:w-full lg:max-w-lg lg:h-[33rem] min-[1279px]:h-[40rem] min-[1400px]:h-[50rem] max-[1399px]:max-w-none min-[1400px]:max-w-2xl m-auto items-center justify-center lg:rounded-2xl lg:bg-[#F9FAFB]">
+        <div className="flex flex-col justify-center max-w-sm m-auto w-full h-full px-4 ">
           <StepNavigation
             labelArray={labelArray}
             currentStep={currentStep}
@@ -84,25 +75,6 @@ const RegisterForm = () => {
           ></StepNavigation>
 
           {getInfoPerPage()}
-
-          <div className="flex justify-center py-4 lg:py-3">
-            <p className="text-caption font-caption pr-2">
-              ¿Ya tienes una cuenta?
-            </p>
-            <a
-              href="/auth/login"
-              className="text-indigo-600 hover:text-blue-800 underline text-link font-link"
-            >
-              Iniciar sesión
-            </a>
-          </div>
-        </div>
-        <div className="items-center m-auto pb-8 hidden md:block lg:block">
-          <img
-            className="w-32 h-6 md:hidden hidden lg:block"
-            src="https://res.cloudinary.com/dw639wmis/image/upload/v1678093239/pawful_logo_i92k6p.png"
-            alt="pawful-logo"
-          />
         </div>
       </div>
     </div>

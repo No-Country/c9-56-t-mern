@@ -9,7 +9,7 @@ import Navbar from "../Navbar/Navbar"
 
 const HomePage = () => {
   const buttons = (
-    <div className="flex flex-col gap-4 md:flex-row md:gap-5 lg:justify-start md:justify-center">
+    <div className="flex flex-col gap-4 md:flex-row md:gap-5 md:items-center lg:justify-start md:justify-center">
       <Link to="/services">
         <PurpleButton text={"Contratar"} className={"flex md:w-60"} />
       </Link>
@@ -17,7 +17,7 @@ const HomePage = () => {
         <div className="">
           <BareButton
             text={"Ofrecer servicios"}
-            className={"flex md:w-[15rem] md:h-11"}
+            className={"flex md:w-60 md:h-[2.79rem]"}
           />
         </div>
       </Link>
@@ -26,7 +26,6 @@ const HomePage = () => {
   return (
     <div className="flex flex-col mx-auto w-full h-screen bg-slate-50">
       <Navbar />
-
       <div className="flex justify-between flex-wrap px-4 lg:max-w-[85%] md:m-auto">
         <div className="lg:w-[60%] flex flex-col gap-10 justify-between">
           <h2 className="max-[500px]:text-main font-bold md:leading-[4.625rem] text-6xl font-title pl-[4%] pt-[5%] text-start w-full">

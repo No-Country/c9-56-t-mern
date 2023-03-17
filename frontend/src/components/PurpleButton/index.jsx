@@ -1,6 +1,6 @@
 import React from "react"
 
-const PurpleButton = ({ text, type, onClick, className, lgPy}) => {
+const PurpleButton = ({ text, type, onClick, className }) => {
   const handleClick = () => {
     if (onClick) {
       onClick(onClick)
@@ -10,7 +10,7 @@ const PurpleButton = ({ text, type, onClick, className, lgPy}) => {
     <div className={className}>
       <button
         type={type}
-        className={`w-full self-center m-auto font-button text-button bg-violet-800 py-3 lg:py-${lgPy} rounded-lg text-gray-50`}
+        className="w-full self-center m-auto font-button text-button bg-violet-800 py-3 rounded-lg text-gray-50"
         onClick={handleClick}
       >
         {text}
